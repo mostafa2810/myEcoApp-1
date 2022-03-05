@@ -24,14 +24,11 @@ class MapView extends StatefulWidget{
  //
   var locationMessage="";
   var position;
- //
- //
- //
+
   void currentLocation()async{
-     position = await
-    Geolocator().getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
 
 
+     position = await Geolocator().getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
  var lastposition=await Geolocator().getLastKnownPosition();
  print(lastposition);
    locationMessage="$position";
@@ -41,11 +38,12 @@ class MapView extends StatefulWidget{
 
 
 
-
   @override
   State<StatefulWidget> createState() {
+
     @override
     Widget build(BuildContext context) {
+
       return Scaffold(
           appBar:AppBar(
             backgroundColor: Colors.white,

@@ -36,53 +36,64 @@ class _PostsScreenState extends State<SaveOrder> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-          backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor:Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
           title:Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
+                    // Colors.white,
                     Colors.white,
+                    //Colors.lightBlueAccent,
+
+                    // Colors.lightBlueAccent,
                     Colors.white,
                   ])),
               height:30,
-              child: Center(
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width:29,
-                      ),
-                      /* Container(
-                 width:80,
-                 child:Image.asset('assets/l1.jfif')
-               ),*/
-                      Text(" E",style:TextStyle(color:Colors.greenAccent,fontWeight:FontWeight.w300,fontSize:22)),
-                      Text(" Commerce",style:TextStyle(color:Colors.green,fontWeight:FontWeight.w300,fontSize:22)),
-                      //  Text("  Broker",style:TextStyle(color:Colors.lightBlue,fontWeight:FontWeight.bold,fontSize:21)),
-                    ],
-                  ))
+              child: Center(child: Row(
+                children: [
+                  SizedBox(
+                    width: 40,
+                  ),
+                  Text("Luban   ",style:TextStyle(color:Colors.blue[600],fontSize:22,
+                      fontWeight:FontWeight.w700
+
+                  ),),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text("لبان   ",style:TextStyle(color:Colors.blue[600],fontSize:22,
+                      fontWeight:FontWeight.w700
+
+                  ),),
+                ],
+              ))
           ),
           //backgroundColor: Colors.lightBlueAccent,
-          actions: <Widget>[
-            SizedBox(
-              height:5,
-            ),
-            IconButton(
-                color:Colors.red,
-                icon: Icon(Icons.logout,size:32,),
-                onPressed: () async {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                     //   return  LoginScreen();
-                      }));
+          // actions: <Widget>[
+          //   IconButton(
+          //       color:Colors.red,
+          //       icon: Icon(Icons.apps,size:34,),
+          //
+          //       onPressed: () {
+          //
+          //
+          //       }),
+          //
+          //   SizedBox(
+          //       width:7
+          //   ),
+          //   IconButton(
+          //       color:Colors.black,
+          //       icon: Icon(Icons.apps_sharp,size:34,),
+          //
+          //       onPressed: () {
+          //
+          //
+          //       })
 
-                })
-
-
-
-          ]
-      ),
+          //]
+        ),
       // drawer: SidebarPage(),
 
       body:

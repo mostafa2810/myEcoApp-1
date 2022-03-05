@@ -34,7 +34,8 @@ class CartDatabaseHelper{
         $columnPrice TEXT NOT NULL,
          $columnQuant INTEGER,
          $columnProductId TEXT NOT NULL,
-         $columnBrand TEXT NOT NULL
+         $columnBrand TEXT NOT NULL,
+         $columnBrand_email TEXT NOT NULL
          )
       ''');
     }

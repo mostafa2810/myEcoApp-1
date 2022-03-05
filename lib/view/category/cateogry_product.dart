@@ -12,6 +12,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 
 class CategoryProducts extends StatefulWidget {
@@ -42,23 +43,54 @@ class _PostsScreenState extends State<CategoryProducts> {
 
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar:AppBar(
+        appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Row(
-            children: [
-              Text("Luban   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                  fontWeight:FontWeight.w700
+          iconTheme: IconThemeData(color: Colors.black),
+          title: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                    // Colors.white,
+                    Colors.white,
+                    //Colors.lightBlueAccent,
 
-              ),),
-              SizedBox(
-                width: 80,
-              ),
-              Text("لبان   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                  fontWeight:FontWeight.w700
+                    // Colors.lightBlueAccent,
+                    Colors.white,
+                  ])),
+              height: 30,
+              child: Center(
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Row(
+                        children: [
 
-              ),),
-            ],
-          ),
+                          Text(
+                            "Luban   ",
+                            style: TextStyle(
+                                color: HexColor("#ff68682A"),
+                                fontSize: 22,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          Container(
+                            width:70,
+                            child: Image.asset("assets/wh3.jpeg",
+                              fit:BoxFit.fill,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 80,
+                      ),
+
+                    ],
+                  ))),
+
         ),
         body:
         Container(
@@ -101,7 +133,7 @@ class _PostsScreenState extends State<CategoryProducts> {
                                           padding: EdgeInsets.all(5),
                                           child: InkWell(
                                             child: Card(
-                                              color: Colors.grey[100],
+                                              color:Colors. white,
                                               child: Column(children: [
                                                 SizedBox(height: 20),
                                                 Container(
@@ -116,7 +148,7 @@ class _PostsScreenState extends State<CategoryProducts> {
                                                     fontWeight:FontWeight.bold),),
                                                 SizedBox(height: 2),
                                                 Text((posts.data()['price']).toString(),
-                                                  style:TextStyle(color:Colors.green,fontSize:16,
+                                                  style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
                                                       fontWeight:FontWeight.bold),
 
                                                 ),

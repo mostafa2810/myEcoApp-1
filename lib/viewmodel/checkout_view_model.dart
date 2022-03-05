@@ -29,8 +29,11 @@ class CheckOutViewModel extends GetxController {
   }
 
 
-  void checkout(String address, String apartment, String floor, String mobile,
-      num total, List<CartProductModel> order, num sub_total) async {
+  void checkout(
+      String address, String apartment, String floor, String mobile,
+      num total, List<CartProductModel> order, num sub_total,
+      String brand_email
+      ) async {
     String pr, pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10;
     int q, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10;
     String order_id;
@@ -371,8 +374,9 @@ class CheckOutViewModel extends GetxController {
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'order_status': 'pending',
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
+         'brand_email':brand_email,
         'order_id': mobile[5] +
             x.toString() +
             address[0] +
@@ -408,11 +412,12 @@ class CheckOutViewModel extends GetxController {
         'apartment': apartment.toString(),
         'floor': floor.toString(),
         'mobile': mobile.toString(),
+        'brand_email':brand_email,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'order_status': 'pending',
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_id': x.toString() +
             mobile[5] +
@@ -449,11 +454,12 @@ class CheckOutViewModel extends GetxController {
         'apartment': apartment.toString(),
         'floor': floor.toString(),
         'mobile': mobile.toString(),
+        'brand_email':brand_email,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_status': 'pending',
         'order_id': mobile[5] +
@@ -492,12 +498,13 @@ class CheckOutViewModel extends GetxController {
         'apartment': apartment.toString(),
         'floor': floor.toString(),
         'mobile': mobile.toString(),
+        'brand_email':brand_email,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
         'ord 4': pr3 + " * " + q3.toString(),
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_status': 'pending',
         'order_id': mobile[5] +
@@ -535,6 +542,7 @@ class CheckOutViewModel extends GetxController {
         'apartment': apartment.toString(),
         'floor': floor.toString(),
         'mobile': mobile.toString(),
+        'brand_email':brand_email,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -542,7 +550,7 @@ class CheckOutViewModel extends GetxController {
         'ord 4': pr3 + " * " + q3.toString(),
         'ord 5': pr4 + " * " + q4.toString(),
         'order_status': 'pending',
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_id': mobile[5] +
             address[0] +
@@ -578,6 +586,7 @@ class CheckOutViewModel extends GetxController {
         'apartment': apartment.toString(),
         'floor': floor.toString(),
         'mobile': mobile.toString(),
+        'brand_email':brand_email,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -586,7 +595,7 @@ class CheckOutViewModel extends GetxController {
         'ord 5': pr4 + " * " + q4.toString(),
         'ord 6': pr5 + " *  " + q5.toString(),
         'order_status': 'pending',
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_id': mobile[5] +
             x.toString() +
@@ -623,6 +632,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'username': uid,
+        'brand_email':brand_email,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
@@ -631,7 +641,7 @@ class CheckOutViewModel extends GetxController {
         'ord 6': pr5 + " *  " + q5.toString(),
         'ord 7': pr6 + " * " + q6.toString(),
         'order_status': 'pending',
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_id': mobile[5] +
             address[0] +
@@ -667,6 +677,7 @@ class CheckOutViewModel extends GetxController {
         'apartment': apartment.toString(),
         'floor': floor.toString(),
         'mobile': mobile.toString(),
+        'brand_email':brand_email,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -677,7 +688,7 @@ class CheckOutViewModel extends GetxController {
         'ord 7': pr6 + " * " + q6.toString(),
         'ord 8': pr7 + " * " + q7.toString(),
         'order_status': 'pending',
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_id': mobile[5] +
             address[0] +
@@ -714,6 +725,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'username': uid,
+        'brand_email':brand_email,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
@@ -724,7 +736,7 @@ class CheckOutViewModel extends GetxController {
         'ord 8': pr7 + " * " + q7.toString(),
         'ord 9': pr8 + " * " + q8.toString(),
         'order_status': 'pending',
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_id': mobile[5] +
             address[0] +
@@ -763,6 +775,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'username': uid,
+        'brand_email':brand_email,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
@@ -775,7 +788,7 @@ class CheckOutViewModel extends GetxController {
         'ord 10': pr9 + " * " + q9.toString(),
         'ord 11': pr10 + " * " + q10.toString(),
         'order_status': 'pending',
-        'time': time.toString(),
+        'time': time,
         'total_amount': sub_total,
         'order_id': x.toString() +
             mobile[5] +

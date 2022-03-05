@@ -3,11 +3,22 @@
 
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecommerce/helper/local_storage_data.dart';
+import 'package:ecommerce/view/brands/brands_view.dart';
+import 'package:ecommerce/view/cart/cart_view.dart';
+import 'package:ecommerce/view/category/category.dart';
+import 'package:ecommerce/view/home/controll_view.dart';
+import 'package:ecommerce/view/owner/owner_check.dart';
+import 'package:ecommerce/view/owner/owner_home_view.dart';
+import 'package:ecommerce/view/profile/change_country.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'dart:math' as math show pi;
 import 'package:collapsible_sidebar/collapsible_sidebar.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 
 
@@ -32,59 +43,80 @@ class _SidebarPageState extends State<SidebarPage> {
   List<CollapsibleItem> get _generateItems {
     return [
       CollapsibleItem(
-          text: 'Home',
+          text: 'الرئيسية',
           isSelected: true,
           icon: Icons.assessment,
           onPressed: ()
           {
-
+             Get.offAll(ControlView());
           }
+      ),
 
+      CollapsibleItem(
+          text: ' التصنيفات ',
+          icon: Icons.category_sharp,
+    onPressed: ()  async {
 
+             Get.to( CategoryView());
+          }
       ),
       CollapsibleItem(
-          text: 'Add New Product',
-          icon: Icons.add,
+          text: 'صفحتي كتاجر ',
+          icon: Icons.supervised_user_circle,
           onPressed: () {
-
+               Get.to(OwnerCheck());
           }
       ),
 
       CollapsibleItem(
-          text: 'Messages',
-          icon: Icons.notifications,
+          text: ' المتاجر ',
+          icon: Icons.shop_outlined,
           onPressed: ()  async {
-            final user = FirebaseAuth.instance.currentUser;
-            final userData = await Firestore.instance
-                .collection('users')
-                .doc(user.uid)
-                .get();
-            String ud=userData['email'];
+
+             Get.to(BrandsView());
 
           }
       ),
+
+
       CollapsibleItem(
-          text: 'Saved Deals',
-          icon: Icons.eco,
+          text: ' تغير الدولة  ',
+          icon: Icons.map,
           onPressed: ()  async {
-            final user = FirebaseAuth.instance.currentUser;
-            final userData = await Firestore.instance
-                .collection('users')
-                .doc(user.uid)
-                .get();
-            String ud=userData['email'];
+
+            Get.to(ChangeCountry());
 
           }
       ),
+
       CollapsibleItem(
-          text: 'LogOut',
+          text: ' سلة المشتريات  ',
+          icon: Icons.add_shopping_cart_sharp,
+          onPressed: ()  async {
+
+            Get.to(CartView2());
+
+          }
+      ),
+
+
+      CollapsibleItem(
+          text: 'تسجيل خروج ',
           icon: Icons.logout,
           onPressed: ()   {
-
+              signOut();
           }
       ),
 
     ];
+  }
+
+  Future<void> signOut() async {
+    final LocalStorageData localStorageData = Get.find();
+    final box = GetStorage();
+    box.remove('country');
+    FirebaseAuth.instance.signOut();
+    localStorageData.deleteUser();
   }
 
   @override
@@ -95,27 +127,23 @@ class _SidebarPageState extends State<SidebarPage> {
         items: _items,
         avatarImg: _avatarImg,
         title: '',
+        toggleTitle: "Luban",
         body: Container(),
-        //backgroundColor: Colors.black,
+      //  backgroundColor:  Colors.white,
 
         selectedTextColor: Colors.white,
         selectedIconBox:Colors.transparent,
         sidebarBoxShadow: [
           BoxShadow(
-            color: Colors.white,
-            blurRadius: 20,
+         color: Colors.white,
+            blurRadius: 5,
             spreadRadius: 0.01,
             offset: Offset(3, 3),
           ),
-          BoxShadow(
-            color: Colors.green,
-            blurRadius: 50,
-            spreadRadius: 0.06,
-            offset: Offset(3, 3),
-          ),
         ],
-        isCollapsed: false,
-        textStyle: TextStyle(color:Colors.black,fontSize: 15, fontStyle: FontStyle.italic),
+       // isCollapsed: false,
+        textStyle: TextStyle(color:Colors.black,fontSize: 15,
+            fontStyle: FontStyle.italic),
         titleStyle: TextStyle(
             fontSize: 20,
             fontStyle: FontStyle.italic,

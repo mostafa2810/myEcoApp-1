@@ -20,13 +20,16 @@ class CartViewModel extends GetxController {
 
   double get totalPrice => _totalPrice;
 
+
+
   double _totalPrice = 0.0;
   num total = 0.0;
 
   int quant2 = 1;
 
   var dbHelper = CartDatabaseHelper.db;
-  ProductModel model;
+  ProductModel  model;
+
 
   @override
   void onInit() {

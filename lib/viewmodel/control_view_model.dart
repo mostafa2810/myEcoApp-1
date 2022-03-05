@@ -5,10 +5,11 @@ import 'package:ecommerce/view/cart/saveOrder.dart';
 import 'package:ecommerce/view/cart/cart_view.dart';
 import 'package:ecommerce/view/category/category.dart';
 import 'package:ecommerce/view/home/home_view.dart';
-
+import 'package:ecommerce/view/owner/owner_code.dart';
 import 'package:ecommerce/view/profile/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 
 class ControlViewModel extends GetxController {
   int _navigatorValue = 0;
@@ -48,6 +49,8 @@ class ControlViewModel extends GetxController {
     switch (selectedValue) {
       case 0:
         {
+
+
           _currentScreen = HomeView();
 
           break;
@@ -60,6 +63,7 @@ class ControlViewModel extends GetxController {
           Get.to(CategoryView()); // SaveOrder('x');
           break;
         }
+
       case 2:
         {
           Get.to(CartView2()); // SaveOrder('x');
@@ -67,6 +71,16 @@ class ControlViewModel extends GetxController {
           // _currentScreen = ProfileView();
 
         }
+
+      // case 3:
+      //   {
+      //     //  _currentScreen = CartView2();
+      //     // Get.to(MapView());
+      //     // _currentScreen = CartView2();
+      //     Get.to(OwnerCodeView()); // SaveOrder('x');
+      //     break;
+      //   }
+
       case 3:
         {
           Get.to(ProfileView());

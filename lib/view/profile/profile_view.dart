@@ -1,5 +1,7 @@
 import 'package:ecommerce/view/auth/login_view.dart';
+import 'package:ecommerce/view/check/all_orders_view.dart';
 import 'package:ecommerce/view/check/allorders_view.dart';
+import 'package:ecommerce/view/profile/change_country.dart';
 import 'package:ecommerce/view/profile/update_profile.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 
@@ -72,16 +74,38 @@ class ProfileView extends StatelessWidget {
                           Container(
                             child: FlatButton(
                               onPressed: () {
-                                Get.to(AllOrders(
+                                Get.to(AllOrdersView(
                                 user:controller.userModel.email,
                                 ));
                               },
+
                               child: ListTile(
                                   title: Custom_Text(
                                     text: "سجل طلباتك",
                                     fontSize: 15,
                                   ),
                                   leading: Image.asset('assets/ord.png'),
+                                  trailing: Icon(Icons.navigate_next)),
+                            ),
+                          ),
+                          SizedBox(height: 30),
+
+                          Container(
+                            child: FlatButton(
+                              onPressed: () {
+                                Get.to(
+                                 ChangeCountry()
+                                );
+                              },
+                              child: ListTile(
+                                  title: Custom_Text(
+                                    text: "تغير الدولة",
+                                    fontSize: 15,
+                                  ),
+                                  leading: Container(
+                                      width:60,
+                                     // height:90,
+                                      child: Image.asset('assets/cc.png')),
                                   trailing: Icon(Icons.navigate_next)),
                             ),
                           ),

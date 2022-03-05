@@ -1,7 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/constants/const.dart';
+import 'package:ecommerce/notification/test_notofication.dart';
 import 'package:ecommerce/services/data_controller.dart';
-import 'package:ecommerce/view/products/products_screen.dart';
+import 'package:ecommerce/view/brands/brand_cat_view.dart';
+import 'package:ecommerce/view/brands/offers_brands.dart';
+import 'package:ecommerce/view/category/category.dart';
+import 'package:ecommerce/view/category/cateogry_product.dart';
 import 'package:ecommerce/view/products/products_view.dart';
 import 'package:ecommerce/view/widgets/slider_drawer.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +17,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:hexcolor/hexcolor.dart';
 import '../products/all_products_view.dart';
 import '../brands/brands_view.dart';
 import '../cart/cart_view.dart';
@@ -21,6 +27,7 @@ import '../widgets/custom_text.dart';
 
 class HomeView extends StatelessWidget {
   String email;
+
   HomeView({this.email});
 
   bool isExecuted = false;
@@ -30,6 +37,10 @@ class HomeView extends StatelessWidget {
     Get.lazyPut(() => HomeViewModel());
     TextEditingController search_txt = new TextEditingController();
     QuerySnapshot querySnapshot;
+    final box = GetStorage();
+    final box_name=box.read('name');
+   // final username=user.displayName;
+   // final userData =FirebaseFirestore.instance.collection('users').doc(user.displayName).get();
 
     Widget searchedData() {
       return ListView.builder(
@@ -51,103 +62,90 @@ class HomeView extends StatelessWidget {
           ? Center(child: CircularProgressIndicator())
           : Scaffold(
           appBar: AppBar(
-              backgroundColor:Colors.white,
-              iconTheme: IconThemeData(color: Colors.black),
-              title:Container(
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        // Colors.white,
-                        Colors.white,
-                        //Colors.lightBlueAccent,
+            backgroundColor: Colors.white,
+            iconTheme: IconThemeData(color: Colors.black),
+            title: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                      // Colors.white,
+                      Colors.white,
+                      //Colors.lightBlueAccent,
+                      // Colors.lightBlueAccent,
+                      Colors.white,
+                    ])),
+                height: 30,
+                child: Center(
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 25,
+                        ),
+                        Row(
+                          children: [
 
-                        // Colors.lightBlueAccent,
-                        Colors.white,
-                      ])),
-                  height:30,
-                  child: Center(child: Row(
-                    children: [
-                      SizedBox(
-                        width: 40,
-                      ),
-                      Text("Luban   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                          fontWeight:FontWeight.w700
-
-                      ),),
-                      SizedBox(
-                        width: 80,
-                      ),
-                      Text("لبان   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                          fontWeight:FontWeight.w700
-
-                      ),),
-                    ],
-                  ))
+                            Text(
+                              " Luban   ",
+                              style: TextStyle(
+                                  color: HexColor("#ff68682A"),
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            SizedBox(
+                              width: 12,
+                            ),
+                            Container(
+                              width:120,
+                              child: CircleAvatar(
+                                child: Image.asset("assets/wh3.png",
+                                  fit:BoxFit.fill,
+                                  width:100,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                      ],
+                    ))),
+          ),
+              drawer: Padding(
+                padding: const EdgeInsets.only(right: 60),
+                child: SidebarPage(),
               ),
-              //backgroundColor: Colors.lightBlueAccent,
-              // actions: <Widget>[
-              //   IconButton(
-              //       color:Colors.red,
-              //       icon: Icon(Icons.apps,size:34,),
-              //
-              //       onPressed: () {
-              //
-              //
-              //       }),
-              //
-              //   SizedBox(
-              //       width:7
-              //   ),
-              //   IconButton(
-              //       color:Colors.black,
-              //       icon: Icon(Icons.apps_sharp,size:34,),
-              //
-              //       onPressed: () {
-              //
-              //
-              //       })
-
-              //]
-          ),
-
-
-          endDrawer: Padding(
-            padding: const EdgeInsets.only(right:60),
-            child: SidebarPage(),
-          ),
               body: isExecuted
                   ? searchedData
                   : Container(
                       padding: EdgeInsets.only(top: 5, right: 20, left: 20),
                       child: ListView(children: [
-
-                        Card(
-                          color: Colors.lightGreen,
-                          child: Row(
-                            children: [
-
-                              Container(
-                                width: 120,
-                                height: 70,
-                                child: Card(
-                                  child: Image.asset(
-                                    "assets/lb.jfif",
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 55),
-                              Container(
-                                  child: Text(
-                                "Luban",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 22),
-                              )),
-                              SizedBox(width: 60),
-                              // Container(
-                              //     child:Text(" لبان ",style:TextStyle(color:Colors.lightGreen,fontSize:23),)
-                              // )
-                            ],
+                        SizedBox(height: 17),
+                        Container(
+                          height:66,
+                          child:Card(
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 20),
+                                  Center(
+                            child: Text(box_name.toString() +"   : اهلا و سهلا  ",
+                            style:TextStyle(
+                                  color: Colors.black,
+                                  fontSize:18,
+                                //  fontStyle:FontStyle.italic,
+                                  fontWeight:FontWeight.bold
+                            ),
+                            ),
                           ),
+                                  SizedBox(width: 30),
+
+                                  Container(
+                                    width:70,
+                                    child: Image.asset("assets/wh3.png",
+                                      fit:BoxFit.fill,
+                                    ),
+                                  ),
+                                ],
+                              ))
                         ),
                         SizedBox(height: 10),
                         GetBuilder<DataController>(
@@ -183,8 +181,54 @@ class HomeView extends StatelessWidget {
                           children: [
                             InkWell(
                               child: Custom_Text(
+                                  text: "جميع الاصناف",
+                                  color: HexColor("#ff68682A")),
+                              onTap: () {
+                                Get.to(CategoryView());
+                              },
+                            ),
+                            SizedBox(width: 155),
+                            Custom_Text(text: " الاصناف "),
+                          ],
+                        ),
+                       // SizedBox(height: 15),
+                        _listViewCat(),
+                        InkWell(
+                          child: Row(
+                              children: [
+                                SizedBox(
+                                    width:30
+                                ),
+                                Container(
+                                    width:40,
+                                    child:Image.asset("assets/offers.png")
+                                ),
+                                SizedBox(
+                                    width:16
+                                ),
+                                InkWell(
+                                    child: Custom_Text(
+                                      text: "عرض جميع العروض و الخصومات  ",
+                                      fontSize: 16,
+                                      color: Colors.red,
+                                    ),
+                                    onTap: () {
+                                      Get.to(OffersBrands());
+                                    }),
+
+
+                              ]),
+                          onTap:(){
+                          //  Get.to();
+                          },
+                        ),
+                        SizedBox(height: 22),
+                        Row(
+                          children: [
+                            InkWell(
+                              child: Custom_Text(
                                   text: "عرض جميع المتاجر",
-                                  color: Colors.lightGreen),
+                                color: HexColor("#ff68682A")),
                               onTap: () {
                                 Get.to(BrandsView());
                               },
@@ -201,25 +245,28 @@ class HomeView extends StatelessWidget {
                           onTap: () {},
                         ),
                         SizedBox(height: 40),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              InkWell(
-                                  child: Custom_Text(
-                                    text: " عرض جميع المنتجات",
-                                    fontSize: 16,
-                                    color: Colors.lightGreen,
-                                  ),
-                                  onTap: () {
-                                    Get.to(AllProductsView());
-                                  }),
-                              Custom_Text(
-                                text: "  المنتجات   ",
-                                fontSize: 18,
-                              ),
-                            ]),
-                        SizedBox(height: 50),
-                        _listViewProducts(),
+
+
+
+                        //   Row(
+                        //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        //       children: [
+                        //         InkWell(
+                        //             child: Custom_Text(
+                        //               text: " عرض جميع المنتجات",
+                        //               fontSize: 16,
+                        //               color:Colors.blue[600],
+                        //             ),
+                        //             onTap: () {
+                        //               Get.to(AllProductsView());
+                        //             }),
+                        //         Custom_Text(
+                        //           text: "  المنتجات   ",
+                        //           fontSize: 18,
+                        //         ),
+                        //       ]),
+                        //   SizedBox(height: 50),
+                        //   _listViewProducts(),
                       ]),
                     )),
     );
@@ -313,6 +360,126 @@ class HomeView extends StatelessWidget {
     );
   }
 
+
+  Widget _listViewCat() {
+    return GetBuilder<HomeViewModel>(
+      builder: (controller) => Container(
+        height: 180,
+        child: ListView(
+          scrollDirection:Axis.horizontal,
+          children: [
+            InkWell(
+              child:Column(
+                children: [
+                  Container(
+                      width:95,
+                      height: 107,
+                      child:Image.asset('assets/q5.png',fit:BoxFit.fill,)
+                  ),
+                  SizedBox(
+                      height:10
+                  ),
+                  Text("فضيات",style: TextStyle(
+                      color:Colors.black,
+                      fontSize:18
+                  ),)
+                ],
+              ),
+              onTap:(){
+
+                Get.to(BrandsCatView(cat:"فضيات"));
+              },
+            ),
+            SizedBox(
+                width:22
+            ),
+            InkWell(
+                child:Column(
+                  children: [
+                    Container(
+                        width:95,
+                        height: 107,
+                        child:Image.asset('assets/q11.png',fit:BoxFit.fill,)
+                    ),
+                    SizedBox(
+                        height:10
+                    ),
+                    Text("عطور",style: TextStyle(
+                        color:Colors.black,
+                        fontSize:18
+                    ),)
+                  ],
+                ),
+              onTap:(){
+                Get.to(BrandsCatView(cat:"عطور"));
+              },
+            ),
+            SizedBox(
+                width:22
+            ),
+            InkWell(
+              child:Column(
+                children: [
+                  Container(
+                      width:95,
+                      height: 107,
+                      child:Image.asset('assets/q10.png',fit:BoxFit.fill,)
+                  ),
+                  SizedBox(
+                      height:10
+                  ),
+                  Text("زيوت",style: TextStyle(
+                      color:Colors.black,
+                      fontSize:18
+                  ),)
+                ],
+              ),
+              onTap:(){
+                Get.to(BrandsCatView(cat:"زيوت"));
+              },
+            ),
+            SizedBox(
+                width:22
+            ),
+
+            InkWell(
+              child:Column(
+                children: [
+                  Container(
+                      width:95,
+                      height: 107,
+                      child:Image.asset('assets/q6.jpeg',fit:BoxFit.fill,)
+                  ),
+                  SizedBox(
+                      height:10
+                  ),
+                  Text("مكسرات",style: TextStyle(
+                      color:Colors.black,
+                      fontSize:18
+                  ),)
+                ],
+              ),
+              onTap:(){
+                Get.to(BrandsCatView(cat:"مكسرات"));
+              },
+            ),
+
+
+            SizedBox(
+              width:22
+            ),
+
+          ],
+        )
+
+
+      ),
+    );
+  }
+
+
+
+
   Widget _listViewProducts() {
     return GetBuilder<HomeViewModel>(
       init: Get.find(),
@@ -376,14 +543,14 @@ class HomeView extends StatelessWidget {
                                     .toString() +
                                 "  ريال",
                             alignment: Alignment.bottomLeft,
-                            color: Colors.lightGreen),
+                            color: Colors.blue[600]),
                       ],
                     ),
                   ),
                   onTap: () {
-                      Get.to(DetailsView(
-                                model: controller.productModel[index],
-                              ));
+                    Get.to(DetailsView(
+                      model: controller.productModel[index],
+                    ));
                   },
                 ),
               );

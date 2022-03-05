@@ -6,17 +6,25 @@ import 'package:ecommerce/viewmodel/cart_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class DetailsView2 extends StatelessWidget {
+
   String name;
   num price;
   String details;
   String image;
   String productId;
   String brand;
+  String x;
+  String brandemail;
 
   DetailsView2(
-      {this.name, this.image, this.price, this.details, this.productId,this.brand});
+      {this.name, this.image, this.price, this.details,
+        this.productId,this.brand,
+        this.x,
+        this.brandemail
+      });
 
 
   int index=0;
@@ -42,16 +50,21 @@ class DetailsView2 extends StatelessWidget {
                   Custom_Text(
                     text: name.toString(),
                     fontSize: 26,
+                    color: HexColor("#ff68682A"),
                   ),
                   SizedBox(height: 15),
 
                   SizedBox(
                     height: 20,
                   ),
+                  Text(
+                      x,
+                      style:TextStyle(color:Colors.red,fontSize:16,fontWeight:FontWeight.w700)
+                  ),
                   Custom_Text(
                       text:'تفاصيل',
                       fontSize:18,
-                      color: Colors.green[200]
+                    color: HexColor("#ff68682A"),
                   ),
                   SizedBox(
                     height:20,
@@ -78,8 +91,8 @@ class DetailsView2 extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   Custom_Text(
-                    text: ' ريال ' + price.toString(),
-                    color: primaryColor,
+                    text: ' ' + price.toString(),
+                    color: HexColor("#ff68682A"),
                     fontSize: 18,
                   ),
                 ],
@@ -112,7 +125,8 @@ class DetailsView2 extends StatelessWidget {
                                     price: price.toString(),
                                     quantity: 1,
                                     productId: productId,
-                                    brand:brand
+                                    brand:brand,
+                                    brand_email:brandemail
                                 ),
                                 productId,
 
@@ -120,6 +134,7 @@ class DetailsView2 extends StatelessWidget {
                               //productId:model.productId)
                             );
                             box.write('brand',brand);
+                            box.write('brand_email',brandemail);
                           }
                           else{
                             controller.dialogAndDelete(
@@ -129,10 +144,12 @@ class DetailsView2 extends StatelessWidget {
                                 price: price.toString(),
                                 quantity: 1,
                                 productId: productId,
-                                brand:brand
+                                brand:brand,
+                                brand_email:brandemail
                             ),
                           productId,
                             );
+                            box.write('brand_email',brandemail);
                           }
 
 

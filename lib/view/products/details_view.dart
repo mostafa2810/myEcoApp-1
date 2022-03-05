@@ -10,6 +10,7 @@ import 'package:ecommerce/viewmodel/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../../viewmodel/cart_viewmodel.dart';
@@ -49,10 +50,12 @@ class DetailsView extends StatelessWidget {
                     padding:EdgeInsets.all(17),
                     child: Column(
                       children: [
+
                         Custom_Text(
                           text:model.name.toString(),
                           fontSize:26,
                         ),
+
                         SizedBox(
                             height:15
                         ),
@@ -60,10 +63,21 @@ class DetailsView extends StatelessWidget {
                         SizedBox(
                           height:20,
                         ),
+
+                        Custom_Text(
+                          text:'  '+model.x.toString(),
+                          color:Colors.red,
+                          fontSize:18,
+                        ),
+
+                        SizedBox(
+                          height:20,
+                        ),
+
                         Custom_Text(
                           text:'تفاصيل  ',
                           fontSize:18,
-                          color: Colors.green[200]
+                          color: HexColor("#ff68682A"),
                         ),
                         SizedBox(
                           height:20,
@@ -72,15 +86,9 @@ class DetailsView extends StatelessWidget {
                           model.des,
                           style:TextStyle(color:Colors.black,fontSize:16)
                         ),
-
-
-                        // Custom_Text(
-                        //   text:model.des,
-                        //   fontSize:16,
-                        //   height: 2.2,
-                        // ),
-
-
+                        SizedBox(
+                          height:20,
+                        ),
 
 
 
@@ -103,8 +111,8 @@ class DetailsView extends StatelessWidget {
                           color:Colors.grey,
                         ),
                         Custom_Text(
-                            text:' ريال '+model.price.toString(),
-                          color:primaryColor,
+                            text:'  '+model.price.toString(),
+                          color: HexColor("#ff68682A"),
                           fontSize:18,
 
                         ),
@@ -125,8 +133,6 @@ class DetailsView extends StatelessWidget {
             child: CustomButton(
                 text:' اضف',
 
-
-
                 onPressed:(){
 
                   print("ttt");
@@ -140,25 +146,29 @@ class DetailsView extends StatelessWidget {
                       (name:model.name,image:model.image,
                       price:model.price.toString(),quantity: 1,
                        productId:model.productId,
-                       brand:model.brand
+                       brand:model.brand,
+                       brand_email: model.brand_email
                     ),
                         model.productId,
                         //productId:model.productId)
                   );
                   box.write('brand',model.brand);
+                  box.write('brand_email',model.brand_email);
      }
      else{
        controller.dialogAndDelete(
          CartProductModel(
              name:model. name,
              image: model.image,
-             price:model. price.toString(),
+             price:model.price.toString(),
              quantity: 1,
              productId: model.productId,
-             brand:model.brand
+             brand:model.brand,
+             brand_email: model.brand_email
          ),
          model.productId,
        );
+       box.write('brand_email',model.brand_email);
      }
                   // controller.addProduct
                   //   (model.name,model.image,model.price,controller.quant2,model.productId);

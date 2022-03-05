@@ -13,7 +13,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/model/cart_product_model.dart';
 import 'package:ecommerce/view/home/controll_view.dart';
 import 'package:ecommerce/view/products/details_view2.dart';
-import 'package:ecommerce/view/products/products_screen.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/cart_viewmodel.dart';
 import 'package:ecommerce/viewmodel/home_view_model.dart';
@@ -21,6 +20,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 
 class OrderStatusView2 extends StatefulWidget {
@@ -53,24 +53,77 @@ class _PostsScreenState extends State<OrderStatusView2> {
     int i2 = widget.cartmodel.length;
     return Scaffold(
         backgroundColor: Colors.white,
-      appBar:AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Row(
-          children: [
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  // Colors.white,
+                  Colors.white,
+                  //Colors.lightBlueAccent,
 
-            Text("Luban   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                fontWeight:FontWeight.w700
+                  // Colors.lightBlueAccent,
+                  Colors.white,
+                ])),
+            height: 30,
+            child: Center(
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Row(
+                      children: [
 
-            ),),
-            SizedBox(
-              width: 100,
-            ),
-            Text("   لبان ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                fontWeight:FontWeight.w700
+                        Text(
+                          "Luban   ",
+                          style: TextStyle(
+                              color: HexColor("#ff68682A"),
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        Container(
+                          width:70,
+                          child: Image.asset("assets/wh3.jpeg",
+                            fit:BoxFit.fill,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 20
+                    ),
 
-            ),),
-          ],
-        ),
+                  ],
+                ))),
+        //backgroundColor: Colors.lightBlueAccent,
+        // actions: <Widget>[
+        //   IconButton(
+        //       color:Colors.red,
+        //       icon: Icon(Icons.apps,size:34,),
+        //
+        //       onPressed: () {
+        //
+        //
+        //       }),
+        //
+        //   SizedBox(
+        //       width:7
+        //   ),
+        //   IconButton(
+        //       color:Colors.black,
+        //       icon: Icon(Icons.apps_sharp,size:34,),
+        //
+        //       onPressed: () {
+        //
+        //
+        //       })
+
+        //]
       ),
         body:
         Container(

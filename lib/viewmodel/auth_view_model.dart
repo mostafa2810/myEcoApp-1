@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecommerce/country/country_view.dart';
 import 'package:ecommerce/helper/local_storage_data.dart';
 import 'package:ecommerce/services/firestore_user.dart';
 import 'package:ecommerce/view/auth/verify_otp.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce/model/user_model.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 //getx Support disaple automatically
@@ -19,6 +21,7 @@ class AuthViewModel extends GetxController {
   FirebaseAuth _auth = FirebaseAuth.instance;
   FacebookLogin _facebookLogin = FacebookLogin();
   String email, password, name,phone ,codeV,code;
+  String country,city,details,mobile,brand_name,cat;
   // TextEditingController email1,pass1,name1,code1;
   var verificationId;
   Rx<User> _user = Rx<User>();
@@ -87,6 +90,9 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
   }
 
   void signInWithEmailAndPassword() async {
+
+    final box = GetStorage();
+
     try {
       await _auth
           .signInWithEmailAndPassword(email: email, password: password)
@@ -96,67 +102,54 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
           print("Userr = " + _user.toString());
         });
       });
-      Get.offAll(ControlView());
+
+      box.write('email', email);
+      box.write('pass',password);
+      box.write('name',email.replaceAll('@','').replaceAll('yahoo.com','').replaceAll('gmail.com','').replaceAll('hotmail.com',''));
+
+     final box_country= box.read('country')??"x";
+
+     if(box_country=='x'){
+       Get.offAll(CountryView());
+     }
+     else{
+       Get.offAll(ControlView());
+     }
+
+
     } catch (e) {
       Get.snackbar("Error login Acoount", e.message,
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
     }
   }
 
-  void brandsignInWithEmailAndPassword() async {
-    try {
-      await _auth
-          .signInWithEmailAndPassword(email: email, password: password)
-          .then((value) async {
-        await FireStoreUser().getCurrentUser(value.user.uid).then((value) {
-          setUser(UserModel.fromJson(value.data()));
-          print("Userr = " + _user.toString());
-        });
-      });
-      Get.offAll(OwnerHomeView(
-        email:email,
-        pass:password,
-      ));
-    } catch (e) {
-      Get.snackbar("Error login Acoount", e.message,
-          colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
-    }
-  }
-
-  // Future signInWithPhoneAndPassword() async {
-  //   UserCredential userCredential = await confirmationResult.confirm('123456');
-  //   try {
-  //    // ConfirmationResult confirmationResult =
-  //     await _auth.signInWithCredential()
-  //     // _auth.signInWithPhoneNumber('+201097970465',
-  //     //     RecaptchaVerifier(
-  //     //   container: 'recaptcha',
-  //     //
-  //     //   size: RecaptchaVerifierSize.compact,
-  //     //   theme: RecaptchaVerifierTheme.dark,
-  //     // ));
-  //   } catch (e) {
-  //     print("eee="+e.toString());
-  //     Get.snackbar("Error login Acoount", e.message,
-  //         colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
-  //   }
-  // }
 
 
 
   void createAccountWithEmailAndPassword() async {
+    final box = GetStorage();
     try {
       await _auth
-          .createUserWithEmailAndPassword(email: email, password: password)
+          .createUserWithEmailAndPassword(email: email, password: password,  )
           .then((user) async {
         saveUser(user);
+        final box1=box.write('email',email);
+        final box2=box.write('pass',password);
+        final box3=box.write('name',name);
       });
 
       await Firestore.instance.collection('users').add({
         'name': name,
         'email': email,
       });
-      Get.offAll(ControlView());
+      final box_country= box.read('country')??"x";
+
+      if(box_country=='x'){
+        Get.offAll(CountryView());
+      }
+      else{
+        Get.offAll(ControlView());
+      }
     } catch (e) {
       Get.snackbar("Error login Acoount", e.message,
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
@@ -247,4 +240,37 @@ _auth.verifyPhoneNumber(phoneNumber: phone,
   void setUser(UserModel userModel) async {
     await localStorageData.setUser(userModel);
   }
+
+ownerSendRequest () async {
+    if(name!=""&&email!=""&&country!=""&&city!=null&&cat!=""&&mobile!=""&&details!="") {
+      FirebaseFirestore.instance.collection('send_requests').document().setData(
+          {
+            'brand_name':brand_name,
+            'brand_email': email,
+            'country': country,
+            'city': city,
+            'category': cat,
+            'mobile': mobile,
+            'details': details
+          });
+
+
+
+      Get.offAll(ControlView());
+
+      Get.snackbar(
+          'تم ارسال طلبك بنجاح ',
+          ' انتظر ردنا علي الايميل او هاتفك خلال الايام القادمة ',
+          colorText: Colors.white, backgroundColor: Colors.deepOrange);
+    }
+    else{
+
+      Get.snackbar(
+          ' خطا',
+          'تاكد من ادخال جميع البيانات بشكل صحيح',
+          colorText: Colors.white, backgroundColor: Colors.red);
+
+    }
+}
+
 }

@@ -30,6 +30,7 @@ class MapView2 extends StatefulWidget {
      currentLocation();
     // TODO: implement initState
     super.initState();
+     currentLocation();
   }
 
 
@@ -37,20 +38,19 @@ class MapView2 extends StatefulWidget {
      position = await
      Geolocator().getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
 
-
      var lastposition=await Geolocator().getLastKnownPosition();
      print(lastposition);
      locationMessage="$position";
    }
 
+
    @override
    Widget build(BuildContext context) {
      return Scaffold(
-       body: Container(
+        body: Container(
            child:Center(
              child: Column(
                children: [
-
                  Container(
                    height:400,
                    child: GoogleMap(
@@ -58,7 +58,6 @@ class MapView2 extends StatefulWidget {
                          target: LatLng(37.43296265331129, -122.08832357078792),
                          zoom: 19.151926040649414
                      ),
-
                    ),
                  ),
                  SizedBox(

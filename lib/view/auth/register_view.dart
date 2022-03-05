@@ -63,7 +63,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                     text: "Email",
                     hint: "dev@example.com",
                     onSave: (value) {
-                      controller.phone = value;
+                      controller.email = value;
                     },
                     validator: (value) {
                       if (value == null) {
@@ -87,8 +87,8 @@ class RegisterView extends GetWidget<AuthViewModel> {
                   onPressed: () {
                     _formKey.currentState.save();
                     if (_formKey.currentState.validate()) {
-                     controller.verifyPhoneNumber();
-                    //  controller.createAccountWithEmailAndPassword();
+                    // controller.verifyPhoneNumber();
+                    controller.createAccountWithEmailAndPassword();
                     }
                   },
                   text: "Sign Up",

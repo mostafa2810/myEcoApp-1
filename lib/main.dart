@@ -14,6 +14,7 @@ import 'view/home/controll_view.dart';
 import 'helper/binding.dart';
 
 Future<void> main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
  // Get.put(CartViewModel());
@@ -21,6 +22,7 @@ Future<void> main() async {
   Get.put(CartViewModel());
   await GetStorage.init();
   runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget {

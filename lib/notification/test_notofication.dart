@@ -29,9 +29,9 @@ class _notification_testState extends State<notification_test> {
 
   @override
   void initState() {
-   Firebase.initializeApp();
+  // Firebase.initializeApp();
     super.initState();
-   print("ffff="+firebaseMessaging.getToken().toString());
+  // print("ffff="+firebaseMessaging.getToken().toString());
 
   }
 
@@ -46,7 +46,6 @@ class _notification_testState extends State<notification_test> {
 
     return Scaffold(
       body:Container(
-
         child:Column(
           children:[
             SizedBox(
@@ -65,10 +64,15 @@ class _notification_testState extends State<notification_test> {
   }
 
   sendNotify() async{
+
+
   Future<Map<String, dynamic>> sendAndRetrieveMessage() async {
+
     await firebaseMessaging.requestNotificationPermissions(
-      const IosNotificationSettings(sound: true, badge: true, alert: true, provisional: false),
+      const IosNotificationSettings(sound: true, badge: true,
+          alert: true, provisional: false),
     );
+
     final Completer<Map<String, dynamic>> completer =
     Completer<Map<String, dynamic>>();
 

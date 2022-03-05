@@ -6,17 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../auth/login_view.dart';
 
+
+
 class ControlView extends StatelessWidget {
   int id;
- 
   ControlView({this.id});
-
-   
 
   @override
   Widget build(BuildContext context) {
 
-    
     return Obx(() {
       return (Get.find<AuthViewModel>().user == null)
           ? LoginView()
@@ -24,7 +22,8 @@ class ControlView extends StatelessWidget {
               init: Get.find(),
               //ControlViewModel(),
               builder: (controller) => Scaffold(
-                body: HomeView(),//controller.currentScreen,
+                body: //HomeView(),
+                controller.currentScreen,
                 bottomNavigationBar: bottomNavigationBar(),
               ),
             );
@@ -69,6 +68,9 @@ class ControlView extends StatelessWidget {
                 child: Image.asset('assets/m2.png',
                     fit: BoxFit.contain, width: 30),
               )),
+
+
+
           BottomNavigationBarItem(
               activeIcon: Padding(
                 padding: const EdgeInsets.only(top: 20),

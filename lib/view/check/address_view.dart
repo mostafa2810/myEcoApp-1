@@ -8,6 +8,7 @@ import 'package:ecommerce/viewmodel/address_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'checkout_screen2.dart';
 
 
@@ -16,6 +17,7 @@ import 'checkout_screen2.dart';
   //List<>String name;
   num total;
   List<CartProductModel> cartmodel;
+  String brand_email;
   double lat,long;
   //String address;
   AdressScreen({this.total,this.cartmodel,this.lat,this.long});
@@ -26,24 +28,78 @@ import 'checkout_screen2.dart';
     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
     final box = GetStorage();
     return Scaffold(
-      appBar:AppBar(
-        backgroundColor: Colors.white,
-        title: Row(
-          children: [
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          title: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                    // Colors.white,
+                    Colors.white,
+                    //Colors.lightBlueAccent,
 
-            Text(" Luban   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-              fontWeight:FontWeight.w700
-            ),),
-            SizedBox(
-              width: 100,
-            ),
-            Text("   لبان ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                fontWeight:FontWeight.w700
+                    // Colors.lightBlueAccent,
+                    Colors.white,
+                  ])),
+              height: 30,
+              child: Center(
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Row(
+                        children: [
 
-            ),),
-          ],
+                          Text(
+                            "Luban   ",
+                            style: TextStyle(
+                                color: HexColor("#ff68682A"),
+                                fontSize: 22,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          Container(
+                            width:70,
+                            child: Image.asset("assets/wh3.jpeg",
+                              fit:BoxFit.fill,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+
+                    ],
+                  ))),
+          //backgroundColor: Colors.lightBlueAccent,
+          // actions: <Widget>[
+          //   IconButton(
+          //       color:Colors.red,
+          //       icon: Icon(Icons.apps,size:34,),
+          //
+          //       onPressed: () {
+          //
+          //
+          //       }),
+          //
+          //   SizedBox(
+          //       width:7
+          //   ),
+          //   IconButton(
+          //       color:Colors.black,
+          //       icon: Icon(Icons.apps_sharp,size:34,),
+          //
+          //       onPressed: () {
+          //
+          //
+          //       })
+
+          //]
         ),
-      ),
       body: GetBuilder<AddressViewModel>(
         init:AddressViewModel(),
         builder:(controller)=>
@@ -164,7 +220,8 @@ import 'checkout_screen2.dart';
                               controller.floor.text.toString(),
                               controller.mobile.text.toString(),
                               total,
-                             cartmodel
+                             cartmodel,
+                              brand_email
                             ));
                           }
 

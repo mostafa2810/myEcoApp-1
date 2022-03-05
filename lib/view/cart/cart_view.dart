@@ -10,12 +10,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hexcolor/hexcolor.dart';
 import '../../viewmodel/cart_viewmodel.dart';
 import '../check/address_view.dart';
 
 class CartView2 extends StatelessWidget {
   int id;
-
+  //String brand_email;
   CartView2({this.id});
 
   @override
@@ -30,6 +31,10 @@ class CartView2 extends StatelessWidget {
     final box_address2=box.read('Adress_details2')??"hh";
     final box_address3=box.read('Adress_details3')??"ogi";
     final box_address4=box.read('Adress_details4')??"yyy";
+    final brand_email=box.read('brand_email')??"///";
+
+
+
 
     return GetBuilder<CartViewModel>(
         init: Get.find(),
@@ -74,7 +79,7 @@ class CartView2 extends StatelessWidget {
                                             fontSize: 24),
                                         SizedBox(height: 14),
                                         Custom_Text(
-                                            color: primaryColor,
+                                            color: HexColor("#ff68682A"),
                                             text: controller
                                                 .cartProductModel[index].price
                                                 .toString()),
@@ -178,7 +183,7 @@ class CartView2 extends StatelessWidget {
                                     init: Get.find(),
                                     builder: (controller) => Custom_Text(
                                       text: controller.totalPrice.toString(),
-                                      color: primaryColor,
+                                      color: HexColor("#ff68682A"),
                                       fontSize: 18,
                                     ),
                                   )
@@ -198,7 +203,7 @@ class CartView2 extends StatelessWidget {
 
                                           if(box_address=='x'){
                                             Get.to(MapView2(
-                                              total:controller.total,
+                                              total:controller.totalPrice,
                                               cartmodel:controller.cartProductModel,
                                             ));
                                           }
@@ -213,6 +218,7 @@ class CartView2 extends StatelessWidget {
                                               phone:box_address4,
                                               lat:box_Lat,
                                               long:box_Long,
+                                             brand_email:brand_email
                                             ));
                                           }
 

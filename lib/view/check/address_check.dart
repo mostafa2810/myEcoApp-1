@@ -15,14 +15,14 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class AddressCheck extends StatefulWidget {
 
-
   num total;
   List<CartProductModel>cartmodel;
   double lat,long;
-  String adress,building,floor,phone;
+  String adress,building,floor,phone,brand_email;
 
   AddressCheck({this.total,this.cartmodel,this.lat,this.long
-  ,this.adress,this.building,this.floor,this.phone
+  ,this.adress,this.building,this.floor,this.phone,this.brand_email
+
   });
 
   @override
@@ -151,7 +151,8 @@ class _AddressCheckState extends State<AddressCheck> {
               widget.floor.toString(),
               widget.phone.toString(),
                 widget.total,
-               widget.cartmodel
+               widget.cartmodel,
+                widget.brand_email
           ));
         }),
 

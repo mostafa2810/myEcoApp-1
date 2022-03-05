@@ -1,6 +1,7 @@
 
 
  import 'package:flutter/material.dart';
+//import 'package:intl/intl.dart';
 
 import 'custom_text.dart';
 
@@ -31,9 +32,13 @@ final Color color;
             ),
 
             TextFormField(
+
               onSaved: onSave,
               validator:validator ,
+
               controller: controller,
+             // textAlign:TextAlign.end,
+
               decoration: InputDecoration(
                 hintText:hint,
                 hintStyle: TextStyle(color:Colors.grey),

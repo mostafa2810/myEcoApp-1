@@ -1,16 +1,14 @@
 
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/view/products/details_view2.dart';
-import 'package:ecommerce/view/products/products_screen.dart';
+import 'package:ecommerce/view/products/products_view.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/home_view_model.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:hexcolor/hexcolor.dart';
 
 class SearchView extends StatefulWidget {
 
@@ -28,9 +26,7 @@ class _PostsScreenState extends State<SearchView> {
   Future resultsLoaded;
   List _allResults = [];
   List _resultsList = [];
-
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
-
 
 
   @override
@@ -38,27 +34,55 @@ class _PostsScreenState extends State<SearchView> {
     final user = FirebaseAuth.instance.currentUser;
     final userData =FirebaseFirestore.instance.collection('users').doc(user.uid).get();
 
-
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar:AppBar(
+        appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Row(
-            children: [
+          iconTheme: IconThemeData(color: Colors.black),
+          title: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                    // Colors.white,
+                    Colors.white,
+                    //Colors.lightBlueAccent,
 
-              Text("Luban   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                  fontWeight:FontWeight.w700
+                    // Colors.lightBlueAccent,
+                    Colors.white,
+                  ])),
+              height: 30,
+              child: Center(
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 25
+                      ),
+                      Row(
+                        children: [
 
-              ),),
-              SizedBox(
-                width: 100,
-              ),
-              Text("   لبان ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                  fontWeight:FontWeight.w700
+                          Text(
+                            "Luban   ",
+                            style: TextStyle(
+                                color: HexColor("#ff68682A"),
+                                fontSize: 22,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          SizedBox(
+                            width: 12,
+                          ),
+                          Container(
+                            width:70,
+                            child: Image.asset("assets/wh3.jpeg",
+                              fit:BoxFit.fill,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 80,
+                      ),
 
-              ),),
-            ],
-          ),
+                    ],
+                  ))),
         ),
 
         body:
@@ -66,9 +90,6 @@ class _PostsScreenState extends State<SearchView> {
           color: Colors.grey[200],
           child: Column(
               children: [
-
-
-
                 SizedBox(
                   height:4,
                 ),
@@ -76,7 +97,8 @@ class _PostsScreenState extends State<SearchView> {
                 Flexible(
                   child: StreamBuilder(
                       stream:
-                      FirebaseFirestore.instance.collection('products').where('name',isGreaterThanOrEqualTo:widget.search_txt)
+                      FirebaseFirestore.instance.
+                      collection('category').where('name',isGreaterThanOrEqualTo:widget.search_txt)
                           .snapshots(),
                       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (!snapshot.hasData) return Center(child: Text('Loading'));
@@ -91,7 +113,6 @@ class _PostsScreenState extends State<SearchView> {
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 2,
                                   mainAxisSpacing: 2,
-
                                 ), //(orientation == Orientation.portrait) ? 2: 2.2),
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
@@ -114,37 +135,31 @@ class _PostsScreenState extends State<SearchView> {
                                                       fit: BoxFit.fitWidth),
                                                 ),
                                                 SizedBox(height: 3),
-                                                Text(posts.data()['name'],
-                                                    style:TextStyle(color:Colors.black,
-                                                        fontWeight:FontWeight.bold,
-                                                        fontSize:16
-                                                    )
 
+                                                Text(posts.data()['name'],
+                                                    style:TextStyle( color: HexColor("#ff68682A"),
+                                                        fontWeight:FontWeight.bold,
+                                                        fontSize:18
+                                                    )
                                                 ),
-                                                SizedBox(height: 3),
-                                                Text(
-                                                    (posts.data()['price'].toString()
-                                                    ), style:TextStyle(color:Colors.green,
-                                                    fontWeight:FontWeight.bold,
-                                                    fontSize:16)),
+
+                                                SizedBox (height : 3),
+
                                               ]),
                                             ),
                                             onTap: () {
-                                              Get.to(DetailsView2(
-                                                name: posts.data()['name'],
-                                                price: posts.data()['price'],
-                                                details: posts.data()['des'],
-                                                image: posts.data()['image'],
-                                                productId:posts.data()['productid'],
-                                              ));
+
+                                              Get.to(
+                                                ProductsView
+                                                (br:posts.data()['name']),);
+
                                             },
                                           )));
                                 });
                         }
                       }),
                 ),
-                //),
-                //  ]),
+
               ] ),
         ));
   }
