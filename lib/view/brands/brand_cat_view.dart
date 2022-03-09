@@ -43,7 +43,7 @@ class _PostsScreenState extends State<BrandsCatView> {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     final userData =FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-
+    Get.put(HomeViewModel());
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -76,10 +76,10 @@ class _PostsScreenState extends State<BrandsCatView> {
                                 fontWeight: FontWeight.w700),
                           ),
                           SizedBox(
-                            width: 12,
+                            width: 16,
                           ),
                           Container(
-                            width:70,
+                            width:60,
                             child: Image.asset("assets/wh3.jpeg",
                               fit:BoxFit.fill,
                             ),

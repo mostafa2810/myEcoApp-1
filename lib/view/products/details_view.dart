@@ -16,14 +16,61 @@ import 'package:sqflite/sqflite.dart';
 import '../../viewmodel/cart_viewmodel.dart';
 import '../widgets/custom_text.dart';
 
-class DetailsView extends StatelessWidget {
+class DetailsView extends StatefulWidget {
 
  ProductModel model;
- DateTime now = DateTime.now();
+
  DetailsView({this.model});
+
+  @override
+  State<DetailsView> createState() => _DetailsViewState();
+}
+
+class _DetailsViewState extends State<DetailsView> {
+ DateTime now = DateTime.now();
+
  int index=0;
+ String lg = '';
+
+
+ @override
+ void initState() {
+
+
+   final box = GetStorage();
+   final box_country=box.read('country')??'x';
+
+   if(box_country=='امارات'){
+     lg ='د.ا';
+   }
+   if(box_country=='البحرين'){
+     lg='د.ب';
+   }
+   if(box_country=='قطر'){
+     lg='ر.ق';
+   }
+   if(box_country=='سلطنة عمان'){
+     lg='ر.ع';
+   }
+
+   if(box_country=='كويت'){
+     lg='د.ك';
+   }
+   if(box_country=='السعودية'){
+
+     lg='ر.س' ;
+   }
+   if(box_country=='x'){
+     lg='ر.س' ;
+   }
+   super.initState();
+ }
+
   @override
   Widget build(BuildContext context) {
+
+
+
 
 
     // Sqflite.devSetDebugModeOn(true);
@@ -39,7 +86,7 @@ class DetailsView extends StatelessWidget {
               Container(
                   width:MediaQuery.of(context).size.width,
                   height:180,
-                  child: Image.network(model.image,fit:BoxFit.fill)),
+                  child: Image.network(widget.model.image,fit:BoxFit.fill)),
               SizedBox(
                   height:15
               ),
@@ -52,7 +99,7 @@ class DetailsView extends StatelessWidget {
                       children: [
 
                         Custom_Text(
-                          text:model.name.toString(),
+                          text:widget.model.name.toString(),
                           fontSize:26,
                         ),
 
@@ -65,7 +112,7 @@ class DetailsView extends StatelessWidget {
                         ),
 
                         Custom_Text(
-                          text:'  '+model.x.toString(),
+                          text:'  '+widget.model.x.toString(),
                           color:Colors.red,
                           fontSize:18,
                         ),
@@ -83,7 +130,7 @@ class DetailsView extends StatelessWidget {
                           height:20,
                         ),
                         Text(
-                          model.des,
+                          widget.model.des,
                           style:TextStyle(color:Colors.black,fontSize:16)
                         ),
                         SizedBox(
@@ -110,11 +157,28 @@ class DetailsView extends StatelessWidget {
                           fontSize:18,
                           color:Colors.grey,
                         ),
-                        Custom_Text(
-                            text:'  '+model.price.toString(),
-                          color: HexColor("#ff68682A"),
-                          fontSize:18,
+                        Row(
+                          children: [
 
+                            SizedBox(
+                              width:5
+                            ),
+                            Custom_Text(
+                              text:lg,
+                              color: Colors.green,
+                              fontSize:18,
+
+                            ),
+                            SizedBox(
+                                width:5
+                            ),
+                            Custom_Text(
+                              text:'  '+widget.model.price.toString(),
+                              color: Colors.green,
+                              fontSize:18,
+
+                            ),
+                          ],
                         ),
 
                       ],
@@ -136,39 +200,39 @@ class DetailsView extends StatelessWidget {
                 onPressed:(){
 
                   print("ttt");
-                  print(model.name);
+                  print(widget.model.name);
     final box = GetStorage();
     final box_brand=box.read('brand')??'x';
 
-     if(model.brand==box_brand || box_brand =='x'){
+     if(widget.model.brand==box_brand || box_brand =='x'){
                   controller.addProduct2(
                     CartProductModel
-                      (name:model.name,image:model.image,
-                      price:model.price.toString(),quantity: 1,
-                       productId:model.productId,
-                       brand:model.brand,
-                       brand_email: model.brand_email
+                      (name:widget.model.name,image:widget.model.image,
+                      price:widget.model.price.toString(),quantity: 1,
+                       productId:widget.model.productId,
+                       brand:widget.model.brand,
+                       brand_email: widget.model.brand_email
                     ),
-                        model.productId,
+                        widget.model.productId,
                         //productId:model.productId)
                   );
-                  box.write('brand',model.brand);
-                  box.write('brand_email',model.brand_email);
+                  box.write('brand',widget.model.brand);
+                  box.write('brand_email',widget.model.brand_email);
      }
      else{
        controller.dialogAndDelete(
          CartProductModel(
-             name:model. name,
-             image: model.image,
-             price:model.price.toString(),
+             name:widget.model. name,
+             image: widget.model.image,
+             price:widget.model.price.toString(),
              quantity: 1,
-             productId: model.productId,
-             brand:model.brand,
-             brand_email: model.brand_email
+             productId: widget.model.productId,
+             brand:widget.model.brand,
+             brand_email: widget.model.brand_email
          ),
-         model.productId,
+         widget.model.productId,
        );
-       box.write('brand_email',model.brand_email);
+       box.write('brand_email',widget.model.brand_email);
      }
                   // controller.addProduct
                   //   (model.name,model.image,model.price,controller.quant2,model.productId);

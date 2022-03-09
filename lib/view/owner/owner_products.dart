@@ -31,8 +31,6 @@ class _PostsScreenState extends State<OwnerProductsView> {
 
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
 
-
-
   @override
   Widget build(BuildContext context) {
     //Get.lazyPut(() => HomeViewModel());

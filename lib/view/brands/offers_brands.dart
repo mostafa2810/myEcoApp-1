@@ -39,7 +39,7 @@ class _PostsScreenState extends State<OffersBrands> {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     final userData =FirebaseFirestore.instance.collection('users').doc(user.displayName).get();
-
+    Get.put(HomeViewModel());
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(

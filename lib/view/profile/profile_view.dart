@@ -1,6 +1,7 @@
 import 'package:ecommerce/view/auth/login_view.dart';
 import 'package:ecommerce/view/check/all_orders_view.dart';
 import 'package:ecommerce/view/check/allorders_view.dart';
+import 'package:ecommerce/view/check/noorders_view.dart';
 import 'package:ecommerce/view/profile/change_country.dart';
 import 'package:ecommerce/view/profile/update_profile.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
@@ -8,12 +9,18 @@ import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/profile_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 //import 'package/ecommerce/view/widgets/Custom_Text';
 
 
-class ProfileView extends StatelessWidget {
+class ProfileView extends StatefulWidget {
   const ProfileView({Key key}) : super(key: key);
 
+  @override
+  State<ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ProfileViewModel>(
@@ -74,10 +81,24 @@ class ProfileView extends StatelessWidget {
                           Container(
                             child: FlatButton(
                               onPressed: () {
-                                Get.to(AllOrdersView(
-                                user:controller.userModel.email,
-                                ));
-                              },
+                                final box = GetStorage();
+                                final box_order=box.read('ordernum1')??"x";
+
+
+
+                                if(box_order=='x'){
+
+                                    Get.to(NoOrdersView());
+                                }
+                                else {
+                                  print(
+                                      "order:::" + controller.userModel.email);
+                                  Get.to(
+                                      AllOrdersView(
+                                        user: controller.userModel.email,
+                                      ));
+                                }
+                                },
 
                               child: ListTile(
                                   title: Custom_Text(

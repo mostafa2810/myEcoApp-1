@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 
 class MapView2 extends StatefulWidget {
@@ -83,7 +84,7 @@ class MapView2 extends StatefulWidget {
                      );
                      print("ddd");
                    },
-                   color:Colors.lightGreen,
+                   color: HexColor("#ff68682A"),
                    child:
                    Text(
                      "تحديد الموقع الحالي",

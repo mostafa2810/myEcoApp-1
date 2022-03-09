@@ -99,7 +99,7 @@ class CartViewModel extends GetxController {
 
 
     else {
-      print("brannnnd="+cartProductModel.brand[1]);
+      print("brannnnd="+cartProductModel.brand_email);
       var dbHelper = CartDatabaseHelper.db;
       await dbHelper.insert(cartProductModel);
       print("done");

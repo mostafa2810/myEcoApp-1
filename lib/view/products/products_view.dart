@@ -38,6 +38,41 @@ class _PostsScreenState extends State<ProductsView> {
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
 
 
+  String lg = '';
+
+
+  @override
+  void initState() {
+
+
+    final box = GetStorage();
+    final box_country=box.read('country')??'x';
+
+    if(box_country=='امارات'){
+      lg ='د.ا';
+    }
+    if(box_country=='البحرين'){
+      lg='د.ب';
+    }
+    if(box_country=='قطر'){
+      lg='ر.ق';
+    }
+    if(box_country=='سلطنة عمان'){
+      lg='ر.ع';
+    }
+
+    if(box_country=='كويت'){
+      lg='د.ك';
+    }
+    if(box_country=='السعودية'){
+
+      lg='ر.س' ;
+    }
+    if(box_country=='x'){
+      lg='ر.س' ;
+    }
+    super.initState();
+  }
 
 
   @override
@@ -142,10 +177,10 @@ class _PostsScreenState extends State<ProductsView> {
                                             child: Card(
                                               color: Colors.grey[100],
                                               child: Column(children: [
-                                                SizedBox(height: 20),
+                                                SizedBox(height: 18),
                                                 Container(
                                                   width: 150,
-                                                  height: 90,
+                                                  height: 85,
                                                   child: Image.network(
                                                       posts.data()['image'],
                                                       fit: BoxFit.fitWidth),
@@ -158,51 +193,148 @@ class _PostsScreenState extends State<ProductsView> {
 
 
                                                 if(box_country=='السعودية')
-                                                  Text((posts.data()['price']).toString(),
-                                                    style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                        fontWeight:FontWeight.bold),
+                                                  Row(
+                                                    children: [
+
+                                                      SizedBox(
+                                                          width:2
+                                                      ),
+
+                                                      Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),),
+                                                      SizedBox(
+                                                          width:2
+                                                      ),
+                                                      Text((posts.data()['price']).toString(),
+                                                        style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
+                                                            fontWeight:FontWeight.bold),
+                                                      ),
+
+                                                    ],
                                                   ),
 
                                                 if(box_country=='قطر')
-                                                  Text((posts.data()['priceQ']).toString(),
-                                                    style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                        fontWeight:FontWeight.bold),
+                                                  Row(
+                                                    children: [
+
+
+                                                      Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
+
+                                                    ,
+
+                                                      SizedBox(
+                                                          width:2
+                                                      ),
+                                                      Text((posts.data()['priceQ']).toString(),
+                                                        style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
+                                                            fontWeight:FontWeight.bold),
+                                                      ),
+
+                                                    ],
                                                   ),
 
 
                                                 if(box_country=='كويت')
-                                                  Text((posts.data()['priceQw']).toString(),
-                                                    style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                        fontWeight:FontWeight.bold),
+                                                  Row(
+                                                    children: [
 
+
+
+
+                                                      Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
+
+                                                     , SizedBox(
+                                                          width:2
+                                                      ),
+
+                                                      Text((posts.data()['priceQw']).toString(),
+                                                        style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
+                                                            fontWeight:FontWeight.bold),
+
+                                                      ),
+
+
+                                                    ],
                                                   ),
 
                                                 if(box_country=='سلطنة عمان')
-                                                  Text((posts.data()['priceAm']).toString(),
-                                                    style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                        fontWeight:FontWeight.bold),
+                                                  Row(
+                                                    children: [
 
+
+
+                                                      Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
+                                                     , SizedBox(
+                                                          width:2
+                                                      ),
+                                                      Text((posts.data()['priceAm']).toString(),
+                                                        style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
+                                                            fontWeight:FontWeight.bold),
+
+                                                      ),
+
+                                                    ],
                                                   ),
 
                                                 if(box_country=='البحرين')
-                                                  Text((posts.data()['priceBh']).toString(),
-                                                    style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                        fontWeight:FontWeight.bold),
+                                                  Row(
+                                                    children: [
 
+
+
+                                                      Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
+                                                      ,SizedBox(
+                                                          width:2
+                                                      ),
+
+                                                      Text((posts.data()['priceBh']).toString(),
+                                                        style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
+                                                            fontWeight:FontWeight.bold),
+
+                                                      ),
+
+                                                    ],
                                                   ),
 
 
 
                                                 if(box_country=='الكويت')
-                                                Text((posts.data()['priceQw']).toString(),
-                                                  style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                      fontWeight:FontWeight.bold),
+                                                Row(
+                                                  children: [
 
+
+
+                                                    Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
+                                                   , SizedBox(
+                                                        width:2
+                                                    ),
+                                                    Text((posts.data()['priceQw']).toString(),
+                                                      style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
+                                                          fontWeight:FontWeight.bold),
+
+                                                    ),
+
+
+                                                  ],
                                                 ),
                                                 if(box_country=='امارات')
-                                                Text((posts.data()['priceAmar']).toString(),
-                                  style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                  fontWeight:FontWeight.bold)),
+                                                Row(
+                                                  children: [
+
+
+
+
+
+                                                    Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
+
+                                                   , SizedBox(
+                                                        width:2
+                                                    ),
+                                                    Text((posts.data()['priceAmar']).toString(),
+                                                        style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
+                                                            fontWeight:FontWeight.bold)),
+
+                                                  ],
+                                                ),
 
 
 

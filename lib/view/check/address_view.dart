@@ -75,30 +75,7 @@ import 'checkout_screen2.dart';
 
                     ],
                   ))),
-          //backgroundColor: Colors.lightBlueAccent,
-          // actions: <Widget>[
-          //   IconButton(
-          //       color:Colors.red,
-          //       icon: Icon(Icons.apps,size:34,),
-          //
-          //       onPressed: () {
-          //
-          //
-          //       }),
-          //
-          //   SizedBox(
-          //       width:7
-          //   ),
-          //   IconButton(
-          //       color:Colors.black,
-          //       icon: Icon(Icons.apps_sharp,size:34,),
-          //
-          //       onPressed: () {
-          //
-          //
-          //       })
 
-          //]
         ),
       body: GetBuilder<AddressViewModel>(
         init:AddressViewModel(),
@@ -195,7 +172,7 @@ import 'checkout_screen2.dart';
                 ),
                 Container(
                       child: RaisedButton(
-                         color: Colors.lightGreen,
+                         color: HexColor("#ff68682A"),
                         onPressed: () {
                            //print(cartmodel[3].name);
                          _formKey.currentState.save();

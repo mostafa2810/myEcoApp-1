@@ -7,6 +7,8 @@ import 'package:ecommerce/helper/local_storage_data.dart';
 import 'package:ecommerce/view/brands/brands_view.dart';
 import 'package:ecommerce/view/cart/cart_view.dart';
 import 'package:ecommerce/view/category/category.dart';
+import 'package:ecommerce/view/check/all_orders_view.dart';
+import 'package:ecommerce/view/check/noorders_view.dart';
 import 'package:ecommerce/view/home/controll_view.dart';
 import 'package:ecommerce/view/owner/owner_check.dart';
 import 'package:ecommerce/view/owner/owner_home_view.dart';
@@ -98,7 +100,25 @@ class _SidebarPageState extends State<SidebarPage> {
 
           }
       ),
+      CollapsibleItem(
+          text: '  طلباتي   ',
+          icon: Icons.map,
+          onPressed: ()  async {
+            final box = GetStorage();
+            final box_name=box.read('name');
+            final box_order=box.read('ordernum1')??"x";
 
+            if(box_order=='x'){
+
+              Get.to(NoOrdersView());
+            }
+            else{
+              Get.to(AllOrdersView(user:box_name,));
+            }
+
+
+          }
+      ),
 
       CollapsibleItem(
           text: 'تسجيل خروج ',

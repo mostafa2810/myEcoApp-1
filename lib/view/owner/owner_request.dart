@@ -37,11 +37,11 @@ class  OwnerRequest extends GetWidget<AuthViewModel> {
                 children: [
 
                   SizedBox(
-                      height:70
+                      height:80
                   ),
                   Container(
-                      height:120,
-                      width:200,
+                      height:90,
+                      width:110,
                       color: Colors.white,
                       child:Image.asset('assets/wh3.jpeg',fit:BoxFit.fill,)
                   ),
@@ -51,6 +51,7 @@ class  OwnerRequest extends GetWidget<AuthViewModel> {
                   CustomTextFormField(
                     // controller: controller.email,
                       text: "                                                        ادخل ايميل للتواصل   ",
+                      color: HexColor("#ff68682A"),
                       hint: "dev@yahoo.com",
                       onSave: (value) {
 
@@ -65,6 +66,7 @@ class  OwnerRequest extends GetWidget<AuthViewModel> {
                   CustomTextFormField(
                     // controller: controller.pass1,
                       text: "                                                     ادخل رقم هاتف للتواصل ",
+                      color: HexColor("#ff68682A"),
                       hint: "+968..........",
                       onSave: (value) {
                         controller.mobile = value;
@@ -79,8 +81,8 @@ class  OwnerRequest extends GetWidget<AuthViewModel> {
                   ),
                   CustomTextFormField(
                       text: "                                                 نوع المنتجات التي تقوم ببيعها  ",
-                      //controller: controller.code1,
-                      hint: "مثال : ملابس ",
+                      color: HexColor("#ff68682A"),
+                      hint: "مثال : الحلوي الع",
                       onSave: (value) {
                         controller.cat= value;
                       },
@@ -95,7 +97,7 @@ class  OwnerRequest extends GetWidget<AuthViewModel> {
                   SizedBox(height: 8),
                   CustomTextFormField(
                       text: "                                                                   اسم متجرك ",
-                      //controller: controller.code1,
+                      color: HexColor("#ff68682A"),
                       hint: "  ",
                       onSave: (value) {
                         controller.brand_name= value;
@@ -109,7 +111,7 @@ class  OwnerRequest extends GetWidget<AuthViewModel> {
                   SizedBox(height: 6),
                   CustomTextFormField(
                       text: "                                                                             الدولة  ",
-                      //controller: controller.code1,
+                      color: HexColor("#ff68682A"),
                       hint: "  ",
                       onSave: (value) {
                         controller.country= value;
@@ -123,7 +125,7 @@ class  OwnerRequest extends GetWidget<AuthViewModel> {
                   SizedBox(height: 6),
                   CustomTextFormField(
                       text: "                                                                            الولاية    ",
-                      //controller: controller.code1,
+                      color: HexColor("#ff68682A"),
                       hint: "  ",
                       onSave: (value) {
                         controller.city= value;
@@ -137,7 +139,7 @@ class  OwnerRequest extends GetWidget<AuthViewModel> {
                   SizedBox(height: 6),
                   CustomTextFormField(
                       text: " لماذا تريد التسجيل كتاجر و ماذا يمكن ان يضيف متجرك داخل التطبيق  ",
-                      //controller: controller.code1,
+                      color: HexColor("#ff68682A"),
                       hint: "  ",
                       onSave: (value) {
                         controller.details= value;

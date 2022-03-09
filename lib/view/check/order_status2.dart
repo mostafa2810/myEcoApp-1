@@ -290,7 +290,7 @@ class _PostsScreenState extends State<OrderStatusView2> {
                                                       init: Get.find(),
                                                       builder: (controller) =>
                                                           RaisedButton(
-                                                              color: Colors.lightGreen,
+                                                              color: HexColor("#ff68682A"),
                                                               shape: new RoundedRectangleBorder(
                                                                 borderRadius: new BorderRadius.circular(30.0),
                                                               ),

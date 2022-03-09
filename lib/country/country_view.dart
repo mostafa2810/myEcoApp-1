@@ -41,7 +41,8 @@ class _CountryViewState extends State<CountryView> {
            ],
          ),
        ),
-       body:Container(
+       body:
+       Container(
          child:Center(
            child: Column(
            //  mainAxisAlignment:MainAxisAlignment.center,

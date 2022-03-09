@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class AddressCheck extends StatefulWidget {
 
@@ -138,7 +139,7 @@ class _AddressCheckState extends State<AddressCheck> {
         RaisedButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(13)),
-        color: Colors.lightGreen,
+            color: HexColor("#ff68682A"),
           child:Text("    تاكيد الطلب علي هذا العنوان     ",style:TextStyle(
               color:Colors.white,
               fontSize:19),),
@@ -161,7 +162,7 @@ class _AddressCheckState extends State<AddressCheck> {
           height:6
         ),
         RaisedButton(
-            color: Colors.lightGreen,
+            color: HexColor("#ff68682A"),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10)),
             child:Text("   اضافة عنوان اخر    ",style:TextStyle(

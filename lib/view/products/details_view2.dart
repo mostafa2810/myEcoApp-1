@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class DetailsView2 extends StatelessWidget {
+class DetailsView2 extends StatefulWidget {
 
   String name;
   num price;
@@ -26,8 +26,50 @@ class DetailsView2 extends StatelessWidget {
         this.brandemail
       });
 
+  @override
+  State<DetailsView2> createState() => _DetailsView2State();
+}
 
+class _DetailsView2State extends State<DetailsView2> {
   int index=0;
+
+  String lg = '';
+
+
+  @override
+  void initState() {
+
+
+    final box = GetStorage();
+    final box_country=box.read('country')??'x';
+
+    if(box_country=='امارات'){
+      lg ='د.ا';
+    }
+    if(box_country=='البحرين'){
+      lg='د.ب';
+    }
+    if(box_country=='قطر'){
+      lg='ر.ق';
+    }
+    if(box_country=='سلطنة عمان'){
+      lg='ر.ع';
+    }
+
+    if(box_country=='كويت'){
+      lg='د.ك';
+    }
+    if(box_country=='السعودية'){
+
+      lg='ر.س' ;
+    }
+    if(box_country=='x'){
+      lg='ر.س' ;
+    }
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +81,7 @@ class DetailsView2 extends StatelessWidget {
         Container(
             width: MediaQuery.of(context).size.width,
             height: 180,
-            child: Image.network(image, fit: BoxFit.fill)),
+            child: Image.network(widget.image, fit: BoxFit.fill)),
         SizedBox(height: 15),
         Expanded(
           child: SingleChildScrollView(
@@ -48,7 +90,7 @@ class DetailsView2 extends StatelessWidget {
               child: Column(
                 children: [
                   Custom_Text(
-                    text: name.toString(),
+                    text: widget.name.toString(),
                     fontSize: 26,
                     color: HexColor("#ff68682A"),
                   ),
@@ -58,7 +100,7 @@ class DetailsView2 extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                      x,
+                      widget.x,
                       style:TextStyle(color:Colors.red,fontSize:16,fontWeight:FontWeight.w700)
                   ),
                   Custom_Text(
@@ -70,7 +112,7 @@ class DetailsView2 extends StatelessWidget {
                     height:20,
                   ),
                   Text(
-                      details,
+                      widget.details,
                       style:TextStyle(color:Colors.black,fontSize:16)
                   ),
                 ],
@@ -90,11 +132,31 @@ class DetailsView2 extends StatelessWidget {
                     fontSize: 18,
                     color: Colors.grey,
                   ),
-                  Custom_Text(
-                    text: ' ' + price.toString(),
-                    color: HexColor("#ff68682A"),
-                    fontSize: 18,
+                  Row(
+                    children: [
+
+                      SizedBox(
+                          width:5
+                      ),
+                      Custom_Text(
+                        text:lg,
+                        color: HexColor("#ff68682A"),
+                        fontSize:18,
+
+                      ),
+                      SizedBox(
+                          width:5
+                      ),
+                      Custom_Text(
+                        text:'  '+widget.price.toString(),
+                        color: HexColor("#ff68682A"),
+                        fontSize:18,
+
+                      ),
+                    ],
                   ),
+
+
                 ],
               ),
               SizedBox(width: 55),
@@ -108,8 +170,8 @@ class DetailsView2 extends StatelessWidget {
                         onPressed: () {
                           index=index+1;
                           print("ttt");
-                          print(name);
-                          print(price);
+                          print(widget.name);
+                          print(widget.price);
 
 
 
@@ -117,39 +179,39 @@ class DetailsView2 extends StatelessWidget {
                           final box_brand=box.read('brand')??'x';
 
 
-                          if(brand==box_brand || box_brand =='x'){
+                          if(widget.brand==box_brand || box_brand =='x'){
                             controller.addProduct2(
                                 CartProductModel(
-                                    name: name,
-                                    image: image,
-                                    price: price.toString(),
+                                    name: widget.name,
+                                    image: widget.image,
+                                    price: widget.price.toString(),
                                     quantity: 1,
-                                    productId: productId,
-                                    brand:brand,
-                                    brand_email:brandemail
+                                    productId: widget.productId,
+                                    brand:widget.brand,
+                                    brand_email:widget.brandemail
                                 ),
-                                productId,
+                                widget.productId,
 
                               // model.productId
                               //productId:model.productId)
                             );
-                            box.write('brand',brand);
-                            box.write('brand_email',brandemail);
+                            box.write('brand',widget.brand);
+                            box.write('brand_email',widget.brandemail);
                           }
                           else{
                             controller.dialogAndDelete(
                               CartProductModel(
-                                name: name,
-                                image: image,
-                                price: price.toString(),
+                                name: widget.name,
+                                image: widget.image,
+                                price: widget.price.toString(),
                                 quantity: 1,
-                                productId: productId,
-                                brand:brand,
-                                brand_email:brandemail
+                                productId: widget.productId,
+                                brand:widget.brand,
+                                brand_email:widget.brandemail
                             ),
-                          productId,
+                          widget.productId,
                             );
-                            box.write('brand_email',brandemail);
+                            box.write('brand_email',widget.brandemail);
                           }
 
 

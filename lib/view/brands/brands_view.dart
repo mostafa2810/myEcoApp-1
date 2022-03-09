@@ -1,8 +1,10 @@
 
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecommerce/services/data_controller.dart';
 import 'package:ecommerce/view/products/details_view2.dart';
 import 'package:ecommerce/view/products/products_view.dart';
+import 'package:ecommerce/view/search/search_view.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/home_view_model.dart';
 
@@ -30,14 +32,11 @@ class _PostsScreenState extends State<BrandsView> {
 
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
 
-
-
-
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     final userData =FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-
+    Get.put(HomeViewModel());
     return Scaffold(
       backgroundColor: Colors.white,
         appBar: AppBar(
@@ -57,35 +56,18 @@ class _PostsScreenState extends State<BrandsView> {
               child: Center(
                   child: Row(
                     children: [
-
                       SizedBox(
-                        width: 25,
+                          width: 188
                       ),
-                      Row(
-                        children: [
-
-                          Text(
-                            " Luban   ",
-                            style: TextStyle(
-                                color: HexColor("#ff68682A"),
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          SizedBox(
-                            width: 12,
-                          ),
-                          Container(
-                            width:70,
-                            child: Image.asset("assets/wh3.png",
-                              fit:BoxFit.fill,
-                            ),
-                          ),
-                        ],
+                      Container(
+                        width:57,
+                        child: Image.asset("assets/wh3.jpeg",
+                            fit:BoxFit.fill
+                        ),
                       ),
                       SizedBox(
-                        width: 80,
+                          width: 5
                       ),
-
                     ],
                   ))),
         ),
@@ -95,11 +77,29 @@ class _PostsScreenState extends State<BrandsView> {
         color: Colors.white,
         child: Column(
             children: [
+              SizedBox(
+                height:13,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left:33.0),
+                child: Text(" جميع المتاجر   ",style:TextStyle(color:Colors.red,fontSize:19,
+                    fontWeight:FontWeight.w800),),
+              ),
+              SizedBox(
+                height:13,
+              ),
+              GetBuilder<DataController>(
+                  init: DataController(),
+                  builder: (controller) => _searchTextFormField()),
 
               SizedBox(
-                height:7,
+                height:13
               ),
 
+
+              SizedBox(
+                height:13,
+              ),
               Flexible(
                   child: StreamBuilder(
                       stream:
@@ -113,14 +113,14 @@ class _PostsScreenState extends State<BrandsView> {
                             return new Text('Loading...');
 //.where("category", isEqualTo:"tec")
                           default:
-                        return GridView.builder(
+                        return ListView.builder(
                         itemCount: snapshot.data.documents.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 2,
-                          mainAxisSpacing: 3,
-                         
-                        ), //(orientation == Orientation.portrait) ? 2: 2.2),
+                        // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        //   crossAxisCount: 2,
+                        //   crossAxisSpacing: 2,
+                        //   mainAxisSpacing: 3,
+                        //
+                        // ), //(orientation == Orientation.portrait) ? 2: 2.2),
                         itemBuilder: (BuildContext context, int index) {
                           DocumentSnapshot posts =
                               snapshot.data.documents[index];
@@ -132,27 +132,31 @@ class _PostsScreenState extends State<BrandsView> {
                                   child: InkWell(
                                     child: Card(
                                       color: Colors.white,
-                                      child: Column(children: [
-                                        SizedBox(height: 20),
-                                        Container(
-                                          width: 150,
-                                          height: 90,
-                                          child: Image.network(
-                                              posts.data()['image'],
-                                              fit: BoxFit.fitWidth),
+                                      child: Row(children: [
+
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:150.0),
+                                          child: Text((posts.data()['name']),
+
+                                            style:TextStyle(
+                                                color: HexColor("#ff68682A"),
+                                                fontSize: 19,
+                                                fontWeight:FontWeight.w800
+                                            ),
+                                          ),
                                         ),
+
+                                        Container(
+                                          padding:EdgeInsets.only(left:18),
+                                          width: 90,
+                                          height: 90,
+                                          child: CircleAvatar(
+                                          backgroundImage: NetworkImage( posts.data()['image']),
+
+                                          ),
+                                        ),
+
                                         SizedBox(height: 5),
-                                        
-                                       Text((posts.data()['name']),
-                                       style:TextStyle(
-                                         color: HexColor("#ff68682A"),
-                                          fontSize: 19,
-                                       ),
-                                       
-                                       
-                                       ),
-                                        SizedBox(height: 5),
-                                        
                                       ]),
                                     ),
                                     onTap: () {
@@ -172,19 +176,42 @@ class _PostsScreenState extends State<BrandsView> {
              ] ),
     ));
   }
+  Widget _searchTextFormField() {
+    TextEditingController search_txt = new TextEditingController();
+    bool isExecuted = false;
+    QuerySnapshot querySnapshot;
+    // bool isExecuted = false;
+    return Container(
+      width:303,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.grey.shade200,
+      ),
+      child: GetBuilder<DataController>(
+          init: DataController(),
+          builder: (controller) => TextFormField(
+            controller: search_txt,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              prefixIcon: InkWell(
+                  child: Icon(Icons.search, color: Colors.green),
+                  onTap: () {
+                    controller.queryData(search_txt.text).then((value) {
+                      querySnapshot = value;
+                      isExecuted = true;
+                      print("issss" + isExecuted.toString());
+                      print("qqq=" + querySnapshot.docs.toString());
+                      print("sss=" + search_txt.text.toString());
+                      Get.to(SearchView(
+                        search_txt: search_txt.text.toString(),
+                      ));
+                    });
+                  }),
+            ),
+          )
+        //}
+      ),
+    );
+  }
 }
 
-//                         }
-//                       }
-//                   ),
-//                 ),
-//               //),
-
-          
-//             ]),
-//       ),
-
-
-//     );
-//   }
-// }

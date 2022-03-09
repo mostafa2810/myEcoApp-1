@@ -60,6 +60,7 @@ class ProductModel {
     }
     quant = map['quant'];
     brand = map['brand'];
+
     brand_email=map['brandemail'];
     productId = map['productid'];
   }

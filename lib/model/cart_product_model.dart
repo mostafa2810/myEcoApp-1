@@ -19,8 +19,8 @@ class CartProductModel {
     name = map['name'];
     image = map['image'];
     quantity = map['quantity'];
-    final box = GetStorage();
 
+    final box = GetStorage();
     final box_country=box.read('country')??'x';
 
 

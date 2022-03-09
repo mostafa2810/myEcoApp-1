@@ -8,6 +8,7 @@ import 'package:ecommerce/view/check/order_status2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 
 class CheckOutViewModel extends GetxController {
@@ -32,7 +33,7 @@ class CheckOutViewModel extends GetxController {
   void checkout(
       String address, String apartment, String floor, String mobile,
       num total, List<CartProductModel> order, num sub_total,
-      String brand_email
+      String brand_email,String notes
       ) async {
     String pr, pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10;
     int q, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10;
@@ -43,6 +44,7 @@ class CheckOutViewModel extends GetxController {
 
     for (int i = 0; i <= order.length; i++) {
       pr = order[0].name ?? "";
+
       q = order[0].quantity ?? 0;
       if (order.length == 1) {
         pr = order[0].name ?? "";
@@ -375,6 +377,7 @@ class CheckOutViewModel extends GetxController {
         'ord 1': pr + " * " + q.toString(),
         'order_status': 'pending',
         'time': time,
+        'notes':notes,
         'total_amount': sub_total,
          'brand_email':brand_email,
         'order_id': mobile[5] +
@@ -413,6 +416,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'notes':notes,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -455,6 +459,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'notes':notes,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -499,6 +504,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'notes':notes,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -543,6 +549,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'notes':notes,
         'username': uid,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -588,6 +595,7 @@ class CheckOutViewModel extends GetxController {
         'mobile': mobile.toString(),
         'brand_email':brand_email,
         'username': uid,
+        'notes':notes,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
@@ -632,6 +640,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'username': uid,
+        'notes':notes,
         'brand_email':brand_email,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -679,6 +688,7 @@ class CheckOutViewModel extends GetxController {
         'mobile': mobile.toString(),
         'brand_email':brand_email,
         'username': uid,
+        'notes':notes,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
@@ -725,6 +735,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'username': uid,
+        'notes':notes,
         'brand_email':brand_email,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -775,6 +786,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'username': uid,
+        'notes':notes,
         'brand_email':brand_email,
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
@@ -813,6 +825,8 @@ class CheckOutViewModel extends GetxController {
     }
     print("uid=" + uid.toString());
     print("time =" + time.toString());
+    final box = GetStorage();
+    final box_order=box.write('ordernum1','nummmm');
 
 
     Get.offAll(OrderStatusView2(order_id: order_id,cartmodel:_cartProductModel));

@@ -30,8 +30,10 @@ class CheckOutScreen2 extends StatelessWidget {
     int i2 = cartmodel.length;
     double opacity=0.0;
     num shipping_cost=22;
+    TextEditingController _notesController = TextEditingController();
     // String cartmodel2=cartmodel.toString();
-    return Scaffold(
+    return
+      Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
@@ -40,9 +42,6 @@ class CheckOutScreen2 extends StatelessWidget {
                 gradient: LinearGradient(colors: [
                   // Colors.white,
                   Colors.white,
-                  //Colors.lightBlueAccent,
-
-                  // Colors.lightBlueAccent,
                   Colors.white,
                 ])),
             height: 30,
@@ -91,7 +90,7 @@ class CheckOutScreen2 extends StatelessWidget {
                     SizedBox(height: 3),
                     Container(
                         width: 300,
-                        height: 380,
+                        height: 580,
                         child: Card(
                           color: Colors.grey[100],
                             child: Column(
@@ -171,6 +170,25 @@ class CheckOutScreen2 extends StatelessWidget {
                                       fontSize: 18,
                                     )),
                                 SizedBox(height: 20),
+                                Container(
+                                   color: Colors.white,
+                                    height:100,
+                                    width:350,
+                                    child:Center(
+                                      child: TextFormField(
+                                        maxLines:4,
+                                        decoration: InputDecoration(
+                                          hintStyle: TextStyle(fontSize: 16,color:Colors.grey),
+                                          hintText: 'اضافة ملاحظة ',
+                                          //suffixIcon: Icon(Icons.search),
+                                          border: InputBorder.none,
+                                          contentPadding: EdgeInsets.all(22),
+                                        ),
+                                        controller:_notesController,
+                                      ),
+                                    )
+                                ),
+                                SizedBox(height: 20),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -185,7 +203,7 @@ class CheckOutScreen2 extends StatelessWidget {
                                             shape: new RoundedRectangleBorder(
       borderRadius: new BorderRadius.circular(30.0),
     ),
-                                            color: Colors.lightGreen,
+                                            color: HexColor("#ff68682A"),
                                             onPressed: () {
                                               for (int i = 0; i < i2; i++)
                                                 controller.DeleteProducts2(
@@ -210,7 +228,8 @@ class CheckOutScreen2 extends StatelessWidget {
                                                   total+shipping_cost,
                                                   cartmodel,
                                                   total+shipping_cost,
-                                                   brand_email
+                                                   brand_email,
+                                                   _notesController.text.toString()
                                               );
                                               opacity=1.0;
 

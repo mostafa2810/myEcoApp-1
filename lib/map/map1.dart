@@ -11,6 +11,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
  import 'package:ecommerce/view/check/address_view.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Map1 extends StatefulWidget {
   double l1,l2;
@@ -117,8 +118,8 @@ class Map1 extends StatefulWidget {
             ),
           ),
           RaisedButton(
-            child:Text("ok and save",style:TextStyle(color:Colors.white,fontSize:18),),
-            color:Colors.lightGreen,
+            child:Text("موافق  ",style:TextStyle(color:Colors.white,fontSize:18),),
+            color: HexColor("#ff68682A"),
             onPressed:(){
                Get.offAll(
                    AdressScreen(
@@ -132,8 +133,8 @@ class Map1 extends StatefulWidget {
           ),
 
           RaisedButton(
-            child:Text("don\'t Save",style:TextStyle(color:Colors.white,fontSize:18),),
-            color:Colors.lightGreen,
+            child:Text("قم بالتخطي",style:TextStyle(color:Colors.white,fontSize:18),),
+            color: HexColor("#ff68682A"),
             onPressed:(){
               Get.offAll(
                   AdressScreen(

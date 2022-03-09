@@ -1,3 +1,4 @@
+import 'package:ecommerce/helper/local_storage_data.dart';
 import 'package:ecommerce/map/map1.dart';
 import 'package:ecommerce/map/map_screen.dart';
 import 'package:ecommerce/map/map_view.dart';
@@ -7,8 +8,11 @@ import 'package:ecommerce/view/category/category.dart';
 import 'package:ecommerce/view/home/home_view.dart';
 import 'package:ecommerce/view/owner/owner_code.dart';
 import 'package:ecommerce/view/profile/profile_view.dart';
+import 'package:ecommerce/viewmodel/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'home_view_model.dart';
 
 
 class ControlViewModel extends GetxController {
@@ -19,6 +23,9 @@ class ControlViewModel extends GetxController {
 
   @override
   void onInit() {
+    Get.put(LocalStorageData());
+    Get.put(AuthViewModel());
+    Get.put(HomeViewModel());
     _currentScreen = HomeView();
     print('onitttt');
     // Here you can fetch you product from server
@@ -26,12 +33,15 @@ class ControlViewModel extends GetxController {
     update();
   }
 
+
+
   @override
   void onReady() {
     print("ready");
     _currentScreen = HomeView();
     super.onReady();
   }
+
 
   @override
   void onClose() {

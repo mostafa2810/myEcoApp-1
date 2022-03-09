@@ -105,7 +105,7 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
 
       box.write('email', email);
       box.write('pass',password);
-      box.write('name',email.replaceAll('@','').replaceAll('yahoo.com','').replaceAll('gmail.com','').replaceAll('hotmail.com',''));
+      box.write('name',email);
 
      final box_country= box.read('country')??"x";
 
