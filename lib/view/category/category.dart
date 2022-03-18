@@ -31,55 +31,61 @@ class CategoryView extends StatelessWidget {
                 child: Row(
                   children: [
                     SizedBox(
-                      width: 188
+                        width: MediaQuery.of(context).size.width * 0.62
                     ),
                     Container(
-                      width:57,
+                      width:40,
+                      //width:57,
                       child: Image.asset("assets/wh3.jpeg",
-                        fit:BoxFit.cover
+                          fit:BoxFit.fitWidth
                       ),
                     ),
                     SizedBox(
-                      width: 5
+                        width: 5
                     ),
-
                   ],
                 ))),
       ),
       body:Container(
         color:Colors.white,
-        child:
-        GridView.count(
-          primary: false,
-          padding: const EdgeInsets.only(top:50,left: 20,right:20,bottom:20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: 2,
+        child:ListView(
+        // GridView.count(
+        //   primary: false,
+        //   padding: const EdgeInsets.only(top:50,left: 20,right:20,bottom:20),
+        //   crossAxisSpacing: 10,
+        //   mainAxisSpacing: 10,
+        //   crossAxisCount: 2,
           children: <Widget>[
             InkWell(
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                child: Center(child: Column(
-                  children: [
-                    InkWell(
-                      child: Container(
-                          height:100,
-                          width:400,
-                          child: Image.asset("assets/c2.jpeg",fit:BoxFit.fill,)),
-                      onTap:(){
-                        Get.to(BrandsCatView(cat:'العسل العُماني',));
-                      },
-                    ),
-                    const Text("العسل العُماني",style:TextStyle(color:Colors.white,fontSize:22),),
-                  ],
-                )),
-                color: HexColor("#ff68682A"),
+              child: Card(
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: Center(child: Column(
+                    children: [
+                      InkWell(
+                        child: Card(
+                          color:Colors.white,
+                          child: Container(
+                              height:100,
+                              width:400,
+                              child: Image.asset("assets/c2.jpeg",fit:BoxFit.fill,)),
+                        ),
+                        onTap:(){
+                          Get.to(BrandsCatView(cat:'العسل العُماني',));
+                        },
+                      ),
+                      const Text("العسل العُماني",style:TextStyle(color:Colors.white,fontSize:22),),
+                    ],
+                  )),
+                  color: HexColor("#ff68682A"),
+                ),
               ),
               onTap:(){
                 Get.to(BrandsCatView(cat:'العسل العُماني',));
               },
             ),
             InkWell(
+             child: Card(
               child: Container(
                 padding: const EdgeInsets.all(8),
                 child:Center(child: Column(
@@ -98,35 +104,38 @@ class CategoryView extends StatelessWidget {
                   ],
                 )),
                 color: HexColor("#ff68682A"),
-              ),
+              )),
               onTap:(){
                 Get.to(BrandsCatView(cat:'الحلوى العُمانيه',));
               },
             ),
 
             InkWell(
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                child: Center(child: Column(
-                  children: [
-                    InkWell(
-                      child: Container(
-                          height:100,
-                          width:400,
-                          child: Image.asset("assets/c7.jpeg",fit:BoxFit.fill,)),
-                      onTap:(){
-                        Get.to(BrandsCatView(cat:'الطيب العُماني',));
-                      },
-                    ),
-                    const Text("الطيب العُماني",style:TextStyle(color:Colors.white,fontSize:22),),
-                  ],
-                )),
-                color: HexColor("#ff68682A"),
+              child: Card(
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: Center(child: Column(
+                    children: [
+                      InkWell(
+                        child: Container(
+                            height:100,
+                            width:400,
+                            child: Image.asset("assets/c7.jpeg",fit:BoxFit.fill,)),
+                        onTap:(){
+                          Get.to(BrandsCatView(cat:'الطيب العُماني',));
+                        },
+                      ),
+                      const Text("الطيب العُماني",style:TextStyle(color:Colors.white,fontSize:22),),
+                    ],
+                  )),
+                  color: HexColor("#ff68682A"),
 
+                ),
               ),
               onTap:(){Get.to(BrandsCatView(cat:'الطيب العُماني',));},
             ),
             InkWell(
+              child:Card(
               child: Container(
                 padding: const EdgeInsets.all(8),
                 child: Center(child: Column(
@@ -145,34 +154,37 @@ class CategoryView extends StatelessWidget {
                 )),
                 color: HexColor("#ff68682A"),
 
-              ),
+              ) ),
               onTap:(){Get.to(BrandsCatView(cat:'جمال و طبيعة',));},
             ),
 
             InkWell(
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                child: Center(child: Column(
-                  children: [
-                    InkWell(
-                      child: Container(
-                          height:100,
-                          width:400,
-                          child: Image.asset("assets/c5.jpeg",fit:BoxFit.fill,)),
-                      onTap:(){
-                        Get.to(BrandsCatView(cat:'المذاق العُماني',));
-                      },
-                    ),
-                    const Text("المذاق العُماني",style:TextStyle(color:Colors.white,fontSize:22),),
-                  ],
-                )),
-                color: HexColor("#ff68682A"),
+              child: Card(
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: Center(child: Column(
+                    children: [
+                      InkWell(
+                        child: Container(
+                            height:100,
+                            width:400,
+                            child: Image.asset("assets/c5.jpeg",fit:BoxFit.fill,)),
+                        onTap:(){
+                          Get.to(BrandsCatView(cat:'المذاق العُماني',));
+                        },
+                      ),
+                      const Text("المذاق العُماني",style:TextStyle(color:Colors.white,fontSize:22),),
+                    ],
+                  )),
+                  color: HexColor("#ff68682A"),
+                ),
               ),
               onTap:(){Get.to(BrandsCatView(cat:'المذاق العُماني',));},
             ),
 
 
             InkWell(
+        child:      Card(
               child: Container(
                 padding: const EdgeInsets.all(8),
                 child: Center(child: Column(
@@ -191,7 +203,7 @@ class CategoryView extends StatelessWidget {
                 )),
                 color: HexColor("#ff68682A"),
 
-              ),
+              )),
               onTap:(){Get.to(BrandsCatView(cat:'تمور',));},
             ),
             //
@@ -243,24 +255,26 @@ class CategoryView extends StatelessWidget {
 
 
             InkWell(
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                child: Center(child: Column(
-                  children: [
-                    InkWell(
-                      child: Container(
-                          height:100,
-                          width:400,
-                          child: Image.asset("assets/c3.jpeg",fit:BoxFit.fill,)),
-                      onTap:(){
-                        Get.to(BrandsCatView(cat:'المشغولات العُمانيه',));
-                      },
-                    ),
-                    const Text("المشغولات العُمانيه",style:TextStyle(color:Colors.white,fontSize:18),),
-                  ],
-                )),
-                color: HexColor("#ff68682A"),
+              child: Card(
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: Center(child: Column(
+                    children: [
+                      InkWell(
+                        child: Container(
+                            height:100,
+                            width:400,
+                            child: Image.asset("assets/c3.jpeg",fit:BoxFit.fill,)),
+                        onTap:(){
+                          Get.to(BrandsCatView(cat:'المشغولات العُمانيه',));
+                        },
+                      ),
+                      const Text("المشغولات العُمانيه",style:TextStyle(color:Colors.white,fontSize:18),),
+                    ],
+                  )),
+                  color: HexColor("#ff68682A"),
 
+                ),
               ),
               onTap:(){Get.to(BrandsCatView(cat:'المشغولات العُمانيه',));},
             ),

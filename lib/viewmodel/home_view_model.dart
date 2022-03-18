@@ -19,7 +19,7 @@ class HomeViewModel extends GetxController{
 
   List<ProductModel>get productModel=>_productModel;
   List <ProductModel> _productModel=[];
-
+  String value = '';
 
   HomeViewModel(){
     getCategory();
@@ -34,6 +34,11 @@ class HomeViewModel extends GetxController{
    }
    update();
     });
+  }
+
+  changeMethod(String val){
+    value=val;
+    update();
   }
   
   getBestSellingProducts()async{

@@ -32,8 +32,8 @@ class CartView2 extends StatelessWidget {
     final box_address3=box.read('Adress_details3')??"ogi";
     final box_address4=box.read('Adress_details4')??"yyy";
     final brand_email=box.read('brand_email')??"///";
-
-
+    final box_country=box.read('Adress_country')??"///";
+    final box_city=box.read('Adress_city')??"///";
 
 
     return GetBuilder<CartViewModel>(
@@ -44,12 +44,17 @@ class CartView2 extends StatelessWidget {
                       child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Center(
-                            child: SvgPicture.asset(
-                          'assets/sss1.svg',
-                          height: 200,
+                        // Center(
+                        //     child: SvgPicture.asset(
+                        //   'assets/sss1.svg',
+                        //   height: 200,
+                        // )),
+                        Center(child: Custom_Text(
+                         text:  "السلة فارغة " ,
+                          color: Colors.black,
+                          fontSize:25,
+                          alignment:Alignment.center,
                         )),
-                        Center(child: Text("Cart Empty ")),
                       ],
                     ))
                   : Column(children: [
@@ -60,12 +65,8 @@ class CartView2 extends StatelessWidget {
                             return Container(
                               height: 140,
                               child: Row(children: [
-                                Container(
-                                    width: 140,
-                                    child: Image.network(
-                                        controller.cartProductModel[index].image
-                                            .toString(),
-                                        fit: BoxFit.fill)),
+
+
                                 Padding(
                                   padding: const EdgeInsets.only(left: 30.0),
                                   child: Column(
@@ -85,7 +86,7 @@ class CartView2 extends StatelessWidget {
                                                 .toString()),
                                         SizedBox(height: 20),
                                         Container(
-                                            width: 170,
+                                            width: 180,
                                             color: Colors.grey.shade200,
                                             height: 40,
                                             child: Row(
@@ -93,15 +94,18 @@ class CartView2 extends StatelessWidget {
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   InkWell(
-                                                    child: Icon(Icons.add,
-                                                        color: Colors.black),
+                                                    child: Container(
+                                                      height:20,width:30,
+                                                      child: Icon(Icons.add,
+                                                          color: Colors.black),
+                                                    ),
                                                     onTap: () {
                                                       controller
                                                           .increaseQuantity(
                                                               index);
                                                     },
                                                   ),
-                                                  SizedBox(width: 20),
+                                                  SizedBox(width: 15),
                                                   Custom_Text(
                                                       alignment:
                                                           Alignment.center,
@@ -117,9 +121,13 @@ class CartView2 extends StatelessWidget {
                                                     padding: EdgeInsets.only(
                                                         bottom: 20),
                                                     child: InkWell(
-                                                      child: Icon(
-                                                          Icons.minimize,
-                                                          color: Colors.black),
+                                                      child: Container(
+                                                        height:20,
+                                                        width:30,
+                                                        child: Icon(
+                                                            Icons.minimize,
+                                                            color: Colors.black),
+                                                      ),
                                                       onTap: () {
                                                         controller
                                                             .decreaseQuantity(
@@ -128,7 +136,7 @@ class CartView2 extends StatelessWidget {
                                                     ),
                                                   ),
                                                   SizedBox(
-                                                    width:20
+                                                    width:27
                                                   ),
                                                   InkWell(
                                                     child: Icon(Icons.delete,
@@ -154,7 +162,13 @@ class CartView2 extends StatelessWidget {
                                                   ),
                                                 ]))
                                       ]),
-                                )
+                                ),
+                                Container(
+                                    width: 140,
+                                    child: Image.network(
+                                        controller.cartProductModel[index].image
+                                            .toString(),
+                                        fit: BoxFit.fill)),
                               ]),
                             );
                           },
@@ -209,7 +223,10 @@ class CartView2 extends StatelessWidget {
                                           }
                                           if(box_address!='x')
                                           {
-                                            Get.off(AddressCheck(
+                                            Get.off(
+                                                AddressCheck(
+                                                  country:box_country,
+                                              city:box_city,
                                               total: controller.totalPrice,
                                               cartmodel:controller.cartProductModel,
                                               adress:box_address,

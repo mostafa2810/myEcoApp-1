@@ -10,12 +10,14 @@ class CustomTextFormField extends StatelessWidget {
 final String text;
 final String hint;
 final Function onSave;
+final bool obs ;
 final Function validator;
 final TextEditingController controller;
 final Color color;
   CustomTextFormField({this.text,
     this.hint,
     this.onSave,
+    this.obs,
     this.controller,
     this.validator,
     this.color,
@@ -35,7 +37,8 @@ final Color color;
 
               onSaved: onSave,
               validator:validator ,
-
+         //    textDirection:TextDirection.rtl,
+              obscureText:obs,
               controller: controller,
              // textAlign:TextAlign.end,
 

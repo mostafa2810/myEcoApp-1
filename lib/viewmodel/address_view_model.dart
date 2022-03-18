@@ -11,6 +11,13 @@ class AddressViewModel extends GetxController{
   TextEditingController apartment= TextEditingController();
   TextEditingController floor= TextEditingController();
   TextEditingController mobile = TextEditingController();
+  TextEditingController  country= TextEditingController();
+  TextEditingController city= TextEditingController();
+  String dropdownValue = '+968';
+  // TextEditingController floor= TextEditingController();
+  // TextEditingController mobile = TextEditingController();
+
+
 
    void addAddress() async{
      print("add6666");

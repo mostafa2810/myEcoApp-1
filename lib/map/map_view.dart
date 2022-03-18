@@ -28,8 +28,8 @@ class MapView extends StatefulWidget{
   void currentLocation()async{
 
 
-     position = await Geolocator().getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
- var lastposition=await Geolocator().getLastKnownPosition();
+     position = await Geolocator.getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
+ var lastposition=await Geolocator.getLastKnownPosition();
  print(lastposition);
    locationMessage="$position";
   }

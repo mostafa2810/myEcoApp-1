@@ -71,59 +71,20 @@ class _PostsScreenState extends State<OrderStatusView2> {
                 child: Row(
                   children: [
                     SizedBox(
-                      width: 20,
+                        width: MediaQuery.of(context).size.width * 0.62
                     ),
-                    Row(
-                      children: [
-
-                        Text(
-                          "Luban   ",
-                          style: TextStyle(
-                              color: HexColor("#ff68682A"),
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Container(
-                          width:70,
-                          child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fill,
-                          ),
-                        ),
-                      ],
+                    Container(
+                      width:40,
+                      //width:57,
+                      child: Image.asset("assets/wh3.jpeg",
+                          fit:BoxFit.fitWidth
+                      ),
                     ),
                     SizedBox(
-                      width: 20
+                        width: 5
                     ),
-
                   ],
                 ))),
-        //backgroundColor: Colors.lightBlueAccent,
-        // actions: <Widget>[
-        //   IconButton(
-        //       color:Colors.red,
-        //       icon: Icon(Icons.apps,size:34,),
-        //
-        //       onPressed: () {
-        //
-        //
-        //       }),
-        //
-        //   SizedBox(
-        //       width:7
-        //   ),
-        //   IconButton(
-        //       color:Colors.black,
-        //       icon: Icon(Icons.apps_sharp,size:34,),
-        //
-        //       onPressed: () {
-        //
-        //
-        //       })
-
-        //]
       ),
         body:
         Container(
@@ -139,7 +100,7 @@ class _PostsScreenState extends State<OrderStatusView2> {
                   child: StreamBuilder(
                       stream:
                       FirebaseFirestore.instance.collection('orders_checkout')
-.where("order_id", isEqualTo: widget.order_id)
+                      .where("order_id", isEqualTo: widget.order_id)
                           .snapshots(),
                       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (!snapshot.hasData) return Center(child: Text('Loading'));
@@ -157,6 +118,7 @@ class _PostsScreenState extends State<OrderStatusView2> {
                                   return GetBuilder<HomeViewModel>(
                                       init: Get.find(),
                                       builder: (controller) => Container(
+                                        color:Colors.red,
                                           padding: EdgeInsets.all(5),
                                           child: Container(
                                             child: Column(
@@ -168,42 +130,58 @@ class _PostsScreenState extends State<OrderStatusView2> {
                                                       children: [
                                                         Row(
                                                           children: [
-                                                            Text("OrderId : ",
-                                                                style: TextStyle(
-                                                                    color: Colors.black,
-                                                                    fontSize: 21)),
+
+                                                            SizedBox(width:20),
                                                             Text(
                                                                 posts.data()[
                                                                 'order_id'] ??
                                                                     "",
                                                                 style: TextStyle(
-                                                                    fontSize: 19,
+                                                                    fontSize: 16,
                                                                     fontWeight:
                                                                     FontWeight.bold,
                                                                     color: Colors.green)),
+                                                            Text(" : رمز الاوردر الحالي   ",
+                                                                style: TextStyle(
+                                                                    color: Colors.black,
+                                                                    fontSize: 18)),
+
                                                           ],
                                                         ),
                                                         SizedBox(height: 5),
                                                         Text(
                                                           posts.data()['time']??"",
                                                         ),
+                                                        SizedBox(height: 22),
                                                         Row(
                                                           children: [
-                                                            SizedBox(width: 20),
+                                                            SizedBox(width: 7),
                                                             Container(
-                                                                width: 50,
+                                                                width: 33,
                                                                 child: Image.asset(
                                                                     'assets/ord.png')),
-                                                            SizedBox(width: 20),
-                                                            Text("Your Order Is : "),
-                                                            Text(
+                                                            SizedBox(width: 5),
+                                                            if(posts.data()['order_status']=='pending')
+                                                              Column(
+                                                                children: [
+                                                                  Text("تم ارسال الطلب بنجاح  " , style: TextStyle(fontSize:15,color:Colors.green,)),
 
-                                                                posts.data()[
-                                                                'order_status'] ??
-                                                                    "",
-                                                                style: TextStyle(
-                                                                    fontSize:23,
-                                                                    color: Colors.green)),
+                                                                  Text("في انتظار الموافقة   " , style: TextStyle(fontSize:15,color:Colors.green,)),
+                                                                ],
+                                                              ),
+                                                            Text(" :  حالة الاوردر     " ,style:TextStyle(color:Colors.black,fontSize:17,fontWeight:FontWeight.w800),),
+
+
+
+                                    //         color: Colors.green)),)
+
+                                                            // Text(
+                                                            //     posts.data()[
+                                                            //     'order_status'] ??
+                                                            //         "",
+                                                            //     style: TextStyle(
+                                                            //         fontSize:23,
+                                                            //         color: Colors.green)),
                                                           ],
                                                         ),
                                                         Text(posts.data()['ord 1']??"",

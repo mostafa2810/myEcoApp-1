@@ -71,8 +71,6 @@ class _DetailsViewState extends State<DetailsView> {
 
 
 
-
-
     // Sqflite.devSetDebugModeOn(true);
      WidgetsFlutterBinding.ensureInitialized();
     return Scaffold(
@@ -86,7 +84,7 @@ class _DetailsViewState extends State<DetailsView> {
               Container(
                   width:MediaQuery.of(context).size.width,
                   height:180,
-                  child: Image.network(widget.model.image,fit:BoxFit.fill)),
+                  child: Image.network(widget.model.image,fit:BoxFit.fitHeight)),
               SizedBox(
                   height:15
               ),

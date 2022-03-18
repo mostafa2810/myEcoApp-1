@@ -6,6 +6,7 @@
 import 'dart:collection';
 
 import 'package:ecommerce/model/cart_product_model.dart';
+import 'package:ecommerce/view/check/address_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
@@ -38,10 +39,10 @@ class Map1 extends StatefulWidget {
 
    void currentLocation()async{
      position=await
-     Geolocator().getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
+     Geolocator.getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
      latLng = LatLng(position.latitude, position.longitude );
      cameraPosition = CameraPosition(target: latLng , zoom: 14);
-     var lastposition=await Geolocator().getLastKnownPosition();
+     var lastposition=await Geolocator.getLastKnownPosition();
      l1=position.latitude;
      l2=position.longitude;
 

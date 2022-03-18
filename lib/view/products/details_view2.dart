@@ -1,5 +1,6 @@
 import 'package:ecommerce/constants/const.dart';
 import 'package:ecommerce/model/cart_product_model.dart';
+import 'package:ecommerce/view/cart/cart_view.dart';
 import 'package:ecommerce/view/widgets/custom_button.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/cart_viewmodel.dart';
@@ -9,7 +10,6 @@ import 'package:get_storage/get_storage.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class DetailsView2 extends StatefulWidget {
-
   String name;
   num price;
   String details;
@@ -20,55 +20,53 @@ class DetailsView2 extends StatefulWidget {
   String brandemail;
 
   DetailsView2(
-      {this.name, this.image, this.price, this.details,
-        this.productId,this.brand,
-        this.x,
-        this.brandemail
-      });
+      {this.name,
+      this.image,
+      this.price,
+      this.details,
+      this.productId,
+      this.brand,
+      this.x,
+      this.brandemail});
 
   @override
   State<DetailsView2> createState() => _DetailsView2State();
 }
 
 class _DetailsView2State extends State<DetailsView2> {
-  int index=0;
+  int index = 0;
 
   String lg = '';
 
-
   @override
   void initState() {
-
-
     final box = GetStorage();
-    final box_country=box.read('country')??'x';
+    final box_country = box.read('country') ?? 'x';
 
-    if(box_country=='امارات'){
-      lg ='د.ا';
+    if (box_country == 'امارات') {
+      lg = 'د.ا';
     }
-    if(box_country=='البحرين'){
-      lg='د.ب';
+    if (box_country == 'البحرين') {
+      lg = 'د.ب';
     }
-    if(box_country=='قطر'){
-      lg='ر.ق';
+    if (box_country == 'قطر') {
+      lg = 'ر.ق';
     }
-    if(box_country=='سلطنة عمان'){
-      lg='ر.ع';
+    if (box_country == 'سلطنة عمان') {
+      lg = 'ر.ع';
     }
 
-    if(box_country=='كويت'){
-      lg='د.ك';
+    if (box_country == 'كويت') {
+      lg = 'د.ك';
     }
-    if(box_country=='السعودية'){
-
-      lg='ر.س' ;
+    if (box_country == 'السعودية') {
+      lg = 'ر.س';
     }
-    if(box_country=='x'){
-      lg='ر.س' ;
+    if (box_country == 'x') {
+      lg = 'ر.س';
     }
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +79,7 @@ class _DetailsView2State extends State<DetailsView2> {
         Container(
             width: MediaQuery.of(context).size.width,
             height: 180,
-            child: Image.network(widget.image, fit: BoxFit.fill)),
+            child: Image.network(widget.image, fit: BoxFit.fitHeight)),
         SizedBox(height: 15),
         Expanded(
           child: SingleChildScrollView(
@@ -95,26 +93,24 @@ class _DetailsView2State extends State<DetailsView2> {
                     color: HexColor("#ff68682A"),
                   ),
                   SizedBox(height: 15),
-
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
-                      widget.x,
-                      style:TextStyle(color:Colors.red,fontSize:16,fontWeight:FontWeight.w700)
-                  ),
+                  Text(widget.x,
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700)),
                   Custom_Text(
-                      text:'تفاصيل',
-                      fontSize:18,
+                    text: 'تفاصيل',
+                    fontSize: 18,
                     color: HexColor("#ff68682A"),
                   ),
                   SizedBox(
-                    height:20,
+                    height: 20,
                   ),
-                  Text(
-                      widget.details,
-                      style:TextStyle(color:Colors.black,fontSize:16)
-                  ),
+                  Text(widget.details,
+                      style: TextStyle(color: Colors.black, fontSize: 16)),
                 ],
               ),
             ),
@@ -134,29 +130,20 @@ class _DetailsView2State extends State<DetailsView2> {
                   ),
                   Row(
                     children: [
-
-                      SizedBox(
-                          width:5
-                      ),
+                      SizedBox(width: 5),
                       Custom_Text(
-                        text:lg,
+                        text: lg,
                         color: HexColor("#ff68682A"),
-                        fontSize:18,
-
+                        fontSize: 18,
                       ),
-                      SizedBox(
-                          width:5
-                      ),
+                      SizedBox(width: 5),
                       Custom_Text(
-                        text:'  '+widget.price.toString(),
+                        text: '  ' + widget.price.toString(),
                         color: HexColor("#ff68682A"),
-                        fontSize:18,
-
+                        fontSize: 18,
                       ),
                     ],
                   ),
-
-
                 ],
               ),
               SizedBox(width: 55),
@@ -168,53 +155,58 @@ class _DetailsView2State extends State<DetailsView2> {
                     child: CustomButton(
                         text: 'اضف',
                         onPressed: () {
-                          index=index+1;
+                          index = index + 1;
                           print("ttt");
                           print(widget.name);
                           print(widget.price);
-
-
-
                           final box = GetStorage();
-                          final box_brand=box.read('brand')??'x';
+                          final box_brand = box.read('brand') ?? 'x';
 
+                          if (widget.brand == box_brand || box_brand == 'x') {
 
-                          if(widget.brand==box_brand || box_brand =='x'){
-                            controller.addProduct2(
-                                CartProductModel(
-                                    name: widget.name,
-                                    image: widget.image,
-                                    price: widget.price.toString(),
-                                    quantity: 1,
-                                    productId: widget.productId,
-                                    brand:widget.brand,
-                                    brand_email:widget.brandemail
-                                ),
-                                widget.productId,
-
-                              // model.productId
-                              //productId:model.productId)
+                            controller.dialogAndAdd(
+                              CartProductModel(
+                                  name: widget.name,
+                                  image: widget.image,
+                                  price: widget.price.toString(),
+                                  quantity: 1,
+                                  productId: widget.productId,
+                                  brand: widget.brand,
+                                  brand_email: widget.brandemail),
+                              widget.productId,
                             );
-                            box.write('brand',widget.brand);
-                            box.write('brand_email',widget.brandemail);
-                          }
-                          else{
+                            // controller.addProduct2(
+                            //   CartProductModel(
+                            //       name: widget.name,
+                            //       image: widget.image,
+                            //       price: widget.price.toString(),
+                            //       quantity: 1,
+                            //       productId: widget.productId,
+                            //       brand: widget.brand,
+                            //       brand_email: widget.brandemail),
+                            //   widget.productId,
+                            //
+                            //   // model.productId
+                            //   //productId:model.productId)
+                            // );
+                            box.write('brand', widget.brand);
+                            box.write('brand_email', widget.brandemail);
+                            print("cooooo" + controller.totalPrice.toString());
+                          } else {
+
                             controller.dialogAndDelete(
                               CartProductModel(
-                                name: widget.name,
-                                image: widget.image,
-                                price: widget.price.toString(),
-                                quantity: 1,
-                                productId: widget.productId,
-                                brand:widget.brand,
-                                brand_email:widget.brandemail
-                            ),
-                          widget.productId,
+                                  name: widget.name,
+                                  image: widget.image,
+                                  price: widget.price.toString(),
+                                  quantity: 1,
+                                  productId: widget.productId,
+                                  brand: widget.brand,
+                                  brand_email: widget.brandemail),
+                              widget.productId,
                             );
-                            box.write('brand_email',widget.brandemail);
+                            box.write('brand_email', widget.brandemail);
                           }
-
-
 
                           //  controller.addProduct2(
                           //      CartProductModel
@@ -232,6 +224,38 @@ class _DetailsView2State extends State<DetailsView2> {
             ],
           ),
         ),
+        Container(height: 30),
+
+
+        GetBuilder<CartViewModel>(
+            init: CartViewModel(),
+            builder: (controller) => InkWell(
+              child: Container(
+             //   width:333,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.green)
+                ),
+                height:60,
+                child: Card(
+                  color:Colors.green,
+                  child: Row(
+                        children: [
+
+                          SizedBox(width:111),
+                          Text(controller.totalPrice.toString(),style:TextStyle(color:Colors.white,fontSize:17),),
+                          SizedBox(width:10),
+                          Container(
+                           // height: 60,
+                            child: Text("  =   انتقل الي السلة  ",style:TextStyle(color:Colors.white,fontSize:17),),
+                          ),
+                        ],
+                      ),
+                ),
+              ),
+              onTap:(){
+                Get.to(CartView2());
+              },
+            ))
       ])),
     );
   }

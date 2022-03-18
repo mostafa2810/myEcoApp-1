@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CheckOutScreen2 extends StatelessWidget {
+  String country,city;
   String address;
   String apartment;
   String floor;
@@ -16,6 +17,8 @@ class CheckOutScreen2 extends StatelessWidget {
   String brand_email;
 
   CheckOutScreen2(
+      this.country,
+    this.city,
     this.address,
     this.apartment,
     this.floor,
@@ -34,52 +37,41 @@ class CheckOutScreen2 extends StatelessWidget {
     // String cartmodel2=cartmodel.toString();
     return
       Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
-        title: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  // Colors.white,
-                  Colors.white,
-                  Colors.white,
-                ])),
-            height: 30,
-            child: Center(
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 15
-                    ),
-                    Row(
-                      children: [
+        backgroundColor:Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          title: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                    // Colors.white,
+                    Colors.white,
+                    //Colors.lightBlueAccent,
 
-                        Text(
-                          "Luban   ",
-                          style: TextStyle(
-                              color: HexColor("#ff68682A"),
-                              fontSize: 22,
-                              fontWeight: FontWeight.w700),
+                    // Colors.lightBlueAccent,
+                    Colors.white,
+                  ])),
+              height: 30,
+              child: Center(
+                  child: Row(
+                    children: [
+                      SizedBox(
+                          width:120
+                        //MediaQuery.of(context).size.width * 0.62
+                      ),
+                      Container(
+                        width:40,
+                        //width:57,
+                        child: Image.asset("assets/wh3.jpeg",
+                            fit:BoxFit.fitWidth
                         ),
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Container(
-                          width:70,
-                          child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fill,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-
-                  ],
-                ))),
-
-      ),
+                      ),
+                      SizedBox(
+                          width: 5
+                      ),
+                    ],
+                  ))),
+        ),
       body: GetBuilder<CheckOutViewModel>(
           init: CheckOutViewModel(),
           builder: (controller) => Container(
@@ -89,10 +81,16 @@ class CheckOutScreen2 extends StatelessWidget {
 
                     SizedBox(height: 3),
                     Container(
+                      color:Colors.white,
+                      height:120,
+                      width:600,
+                      child:Image.asset('assets/wh3.jpeg'),
+                    ),
+                    Container(
                         width: 300,
                         height: 580,
                         child: Card(
-                          color: Colors.grey[100],
+                        //  color: Colors.grey[100],
                             child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -169,25 +167,31 @@ class CheckOutScreen2 extends StatelessWidget {
                                       color: Colors.black,
                                       fontSize: 18,
                                     )),
-                                SizedBox(height: 20),
+                                SizedBox(height: 50),
+
                                 Container(
-                                   color: Colors.white,
+                                   color: Colors.white24,
                                     height:100,
-                                    width:350,
+                                    width:330,
                                     child:Center(
-                                      child: TextFormField(
-                                        maxLines:4,
-                                        decoration: InputDecoration(
-                                          hintStyle: TextStyle(fontSize: 16,color:Colors.grey),
-                                          hintText: 'اضافة ملاحظة ',
-                                          //suffixIcon: Icon(Icons.search),
-                                          border: InputBorder.none,
-                                          contentPadding: EdgeInsets.all(22),
+                                      child: Directionality(
+                                        textDirection:TextDirection.rtl,
+                                        child: TextFormField(
+                                          maxLines:4,
+                                          decoration: InputDecoration(
+                                            hintStyle: TextStyle(fontSize: 16,color:Colors.grey),
+                                            hintText: 'اضافة ملاحظة ',
+                                            //suffixIcon: Icon(Icons.search),
+                                            border: InputBorder.none,
+                                            contentPadding: EdgeInsets.all(22),
+                                          ),
+                                          controller:_notesController,
                                         ),
-                                        controller:_notesController,
                                       ),
                                     )
                                 ),
+
+
                                 SizedBox(height: 20),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -221,6 +225,8 @@ class CheckOutScreen2 extends StatelessWidget {
 
 
                                               controller.checkout(
+                                                country,
+                                                  city,
                                                   address,
                                                   apartment,
                                                   floor,
@@ -229,8 +235,9 @@ class CheckOutScreen2 extends StatelessWidget {
                                                   cartmodel,
                                                   total+shipping_cost,
                                                    brand_email,
-                                                   _notesController.text.toString()
+                                              _notesController.text.toString()
                                               );
+                                              print("doooo");
                                               opacity=1.0;
 
                                             },

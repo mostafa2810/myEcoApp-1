@@ -23,212 +23,264 @@ class _CountryViewState extends State<CountryView> {
      String x;
      return Scaffold(
        backgroundColor: Colors.white,
-       appBar:AppBar(
+       appBar: AppBar(
          backgroundColor: Colors.white,
-         title: Row(
-           children: [
-             Text("Luban   ",style:TextStyle(  color: HexColor("#ff68682A"),fontSize:22,
-                 fontWeight:FontWeight.w700
+         iconTheme: IconThemeData(color: Colors.black),
+         title: Container(
+             decoration: BoxDecoration(
+                 gradient: LinearGradient(colors: [
+                   // Colors.white,
+                   Colors.white,
+                   //Colors.lightBlueAccent,
 
-             ),),
-             SizedBox(
-               width: 80,
-             ),
-             Text("لبان   ",style:TextStyle(  color: HexColor("#ff68682A"),fontSize:22,
-                 fontWeight:FontWeight.w700
-
-             ),),
-           ],
-         ),
+                   // Colors.lightBlueAccent,
+                   Colors.white,
+                 ])),
+             height: 30,
+             child: Center(
+                 child: Row(
+                   children: [
+                     SizedBox(
+                         width: MediaQuery.of(context).size.width * 0.62
+                     ),
+                     Container(
+                       width:40,
+                       //width:57,
+                       child: Image.asset("assets/wh3.jpeg",
+                           fit:BoxFit.fitWidth
+                       ),
+                     ),
+                     SizedBox(
+                         width: 5
+                     ),
+                   ],
+                 ))),
        ),
        body:
-       Container(
-         child:Center(
-           child: Column(
-           //  mainAxisAlignment:MainAxisAlignment.center,
-             crossAxisAlignment:CrossAxisAlignment.center,
-             children: [
-              SizedBox(
-                height:20
-              ),
-               Row(
+       Directionality(
+         textDirection:TextDirection.rtl,
+         child: Container(
+             child:Center(
+               child: Column(
+                 //  mainAxisAlignment:MainAxisAlignment.center,
+                 crossAxisAlignment:CrossAxisAlignment.center,
                  children: [
-                   Radio(
-                      value:'سلطنة عمان',
-                     activeColor: Colors.green,
-
-                     groupValue:_value,
-                     onChanged:(value){
-                        print("val ==="+value.toString());
-                        setState(() {
-                          _value=value;
-
-                        });
-
-                     },
+                   SizedBox(
+                       height:20
                    ),
-                   SizedBox(width:22),
-                   Custom_Text(
-                     text: 'سلطنة عمان ',
-                     color: Colors.black,
-                   )
-                 ],
-               ),
-               SizedBox(
-                   height:20
-               ),
-               Row(
-                 children: [
-                   Radio(
-                     value:'الكويت',
-                     activeColor: Colors.green,
+                   Row(
+                     children: [
+                       //  SizedBox(width:MediaQuery.of(context).size.width * 0.60),
+                       Container(
+                         width:70,
+                         child: Custom_Text(
+                           text: ' عمان ',
+                           color: Colors.black,
+                         ),
+                       ),
+                       SizedBox(width:22),
+                       Radio(
+                         value:'سلطنة عمان',
+                         activeColor: Colors.green,
 
-                     groupValue:_value,
-                     onChanged:(value){
-                       print("val ==="+value.toString());
-                       setState(() {
-                         _value=value;
-                       });
+                         groupValue:_value,
+                         onChanged:(value){
+                           print("val ==="+value.toString());
+                           setState(() {
+                             _value=value;
 
-                     },
+                           });
+
+                         },
+                       ),
+
+
+                     ],
                    ),
-                   SizedBox(width:22),
-                   Custom_Text(
-                     text: 'الكويت ',
-                     color: Colors.black,
-                   )
-                 ],
-               ),
-               SizedBox(
-                   height:20
-               ),
-               Row(
-                 children: [
-                   Radio(
-                     value:'امارات',
-                     activeColor: Colors.green,
-
-                     groupValue:_value,
-                     onChanged:(value){
-                       print("val ==="+value.toString());
-
-                       setState(() {
-                         _value=value;
-                       });
-
-                     },
+                   SizedBox(
+                       height:20
                    ),
-                   SizedBox(width:22),
-                   Custom_Text(
-                     text: 'امارات',
-                     color: Colors.black,
-                   )
-                 ],
-               ),
-               SizedBox(
-                   height:20
-               ),
-               Row(
-                 children: [
-                   Radio(
-                     activeColor: Colors.green,
+                   Row(
+                     children: [
+                       //  SizedBox(width:MediaQuery.of(context).size.width * 0.60),
+                       Container(
+                         width:70,
+                         child: Custom_Text(
+                           text: 'الكويت ',
+                           color: Colors.black,
+                         ),
+                       ),
+                       SizedBox(width:22),
+                       Radio(
+                         value:'الكويت',
+                         activeColor: Colors.green,
 
-                     value:'السعودية',
-                     groupValue:_value,
-                     onChanged:(value){
-                       print("val ==="+value.toString());
+                         groupValue:_value,
+                         onChanged:(value){
+                           print("val ==="+value.toString());
+                           setState(() {
+                             _value=value;
+                           });
 
-                       setState(() {
-                         _value=value;
-                       });
-                     },
+                         },
+                       ),
+
+
+                     ],
                    ),
-                   SizedBox(width:22),
-                   Custom_Text(
-                     text: 'السعودية',
-                     color: Colors.black,
-                   )
-                 ],
-               ),
-               SizedBox(
-                   height:20
-               ),
-               Row(
-                 children: [
-                   Radio(
-                     activeColor: Colors.green,
-
-                     value:'البحرين',
-                     groupValue:_value,
-                     onChanged:(value){
-                       print("val ==="+value.toString());
-
-                       setState(() {
-                         _value=value;
-                       });
-
-                     },
+                   SizedBox(
+                       height:20
                    ),
-                   SizedBox(width:22),
-                   Custom_Text(
-                     text: 'البحرين',
-                     color: Colors.black,
-                   )
-                 ],
-               ),
+                   Row(
+                     children: [
+                       //   SizedBox(width:MediaQuery.of(context).size.width * 0.67),
+                       Container(
+                         width:70,
+                         child: Custom_Text(
+                           text: 'امارات',
+                           color: Colors.black,
+                         ),
+                       ),
+                       SizedBox(width:22),
+                       Radio(
+                         value:'امارات',
+                         activeColor: Colors.green,
 
-               SizedBox(
-                   height:20
-               ),
-               Row(
-                 children: [
-                   Radio(
-                     activeColor: Colors.green,
+                         groupValue:_value,
+                         onChanged:(value){
+                           print("val ==="+value.toString());
 
-                     value:'قطر',
-                     groupValue:_value,
-                     onChanged:(value){
-                       print("val ==="+value.toString());
+                           setState(() {
+                             _value=value;
+                           });
 
-                       setState(() {
-                         _value=value;
-                       });
+                         },
+                       ),
 
-                       //  Get.offAll(ControlView());
-                     },
+
+                     ],
                    ),
-                   SizedBox(width:22),
-                   Custom_Text(
-                     text: 'قطر',
-                     color: Colors.black,
-                   )
-                 ],
-               ),
-               SizedBox(
-                 height:12
-               ),
-
-
-
-               RaisedButton(
-                   color: HexColor("#ff68682A"),
-                   child:Text("انتقل للرئيسية ",
-                   style:TextStyle(
-                     color:Colors.white,
-                     fontSize:18,
-                     fontWeight:FontWeight.w700
+                   SizedBox(
+                       height:20
                    ),
+                   Row(
+                     children: [
+                       ///   SizedBox(width:MediaQuery.of(context).size.width * 0.60),
+                       Container(
+                         width:70,
+                         child: Custom_Text(
+                           text: 'السعودية',
+                           color: Colors.black,
+                         ),
+                       ),
+                       SizedBox(width:22),
+                       Radio(
+                         activeColor: Colors.green,
+
+                         value:'السعودية',
+                         groupValue:_value,
+                         onChanged:(value){
+                           print("val ==="+value.toString());
+
+                           setState(() {
+                             _value=value;
+                           });
+                         },
+                       ),
+
+
+                     ],
                    ),
-                   onPressed:(){
-                     final box = GetStorage();
-                     final box_country=box.write('country',_value);
-                     print("tt"+_value);
-                     Get.offAll(ControlView());
-                   })
-             ],
-           ),
-         )
+                   SizedBox(
+                       height:20
+                   ),
+                   Row(
+                     children: [
+                       //  SizedBox(width:MediaQuery.of(context).size.width * 0.65),
+                       Container(
+                         width:70,
+                         child: Custom_Text(
+                           text: 'البحرين',
+                           color: Colors.black,
+                         ),
+                       ),
+                       SizedBox(width:22),
+                       Radio(
+                         activeColor: Colors.green,
+
+                         value:'البحرين',
+                         groupValue:_value,
+                         onChanged:(value){
+                           print("val ==="+value.toString());
+
+                           setState(() {
+                             _value=value;
+                           });
+
+                         },
+                       ),
+
+
+                     ],
+                   ),
+
+                   SizedBox(
+                       height:20
+                   ),
+                   Row(
+                     children: [
+                       //    SizedBox(width:MediaQuery.of(context).size.width * 0.67),
+                       Container(
+                         width:70,
+                         child: Custom_Text(
+                           text: 'قطر',
+                           color: Colors.black,
+                         ),
+                       ),
+                       SizedBox(width:22),
+                       Radio(
+                         activeColor: Colors.green,
+
+                         value:'قطر',
+                         groupValue:_value,
+                         onChanged:(value){
+                           print("val ==="+value.toString());
+
+                           setState(() {
+                             _value=value;
+                           });
+
+                           //  Get.offAll(ControlView());
+                         },
+                       ),
+
+
+                     ],
+                   ),
+                   SizedBox(
+                       height:12
+                   ),
+              RaisedButton(
+                  color: HexColor("#ff68682A"),
+                  child: Text(
+                    "انتقل للرئيسية ",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  onPressed: () {
+                    final box = GetStorage();
+                    final box_country = box.write('country', _value);
+                    print("tt" + _value);
+                    Get.offAll(ControlView());
+                  })
+            ],
+               ),
+             )
+         ),
        ),
      );
    }
 }
+

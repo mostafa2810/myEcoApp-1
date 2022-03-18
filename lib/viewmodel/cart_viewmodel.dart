@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/model/cart_product_model.dart';
 import 'package:ecommerce/model/product_moidel.dart';
 import 'package:ecommerce/services/database/cart_database_helper2.dart';
+import 'package:ecommerce/view/cart/cart_view.dart';
 import 'package:ecommerce/view/home/controll_view.dart';
 import 'package:ecommerce/view/home/home_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -97,16 +98,16 @@ class CartViewModel extends GetxController {
 
 
 
-
     else {
       print("brannnnd="+cartProductModel.brand_email);
       var dbHelper = CartDatabaseHelper.db;
       await dbHelper.insert(cartProductModel);
       print("done");
-       Get.snackbar('done', 'تم اضافة المنتج بنجاح',
-        snackPosition: SnackPosition.BOTTOM,
-        //backgroundColor: Colors.green,
-        colorText: Colors.black);
+     // Get.to(CartView2());
+       // Get.snackbar('done', 'تم اضافة المنتج بنجاح',
+       //  snackPosition: SnackPosition.BOTTOM,
+       //  //backgroundColor: Colors.green,
+       //  colorText: Colors.black);
     }
 
     _cartProductModel.add(cartProductModel);
@@ -115,6 +116,35 @@ class CartViewModel extends GetxController {
     update();
     getAllProduct();
    
+  }
+
+
+  dialogAndAdd(CartProductModel cartProductModel, String productId){
+
+    Get.defaultDialog(
+      title: "متاكد من الاضافة الي السلة  ",
+      middleText:"",
+      onConfirm:(){
+        addProduct2(cartProductModel,productId);
+        print("");
+        Get.back();
+        // Get.off(ControlView());
+      },
+
+      onCancel:(){
+        print("kk");
+      },
+      textCancel:"لا",
+      textConfirm:"نعم",
+      cancelTextColor:Colors.deepOrange,
+      buttonColor:Colors.red,
+      confirmTextColor:Colors.white,
+      barrierDismissible: true,
+      //middleText: "Hello world!",
+      backgroundColor: Colors.white,
+      titleStyle: TextStyle(color: Colors.green),
+      middleTextStyle: TextStyle(color: Colors.white),
+    );
   }
 
 
@@ -130,6 +160,7 @@ class CartViewModel extends GetxController {
         Get.back();
        // Get.off(ControlView());
       },
+
       onCancel:(){
         print("kk");
       },
@@ -137,11 +168,12 @@ class CartViewModel extends GetxController {
       textConfirm:"نعم",
       cancelTextColor:Colors.deepOrange,
       buttonColor:Colors.red,
+
       confirmTextColor:Colors.white,
       barrierDismissible: true,
       //middleText: "Hello world!",
-      backgroundColor: Colors.lightGreen,
-      titleStyle: TextStyle(color: Colors.white),
+      backgroundColor: Colors.white,
+      titleStyle: TextStyle(color: Colors.green),
       middleTextStyle: TextStyle(color: Colors.white),
     );
   }

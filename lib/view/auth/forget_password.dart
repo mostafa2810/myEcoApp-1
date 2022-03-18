@@ -40,6 +40,7 @@ class ForgetPasswordView extends GetWidget<AuthViewModel> {
 
                 CustomTextFormField(
                     text: "E_mail",
+                    obs: false,
                     hint: "dev@yahoo.com",
                     onSave: (value) {
                       controller.email = value;

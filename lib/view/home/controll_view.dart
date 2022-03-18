@@ -44,7 +44,7 @@ class ControlView extends StatelessWidget {
               label: '',
               icon: Padding(
                 padding: const EdgeInsets.only(top: 15),
-                child: Image.asset('assets/m3.png',
+                child: Image.asset('assets/home1.jpg',
                     fit: BoxFit.contain, width: 30),
               )),
           BottomNavigationBarItem(

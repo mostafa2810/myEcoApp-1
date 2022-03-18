@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/model/cart_product_model.dart';
 import 'package:ecommerce/services/database/cart_database_helper2.dart';
+import 'package:ecommerce/view/check/last_view.dart';
 import 'package:ecommerce/view/check/order_status.dart';
 import 'package:ecommerce/view/check/order_status2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -31,15 +32,25 @@ class CheckOutViewModel extends GetxController {
 
 
   void checkout(
+      String country,String city,
       String address, String apartment, String floor, String mobile,
       num total, List<CartProductModel> order, num sub_total,
-      String brand_email,String notes
-      ) async {
+      String brand_email, String notes
+      )
+  async {
     String pr, pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10;
     int q, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10;
     String order_id;
+
+    
     DateTime now = DateTime.now();
+
     String time = DateFormat('kk:mm:ss \n EEE d MMM').format(now);
+
+    Timestamp time2 = Timestamp.fromDate(now);
+
+
+
     print("add6666");
 
     for (int i = 0; i <= order.length; i++) {
@@ -158,6 +169,7 @@ class CheckOutViewModel extends GetxController {
 
         update();
       }
+
 
       if (order.length == 5) {
         pr1 = order[1].name ?? "";
@@ -359,16 +371,27 @@ class CheckOutViewModel extends GetxController {
     final User user = auth.currentUser;
     final uid = user.email;
 
-    if (order.length == 1) {
-      print("addd: " + address[0]);
 
+
+
+    if (order.length == 1) {
+
+
+
+      print("addd: " + address[0]);
       var random = new Random();
-      var x = random.nextInt(5000);
+      var x = random.nextInt(110);
+      print('x=' + x.toString());
+      var x2 = random.nextInt(430);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(1200);
       print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -377,40 +400,38 @@ class CheckOutViewModel extends GetxController {
         'ord 1': pr + " * " + q.toString(),
         'order_status': 'pending',
         'time': time,
+         'time2':time2,
+          'x':'x',
         'notes':notes,
         'total_amount': sub_total,
          'brand_email':brand_email,
-        'order_id': mobile[5] +
-            x.toString() +
-            address[0] +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            mobile[8]
+        'order_id': x.toString() +
+              x2.toString()+
+            x3.toString()
+            // x3.toString() + x2.toString()
+            // + x.toString()
       });
-      order_id = (mobile[5] +
-              x.toString() +
-              address[0] +
-              apartment[1] +
-              address[2] +
-              floor[0] +
-              mobile[4] +
-              mobile[2] +
-              mobile[8])
-          .toString();
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 2) {
       var random = new Random();
-      var x = random.nextInt(10000);
+      var x = random.nextInt(1500);
       print('x=' + x.toString());
-
+      var x2 = random.nextInt(90);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(760);
+      print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -422,38 +443,35 @@ class CheckOutViewModel extends GetxController {
         'ord 2': pr1 + " * " + q1.toString(),
         'order_status': 'pending',
         'time': time,
+         'time2':time2,
+          'x':'x',
         'total_amount': sub_total,
-        'order_id': x.toString() +
-            mobile[5] +
-            address[0] +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            mobile[8]
+        'order_id': x3.toString() +
+            x.toString()+
+            x2.toString()
       });
-      order_id = (x.toString() +
-              mobile[5] +
-              address[0] +
-              apartment[1] +
-              address[2] +
-              floor[0] +
-              mobile[4] +
-              mobile[2] +
-              mobile[8])
-          .toString();
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 3) {
       var random = new Random();
-      var x = random.nextInt(1000);
+      var x = random.nextInt(100);
       print('x=' + x.toString());
-
+      var x2 = random.nextInt(40);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(9);
+      print('x=' + x.toString());
+      print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -465,40 +483,35 @@ class CheckOutViewModel extends GetxController {
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
         'time': time,
+         'time2':time2,
+          'x':'x',
         'total_amount': sub_total,
         'order_status': 'pending',
-        'order_id': mobile[5] +
-            x.toString() +
-            address[0] +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            mobile[8] +
+        'order_id': x2.toString() +
+            x3.toString()+
             x.toString()
       });
-      order_id = mobile[5] +
-          x.toString() +
-          address[0] +
-          apartment[1] +
-          address[2] +
-          floor[0] +
-          mobile[4] +
-          mobile[2] +
-          mobile[8] +
-          x.toString();
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 4) {
       var random = new Random();
-      var x = random.nextInt(1000);
+      var x = random.nextInt(100);
       print('x=' + x.toString());
-
+      var x2 = random.nextInt(920);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(760);
+      print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -506,44 +519,42 @@ class CheckOutViewModel extends GetxController {
         'brand_email':brand_email,
         'notes':notes,
         'username': uid,
+
         'ord 1': pr + " * " + q.toString(),
         'ord 2': pr1 + " * " + q1.toString(),
         'ord 3': pr2 + " * " + q2.toString(),
         'ord 4': pr3 + " * " + q3.toString(),
         'time': time,
+         'time2':time2,
+          'x':'x',
         'total_amount': sub_total,
         'order_status': 'pending',
-        'order_id': mobile[5] +
-            address[0] +
-            x.toString() +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            mobile[8]
+        'order_id': x2.toString() +
+            x2.toString()+
+            x3.toString()
       });
 
-      order_id = mobile[5] +
-          address[0] +
-          x.toString() +
-          apartment[1] +
-          address[2] +
-          floor[0] +
-          mobile[4] +
-          mobile[2] +
-          mobile[8];
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 5) {
       var random = new Random();
-      var x = random.nextInt(3000);
+      var x = random.nextInt(700);
       print('x=' + x.toString());
-
+      var x2 = random.nextInt(400);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(600);
+      print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -558,37 +569,35 @@ class CheckOutViewModel extends GetxController {
         'ord 5': pr4 + " * " + q4.toString(),
         'order_status': 'pending',
         'time': time,
+         'time2':time2,
+          'x':'x',
         'total_amount': sub_total,
-        'order_id': mobile[5] +
-            address[0] +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            x.toString() +
-            mobile[2] +
-            mobile[8]
+        'order_id': x3.toString() +
+            x.toString()+
+            x3.toString()
       });
 
-      order_id = mobile[5] +
-          address[0] +
-          apartment[1] +
-          address[2] +
-          floor[0] +
-          mobile[4] +
-          x.toString() +
-          mobile[2] +
-          mobile[8];
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 6) {
       var random = new Random();
-      var x = random.nextInt(2200);
+      var x = random.nextInt(190);
+      print('x=' + x.toString());
+      var x2 = random.nextInt(600);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(800);
       print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -604,37 +613,35 @@ class CheckOutViewModel extends GetxController {
         'ord 6': pr5 + " *  " + q5.toString(),
         'order_status': 'pending',
         'time': time,
+         'time2':time2,
+          'x':'x',
         'total_amount': sub_total,
-        'order_id': mobile[5] +
-            x.toString() +
-            address[0] +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            mobile[8]
+        'order_id': x.toString() +
+            x2.toString()+
+            x3.toString()
       });
 
-      order_id = mobile[5] +
-          x.toString() +
-          address[0] +
-          apartment[1] +
-          address[2] +
-          floor[0] +
-          mobile[4] +
-          mobile[2] +
-          mobile[8];
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 7) {
       var random = new Random();
-      var x = random.nextInt(6600);
+      var x = random.nextInt(100);
+      print('x=' + x.toString());
+      var x2 = random.nextInt(400);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(970);
       print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -651,37 +658,34 @@ class CheckOutViewModel extends GetxController {
         'ord 7': pr6 + " * " + q6.toString(),
         'order_status': 'pending',
         'time': time,
+         'time2':time2,
+          'x':'x',
         'total_amount': sub_total,
-        'order_id': mobile[5] +
-            address[0] +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            x.toString() +
-            mobile[8]
+        'order_id': x2.toString() +
+            x2.toString()+
+            x2.toString()
       });
-
-      order_id = mobile[5] +
-          address[0] +
-          apartment[1] +
-          address[2] +
-          floor[0] +
-          mobile[4] +
-          mobile[2] +
-          x.toString() +
-          mobile[8];
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 8) {
       var random = new Random();
-      var x = random.nextInt(8700);
+      var x = random.nextInt(2100);
+      print('x=' + x.toString());
+      var x2 = random.nextInt(40);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(760);
       print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -699,37 +703,35 @@ class CheckOutViewModel extends GetxController {
         'ord 8': pr7 + " * " + q7.toString(),
         'order_status': 'pending',
         'time': time,
+         'time2':time2,
+          'x':'x',
         'total_amount': sub_total,
-        'order_id': mobile[5] +
-            address[0] +
-            apartment[1] +
-            x.toString() +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            mobile[8]
+        'order_id': x.toString() +
+            x3.toString()+
+            x3.toString()
       });
 
-      order_id = mobile[5] +
-          address[0] +
-          apartment[1] +
-          x.toString() +
-          address[2] +
-          floor[0] +
-          mobile[4] +
-          mobile[2] +
-          mobile[8];
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 9) {
       var random = new Random();
-      var x = random.nextInt(8900);
+      var x = random.nextInt(700);
+      print('x=' + x.toString());
+      var x2 = random.nextInt(12);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(900);
       print('x=' + x.toString());
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -747,40 +749,38 @@ class CheckOutViewModel extends GetxController {
         'ord 8': pr7 + " * " + q7.toString(),
         'ord 9': pr8 + " * " + q8.toString(),
         'order_status': 'pending',
+          'x':'x',
         'time': time,
+         'time2':time2,
         'total_amount': sub_total,
-        'order_id': mobile[5] +
-            address[0] +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            mobile[8] +
-            x.toString()
+        'order_id': x2.toString() +
+            x3.toString()+
+            x3.toString()
         //order.toList(),//order[i].name,
       });
 
-      order_id = mobile[5] +
-          address[0] +
-          apartment[1] +
-          address[2] +
-          floor[0] +
-          mobile[4] +
-          mobile[2] +
-          mobile[8] +
-          x.toString();
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
 
     if (order.length == 10) {
       var random = new Random();
-      var x = random.nextInt(1000);
+      var x = random.nextInt(100);
+      print('x=' + x.toString());
+      var x2 = random.nextInt(400);
+      print('x=' + x.toString());
+      var x3 = random.nextInt(900);
       print('x=' + x.toString());
 
       await Firestore.instance
           .collection('orders_checkout')
           .document()
           .setData({
+        'country':country.toString(),
+        'city':city.toString(),
         'address': address.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
@@ -800,28 +800,22 @@ class CheckOutViewModel extends GetxController {
         'ord 10': pr9 + " * " + q9.toString(),
         'ord 11': pr10 + " * " + q10.toString(),
         'order_status': 'pending',
+         'x':'x',
         'time': time,
+         'time2':time2,
         'total_amount': sub_total,
-        'order_id': x.toString() +
-            mobile[5] +
-            address[0] +
-            apartment[1] +
-            address[2] +
-            floor[0] +
-            mobile[4] +
-            mobile[2] +
-            mobile[8]
+        'order_id': x3.toString() +
+            x2.toString()+
+            x.toString()
+        // mobile[2] +
+            // mobile[8]
         //order.toList(),//order[i].name,
       });
-      order_id = x.toString() +
-          mobile[5] +
-          address[0] +
-          apartment[1] +
-          address[2] +
-          floor[0] +
-          mobile[4] +
-          mobile[2] +
-          mobile[8];
+      order_id =  x.toString() +
+          x2.toString()+
+          x2.toString() +
+          x3.toString() + x2.toString()
+          + x.toString();
     }
     print("uid=" + uid.toString());
     print("time =" + time.toString());
@@ -829,7 +823,9 @@ class CheckOutViewModel extends GetxController {
     final box_order=box.write('ordernum1','nummmm');
 
 
-    Get.offAll(OrderStatusView2(order_id: order_id,cartmodel:_cartProductModel));
+    //Get.offAll(OrderStatusView2(order_id: order_id,cartmodel:_cartProductModel));
+    print("order_idddd"+order_id);
+    Get.offAll(LastView());
     // Get.offAll(OrderStatus(
     //   order_id: order_id,
     //   cartmodel: _cartProductModel,

@@ -5,6 +5,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/view/products/details_view2.dart';
 import 'package:ecommerce/view/products/products_view.dart';
+import 'package:ecommerce/view/products/products_view2.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/home_view_model.dart';
 
@@ -59,35 +60,19 @@ class _PostsScreenState extends State<OffersBrands> {
               child: Center(
                   child: Row(
                     children: [
-
                       SizedBox(
-                        width: 15
+                          width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Row(
-                        children: [
-
-                          Text(
-                            "  Luban   ",
-                            style: TextStyle(
-                                color: HexColor("#ff68682A"),
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          SizedBox(
-                            width: 12,
-                          ),
-                          Container(
-                            width:70,
-                            child: Image.asset("assets/wh3.png",
-                              fit:BoxFit.fill,
-                            ),
-                          ),
-                        ],
+                      Container(
+                        width:40,
+                        //width:57,
+                        child: Image.asset("assets/wh3.jpeg",
+                            fit:BoxFit.fitWidth
+                        ),
                       ),
                       SizedBox(
-                        width: 80,
+                          width: 5
                       ),
-
                     ],
                   ))),
         ),

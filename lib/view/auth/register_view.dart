@@ -30,15 +30,16 @@ class RegisterView extends GetWidget<AuthViewModel> {
               child: Column(children: <Widget>[
 
                 Custom_Text(
-                  text: "Sign Up",
+                  text: "تسجيل",
                   fontSize: 30,
                 ),
 
                 SizedBox(height: 7),
                 SizedBox(height: 20),
                 CustomTextFormField(
-                    text: "Name",
-                    hint: "Pesa",
+                    text: "الاسم",
+                    obs: false,
+                    hint: "omar",
                     onSave: (value) {
                       controller.name = value;
                     },
@@ -60,8 +61,9 @@ class RegisterView extends GetWidget<AuthViewModel> {
                 //       }
                 //     }),
                 CustomTextFormField(
-                    text: "Email",
-                    hint: "dev@example.com",
+                    text: "الايميل",
+                    hint: "dev@gmail.com",
+                    obs: false,
                     onSave: (value) {
                       controller.email = value;
                     },
@@ -74,6 +76,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                 CustomTextFormField(
                     text: "Password",
                     hint: "************",
+                    obs: true,
                     onSave: (value) {
                       controller.password = value;
                     },
@@ -83,6 +86,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                       }
                     }),
                 SizedBox(height: 20),
+
                 CustomButton(
                   onPressed: () {
                     _formKey.currentState.save();

@@ -5,12 +5,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/helper/local_storage_data.dart';
 import 'package:ecommerce/view/brands/brands_view.dart';
+import 'package:ecommerce/view/brands/brands_view2.dart';
 import 'package:ecommerce/view/cart/cart_view.dart';
 import 'package:ecommerce/view/category/category.dart';
 import 'package:ecommerce/view/check/all_orders_view.dart';
 import 'package:ecommerce/view/check/noorders_view.dart';
 import 'package:ecommerce/view/home/controll_view.dart';
 import 'package:ecommerce/view/owner/owner_check.dart';
+import 'package:ecommerce/view/owner/owner_code.dart';
 import 'package:ecommerce/view/owner/owner_home_view.dart';
 import 'package:ecommerce/view/profile/change_country.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -47,7 +49,7 @@ class _SidebarPageState extends State<SidebarPage> {
       CollapsibleItem(
           text: 'الرئيسية',
           isSelected: true,
-          icon: Icons.assessment,
+          icon: Icons.home,
           onPressed: ()
           {
              Get.offAll(ControlView());
@@ -55,18 +57,11 @@ class _SidebarPageState extends State<SidebarPage> {
       ),
 
       CollapsibleItem(
-          text: ' التصنيفات ',
+          text: ' الاقسام ',
           icon: Icons.category_sharp,
     onPressed: ()  async {
 
              Get.to( CategoryView());
-          }
-      ),
-      CollapsibleItem(
-          text: 'صفحتي كتاجر ',
-          icon: Icons.supervised_user_circle,
-          onPressed: () {
-               Get.to(OwnerCheck());
           }
       ),
 
@@ -74,20 +69,27 @@ class _SidebarPageState extends State<SidebarPage> {
           text: ' المتاجر ',
           icon: Icons.shop_outlined,
           onPressed: ()  async {
-
-             Get.to(BrandsView());
+            Get.to(PostsScreen());
+           // Get.to(BrandsView());
 
           }
       ),
 
-
       CollapsibleItem(
-          text: ' تغير الدولة  ',
-          icon: Icons.map,
+          text: '  طلباتي   ',
+          icon: Icons.note,
           onPressed: ()  async {
+            final box = GetStorage();
+            final box_name=box.read('email');
+            final box_order=box.read('ordernum1')??"x";
+            print("bbb"+box_name);
+            if(box_order=='x'){
 
-            Get.to(ChangeCountry());
-
+              Get.to(NoOrdersView());
+            }
+            else{
+              Get.to(AllOrdersView(user:box_name,));
+            }
           }
       ),
 
@@ -100,25 +102,33 @@ class _SidebarPageState extends State<SidebarPage> {
 
           }
       ),
+
+
       CollapsibleItem(
-          text: '  طلباتي   ',
+          text: 'صفحتي كتاجر ',
+          icon: Icons.supervised_user_circle,
+          onPressed: () {
+
+            Get.to(OwnerCodeView());
+              // Get.to(OwnerCheck());
+          }
+      ),
+
+
+
+
+      CollapsibleItem(
+          text: ' تغير الدولة  ',
           icon: Icons.map,
           onPressed: ()  async {
-            final box = GetStorage();
-            final box_name=box.read('name');
-            final box_order=box.read('ordernum1')??"x";
 
-            if(box_order=='x'){
-
-              Get.to(NoOrdersView());
-            }
-            else{
-              Get.to(AllOrdersView(user:box_name,));
-            }
-
+            Get.to(ChangeCountry());
 
           }
       ),
+
+
+
 
       CollapsibleItem(
           text: 'تسجيل خروج ',

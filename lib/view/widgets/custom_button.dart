@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
    Widget build(BuildContext context) {
      return  FlatButton(
          shape:RoundedRectangleBorder(
-           borderRadius:BorderRadius.circular(30),
+           borderRadius:BorderRadius.circular(20),
 
          ),
          padding:EdgeInsets.all(18),
@@ -29,7 +29,7 @@ class CustomButton extends StatelessWidget {
          onPressed:onPressed,
          child:Custom_Text(
            text:text,
-           fontSize:20,
+           fontSize:18,
            alignment:Alignment.center,
            color: Colors.white,
          ));

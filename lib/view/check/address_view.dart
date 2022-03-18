@@ -1,8 +1,7 @@
-
-
- import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/model/cart_product_model.dart';
 import 'package:ecommerce/view/check/address_check.dart';
+import 'package:ecommerce/view/widgets/custom_formfield.dart';
 import 'package:ecommerce/view/widgets/custom_textformfield.dart';
 import 'package:ecommerce/viewmodel/address_view_model.dart';
 import 'package:flutter/material.dart';
@@ -13,15 +12,21 @@ import 'checkout_screen2.dart';
 
 
 
- class AdressScreen extends StatelessWidget {
+class AdressScreen extends StatefulWidget {
   //List<>String name;
   num total;
   List<CartProductModel> cartmodel;
-  String brand_email;
   double lat,long;
   //String address;
   AdressScreen({this.total,this.cartmodel,this.lat,this.long});
- // const CheckOutScreen({Key key}) : super(key: key);
+
+  @override
+  State<AdressScreen> createState() => _AdressScreenState();
+}
+
+class _AdressScreenState extends State<AdressScreen> {
+  String brand_email;
+
   @override
   Widget build(BuildContext context) {
     TextEditingController address3= TextEditingController();
@@ -50,21 +55,20 @@ import 'checkout_screen2.dart';
                       ),
                       Row(
                         children: [
-
-                          Text(
-                            "Luban   ",
-                            style: TextStyle(
-                                color: HexColor("#ff68682A"),
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700),
-                          ),
+                          // Text(
+                          //   "Luban   ",
+                          //   style: TextStyle(
+                          //       color: HexColor("#ff68682A"),
+                          //       fontSize: 22,
+                          //       fontWeight: FontWeight.w700),
+                          // ),
                           SizedBox(
-                            width: 12,
+                            width: 200
                           ),
                           Container(
-                            width:70,
+                            width:60,
                             child: Image.asset("assets/wh3.jpeg",
-                              fit:BoxFit.fill,
+                              fit:BoxFit.cover
                             ),
                           ),
                         ],
@@ -77,145 +81,239 @@ import 'checkout_screen2.dart';
                   ))),
 
         ),
-      body: GetBuilder<AddressViewModel>(
-        init:AddressViewModel(),
-        builder:(controller)=>
-        Container(
-          child:  Form(
-            key: _formKey,
-            child: Column(
-              children:[
-                SizedBox(
-                  height:30
-                ),
-              Column(
-                children: [
-                  Container(
-                    padding:EdgeInsets.only(left:30),
-                    width:330,
-                    child: CustomTextFormField(
-                      controller:controller.address,
-                      hint: 'العنوان ',
-                      text: '',
-                      color:Colors.black,
-                      onSave: (value) {
-                      controller.address.text= value;
-                      print("ttt ="+controller.address.toString());
-                      },
-                        validator: (value) {
-                          if (value == null || value=='' ) {
-                            return ("Enter address ");
-                          }
-                        }
-                    ),
-                  ),
-                  Container(
-                    padding:EdgeInsets.only(left:30),
-                    width:330,
-                    child: CustomTextFormField(
-                      controller:controller.apartment,
-                      hint: 'المبني ',
-                      text:'',
-                      color:Colors.black,
-                      onSave: (value) {
-                          controller.apartment .text= value;
-                      },
-                        validator: (value) {
-                          if (value == null|| value=='' ){
-                            return ("Enter apartment ");
-                          }
-                        }
-                    ),
-                  ),
-                  Container(
-                    padding:EdgeInsets.only(left:30),
-                    width:330,
-                    child: CustomTextFormField(
-                      controller: controller.floor,
-                      hint: 'الطابق ',
-                      text: '',
-                      color:Colors.black,
-                      onSave: (value) {
-                        print("lll= "+value);
-                          controller.floor.text= value;
-                      },
-                        validator: (value) {
-                          if (value == null|| value=='') {
-                            return ("Enter floor ");
-                          }
-                        }
-                    ),
-                  ),
+        body: GetBuilder<AddressViewModel>(
+          init:AddressViewModel(),
+          builder:(controller)=>
+              SingleChildScrollView(
+                child: Directionality(
+                  textDirection:TextDirection.rtl,
+                  child: Container(
+                      child:  Form(
+                        key: _formKey,
+                        child: Column(
+                        //  crossAxisAlignment:CrossAxisAlignment.baseline,
+                            children:[
+                              SizedBox(
+                                  height:30
+                              ),
+                              Column(
+                                children: [
+                                  Container(
+                                    padding:EdgeInsets.only(left:30),
+                                    width:330,
+                                    child: CustomFormField(
+                                        controller:controller.country,
+                                        hint: 'الدولة ',
+                                        text: '',
+                                        color:Colors.black,
+                                        onSave: (value) {
+                                          controller.country.text= value;
+                                          print("ttt ="+controller.country.toString());
+                                        },
+                                        validator: (value) {
+                                          if (value == null || value=='' ) {
+                                            return ("ادخل الدولة ");
+                                          }
+                                        }
+                                    ),
+                                  ),
 
-                    Container(
-                      padding:EdgeInsets.only(left:30),
-                      width:330,
-                      child: CustomTextFormField(
-                        controller:controller.mobile,
-                        hint: 'رقم الجوال',
-                        text:'',
-                        color:Colors.black,
-                        onSave: (value) {
-                            controller.mobile.text= value;
-                        },
-                          validator: (value) {
-                            if (value == null || value==''|| value.length<9|| value.length>12) {
-                              return ("Enter correct mobile number ");
-                            }
-                          }
-                      ),
-                    ),
-                ],
+                                  Container(
+                                    padding:EdgeInsets.only(left:30),
+                                    width:330,
+                                    child: CustomFormField(
+                                        controller:controller.city,
+                                        hint: 'المدينة ',
+                                        text: '',
+                                        color:Colors.black,
+                                        onSave: (value) {
+                                          controller.city.text= value;
+                                          print("ttt ="+controller.city.toString());
+                                        },
+                                        validator: (value) {
+                                          if (value == null || value=='' ) {
+                                            return (" ادخل المدينة ");
+                                          }
+                                        }
+                                    ),
+                                  ),
+
+                                  Container(
+                                    padding:EdgeInsets.only(left:30),
+                                    width:330,
+                                    child: CustomFormField(
+                                        controller:controller.address,
+                                        hint: 'عنوان الشارع  ',
+                                        text: '',
+                                        color:Colors.black,
+                                        onSave: (value) {
+                                          controller.address.text= value;
+                                          print("ttt ="+controller.address.toString());
+                                        },
+                                        validator: (value) {
+                                          if (value == null || value=='' ) {
+                                            return ("ادخل العنوان  ");
+                                          }
+                                        }
+                                    ),
+                                  ),
+                                  Container(
+                                    padding:EdgeInsets.only(left:30),
+                                    width:330,
+                                    child: CustomFormField(
+                                        controller:controller.apartment,
+                                        hint: 'رقم المبني   ',
+                                        text:'',
+                                        color:Colors.black,
+                                        onSave: (value) {
+                                          controller.apartment .text= value;
+                                        },
+                                        // validator: (value) {
+                                        //   if (value == null|| value=='' ){
+                                        //     return ("Enter apartment ");
+                                        //   }
+                                        // }
+                                    ),
+                                  ),
+                                  Container(
+                                    padding:EdgeInsets.only(left:30),
+                                    width:330,
+                                    child: CustomFormField(
+                                        controller: controller.floor,
+                                        hint: 'رقم الشقة  ',
+                                        text: '',
+                                        color:Colors.black,
+                                        onSave: (value) {
+                                          print("lll= "+value);
+                                          controller.floor.text= value;
+                                        },
+                                        validator: (value) {
+                                          if (value == null|| value=='') {
+                                            return ("ادخل رقم الشقة  ");
+                                          }
+                                        }
+                                    ),
+                                  ),
+
+                                  Directionality(
+                                    textDirection:TextDirection.ltr,
+                                    child: Row(
+                                      children: [
+
+                                        SizedBox(
+                                          width:40
+                                        ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top:28.0),
+                                        child: DropdownButton<String>(
+                                        value: controller.dropdownValue,
+                                        icon: const Icon(Icons.arrow_downward),
+                                        elevation: 16,
+                                        style: const TextStyle(color: Colors.deepPurple),
+                                        underline: Container(
+                                          height: 2,
+                                          color: Colors.green,
+                                        ),
+                                        onChanged: (String newValue) {
+                                          setState(() {
+                                            controller.dropdownValue = newValue;
+                                            print(controller.dropdownValue);
+                                          });
+                                        },
+                                        items: <String>['+968', '+971', '+965', '+974','+966','+973']
+                                            .map<DropdownMenuItem<String>>((String value) {
+                                          return DropdownMenuItem<String>(
+                                            value: value,
+                                            child: Text(value),
+                                          );
+                                        }).toList(),
+                                    ),
+                                      ),
+                                        SizedBox(
+                                            width:11
+                                        ),
+                                        Container(
+                                         // padding:EdgeInsets.only(left:30),
+                                          width:250,
+                                          child: CustomFormField(
+                                              controller:controller.mobile,
+                                              hint: 'رقم الجوال',
+                                              text:'',
+                                              color:Colors.black,
+                                              onSave: (value) {
+                                                controller.mobile.text= value;
+                                              },
+                                              validator: (value) {
+                                                if (value == null || value==''|| value.length<7|| value.length>15) {
+                                                  return (" ادخل رقم بشكل صحيح");
+                                                }
+                                              }
+                                          ),
+                                        ),
+
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                  height:20
+                              ),
+                              Container(
+                                child: RaisedButton(
+                                  color: HexColor("#ff68682A"),
+                                  onPressed: () {
+                                    //print(cartmodel[3].name);
+                                    _formKey.currentState.save();
+                                    if (_formKey.currentState.validate()) {
+                                      print("add2222");
+                                      print("cont" + controller.address.toString());
+                                      controller.addAddress();
+                                      print("add1111");
+                                      box.write('Adress_details1',
+                                        controller.address.text.toString(),);
+
+                                      box.write('Adress_details2', controller.apartment.text.toString(),);
+                                      box.write('Adress_details3', controller.floor.text.toString(),);
+                                      box.write('Adress_details4', controller.dropdownValue+controller.mobile.text.toString(),);
+
+                                      box.write('Adress_country', controller.country.text.toString(),);
+                                      box.write('Adress_city', controller.city.text.toString(),);
+
+
+                                      box.write('Lat', widget.lat,);
+                                      box.write('Long',widget.long);
+
+                                      // Get.to(AddressCheck());
+                                      Get.to( CheckOutScreen2(
+                                          controller.country.text.toString(),
+                                          controller.city.text.toString(),
+                                          controller.address.text.toString(),
+                                          controller.apartment.text.toString(),
+                                          controller.floor.text.toString(),
+                                          controller.dropdownValue+controller.mobile.text.toString(),
+                                          widget.total,
+                                          widget.cartmodel,
+                                          brand_email
+                                      ));
+                                    }
+
+                                    else{
+                                      Get.snackbar('حدث خطا', 'ادخلت بيانات بطريقة خاطئة');
+                                    }
+                                  },
+                                  child:Text("تاكيد الطلب",style:TextStyle(
+                                      color:Colors.white,
+                                      fontSize:22),),
+                                ),
+                              )
+                            ]
+                        ),
+                      )
+                  ),
+                ),
               ),
-                SizedBox(
-                  height:20
-                ),
-                Container(
-                      child: RaisedButton(
-                         color: HexColor("#ff68682A"),
-                        onPressed: () {
-                           //print(cartmodel[3].name);
-                         _formKey.currentState.save();
-                          if (_formKey.currentState.validate()) {
-                            print("add2222");
-                            print("cont" + controller.address.toString());
-                            controller.addAddress();
-                            print("add1111");
-                            box.write('Adress_details1',
-                              controller.address.text.toString(),);
-
-                            box.write('Adress_details2', controller.apartment.text.toString(),);
-                            box.write('Adress_details3', controller.floor.text.toString(),);
-                            box.write('Adress_details4', controller.mobile.text.toString(),);
-                            box.write('Lat', lat,);
-                            box.write('Long',long);
-
-                            // Get.to(AddressCheck());
-                            Get.to( CheckOutScreen2(
-                              controller.address.text.toString(),
-                              controller.apartment.text.toString(),
-                              controller.floor.text.toString(),
-                              controller.mobile.text.toString(),
-                              total,
-                             cartmodel,
-                              brand_email
-                            ));
-                          }
-
-                          else{
-                            Get.snackbar('حدث خطا', 'ادخلت بيانات بطريقة خاطئة');
-                          }
-                        },
-                        child:Text("تاكيد الطلب",style:TextStyle(
-                            color:Colors.white,
-                            fontSize:22),),
-                      ),
-                    )
-              ]
-            ),
-          )
-        ),
-      )
+        )
     );
   }
 }

@@ -5,6 +5,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/view/products/details_view2.dart';
 import 'package:ecommerce/view/products/products_view.dart';
+import 'package:ecommerce/view/products/products_view2.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/home_view_model.dart';
 
@@ -43,6 +44,8 @@ class _PostsScreenState extends State<BrandsCatView> {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     final userData =FirebaseFirestore.instance.collection('users').doc(user.uid).get();
+    
+
     Get.put(HomeViewModel());
     return Scaffold(
         backgroundColor: Colors.white,
@@ -55,6 +58,7 @@ class _PostsScreenState extends State<BrandsCatView> {
                     // Colors.white,
                     Colors.white,
                     //Colors.lightBlueAccent,
+
                     // Colors.lightBlueAccent,
                     Colors.white,
                   ])),
@@ -63,33 +67,18 @@ class _PostsScreenState extends State<BrandsCatView> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 25,
+                          width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Row(
-                        children: [
-
-                          Text(
-                            "Luban   ",
-                            style: TextStyle(
-                                color: HexColor("#ff68682A"),
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          SizedBox(
-                            width: 16,
-                          ),
-                          Container(
-                            width:60,
-                            child: Image.asset("assets/wh3.jpeg",
-                              fit:BoxFit.fill,
-                            ),
-                          ),
-                        ],
+                      Container(
+                        width:40,
+                        //width:57,
+                        child: Image.asset("assets/wh3.jpeg",
+                            fit:BoxFit.fitWidth
+                        ),
                       ),
                       SizedBox(
-                        width: 80,
+                          width: 5
                       ),
-
                     ],
                   ))),
         ),
@@ -104,72 +93,117 @@ class _PostsScreenState extends State<BrandsCatView> {
                   height:7,
                 ),
 
+
                 Flexible(
                   child: StreamBuilder(
+
                       stream:
                       FirebaseFirestore.instance.collection('category')
-                          .where('cat',isEqualTo:widget.cat)
+                          .where('catx',arrayContains:widget.cat) 
                           .snapshots(),
+
+
+                          
+                          
                       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (!snapshot.hasData) return Center(child: Text('Loading'));
                         switch (snapshot.connectionState) {
                           case ConnectionState.waiting:
                             return new Text('Loading...');
 //.where("category", isEqualTo:"tec")
+                        //
+                          //  Get.to(ProductsView(
+                         //       br: posts.data()['name'])
                           default:
-                            return GridView.builder(
+                            return ListView.builder(
                                 itemCount: snapshot.data.documents.length,
-                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  crossAxisSpacing: 2,
-                                  mainAxisSpacing: 3,
+                                itemBuilder: (context, index) {
+                                  DocumentSnapshot posts = snapshot.data.documents[index];
 
-                                ), //(orientation == Orientation.portrait) ? 2: 2.2),
-                                itemBuilder: (BuildContext context, int index) {
-                                  DocumentSnapshot posts =
-                                  snapshot.data.documents[index];
+                                  // (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
+                                  return Column(
+                                    children: <Widget>[
+                                      GetBuilder<HomeViewModel>(
+                                          init: Get.find(),
+                                          builder: (controller) =>
+                                              Container(
+                                                padding: EdgeInsets.only(left:30,right:30,top:11),
+                                                height: 230,
+                                                color:Colors.white10,
+                                                width: MediaQuery.of(context).size.width / 0.8,
+                                                child: InkWell(
+                                                  child: Card(
+                                                    //  elevation:30,
+                                                    child:
+                                                    Column(
+                                                      children: [
+                                                        Container(
+                                                          width:310,
+                                                          height:110,
+                                                          //backgroundImage: (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
+                                                          child:
+                                                          Image.network(posts.data()['pic'],
+                                                              fit:BoxFit.fill
+                                                          ),
 
-                                  return GetBuilder<HomeViewModel>(
-                                      init: Get.find(),
-                                      builder: (controller) => Container(
-                                          padding: EdgeInsets.all(5),
-                                          child: InkWell(
-                                            child: Card(
-                                              color: Colors.white,
-                                              child: Column(children: [
-                                                SizedBox(height: 20),
-                                                Container(
-                                                  width: 150,
-                                                  height: 90,
-                                                  child: Image.network(
-                                                      posts.data()['image'],
-                                                      fit: BoxFit.fitWidth),
-                                                ),
-                                                SizedBox(height: 5),
+                                                        ),
+                                                        SizedBox(
+                                                            height:3
+                                                        ),
 
-                                                Text((posts.data()['name']),
-                                                  style:TextStyle(
-                                                    color: HexColor("#ff68682A"),
-                                                    fontSize: 19,
+                                                        Container(
+                                                          padding: EdgeInsets.only(left:120),
+                                                          child: ListTile(
+                                                            leading:  Column(
+                                                              children: [
+                                                                Text(posts.data()['name'],style:TextStyle(fontSize:22),),
+                                                             //      Text(posts.data()['cat'].split('/').last,style:TextStyle(fontSize:13,color:Colors.green),),
+                                                              ],
+                                                            ),
+                                                            title:Container(
+                                                                width:70,
+                                                                height:40,
+                                                                child: CircleAvatar(
+                                                                  radius:30,
+                                                                  backgroundImage: NetworkImage( posts.data()['image']),
+                                                                )),
+
+
+                                                            // Image.network(posts.data()['image'])),
+                                                            //Text(posts.data()['name'],
+                                                            //   style:TextStyle(color:Colors.red,fontSize:21,fontWeight:FontWeight.w700),),
+
+                                                            //     trailing: Text(" " + posts.data()['class'],style:TextStyle(color:Colors.red,fontSize:24,fontWeight:FontWeight.w500),),
+                                                          ),
+                                                        ),
+
+
+
+                                                      ],
+                                                    ),
                                                   ),
-
-
+                                                  onTap: () {
+                                                    Get.to(ProductsView(
+                                                               br: posts.data()['name']));
+                                                  },
                                                 ),
-                                                SizedBox(height: 5),
+                                              )
 
-                                              ]),
-                                            ),
-                                            onTap: () {
-
-                                              Get.to(ProductsView(
-                                                 br: posts.data()['name'])
-                                                  //br: controller.categoryModel[index].name)
-                                              );
-                                              //         Get.to(ProductScreen(
-                                              // productmodel: controller.productModel,
-                                              // brand: controller.categoryModel[index].name));
-                                            },
-                                          )));
+                                      ),
+                                      //  Container(
+                                      //    padding: EdgeInsets.only(left:180),
+                                      //    child: ListTile(
+                                      //      // leading: Image.network(posts.data()['img']),
+                                      //      title: Text(posts.data()['name'],
+                                      //        style:TextStyle(color:Colors.red,fontSize:21,fontWeight:FontWeight.w700),),
+                                      //      subtitle: Container(
+                                      //          height:30,
+                                      //          child: Text(""  + posts.data()['cat'],style:TextStyle(color:Colors.white,fontSize:17,fontWeight:FontWeight.w500),)),
+                                      // //     trailing: Text(" " + posts.data()['class'],style:TextStyle(color:Colors.red,fontSize:24,fontWeight:FontWeight.w500),),
+                                      //    ),
+                                      //  ),
+                                    ],
+                                  );
                                 });
                         }
                       }),

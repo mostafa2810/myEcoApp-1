@@ -16,6 +16,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 //getx Support disaple automatically
 
+
+
 class AuthViewModel extends GetxController {
   GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -26,8 +28,9 @@ class AuthViewModel extends GetxController {
   var verificationId;
   Rx<User> _user = Rx<User>();
   get user => _user.value?.email;
-
   final LocalStorageData localStorageData = Get.find();
+
+
 
   @override
   void onInit() {

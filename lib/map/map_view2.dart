@@ -1,12 +1,16 @@
 
+import 'dart:io';
+
 import 'package:ecommerce/map/map1.dart';
 import 'package:ecommerce/model/cart_product_model.dart';
+import 'package:ecommerce/view/check/address_screen.dart';
+import 'package:ecommerce/view/check/address_view.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
-
+import 'package:location_permissions/location_permissions.dart';
 
 class MapView2 extends StatefulWidget {
   num total;
@@ -28,21 +32,55 @@ class MapView2 extends StatefulWidget {
 
    @override
   void initState() {
-     currentLocation();
+    // currentLocation();
     // TODO: implement initState
     super.initState();
-     currentLocation();
+   //  currentLocation();
   }
 
 
    void currentLocation()async{
-     position = await
-     Geolocator().getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
 
-     var lastposition=await Geolocator().getLastKnownPosition();
+     //LocationPermissions permission = await Geolocator.requestPermission();
+     location_permission();
+     position = await
+     Geolocator.getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
+
+     var lastposition=await Geolocator.getLastKnownPosition();
      print(lastposition);
-     locationMessage="$position";
+     setState(() {
+       locationMessage="$position";
+     });
+
+
    }
+
+   void location_permission() async {
+     final PermissionStatus permission = await _getLocationPermission();
+     if (permission == PermissionStatus.granted) {
+       final PermissionStatus permissionStatus = await LocationPermissions()
+           .requestPermissions(
+           permissionLevel: LocationPermissionLevel.location);
+
+       // Use the position to do whatever...
+     }
+   }
+
+   Future<PermissionStatus> _getLocationPermission() async {
+     final PermissionStatus permission = await LocationPermissions()
+         .checkPermissionStatus(level: LocationPermissionLevel.location);
+
+     if (permission != PermissionStatus.granted) {
+       final PermissionStatus permissionStatus = await LocationPermissions()
+           .requestPermissions(
+           permissionLevel: LocationPermissionLevel.location);
+
+       return permissionStatus;
+     } else {
+       return permission;
+     }
+   }
+
 
 
    @override
@@ -91,18 +129,26 @@ class MapView2 extends StatefulWidget {
                      style:TextStyle(color:Colors.white),
                    ),
                  ),
-                 // GoogleMap(
-                 //   initialCameraPosition: CameraPosition(
-                 //     target: LatLng( l1, l2),
-                 //     zoom: 14.4746,
-                 //   ),
-                 // ),
-                 // RaisedButton(onPressed:(){
-                 //
-                 // },
-                 //   color:Colors.lightGreen,
-                 //   child:Text("Ok",style:TextStyle(color:Colors.white),),
-                 // ),
+
+
+                  SizedBox(
+                    height:20
+                  ),
+                 RaisedButton(
+                   child:Text("قم بالتخطي",style:TextStyle(color:Colors.white,fontSize:18),),
+                   color: HexColor("#ff68682A"),
+                   onPressed:(){
+
+                     Get.offAll(
+                         AdressScreen(
+                           total: widget.total,
+                           cartmodel: widget.cartmodel,
+                           lat:0.0 ,
+                           long:0.0,
+                         )
+                     );
+                   },
+                 )
 
                ],
              ),

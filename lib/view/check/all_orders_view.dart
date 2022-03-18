@@ -41,7 +41,7 @@ class _PostsScreenState extends State<AllOrdersView> {
 
     Query query=FirebaseFirestore.instance.collection('orders_checkout')
         .where("username", isEqualTo: widget.user)
-        .orderBy('time', descending: true,);
+        .orderBy('time2', descending: true,);
 
 
     return Scaffold(
@@ -64,33 +64,18 @@ class _PostsScreenState extends State<AllOrdersView> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 25,
+                          width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Row(
-                        children: [
-
-                          Text(
-                            "Luban   ",
-                            style: TextStyle(
-                                color: HexColor("#ff68682A"),
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          SizedBox(
-                            width: 12,
-                          ),
-                          Container(
-                            width:70,
-                            child: Image.asset("assets/wh3.jpeg",
-                              fit:BoxFit.fill,
-                            ),
-                          ),
-                        ],
+                      Container(
+                        width:40,
+                        //width:57,
+                        child: Image.asset("assets/wh3.jpeg",
+                            fit:BoxFit.fitWidth
+                        ),
                       ),
                       SizedBox(
-                        width: 80,
+                          width: 5
                       ),
-
                     ],
                   ))),
         ),
@@ -136,122 +121,175 @@ class _PostsScreenState extends State<AllOrdersView> {
 
                                           Container(
                                               padding: EdgeInsets.all(5),
-                                              child: Container(
+                                              child:
+
+                                              Container(
                                                 child: Card(
-                                                  color:Colors.grey[300],
+                                                  color: Colors.grey[100],
                                                   child: Column(
                                                     children: [
                                                       Row(
                                                         children: [
-                                                          Text("OrderId : ",
+
+                                                          SizedBox(width:20),
+                                                          Text(
+                                                              posts.data()[
+                                                              'order_id'] ??
+                                                                  "",
+                                                              style: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                  FontWeight.bold,
+                                                                  color: Colors.green)),
+                                                          Text(" : رمز الاوردر الحالي   ",
                                                               style: TextStyle(
                                                                   color: Colors.black,
-                                                                  fontSize: 21)),
-                                                          Text(posts.data()['order_id']??"",
-                                                              style: TextStyle(
-                                                                  fontSize: 19,
-                                                                  fontWeight:FontWeight.bold,
-                                                                  color: Colors.green)),
+                                                                  fontSize: 18)),
+
                                                         ],
                                                       ),
                                                       SizedBox(height: 5),
-                                                      Text(posts.data()['time'].toString()??"",),
-                                                      SizedBox(height: 10),
+                                                      Text(
+                                                        posts.data()['time']??"",
+                                                      ),
+                                                      SizedBox(height: 22),
                                                       Row(
                                                         children: [
-                                                          SizedBox(width: 20),
+                                                          SizedBox(width: 7),
                                                           Container(
-                                                              width: 50,
+                                                              width: 33,
                                                               child: Image.asset(
                                                                   'assets/ord.png')),
-                                                          SizedBox(width: 20),
-                                                          Text("Your Order Is : "),
-                                                          Text(posts.data()['order_status']??"",
-                                                              style: TextStyle(
-                                                                  fontSize:23,
-                                                                  color: Colors.green)),
+                                                          SizedBox(width: 5),
+                                                            if( posts.data()['order_status']=='delivered')
+                                            Text(
+                                                "تم التوصيل  ",
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    color: Colors.green)),
+                                          if( posts.data()['order_status']=='pending')
+                                            Text(
+                                                "بانتظار الموافقة ",
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    color: Colors.green)),
+
+                                          if( posts.data()['order_status']=='cancel')
+                                            Text(
+                                                "تم الالغاء  ",
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    color: Colors.green)),
+
+                                          if( posts.data()['order_status']=='confirm')
+                                            Text(
+                                                "تم التاكيد  ",
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    color: Colors.green)),
+
+
+                                          if( posts.data()['order_status']=='ontheway')
+                                            Text(
+                                                "في الطريق",
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    color: Colors.green)),
+
+
+
+                                          Text("  : حالة الطلب   "),
+
+
+                                                          //         color: Colors.green)),)
+
+                                                          // Text(
+                                                          //     posts.data()[
+                                                          //     'order_status'] ??
+                                                          //         "",
+                                                          //     style: TextStyle(
+                                                          //         fontSize:23,
+                                                          //         color: Colors.green)),
                                                         ],
                                                       ),
                                                       Text(posts.data()['ord 1']??"",
                                                           style: TextStyle(
                                                               color: Colors.black,
-                                                              fontSize:16,
-                                                              fontWeight:FontWeight.bold
-
-                                                          )),
-
-
-                                                      Text(posts.data()['ord 2']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black,
-                                                              fontSize:16,
-                                                              fontWeight:FontWeight.bold
-
-                                                          )),
-
-                                                      Text(posts.data()['ord 3']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold
-
-                                                          )),
-
-                                                      Text(posts.data()['ord 4']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold
-
-                                                          )),
-
-                                                      Text(posts.data()['ord 5']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold
-
-
-                                                          )),
-
-
-                                                      Text(posts.data()['ord 6']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold
-
-                                                          )),
-
-
-                                                      Text(posts.data()['ord 7']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold)),
-
-                                                      Text(posts.data()['ord 8']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold)),
-
-
-                                                      Text(posts.data()['ord 9']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold)),
-
-
-                                                      Text(posts.data()['ord 10']??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold)),
-
-
-                                                      Text("--------------------------------------------"),
-                                                      Text(posts.data()['total_amount'].toString()??"",
-                                                          style:
-                                                          TextStyle(color: Colors.black, fontSize:16,
-                                                              fontWeight:FontWeight.bold)),
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 2'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 3'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 4'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 5'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 6'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 7'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 8'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 9'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(posts.data()['ord 10'] ?? "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
+                                                      Text(
+                                                          "--------------------------------------------"),
+                                                      Text(
+                                                          posts.data()[
+                                                          'total_amount'].toString() ??
+                                                              "",
+                                                          style: TextStyle(
+                                                              color: Colors.black,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                              FontWeight.bold)),
                                                     ],
                                                   ),
                                                 ),
-                                              ))
+                                              ),
+
+
+                                          )
 
                                   );
                                 });

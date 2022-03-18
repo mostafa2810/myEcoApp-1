@@ -135,13 +135,6 @@
             </list>
           </value>
         </entry>
-        <entry key="equatable">
-          <value>
-            <list>
-              <option value="$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-1.2.6/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="fake_async">
           <value>
             <list>
@@ -285,7 +278,21 @@
         <entry key="geolocator">
           <value>
             <list>
-              <option value="$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator-5.3.2+2/lib" />
+              <option value="$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator-6.2.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="geolocator_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_platform_interface-1.0.9/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="geolocator_web">
+          <value>
+            <list>
+              <option value="$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_web-1.0.1/lib" />
             </list>
           </value>
         </entry>
@@ -300,13 +307,6 @@
           <value>
             <list>
               <option value="$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/get_storage-1.1.6/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="google_api_availability">
-          <value>
-            <list>
-              <option value="$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/google_api_availability-2.0.4/lib" />
             </list>
           </value>
         </entry>
@@ -836,7 +836,6 @@
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-2.1.5/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/csslib-0.17.1/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4/lib" />
-      <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-1.2.6/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-1.1.2/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/lib" />
@@ -854,10 +853,11 @@
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_map-0.12.0/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.19.3/lib" />
-      <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator-5.3.2+2/lib" />
+      <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator-6.2.1/lib" />
+      <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_platform_interface-1.0.9/lib" />
+      <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_web-1.0.1/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/get-3.26.0/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/get_storage-1.1.6/lib" />
-      <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/google_api_availability-2.0.4/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.0.10/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_platform_interface-2.0.0/lib" />
       <root url="file://$USER_HOME$/sdks/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.5.9/lib" />

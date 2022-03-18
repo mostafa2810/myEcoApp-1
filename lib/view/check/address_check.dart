@@ -19,9 +19,9 @@ class AddressCheck extends StatefulWidget {
   num total;
   List<CartProductModel>cartmodel;
   double lat,long;
-  String adress,building,floor,phone,brand_email;
+  String  country,city,adress,building,floor,phone,brand_email;
 
-  AddressCheck({this.total,this.cartmodel,this.lat,this.long
+  AddressCheck({this.total,this.cartmodel,this.lat,this.long,this.country,this.city
   ,this.adress,this.building,this.floor,this.phone,this.brand_email
 
   });
@@ -33,7 +33,6 @@ class AddressCheck extends StatefulWidget {
 }
 
 class _AddressCheckState extends State<AddressCheck> {
-
 
 
 
@@ -61,7 +60,7 @@ class _AddressCheckState extends State<AddressCheck> {
             ),
             Container(
               width:4000,
-              height:180,
+              height:220,
               color:Colors.grey[200],
               child:Card(
                 color:Colors.grey[200],
@@ -74,6 +73,8 @@ class _AddressCheckState extends State<AddressCheck> {
                       Row(
                         children: [
 
+
+
                           Custom_Text(
                               text:widget.adress),
                           Custom_Text(
@@ -82,9 +83,32 @@ class _AddressCheckState extends State<AddressCheck> {
 
                         ],
                       ),
-                      SizedBox(
-                        height:5,
+
+                      Row(
+                        children: [
+                          Custom_Text(
+                              text:widget.country),
+                          Custom_Text(
+                              text:" :الدولة  "),
+                          SizedBox(
+                            height:5,
+                          ),
+                        ],
                       ),
+
+
+                      Row(
+                        children: [
+                          Custom_Text(
+                              text:widget.city),
+                          Custom_Text(
+                              text:" :المدينة   "),
+                          SizedBox(
+                            height:5,
+                          ),
+                        ],
+                      ),
+
                       Row(
                         children: [
 
@@ -147,6 +171,8 @@ class _AddressCheckState extends State<AddressCheck> {
         onPressed: () {
           Get.to(
               CheckOutScreen2(
+                widget.country.toString(),
+               widget.city.toString(),
                widget.adress.toString(),
                   widget.building.toString(),
               widget.floor.toString(),

@@ -3,10 +3,12 @@ import 'package:ecommerce/constants/const.dart';
 import 'package:ecommerce/notification/test_notofication.dart';
 import 'package:ecommerce/services/data_controller.dart';
 import 'package:ecommerce/view/brands/brand_cat_view.dart';
+import 'package:ecommerce/view/brands/brands_view2.dart';
 import 'package:ecommerce/view/brands/offers_brands.dart';
 import 'package:ecommerce/view/category/category.dart';
 import 'package:ecommerce/view/category/cateogry_product.dart';
 import 'package:ecommerce/view/products/products_view.dart';
+import 'package:ecommerce/view/products/products_view2.dart';
 import 'package:ecommerce/view/widgets/slider_drawer.dart';
 import 'package:ecommerce/viewmodel/auth_view_model.dart';
 import 'package:flutter/material.dart';
@@ -72,6 +74,7 @@ class HomeView extends StatelessWidget {
                       // Colors.white,
                       Colors.white,
                       //Colors.lightBlueAccent,
+
                       // Colors.lightBlueAccent,
                       Colors.white,
                     ])),
@@ -80,34 +83,17 @@ class HomeView extends StatelessWidget {
                     child: Row(
                       children: [
                         SizedBox(
-                          width: 25,
+                            width: MediaQuery.of(context).size.width * 0.62
                         ),
-                        Row(
-                          children: [
-
-                            Text(
-                              " Luban   ",
-                              style: TextStyle(
-                                  color: HexColor("#ff68682A"),
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w700),
-                            ),
-                            SizedBox(
-                              width: 38
-                            ),
-                            Container(
-                              width:110,
-                              child: CircleAvatar(
-                                child: Image.asset("assets/wh3.png",
-                                  fit:BoxFit.fill,
-                                 width:60,
-                                ),
-                              ),
-                            ),
-                          ],
+                        Container(
+                          width:40,
+                          //width:57,
+                          child: Image.asset("assets/wh3.jpeg",
+                              fit:BoxFit.fitWidth
+                          ),
                         ),
                         SizedBox(
-                          width: 10,
+                            width: 5
                         ),
                       ],
                     ))),
@@ -119,7 +105,7 @@ class HomeView extends StatelessWidget {
               body: isExecuted
                   ? searchedData
                   : Container(
-                      padding: EdgeInsets.only(top: 5, right: 20, left: 20),
+                      padding: EdgeInsets.only(top: 5, right: 10, left: 20),
                       child: ListView(children: [
                         SizedBox(height: 17),
                         Container(
@@ -127,49 +113,56 @@ class HomeView extends StatelessWidget {
                           child:Card(
                               child: Row(
                                 children: [
-                                  SizedBox(width: 20),
+                                  SizedBox(width: 12),
                                   Center(
                             child: Row(
                               children: [
 
-                                Text("  ايش في خاطرك اليوم",
+                                Text("  ايش في خاطرك اليوم ؟ ",
                                     style:TextStyle(
-                                        color: HexColor("#ff68682A"),
-                                        fontSize:15,
+                                        color: Colors.black,
+                                        fontSize:13,
                                         //  fontStyle:FontStyle.italic,
                                         fontWeight:FontWeight.w800
                                     )),
                                 SizedBox(
-                                    width:6
+                                    width:3
                                 ),
-                            // SizedBox(
-                            //     width:6
-                            // ),
+
                                 Padding(
                                   padding: const EdgeInsets.only(left:8.0),
-                                  child: Text(box_name.toString() +"   اهلا و سهلا  يا  ",
-                                  style:TextStyle(
-                                        color: Colors.black,
-                                        fontSize:15,
-                                      //  fontStyle:FontStyle.italic,
-                                        fontWeight:FontWeight.bold
-                                  ),
-                                    // SizedBox(
-                                    //     width:6
-                                    // ),
+                                  child: Row(
+                                    children: [
+                                      Text(box_name.toString() ,
+                                        style:TextStyle(
+                                            color: Colors.red,
+                                            fontSize:14,
+                                            //  fontStyle:FontStyle.italic,
+                                            fontWeight:FontWeight.w700
+                                        ),
+                                      ),
 
+                                      Text("   اهلا و سهلا  يا  ",
+                                      style:TextStyle(
+                                            color: Colors.black,
+                                            fontSize:13,
+                                          //  fontStyle:FontStyle.italic,
+                                            fontWeight:FontWeight.bold
+                                      ),
 ),
+                                    ],
+                                  ),
                                 ),
 
                               ],
                             ),
                           ),
-                                  SizedBox(width:1),
+                                  SizedBox(width:6),
 
                                   Container(
-                                    width:19,
-                                    child: Image.asset("assets/wh3.png",
-                                      fit:BoxFit.fill,
+                                    width:36,
+                                    child: Image.asset("assets/wh3.jpeg",
+                                      fit:BoxFit.cover,
                                     ),
                                   ),
                                 ],
@@ -255,7 +248,8 @@ class HomeView extends StatelessWidget {
                                   text: "عرض جميع المتاجر",
                                 color: HexColor("#ff68682A")),
                               onTap: () {
-                                Get.to(BrandsView());
+                             //   Get.to(BrandsView());
+                                Get.to(PostsScreen());
                               },
                             ),
                             SizedBox(width: 155),
@@ -336,7 +330,7 @@ class HomeView extends StatelessWidget {
   Widget _listViewCategory() {
     return GetBuilder<HomeViewModel>(
       builder: (controller) => Container(
-        height: 100,
+        height: 160,
         child: ListView.separated(
           itemCount: 4, //controller.categoryModel.length,
           scrollDirection: Axis.horizontal,
@@ -348,15 +342,18 @@ class HomeView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     color: Colors.grey.shade100,
                   ),
-                  height: 70,
-                  width: 70,
+                  width:95,
+                  height: 107,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: InkWell(
                       child: Container(
-                          width: 200,
-                          child: Image.network(
-                              controller.categoryModel[index].image)),
+                          height: 90,
+                          child: CircleAvatar(
+                            backgroundImage: NetworkImage(controller.categoryModel[index].image),
+                            // child: Image.network(
+                            //     controller.categoryModel[index].image),
+                          )),
                       onTap: () {
                         print("br: " + controller.categoryModel[index].name);
                         Get.to(ProductsView(

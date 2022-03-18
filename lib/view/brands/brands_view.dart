@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/services/data_controller.dart';
 import 'package:ecommerce/view/products/details_view2.dart';
 import 'package:ecommerce/view/products/products_view.dart';
+import 'package:ecommerce/view/products/products_view2.dart';
 import 'package:ecommerce/view/search/search_view.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/home_view_model.dart';
@@ -16,7 +17,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 
 class BrandsView extends StatefulWidget {
- 
+
 
   @override
   _PostsScreenState createState() => _PostsScreenState();
@@ -57,12 +58,13 @@ class _PostsScreenState extends State<BrandsView> {
                   child: Row(
                     children: [
                       SizedBox(
-                          width: 188
+                          width: MediaQuery.of(context).size.width * 0.62
                       ),
                       Container(
-                        width:57,
+                        width:40,
+                        //width:57,
                         child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fill
+                            fit:BoxFit.fitWidth
                         ),
                       ),
                       SizedBox(
@@ -80,11 +82,11 @@ class _PostsScreenState extends State<BrandsView> {
               SizedBox(
                 height:13,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left:33.0),
-                child: Text(" جميع المتاجر   ",style:TextStyle(color:Colors.red,fontSize:19,
-                    fontWeight:FontWeight.w800),),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(left:33.0),
+              //   child: Text(" جميع المتاجر   ",style:TextStyle(color:Colors.black,fontSize:19,
+              //       fontWeight:FontWeight.w800),),
+              // ),
               SizedBox(
                 height:13,
               ),
@@ -104,14 +106,12 @@ class _PostsScreenState extends State<BrandsView> {
                   child: StreamBuilder(
                       stream:
                       FirebaseFirestore.instance.collection('category')
-                   
                           .snapshots(),
                       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (!snapshot.hasData) return Center(child: Text('Loading'));
                         switch (snapshot.connectionState) {
                           case ConnectionState.waiting:
                             return new Text('Loading...');
-//.where("category", isEqualTo:"tec")
                           default:
                         return ListView.builder(
                         itemCount: snapshot.data.documents.length,
@@ -124,7 +124,7 @@ class _PostsScreenState extends State<BrandsView> {
                         itemBuilder: (BuildContext context, int index) {
                           DocumentSnapshot posts =
                               snapshot.data.documents[index];
-     
+
                           return GetBuilder<HomeViewModel>(
                               init: Get.find(),
                               builder: (controller) => Container(
@@ -132,36 +132,69 @@ class _PostsScreenState extends State<BrandsView> {
                                   child: InkWell(
                                     child: Card(
                                       color: Colors.white,
-                                      child: Row(children: [
+                                      child:  Column(children: [
+                                        Row(
+                                          children: [
+                                            SizedBox(
+                                              width:198
+                                            ),
+                                            Container(
+                                              padding:EdgeInsets.only(left:2),
+                                              width: 90,
+                                              height: 100,
+                                              child: CircleAvatar(
+                                                radius:120,
+                                                backgroundImage: NetworkImage( posts.data()['image']),
+                                              ),
+                                            ),
 
+                                            // Padding(
+                                            //   padding: const EdgeInsets.only(left:3.0),
+                                            //   child: Text((posts.data()['name']),
+                                            //
+                                            //     style:TextStyle(
+                                            //         color: HexColor("#ff68682A"),
+                                            //         fontSize: 19,
+                                            //         fontWeight:FontWeight.w800
+                                            //     ),
+                                            //   ),
+                                            // ),
+                                          ],
+                                        ),
+
+                                        SizedBox(width: 5),
+                                        // Padding(
+                                        //   padding: const EdgeInsets.only(left:3.0),
+                                        //   child: Text((posts.data()['cat'].split('/').last),
+
+                                        //     style:TextStyle(
+                                        //         color: HexColor("#ff68682A"),
+                                        //         fontSize: 19,
+                                        //         fontWeight:FontWeight.w800
+                                        //     ),
+                                        //   ),
+                                        // ),
+                                        SizedBox(height: 5),
                                         Padding(
-                                          padding: const EdgeInsets.only(left:150.0),
-                                          child: Text((posts.data()['name']),
+                                          padding: const EdgeInsets.only(left:3.0),
+                                          child: Text((posts.data()['cat']),
 
                                             style:TextStyle(
-                                                color: HexColor("#ff68682A"),
-                                                fontSize: 19,
-                                                fontWeight:FontWeight.w800
+                                                color:Colors.green,
+                                                fontSize: 11,
+                                                fontWeight:FontWeight.w600
                                             ),
                                           ),
                                         ),
 
-                                        Container(
-                                          padding:EdgeInsets.only(left:18),
-                                          width: 90,
-                                          height: 90,
-                                          child: CircleAvatar(
-                                          backgroundImage: NetworkImage( posts.data()['image']),
 
-                                          ),
-                                        ),
-
-                                        SizedBox(height: 5),
                                       ]),
                                     ),
                                     onTap: () {
-                                      Get.to(ProductsView(br:
-                                      controller.categoryModel[index].name));
+                                      Get.to(ProductsView(br:posts.data()['name']
+                                     // controller.categoryModel[index].name
+                                      )
+                                      );
                             //         Get.to(ProductScreen(
                             // productmodel: controller.productModel,
                             // brand: controller.categoryModel[index].name));

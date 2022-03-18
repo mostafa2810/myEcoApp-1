@@ -29,6 +29,7 @@ import 'owner_request.dart';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:Colors.white,
       body:Container(
           child:Padding(
             padding: const EdgeInsets.all(8.0),
@@ -41,10 +42,10 @@ import 'owner_request.dart';
                       height:70
                   ),
                   Container(
-                      height:80,
+                      height:220,
                       width:120,
                       color:Colors.white,
-                      child:Image.asset('assets/wh3.jpeg',fit:BoxFit.fill,)
+                      child:Image.asset('assets/wh3.jpeg',fit:BoxFit.cover,)
                   ),
                   SizedBox(
                       height:30
@@ -79,6 +80,7 @@ import 'owner_request.dart';
                       height:11
                   ),
                   CustomTextFormField(
+                    obs: true,
                       text: "Code",
                       //controller: controller.code1,
                       hint: "************",
@@ -94,16 +96,7 @@ import 'owner_request.dart';
                         // }
                       }),
                   SizedBox(height: 8),
-                  InkWell(
-                    child: Custom_Text(
-                      text: "Forget Password",
-                      fontSize: 14,
-                      alignment: Alignment.topRight,
-                    ),
-                    onTap:(){
-                      Get.to(ForgetPasswordView());
-                    },
-                  ),
+
                   SizedBox(height: 20),
                   SizedBox(
                       height:20
