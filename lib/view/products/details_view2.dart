@@ -191,6 +191,7 @@ class _DetailsView2State extends State<DetailsView2> {
                             // );
                             box.write('brand', widget.brand);
                             box.write('brand_email', widget.brandemail);
+                            box.write('cart', '1');
                             print("cooooo" + controller.totalPrice.toString());
                           } else {
 

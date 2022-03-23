@@ -221,12 +221,27 @@ _auth.verifyPhoneNumber(phoneNumber: phone,
 
 
    void ResetPassword()async{
-    _auth.sendPasswordResetEmail(email: email);
 
-    Get.to(ControlView());
-   Get.snackbar('تم', 'ارسلنا لك رابط علي الايميل تستطيع اعادة كلمة المرور من خلاله',backgroundColor: Colors.lightGreen,colorText:Colors.white,
-   duration:Duration(seconds:10)
-   );
+     try {
+       await  _auth.sendPasswordResetEmail(email: email).then((value) {
+         Get.to(ControlView());
+         Get.snackbar('تم',
+             'ارسلنا لك رابط علي الايميل تستطيع اعادة كلمة المرور من خلاله',
+             backgroundColor: Colors.lightGreen, colorText: Colors.white,
+             duration: Duration(seconds: 10)
+         );
+       });
+     } on FirebaseAuthException catch (e) {
+       print("PPP"+e.code);
+       print("eeee="+e.message);
+
+       Get.snackbar('!!!!!', 'تاكد من ان هذا الايميل صحيح و مسجل داخل Luban',backgroundColor: Colors.lightGreen,colorText:Colors.white,
+       duration:Duration(seconds:10));
+// show the snackbar here
+     }
+ //   _auth.sendPasswordResetEmail(email: email);
+
+
    }
 
   Future<void> saveUser(UserCredential user) async {

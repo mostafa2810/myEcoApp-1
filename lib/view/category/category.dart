@@ -146,10 +146,10 @@ class CategoryView extends StatelessWidget {
                           width:400,
                           child: Image.asset("assets/c6.jpeg",fit:BoxFit.fill,)),
                       onTap:(){
-                        Get.to(BrandsCatView(cat:'جمال و طبيعه',));
+                        Get.to(BrandsCatView(cat:'جمال و طبيعة',));
                       },
                     ),
-                    const Text("جمال و طبيعه",style:TextStyle(color:Colors.white,fontSize:22),),
+                    const Text("جمال و طبيعة",style:TextStyle(color:Colors.white,fontSize:22),),
                   ],
                 )),
                 color: HexColor("#ff68682A"),

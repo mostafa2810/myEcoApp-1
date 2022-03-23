@@ -19,10 +19,11 @@ class AddressCheck extends StatefulWidget {
   num total;
   List<CartProductModel>cartmodel;
   double lat,long;
-  String  country,city,adress,building,floor,phone,brand_email;
+  String  country,city,adress,building,floor,phone,brand_email,brand_name;
 
   AddressCheck({this.total,this.cartmodel,this.lat,this.long,this.country,this.city
-  ,this.adress,this.building,this.floor,this.phone,this.brand_email
+  ,this.adress,this.building,this.floor,this.phone,this.brand_email,
+    //this.brand_name
 
   });
 
@@ -179,7 +180,10 @@ class _AddressCheckState extends State<AddressCheck> {
               widget.phone.toString(),
                 widget.total,
                widget.cartmodel,
-                widget.brand_email
+                widget.brand_email,
+           //     widget.brand_name,
+                widget.lat,
+                widget.long
           ));
         }),
 

@@ -216,6 +216,7 @@ class _DetailsViewState extends State<DetailsView> {
                   );
                   box.write('brand',widget.model.brand);
                   box.write('brand_email',widget.model.brand_email);
+                  box.write('cart', '1');
      }
      else{
        controller.dialogAndDelete(
@@ -231,6 +232,8 @@ class _DetailsViewState extends State<DetailsView> {
          widget.model.productId,
        );
        box.write('brand_email',widget.model.brand_email);
+       box.write('brand',widget.model.brand);
+
      }
                   // controller.addProduct
                   //   (model.name,model.image,model.price,controller.quant2,model.productId);

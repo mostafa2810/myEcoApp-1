@@ -43,6 +43,7 @@ class CartViewModel extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    update();
   }
 
   @override
@@ -94,8 +95,6 @@ class CartViewModel extends GetxController {
           //backgroundColor: Colors.white,
           colorText: Colors.black);
     }
-
-
 
 
     else {
@@ -200,6 +199,7 @@ class CartViewModel extends GetxController {
      final box = GetStorage();
      box.remove('brand');
      print("delete Done");
+     update();
    }
   // addProduct(name, img, price, quant2, product_id) async {
   //   final user = FirebaseAuth.instance.currentUser;

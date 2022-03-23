@@ -2,6 +2,7 @@ import 'package:ecommerce/helper/local_storage_data.dart';
 import 'package:ecommerce/map/map1.dart';
 import 'package:ecommerce/map/map_screen.dart';
 import 'package:ecommerce/map/map_view.dart';
+import 'package:ecommerce/view/cart/empty_cart.dart';
 import 'package:ecommerce/view/cart/saveOrder.dart';
 import 'package:ecommerce/view/cart/cart_view.dart';
 import 'package:ecommerce/view/category/category.dart';
@@ -11,6 +12,7 @@ import 'package:ecommerce/view/profile/profile_view.dart';
 import 'package:ecommerce/viewmodel/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'home_view_model.dart';
 
@@ -76,7 +78,22 @@ class ControlViewModel extends GetxController {
 
       case 2:
         {
-          Get.to(CartView2()); // SaveOrder('x');
+
+          final box = GetStorage();
+          final cart_box=box.read('cart')??'x';
+
+
+          if(cart_box=='x'){
+            Get.to(EmptyCart());
+          }
+
+          else{
+            Get.to(CartView2());
+          }
+
+
+// out: GetX is the best
+       //   Get.to(CartView2()); // SaveOrder('x');
           break;
           // _currentScreen = ProfileView();
 

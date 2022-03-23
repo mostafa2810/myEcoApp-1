@@ -35,7 +35,7 @@ class CheckOutViewModel extends GetxController {
       String country,String city,
       String address, String apartment, String floor, String mobile,
       num total, List<CartProductModel> order, num sub_total,
-      String brand_email, String notes
+      String brand_email,String brand, String notes,double lat,double long
       )
   async {
     String pr, pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10;
@@ -332,34 +332,7 @@ class CheckOutViewModel extends GetxController {
         update();
       }
 
-      // if(order.length<=10){
-      //   pr1= order[1].name??"" ;
-      //   pr2= order[2].name??"" ;
-      //   pr3=order[3].name??"" ;
-      //   pr4=order[4].name??"" ;
-      //   pr5=order[5].name??"" ;
-      //   pr6=order[6].name??"" ;
-      //   pr7=order[7].name??"" ;
-      //   pr8=order[8].name??"" ;
-      //   pr9=order[9].name??"" ;
-      //   pr10=order[10].name??"" ;
-      // }
-      // else{
-      //
-      //   pr10="" ;
-      // }
 
-      // q=order[0].quantity??0;
-      // q1=order[1].quantity??0;
-      // q2=order[2].quantity??0;
-      // q3=order[3].quantity??0;
-      // q4=order[4].quantity??0;
-      // q5=order[5].quantity??0;
-      // q6=order[6].quantity??0;
-      // q7=order[7].quantity??0;
-      // q8=order[8].quantity??0;
-      // q9=order[9].quantity??0;
-      // q10=order[10].quantity??0;
 
     }
 
@@ -397,7 +370,7 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'username': uid,
-        'ord 1': pr + " * " + q.toString(),
+        'ord 1': pr + " x " + q.toString(),
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -405,6 +378,9 @@ class CheckOutViewModel extends GetxController {
         'notes':notes,
         'total_amount': sub_total,
          'brand_email':brand_email,
+         'brand':brand,
+         'lat':lat,
+          'long':long,
         'order_id': x.toString() +
               x2.toString()+
             x3.toString()
@@ -437,10 +413,13 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'brand':brand,
+           'lat':lat,
+          'long':long,
         'notes':notes,
         'username': uid,
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
+        'ord 1': pr + " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -477,11 +456,14 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'brand':brand,
+           'lat':lat,
+          'long':long,
         'notes':notes,
         'username': uid,
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
-        'ord 3': pr2 + " * " + q2.toString(),
+        'ord 1': pr + " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
+        'ord 3': pr2 + " x " + q2.toString(),
         'time': time,
          'time2':time2,
           'x':'x',
@@ -517,13 +499,15 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'brand':brand,
         'notes':notes,
         'username': uid,
-
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
-        'ord 3': pr2 + " * " + q2.toString(),
-        'ord 4': pr3 + " * " + q3.toString(),
+   'lat':lat,
+          'long':long,
+        'ord 1': pr +  " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
+        'ord 3': pr2 + " x " + q2.toString(),
+        'ord 4': pr3 + " x " + q3.toString(),
         'time': time,
          'time2':time2,
           'x':'x',
@@ -560,13 +544,16 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'brand':brand,
         'notes':notes,
         'username': uid,
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
-        'ord 3': pr2 + " * " + q2.toString(),
-        'ord 4': pr3 + " * " + q3.toString(),
-        'ord 5': pr4 + " * " + q4.toString(),
+           'lat':lat,
+          'long':long,
+        'ord 1': pr +  " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
+        'ord 3': pr2 + " x " + q2.toString(),
+        'ord 4': pr3 + " x " + q3.toString(),
+        'ord 5': pr4 + " x " + q4.toString(),
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -603,14 +590,17 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'brand':brand,
+           'lat':lat,
+          'long':long,
         'username': uid,
         'notes':notes,
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
-        'ord 3': pr2 + " * " + q2.toString(),
-        'ord 4': pr3 + " * " + q3.toString(),
-        'ord 5': pr4 + " * " + q4.toString(),
-        'ord 6': pr5 + " *  " + q5.toString(),
+        'ord 1': pr + " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
+        'ord 3': pr2 + " x " + q2.toString(),
+        'ord 4': pr3 + " x " + q3.toString(),
+        'ord 5': pr4 + " x " + q4.toString(),
+        'ord 6': pr5 + " x " + q5.toString(),
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -648,14 +638,17 @@ class CheckOutViewModel extends GetxController {
         'mobile': mobile.toString(),
         'username': uid,
         'notes':notes,
+           'lat':lat,
+          'long':long,
         'brand_email':brand_email,
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
-        'ord 3': pr2 + " * " + q2.toString(),
-        'ord 4': pr3 + " * " + q3.toString(),
-        'ord 5': pr4 + " * " + q4.toString(),
-        'ord 6': pr5 + " *  " + q5.toString(),
-        'ord 7': pr6 + " * " + q6.toString(),
+        'brand':brand,
+        'ord 1': pr + " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
+        'ord 3': pr2 + " x " + q2.toString(),
+        'ord 4': pr3 + " x " + q3.toString(),
+        'ord 5': pr4 + " x " + q4.toString(),
+        'ord 6': pr5 + " x  " + q5.toString(),
+        'ord 7': pr6 + " x " + q6.toString(),
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -691,16 +684,19 @@ class CheckOutViewModel extends GetxController {
         'floor': floor.toString(),
         'mobile': mobile.toString(),
         'brand_email':brand_email,
+        'brand':brand,
         'username': uid,
         'notes':notes,
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
-        'ord 3': pr2 + " * " + q2.toString(),
-        'ord 4': pr3 + " * " + q3.toString(),
-        'ord 5': pr4 + " * " + q4.toString(),
-        'ord 6': pr5 + " *  " + q5.toString(),
-        'ord 7': pr6 + " * " + q6.toString(),
-        'ord 8': pr7 + " * " + q7.toString(),
+           'lat':lat,
+          'long':long,
+        'ord 1': pr + " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
+        'ord 3': pr2 + " x " + q2.toString(),
+        'ord 4': pr3 + " x " + q3.toString(),
+        'ord 5': pr4 + " x " + q4.toString(),
+        'ord 6': pr5 + " x  " + q5.toString(),
+        'ord 7': pr6 + " x " + q6.toString(),
+        'ord 8': pr7 + " x " + q7.toString(),
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -739,15 +735,18 @@ class CheckOutViewModel extends GetxController {
         'username': uid,
         'notes':notes,
         'brand_email':brand_email,
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
-        'ord 3': pr2 + " * " + q2.toString(),
-        'ord 4': pr3 + " * " + q3.toString(),
-        'ord 5': pr4 + " * " + q4.toString(),
-        'ord 6': pr5 + " *  " + q5.toString(),
-        'ord 7': pr6 + " * " + q6.toString(),
-        'ord 8': pr7 + " * " + q7.toString(),
-        'ord 9': pr8 + " * " + q8.toString(),
+        'brand':brand,
+           'lat':lat,
+          'long':long,
+        'ord 1': pr + " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
+        'ord 3': pr2 + " x " + q2.toString(),
+        'ord 4': pr3 + " x " + q3.toString(),
+        'ord 5': pr4 + " x " + q4.toString(),
+        'ord 6': pr5 + " x  " + q5.toString(),
+        'ord 7': pr6 + " x " + q6.toString(),
+        'ord 8': pr7 + " x " + q7.toString(),
+        'ord 9': pr8 + " x " + q8.toString(),
         'order_status': 'pending',
           'x':'x',
         'time': time,
@@ -788,17 +787,20 @@ class CheckOutViewModel extends GetxController {
         'username': uid,
         'notes':notes,
         'brand_email':brand_email,
-        'ord 1': pr + " * " + q.toString(),
-        'ord 2': pr1 + " * " + q1.toString(),
-        'ord 3': pr2 + " * " + q2.toString(),
-        'ord 4': pr3 + " * " + q3.toString(),
-        'ord 5': pr4 + " * " + q4.toString(),
-        'ord 6': pr5 + " *  " + q5.toString(),
-        'ord 7': pr6 + " * " + q6.toString(),
-        'ord 8': pr7 + " * " + q7.toString(),
-        'ord 9': pr8 + " * " + q8.toString(),
-        'ord 10': pr9 + " * " + q9.toString(),
-        'ord 11': pr10 + " * " + q10.toString(),
+        'brand':brand,
+           'lat':lat,
+          'long':long,
+        'ord 1': pr + " x " + q.toString(),
+        'ord 2': pr1 + " x " + q1.toString(),
+        'ord 3': pr2 + " x " + q2.toString(),
+        'ord 4': pr3 + " x " + q3.toString(),
+        'ord 5': pr4 + " x " + q4.toString(),
+        'ord 6': pr5 + " x  " + q5.toString(),
+        'ord 7': pr6 + " x " + q6.toString(),
+        'ord 8': pr7 + " x " + q7.toString(),
+        'ord 9': pr8 + " x " + q8.toString(),
+        'ord 10': pr9 + " x " + q9.toString(),
+        'ord 11': pr10 + " x " + q10.toString(),
         'order_status': 'pending',
          'x':'x',
         'time': time,
@@ -825,13 +827,12 @@ class CheckOutViewModel extends GetxController {
 
     //Get.offAll(OrderStatusView2(order_id: order_id,cartmodel:_cartProductModel));
     print("order_idddd"+order_id);
+
     Get.offAll(LastView());
     // Get.offAll(OrderStatus(
     //   order_id: order_id,
     //   cartmodel: _cartProductModel,
     // ));
-
-
 
     print("add999");
 

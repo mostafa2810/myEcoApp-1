@@ -92,14 +92,13 @@ class _PostsScreenState extends State<OffersBrands> {
                   child: StreamBuilder(
                       stream:
                       FirebaseFirestore.instance.collection('category')
-                      .where('offers',isNotEqualTo:'x')
+                      .where('offers',isNotEqualTo:'')
                           .snapshots(),
                       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (!snapshot.hasData) return Center(child: Text('Loading'));
                         switch (snapshot.connectionState) {
                           case ConnectionState.waiting:
                             return new Text('Loading...');
-//.where("category", isEqualTo:"tec")
                           default:
                             return GridView.builder(
                                 itemCount: snapshot.data.documents.length,
@@ -107,12 +106,10 @@ class _PostsScreenState extends State<OffersBrands> {
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 2,
                                   mainAxisSpacing: 3,
-
                                 ), //(orientation == Orientation.portrait) ? 2: 2.2),
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
                                   snapshot.data.documents[index];
-
                                   return GetBuilder<HomeViewModel>(
                                       init: Get.find(),
                                       builder: (controller) => Container(

@@ -128,6 +128,120 @@ class _PostsScreenState extends State<OrderStatusView2> {
                                                     color: Colors.grey[100],
                                                     child: Column(
                                                       children: [
+
+                                                        Text("تفاصيل العنوان ",style:TextStyle(color:Colors.black,fontSize:18),),
+
+                                                        SizedBox(
+                                                            height:6
+                                                        ),
+
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(width:130,),
+                                                            Text(
+                                                                posts.data()['country'] ??
+                                                                    "",
+                                                                style: TextStyle(
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                    FontWeight.bold,
+                                                                    color: Colors.green)),
+                                                            Text(" :الدولة ",style:TextStyle(color:Colors.black,fontSize:19),)
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(width: 130,),
+
+                                                            Text(
+                                                                posts.data()['city'] ??
+                                                                    "",
+                                                                style: TextStyle(
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                    FontWeight.bold,
+                                                                    color: Colors.green)),
+                                                            Text(" :المدينة ",style:TextStyle(color:Colors.black,fontSize:19),)
+                                                          ],
+                                                        ),
+
+
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(width:130,),
+
+                                                            Text(
+                                                                posts.data()['address'] ??
+                                                                    "",
+                                                                style: TextStyle(
+                                                                    fontSize: 16,
+                                                                    fontWeight:
+                                                                    FontWeight.bold,
+                                                                    color: Colors.green)),
+                                                            Text(": عنوان الشارع  ",style:TextStyle(color:Colors.black,fontSize:19),)
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(width:130,),
+
+                                                            Text(
+                                                                posts.data()['apartment'] ??
+                                                                    "",
+                                                                style: TextStyle(
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                    FontWeight.bold,
+                                                                    color: Colors.green)),
+                                                            Text(": الشقة  ",style:TextStyle(color:Colors.black,fontSize:19),)
+                                                          ],
+                                                        ),
+
+                                                        Center(
+                                                          child: Row(
+                                                            children: [
+                                                              SizedBox(width:130,),
+                                                              Text(
+                                                                  posts.data()['floor'] ??
+                                                                      "",
+                                                                  style: TextStyle(
+                                                                      fontSize: 19,
+                                                                      fontWeight:
+                                                                      FontWeight.bold,
+                                                                      color: Colors.green)),
+                                                              Text(" :الطابق ",style:TextStyle(color:Colors.black,fontSize:19),)
+                                                            ],
+                                                          ),
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(width:80,),
+                                                            Text(
+                                                                posts.data()['mobile'] ??
+                                                                    "",
+                                                                style: TextStyle(
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                    FontWeight.bold,
+                                                                    color: Colors.green)),
+                                                            Text(" :الهاتف ",style:TextStyle(color:Colors.black,fontSize:19),)
+                                                          ],
+                                                        ),
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(width:130,),
+                                                            Text(
+                                                                posts.data()['notes'] ??
+                                                                    "",
+                                                                style: TextStyle(
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                    FontWeight.bold,
+                                                                    color: Colors.green)),
+                                                     if(posts.data()['notes']!='')
+                                                       Text(": ملاحظات  ",style:TextStyle(color:Colors.black,fontSize:19),)
+                                                          ],
+                                                        ),
                                                         Row(
                                                           children: [
 
@@ -141,7 +255,7 @@ class _PostsScreenState extends State<OrderStatusView2> {
                                                                     fontWeight:
                                                                     FontWeight.bold,
                                                                     color: Colors.green)),
-                                                            Text(" : رمز الاوردر الحالي   ",
+                                                            Text(" : رقم الطلب    ",
                                                                 style: TextStyle(
                                                                     color: Colors.black,
                                                                     fontSize: 18)),

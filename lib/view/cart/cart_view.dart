@@ -14,10 +14,23 @@ import 'package:hexcolor/hexcolor.dart';
 import '../../viewmodel/cart_viewmodel.dart';
 import '../check/address_view.dart';
 
-class CartView2 extends StatelessWidget {
+class CartView2 extends StatefulWidget {
   int id;
   //String brand_email;
   CartView2({this.id});
+
+  @override
+  State<CartView2> createState() => _CartView2State();
+}
+
+class _CartView2State extends State<CartView2> {
+
+
+  void initState() {
+   setState(() {
+
+   });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +45,7 @@ class CartView2 extends StatelessWidget {
     final box_address3=box.read('Adress_details3')??"ogi";
     final box_address4=box.read('Adress_details4')??"yyy";
     final brand_email=box.read('brand_email')??"///";
+    final brand_name=box.read('brand')??"///";
     final box_country=box.read('Adress_country')??"///";
     final box_city=box.read('Adress_city')??"///";
 
@@ -39,7 +53,7 @@ class CartView2 extends StatelessWidget {
     return GetBuilder<CartViewModel>(
         init: Get.find(),
         builder: (controller) => (Scaffold(
-              body: controller.cartProductModel.length == 0 || id == 3
+              body: controller.cartProductModel.length == 0 || widget.id == 3
                   ? Container(
                       child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -235,8 +249,10 @@ class CartView2 extends StatelessWidget {
                                               phone:box_address4,
                                               lat:box_Lat,
                                               long:box_Long,
-                                             brand_email:brand_email
-                                            ));
+                                             brand_email:brand_email,
+                                         //     brand_name:brand_name
+                                            )
+                                            );
                                           }
 
 
@@ -268,5 +284,4 @@ class CartView2 extends StatelessWidget {
 
     //  );
   }
-
 }

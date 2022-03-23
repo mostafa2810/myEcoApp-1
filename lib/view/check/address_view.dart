@@ -27,6 +27,7 @@ class AdressScreen extends StatefulWidget {
 class _AdressScreenState extends State<AdressScreen> {
   String brand_email;
 
+
   @override
   Widget build(BuildContext context) {
     TextEditingController address3= TextEditingController();
@@ -263,6 +264,8 @@ class _AdressScreenState extends State<AdressScreen> {
                                 child: RaisedButton(
                                   color: HexColor("#ff68682A"),
                                   onPressed: () {
+                                   // print("brand"+brandname);
+                                    //print("emmmaill="+brand_email);
                                     //print(cartmodel[3].name);
                                     _formKey.currentState.save();
                                     if (_formKey.currentState.validate()) {
@@ -276,15 +279,11 @@ class _AdressScreenState extends State<AdressScreen> {
                                       box.write('Adress_details2', controller.apartment.text.toString(),);
                                       box.write('Adress_details3', controller.floor.text.toString(),);
                                       box.write('Adress_details4', controller.dropdownValue+controller.mobile.text.toString(),);
-
                                       box.write('Adress_country', controller.country.text.toString(),);
                                       box.write('Adress_city', controller.city.text.toString(),);
-
-
                                       box.write('Lat', widget.lat,);
                                       box.write('Long',widget.long);
-
-                                      // Get.to(AddressCheck());
+                                       //Get.to(AddressCheck());
                                       Get.to( CheckOutScreen2(
                                           controller.country.text.toString(),
                                           controller.city.text.toString(),
@@ -294,7 +293,10 @@ class _AdressScreenState extends State<AdressScreen> {
                                           controller.dropdownValue+controller.mobile.text.toString(),
                                           widget.total,
                                           widget.cartmodel,
-                                          brand_email
+                                          brand_email,
+                                        //  brandname,
+                                          widget.lat,
+                                          widget.long
                                       ));
                                     }
 

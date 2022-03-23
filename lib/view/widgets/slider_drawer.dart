@@ -109,8 +109,25 @@ class _SidebarPageState extends State<SidebarPage> {
           icon: Icons.supervised_user_circle,
           onPressed: () {
 
-            Get.to(OwnerCodeView());
-              // Get.to(OwnerCheck());
+            final box = GetStorage();
+            final box1= box.read('email')??'x';
+            final box2= box.read('pass')??'x';
+            final box3=box.read('code')??'x';
+
+            print("box1=="+box1);
+            print("box3=="+box3);
+            if(box3=='x'){
+              Get.to(OwnerCodeView());
+            }
+            else{
+              Get.to(OwnerHomeView(
+                  email:box1,
+                  pass:box2,
+                  code:box3
+              ));
+            }
+          //  Get.to(OwnerCodeView());
+             //  Get.to(OwnerCheck());
           }
       ),
 

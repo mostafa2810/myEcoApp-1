@@ -87,10 +87,12 @@ import 'owner_request.dart';
                       onSave: (value) {
                         controller.code= value;
                       },
+
                       validator: (value) {
                         if (value == null) {
                           print("error");
                         }
+
                         // if(value!="123456"){
                         //   print("error");
                         // }
@@ -115,9 +117,34 @@ import 'owner_request.dart';
                       ),
                     ),
                     onTap:(){
+
+
                       _formKey.currentState.save();
                       final box = GetStorage();
-                      if(controller.code=='123456'){
+                      if(controller.code=='LU1AAbb'||controller.code=='LU2AaBb'||controller.code=='LU3AaBB'
+                      ||controller.code=='LU4aaBB'||controller.code=='LU5aAbb'||controller.code=='LU6AAAB'||
+                          controller.code=='LU7AAABBB'|| controller.code=='123456XXXYYYZZZ'||
+                          controller.code=='LU8AaaBbb'||controller.code=='LU9ABab'||controller.code=='LU10aAbB'||
+                          controller.code=='LU11ABAba'||
+                          controller.code=='LU12Aabb'||controller.code=='LU13bbaa'||controller.code=='LU14bbAA'||
+                          controller.code=='LU15AbbAb'||
+                          controller.code=='LU16aaAb'||controller.code=='LU17AAAA'||controller.code=='LU18bbbb'||
+                          controller.code=='LU19BBBB'
+                        || controller.code=='LU20aaaa'||controller.code=='LU21DDDD'||controller.code=='LU22CCCC'||
+                          controller.code=='LU23ffff'
+                        || controller.code=='LU24FFFF'||controller.code=='LU25RRRR'|| controller.code=='LU26KKKK'||
+                          controller.code=='LU27AACC'||controller.code=='LU28AADD'||controller.code=='LU29AAWW'||
+                          controller.code=='LU678io632' || controller.code=='LU75m1wx8c1'||controller.code=='LU006yc2w1z'||
+                          controller.code=='LU123ewr4g0l' || controller.code=='LU12c3v4b5zc'|| controller.code=='LUm8n7b5v3x1' ||
+                          controller.code=='LU12wer4tynz5'|| controller.code=='LUq2w3c9m00j'|| controller.code=='LU1xzcv65bnp'||
+                          controller.code=='LUn1s3f8r44z'|| controller.code=='LUw7u7i99kz'||controller.code=='LU098jt4z'||
+                          controller.code=='LU16yn88i10x' || controller.code=='LUx44t6y7un0'|| controller.code=='LU155u7n12x'||
+                          controller.code=='LU120ii8un4'||controller.code=='LU0l9m7bx1'|| controller.code=='LU1112340h6'||
+                          controller.code=='LU89713ecx'|| controller.code=='LU876ynh12z'|| controller.code=='LU0o9kn8jj7'||
+                          controller.code=='LU109o8im776h'|| controller.code=='LU10p8n5y6z'|| controller.code=='LU8o90l4zx2')
+
+
+                      {
                         if (_formKey.currentState.validate()){
 
                           Get.off(OwnerHomeView(
