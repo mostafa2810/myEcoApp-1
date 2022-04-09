@@ -15,9 +15,7 @@ class DetailsView2 extends StatefulWidget {
   String details;
   String image;
   String productId;
-  String brand;
-  String x;
-  String brandemail;
+
 
   DetailsView2(
       {this.name,
@@ -25,9 +23,7 @@ class DetailsView2 extends StatefulWidget {
       this.price,
       this.details,
       this.productId,
-      this.brand,
-      this.x,
-      this.brandemail});
+    });
 
   @override
   State<DetailsView2> createState() => _DetailsView2State();
@@ -44,27 +40,33 @@ class _DetailsView2State extends State<DetailsView2> {
     final box_country = box.read('country') ?? 'x';
 
     if (box_country == 'امارات') {
-      lg = 'د.ا';
+      lg = 'LE';
     }
+
     if (box_country == 'البحرين') {
-      lg = 'د.ب';
+      lg = 'LE';
     }
+
     if (box_country == 'قطر') {
-      lg = 'ر.ق';
+      lg = 'LE';
     }
+
     if (box_country == 'سلطنة عمان') {
-      lg = 'ر.ع';
+      lg = 'LE';
     }
 
     if (box_country == 'كويت') {
-      lg = 'د.ك';
+      lg = 'LE';
     }
+
     if (box_country == 'السعودية') {
-      lg = 'ر.س';
+      lg = 'LE';
     }
+
     if (box_country == 'x') {
-      lg = 'ر.س';
+      lg = 'LE';
     }
+
     super.initState();
   }
 
@@ -77,10 +79,12 @@ class _DetailsView2State extends State<DetailsView2> {
           height: 30,
         ),
         Container(
+          color:Colors.white,
             width: MediaQuery.of(context).size.width,
-            height: 180,
-            child: Image.network(widget.image, fit: BoxFit.fitHeight)),
+            height: 320,
+            child: Image.network(widget.image, fit: BoxFit.scaleDown)),
         SizedBox(height: 15),
+
         Expanded(
           child: SingleChildScrollView(
             child: Container(
@@ -90,17 +94,13 @@ class _DetailsView2State extends State<DetailsView2> {
                   Custom_Text(
                     text: widget.name.toString(),
                     fontSize: 26,
-                    color: HexColor("#ff68682A"),
+                    color: Colors.black
                   ),
                   SizedBox(height: 15),
                   SizedBox(
                     height: 20,
                   ),
-                  Text(widget.x,
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700)),
+
                   Custom_Text(
                     text: 'تفاصيل',
                     fontSize: 18,
@@ -110,7 +110,7 @@ class _DetailsView2State extends State<DetailsView2> {
                     height: 20,
                   ),
                   Text(widget.details,
-                      style: TextStyle(color: Colors.black, fontSize: 16)),
+                      style: TextStyle(color: Colors.blue, fontSize: 16)),
                 ],
               ),
             ),
@@ -121,27 +121,34 @@ class _DetailsView2State extends State<DetailsView2> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              SizedBox(width:2,),
               Column(
                 children: [
                   Custom_Text(
-                    text: "السعر",
+                    text: "    السعر",
                     fontSize: 18,
                     color: Colors.grey,
                   ),
+                  SizedBox(height:3,),
                   Row(
                     children: [
                       SizedBox(width: 5),
-                      Custom_Text(
-                        text: lg,
-                        color: HexColor("#ff68682A"),
-                        fontSize: 18,
-                      ),
                       SizedBox(width: 5),
-                      Custom_Text(
-                        text: '  ' + widget.price.toString(),
-                        color: HexColor("#ff68682A"),
-                        fontSize: 18,
+                      Row(
+                        children: [
+                          Custom_Text(
+                            text: '  ' + widget.price.toString(),
+                            color: Colors.blue,
+                            fontSize: 18,
+                          ),
+                          Custom_Text(
+                            text: '  ' + 'LE',
+                            color: Colors.blue,
+                            fontSize: 18,
+                          ),
+                        ],
                       ),
+
                     ],
                   ),
                 ],
@@ -159,11 +166,6 @@ class _DetailsView2State extends State<DetailsView2> {
                           print("ttt");
                           print(widget.name);
                           print(widget.price);
-                          final box = GetStorage();
-                          final box_brand = box.read('brand') ?? 'x';
-
-                          if (widget.brand == box_brand || box_brand == 'x') {
-
                             controller.dialogAndAdd(
                               CartProductModel(
                                   name: widget.name,
@@ -171,8 +173,7 @@ class _DetailsView2State extends State<DetailsView2> {
                                   price: widget.price.toString(),
                                   quantity: 1,
                                   productId: widget.productId,
-                                  brand: widget.brand,
-                                  brand_email: widget.brandemail),
+                                  ),
                               widget.productId,
                             );
                             // controller.addProduct2(
@@ -189,25 +190,22 @@ class _DetailsView2State extends State<DetailsView2> {
                             //   // model.productId
                             //   //productId:model.productId)
                             // );
-                            box.write('brand', widget.brand);
-                            box.write('brand_email', widget.brandemail);
-                            box.write('cart', '1');
-                            print("cooooo" + controller.totalPrice.toString());
-                          } else {
 
-                            controller.dialogAndDelete(
-                              CartProductModel(
-                                  name: widget.name,
-                                  image: widget.image,
-                                  price: widget.price.toString(),
-                                  quantity: 1,
-                                  productId: widget.productId,
-                                  brand: widget.brand,
-                                  brand_email: widget.brandemail),
-                              widget.productId,
-                            );
-                            box.write('brand_email', widget.brandemail);
-                          }
+                    //        box.write('cart', '1');
+                            print("cooooo" + controller.totalPrice.toString());
+                          // } else {
+                          //
+                          //   controller.dialogAndDelete(
+                          //     CartProductModel(
+                          //         name: widget.name,
+                          //         image: widget.image,
+                          //         price: widget.price.toString(),
+                          //         quantity: 1,
+                          //         productId: widget.productId,),
+                          //     widget.productId,
+                          //   );
+                          //  // box.write('brand_email', widget.brandemail);
+                          // }
 
                           //  controller.addProduct2(
                           //      CartProductModel
@@ -238,7 +236,7 @@ class _DetailsView2State extends State<DetailsView2> {
                 ),
                 height:60,
                 child: Card(
-                  color:Colors.green,
+                  color:Colors.blue,
                   child: Row(
                         children: [
 

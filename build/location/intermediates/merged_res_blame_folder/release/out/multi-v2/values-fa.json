@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/location/intermediates/incremental/mergeReleaseResources/merged.dir/values-fa/values-fa.xml",
+            "outputFile": "/home/joo/work/eco_template/build/location/intermediates/res/merged/release/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/d065c9c994bbbdee630b3b2724707291/core-1.3.2/res/values-fa/values-fa.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/location/intermediates/res/merged/release/values-fa/values-fa.xml",
+            "outputFile": "/home/joo/work/eco_template/build/location/intermediates/incremental/mergeReleaseResources/merged.dir/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/d065c9c994bbbdee630b3b2724707291/core-1.3.2/res/values-fa/values-fa.xml",

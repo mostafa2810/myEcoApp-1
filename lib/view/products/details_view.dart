@@ -41,13 +41,13 @@ class _DetailsViewState extends State<DetailsView> {
    final box_country=box.read('country')??'x';
 
    if(box_country=='امارات'){
-     lg ='د.ا';
+     lg ='';
    }
    if(box_country=='البحرين'){
-     lg='د.ب';
+     lg='';
    }
    if(box_country=='قطر'){
-     lg='ر.ق';
+     lg='';
    }
    if(box_country=='سلطنة عمان'){
      lg='ر.ع';
@@ -192,60 +192,27 @@ class _DetailsViewState extends State<DetailsView> {
           Container(
             width:130,
             height:80,
+
             child: CustomButton(
                 text:' اضف',
-
                 onPressed:(){
-
                   print("ttt");
                   print(widget.model.name);
-    final box = GetStorage();
-    final box_brand=box.read('brand')??'x';
-
-     if(widget.model.brand==box_brand || box_brand =='x'){
                   controller.addProduct2(
                     CartProductModel
-                      (name:widget.model.name,image:widget.model.image,
+                      (
+                      name:widget.model.name,image:widget.model.image,
                       price:widget.model.price.toString(),quantity: 1,
                        productId:widget.model.productId,
-                       brand:widget.model.brand,
-                       brand_email: widget.model.brand_email
                     ),
                         widget.model.productId,
-                        //productId:model.productId)
                   );
-                  box.write('brand',widget.model.brand);
-                  box.write('brand_email',widget.model.brand_email);
-                  box.write('cart', '1');
-     }
-     else{
-       controller.dialogAndDelete(
-         CartProductModel(
-             name:widget.model. name,
-             image: widget.model.image,
-             price:widget.model.price.toString(),
-             quantity: 1,
-             productId: widget.model.productId,
-             brand:widget.model.brand,
-             brand_email: widget.model.brand_email
-         ),
-         widget.model.productId,
-       );
-       box.write('brand_email',widget.model.brand_email);
-       box.write('brand',widget.model.brand);
-
-     }
-                  // controller.addProduct
-                  //   (model.name,model.image,model.price,controller.quant2,model.productId);
                 }
             )),
                    ),
-
-
                   ],
                 ),
               ),
-
             ]
           )
         ),

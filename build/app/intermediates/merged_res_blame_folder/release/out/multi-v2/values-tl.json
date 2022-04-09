@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-tl/values-tl.xml",
+            "outputFile": "/home/joo/work/eco_template/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-tl/values-tl.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ee2e3c9bc2f81a35f3fc18d7cafb7a9e/jetified-facebook-login-5.5.1/res/values-tl/values-tl.xml",

@@ -122,7 +122,7 @@ class MapView2 extends StatefulWidget {
                      );
                      print("ddd");
                    },
-                   color: HexColor("#ff68682A"),
+                   color: Colors.blue,
                    child:
                    Text(
                      "تحديد الموقع الحالي",
@@ -136,7 +136,7 @@ class MapView2 extends StatefulWidget {
                   ),
                  RaisedButton(
                    child:Text("قم بالتخطي",style:TextStyle(color:Colors.white,fontSize:18),),
-                   color: HexColor("#ff68682A"),
+                   color: Colors.blue,
                    onPressed:(){
 
                      Get.offAll(

@@ -7,6 +7,7 @@ import 'package:ecommerce/view/brands/brands_view2.dart';
 import 'package:ecommerce/view/brands/offers_brands.dart';
 import 'package:ecommerce/view/category/category.dart';
 import 'package:ecommerce/view/category/cateogry_product.dart';
+import 'package:ecommerce/view/products/details_view2.dart';
 import 'package:ecommerce/view/products/products_view.dart';
 import 'package:ecommerce/view/products/products_view2.dart';
 import 'package:ecommerce/view/widgets/slider_drawer.dart';
@@ -21,11 +22,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:hexcolor/hexcolor.dart';
-import '../products/all_products_view.dart';
-import '../brands/brands_view.dart';
-import '../cart/cart_view.dart';
-import '../products/details_view.dart';
 import '../widgets/custom_text.dart';
 
 class HomeView extends StatelessWidget {
@@ -69,15 +65,6 @@ class HomeView extends StatelessWidget {
             backgroundColor: Colors.white,
             iconTheme: IconThemeData(color: Colors.black),
             title: Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
-                      // Colors.white,
-                      Colors.white,
-                      //Colors.lightBlueAccent,
-
-                      // Colors.lightBlueAccent,
-                      Colors.white,
-                    ])),
                 height: 30,
                 child: Center(
                     child: Row(
@@ -85,13 +72,7 @@ class HomeView extends StatelessWidget {
                         SizedBox(
                             width: MediaQuery.of(context).size.width * 0.62
                         ),
-                        Container(
-                          width:40,
-                          //width:57,
-                          child: Image.asset("assets/wh3.jpeg",
-                              fit:BoxFit.fitWidth
-                          ),
-                        ),
+
                         SizedBox(
                             width: 5
                         ),
@@ -108,66 +89,62 @@ class HomeView extends StatelessWidget {
                       padding: EdgeInsets.only(top: 5, right: 10, left: 20),
                       child: ListView(children: [
                         SizedBox(height: 17),
-                        Container(
-                          height:66,
-                          child:Card(
-                              child: Row(
-                                children: [
-                                  SizedBox(width: 12),
-                                  Center(
-                            child: Row(
-                              children: [
-
-                                Text("  ايش في خاطرك اليوم ؟ ",
-                                    style:TextStyle(
-                                        color: Colors.black,
-                                        fontSize:13,
-                                        //  fontStyle:FontStyle.italic,
-                                        fontWeight:FontWeight.w800
-                                    )),
-                                SizedBox(
-                                    width:3
-                                ),
-
-                                Padding(
-                                  padding: const EdgeInsets.only(left:8.0),
-                                  child: Row(
-                                    children: [
-                                      Text(box_name.toString() ,
-                                        style:TextStyle(
-                                            color: Colors.red,
-                                            fontSize:14,
-                                            //  fontStyle:FontStyle.italic,
-                                            fontWeight:FontWeight.w700
-                                        ),
-                                      ),
-
-                                      Text("   اهلا و سهلا  يا  ",
-                                      style:TextStyle(
-                                            color: Colors.black,
-                                            fontSize:13,
-                                          //  fontStyle:FontStyle.italic,
-                                            fontWeight:FontWeight.bold
-                                      ),
-),
-                                    ],
-                                  ),
-                                ),
-
-                              ],
-                            ),
-                          ),
-                                  SizedBox(width:6),
-
-                                  Container(
-                                    width:36,
-                                    child: Image.asset("assets/wh3.jpeg",
-                                      fit:BoxFit.cover,
-                                    ),
-                                  ),
-                                ],
-                              ))
-                        ),
+//                         Container(
+//                           height:66,
+//                           child:Card(
+//                               child: Row(
+//                                 children: [
+//                                   SizedBox(width: 12),
+//                                   Center(
+//                             child: Row(
+//                               children: [
+//
+//                                 Text("                                                           ",
+//                                     style:TextStyle(
+//                                         color: Colors.black,
+//                                         fontSize:13,
+//                                         //  fontStyle:FontStyle.italic,
+//                                         fontWeight:FontWeight.w800
+//                                     )),
+//                                 SizedBox(
+//                                     width:3
+//                                 ),
+//
+//                                 Padding(
+//                                   padding: const EdgeInsets.only(left:8.0),
+//                                   child: Row(
+//                                     children: [
+//                                       SizedBox(width:6),
+//                                       Text(box_name.toString() ,
+//                                         style:TextStyle(
+//                                             color: Colors.red,
+//                                             fontSize:17,
+//                                             //  fontStyle:FontStyle.italic,
+//                                             fontWeight:FontWeight.w700
+//                                         ),
+//                                       ),
+//
+//                                       Text("   اهلا و سهلا  يا  ",
+//                                       style:TextStyle(
+//                                             color: Colors.black,
+//                                             fontSize:16,
+//                                           //  fontStyle:FontStyle.italic,
+//                                             fontWeight:FontWeight.bold
+//                                       ),
+// ),
+//                                     ],
+//                                   ),
+//                                 ),
+//
+//                               ],
+//                             ),
+//                           ),
+//                                   SizedBox(width:6),
+//
+//
+//                                 ],
+//                               ))
+//                         ),
                         SizedBox(height: 10),
                         GetBuilder<DataController>(
                             init: DataController(),
@@ -175,10 +152,10 @@ class HomeView extends StatelessWidget {
                         SizedBox(height: 15),
                         Center(
                             child: SizedBox(
-                          height: 120.0,
+                          height: 190.0,
                           width: 300.0,
                           child: Carousel(
-                            boxFit: BoxFit.cover,
+                            boxFit: BoxFit.fill,
                             autoplay: true,
                             animationCurve: Curves.fastOutSlowIn,
                             animationDuration: Duration(milliseconds: 1000),
@@ -189,21 +166,26 @@ class HomeView extends StatelessWidget {
                             dotVerticalPadding: 10.0,
                             showIndicator: true,
                             indicatorBgPadding: 7.0,
+
                             images: [
-                              AssetImage('assets/P1.jpg'),
-                              AssetImage('assets/P2.jpg'),
-                              AssetImage('assets/P3.jfif'),
-                              AssetImage('assets/P4.jpg'),
+
+                              AssetImage('assets/c6.jpg'),
+                              AssetImage('assets/c11.png'),
+                              AssetImage('assets/c2.jpg'),
+                              AssetImage('assets/c5.jpg'),
+
                             ],
                           ),
                         )),
                         SizedBox(height: 24),
                         Padding(
-                          padding: const EdgeInsets.only(left:233),
+                          padding: const EdgeInsets.only(left:260),
                           child: InkWell(
-                            child: Custom_Text(
-                                text: "جميع الاقسام",
-                                color: HexColor("#ff68682A")),
+                            child: Text(
+                                "جميع الاقسام",style:TextStyle(color:Colors.black,fontSize:18,
+                                fontWeight:FontWeight.w700
+                            )),
+
                             onTap: () {
                               Get.to(CategoryView());
                             },
@@ -211,81 +193,37 @@ class HomeView extends StatelessWidget {
                         ),
                        SizedBox(height: 10),
                         _listViewCat(),
-                        InkWell(
-                          child: Row(
+
+                        SizedBox(height: 22),
+
+
+                          Row(
+                            //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SizedBox(
-                                    width:30
-                                ),
-                                Container(
-                                    width:40,
-                                    child:Image.asset("assets/offers.png")
-                                ),
-                                SizedBox(
-                                    width:16
-                                ),
                                 InkWell(
                                     child: Custom_Text(
-                                      text: "عرض جميع العروض و الخصومات  ",
+                                      text: " عرض جميع المنتجات",
                                       fontSize: 16,
-                                      color: Colors.red,
+                                      color:Colors.blue,
                                     ),
                                     onTap: () {
-                                      Get.to(OffersBrands());
+                                      Get.to(ProductsView());
+
+                                            // controller.categoryModel[index].name
+
+                                       //   AllProductsView()
+
+
+
                                     }),
-
-
+                                SizedBox(width:164,),
+                                Custom_Text(
+                                  text: "  المنتجات   ",
+                                  fontSize: 18,
+                                ),
                               ]),
-                          onTap:(){
-                          //  Get.to();
-                          },
-                        ),
-                        SizedBox(height: 22),
-                        Row(
-                          children: [
-                            InkWell(
-                              child: Custom_Text(
-                                  text: "عرض جميع المتاجر",
-                                color: HexColor("#ff68682A")),
-                              onTap: () {
-                             //   Get.to(BrandsView());
-                                Get.to(PostsScreen());
-                              },
-                            ),
-                            SizedBox(width: 155),
-                            Custom_Text(
-                              text: "المتاجر",
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 30),
-                        InkWell(
-                          child: _listViewCategory(),
-                          onTap: () {},
-                        ),
-                        SizedBox(height: 40),
-
-
-
-                        //   Row(
-                        //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //       children: [
-                        //         InkWell(
-                        //             child: Custom_Text(
-                        //               text: " عرض جميع المنتجات",
-                        //               fontSize: 16,
-                        //               color:Colors.blue[600],
-                        //             ),
-                        //             onTap: () {
-                        //               Get.to(AllProductsView());
-                        //             }),
-                        //         Custom_Text(
-                        //           text: "  المنتجات   ",
-                        //           fontSize: 18,
-                        //         ),
-                        //       ]),
-                        //   SizedBox(height: 50),
-                        //   _listViewProducts(),
+                          SizedBox(height: 50),
+                          _listViewProducts(),
                       ]),
                     )),
     );
@@ -357,7 +295,7 @@ class HomeView extends StatelessWidget {
                       onTap: () {
                         print("br: " + controller.categoryModel[index].name);
                         Get.to(ProductsView(
-                            br: controller.categoryModel[index].name));
+                            cat: controller.categoryModel[index].name));
                         // Get.to(ProductScreen(
                         //     productmodel: controller.productModel,
                         //     brand: controller.categoryModel[index].namecontroller.categoryModel[index].name));
@@ -397,14 +335,14 @@ class HomeView extends StatelessWidget {
                       width:95,
                       height: 107,
                       child:CircleAvatar(
-                          backgroundColor:HexColor("#ff68682A"),
-                        backgroundImage:AssetImage('assets/c1.jpeg')),
-                          // child: Image.asset('assets/c1.jpeg',fit:BoxFit.fill,))
+                          backgroundColor:Colors.white38,
+                       // backgroundImage:AssetImage('assets/w1.png')),
+                          child: Image.asset('assets/w1.png',fit:BoxFit.fill,))
                   ),
                   SizedBox(
                       height:10
                   ),
-                  Text("الزي العُماني",style: TextStyle(
+                  Text("ملابس رجالي",style: TextStyle(
                       color:Colors.black,
                       fontSize:17,
                       fontStyle:FontStyle.italic
@@ -412,12 +350,11 @@ class HomeView extends StatelessWidget {
                 ],
               ),
               onTap:(){
-
-                Get.to(BrandsCatView(cat:"الزي العُماني"));
+                Get.to(ProductsView(cat:"men"));
               },
             ),
             SizedBox(
-                width:22
+                width:33
             ),
             InkWell(
                 child:Column(
@@ -426,14 +363,14 @@ class HomeView extends StatelessWidget {
                         width:95,
                         height: 107,
                         child:CircleAvatar(
-                          backgroundColor:HexColor("#ff68682A"),
-                          backgroundImage: AssetImage("assets/c3.jpeg"),
+                          backgroundColor:Colors.white38,
+                          child:Image.asset('assets/w2.png'),
                         )
                     ),
                     SizedBox(
                         height:10
                     ),
-                    Text("المشغولات العُمانيه",style: TextStyle(
+                    Text("ملابس حريمي",style: TextStyle(
                         color:Colors.black,
                         fontSize:17,
                         fontStyle:FontStyle.italic
@@ -441,11 +378,11 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
               onTap:(){
-                Get.to(BrandsCatView(cat:"المشغولات العُمانيه"));
+                Get.to(ProductsView (cat:"women"));
               },
             ),
             SizedBox(
-                width:22
+                width:33
             ),
             InkWell(
               child:Column(
@@ -454,14 +391,15 @@ class HomeView extends StatelessWidget {
                       width:95,
                       height: 107,
                       child:CircleAvatar(
-                        backgroundColor:HexColor("#ff68682A"),
-                        backgroundImage:AssetImage('assets/c5.jpeg'),
+                        backgroundColor:Colors.white38,
+                       child:Image.asset('assets/w66.png'),
+                       // backgroundImage:AssetImage('assets/w33.png'),
                          )
                   ),
                   SizedBox(
                       height:10
                   ),
-                  Text("المذاق العُماني",style: TextStyle(
+                  Text("اكسسوارات ",style: TextStyle(
                       color:Colors.black,
                       fontSize:17,
                       fontStyle:FontStyle.italic
@@ -469,34 +407,13 @@ class HomeView extends StatelessWidget {
                 ],
               ),
               onTap:(){
-                Get.to(BrandsCatView(cat:"المذاق العُماني"));
+                Get.to(ProductsView (cat:"Acx"));
               },
             ),
             SizedBox(
                 width:22
             ),
 
-            // InkWell(
-            //   child:Column(
-            //     children: [
-            //       Container(
-            //           width:95,
-            //           height: 107,
-            //           child:Image.asset('assets/q6.jpeg',fit:BoxFit.fill,)
-            //       ),
-            //       SizedBox(
-            //           height:10
-            //       ),
-            //       Text("مكسرات",style: TextStyle(
-            //           color:Colors.black,
-            //           fontSize:18
-            //       ),)
-            //     ],
-            //   ),
-            //   onTap:(){
-            //     Get.to(BrandsCatView(cat:"مكسرات"));
-            //   },
-            // ),
 
 
             SizedBox(
@@ -519,7 +436,7 @@ class HomeView extends StatelessWidget {
       init: Get.find(),
       builder: (controller) => SingleChildScrollView(
         child: Container(
-          height: 200,
+          height: 245,
           child: ListView.separated(
             itemCount: controller.productModel.length,
             scrollDirection: Axis.horizontal,
@@ -536,20 +453,28 @@ class HomeView extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .4,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
-                                color: Colors.green.shade100,
+                                color: Colors.white,
                               ),
-                              height: 100,
+                              height: 150,
                               child: Container(
                                 // height: 250,
                                 child: Image.network(
                                   controller.productModel[index].image,
-                                  fit: BoxFit.fill,
+                                  fit: BoxFit.scaleDown,
                                 ),
                               ),
                             ),
                             onTap: () {
-                              Get.to(DetailsView(
-                                model: controller.productModel[index],
+
+                              Get.to(DetailsView2(
+                                name: controller.productModel[index].name,
+                                price:controller.productModel[index].price,
+                                //      x:posts.data()['x'],
+                                details: controller.productModel[index].des,
+                                image: controller.productModel[index].image,
+                                productId:controller.productModel[index].productId,
+                                //    brand:posts.data()['brand'],
+                                //  brandemail:posts.data()['brandemail']
                               ));
                             }),
                         SizedBox(
@@ -562,28 +487,36 @@ class HomeView extends StatelessWidget {
                         SizedBox(
                           height: 20,
                         ),
-                        // Expanded(
-                        //   child: Custom_Text(
-                        //     text:controller.productModel[index].des,
-                        //     alignment:Alignment.bottomLeft,
-                        //     color:Colors.grey
-                        //   ),
-                        // ),
-                        // SizedBox(
-                        //  height:10,
-                        // ),
-                        Custom_Text(
-                            text: controller.productModel[index].price
-                                    .toString() +
-                                "  ريال",
-                            alignment: Alignment.bottomLeft,
-                            color: Colors.blue[600]),
+
+                        Row(
+                          children: [
+                            Custom_Text(
+                                text: controller.productModel[index].price
+                                        .toString() +
+                                    " ",
+                                alignment: Alignment.bottomLeft,
+                                color: Colors.blue[600]),
+
+                            Custom_Text(
+                                text: "  L.E"
+                                   ,
+                                alignment: Alignment.bottomLeft,
+                                color: Colors.blue[600]),
+                          ],
+                        ),
                       ],
                     ),
                   ),
                   onTap: () {
-                    Get.to(DetailsView(
-                      model: controller.productModel[index],
+                    Get.to(DetailsView2(
+                      name: controller.productModel[index].name,
+                      price:controller.productModel[index].price,
+                      //      x:posts.data()['x'],
+                      details: controller.productModel[index].des,
+                      image: controller.productModel[index].image,
+                      productId:controller.productModel[index].productId,
+                      //    brand:posts.data()['brand'],
+                      //  brandemail:posts.data()['brandemail']
                     ));
                   },
                 ),

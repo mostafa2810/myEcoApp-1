@@ -112,12 +112,13 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
 
      final box_country= box.read('country')??"x";
 
-     if(box_country=='x'){
-       Get.offAll(CountryView());
-     }
-     else{
-       Get.offAll(ControlView());
-     }
+     Get.offAll(ControlView());
+     // if(box_country=='x'){
+     //   Get.offAll(CountryView());
+     // }
+     // else{
+     //   Get.offAll(ControlView());
+     // }
 
 
     } catch (e) {

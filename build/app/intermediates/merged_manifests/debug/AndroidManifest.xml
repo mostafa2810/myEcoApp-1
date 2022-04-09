@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.job777.ecommerce"
+    package="com.eco.temp"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -30,14 +30,14 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/launcher_icon"
-        android:label="Luban"
+        android:label="المتجر الالكتروني "
         android:supportsRtl="true" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBW3WO2ZHalL-yrQLLdTogo8LKT-yB5xyU" />
 
         <activity
-            android:name="com.job777.ecommerce.MainActivity"
+            android:name="com.eco.temp.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTask"
@@ -213,7 +213,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.job777.ecommerce.firebaseinitprovider"
+            android:authorities="com.eco.temp.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
@@ -251,7 +251,7 @@
         -->
         <provider
             android:name="com.facebook.internal.FacebookInitProvider"
-            android:authorities="com.job777.ecommerce.FacebookInitProvider"
+            android:authorities="com.eco.temp.FacebookInitProvider"
             android:exported="false" />
 
         <receiver

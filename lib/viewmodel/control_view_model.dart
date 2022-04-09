@@ -79,17 +79,9 @@ class ControlViewModel extends GetxController {
       case 2:
         {
 
-          final box = GetStorage();
-          final cart_box=box.read('cart')??'x';
 
-
-          if(cart_box=='x'){
-            Get.to(EmptyCart());
-          }
-
-          else{
             Get.to(CartView2());
-          }
+
 
 
 // out: GetX is the best

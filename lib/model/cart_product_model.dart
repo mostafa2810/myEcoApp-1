@@ -4,13 +4,13 @@ import 'package:get_storage/get_storage.dart';
 import 'package:sqflite/sqflite.dart';
 
 class CartProductModel {
-  String name, image, price, productId,brand,brand_email;
+  String name, image, price, productId;
   int quantity;
 
 
   CartProductModel(
       {this.name, this.image, this.quantity, this.price,
-        this.productId,this.brand,this.brand_email});
+        this.productId});
 
   CartProductModel.fromJson(Map<dynamic, dynamic> map) {
     if (map == null) {
@@ -49,8 +49,8 @@ class CartProductModel {
 
     price=map['price'];
     productId = map['productid'];
-    brand=map['brand'];
-    brand_email=map['brandemail'];
+   // brand=map['brand'];
+  //  brand_email=map['brandemail'];
   }
 
   toJson() {
@@ -60,8 +60,8 @@ class CartProductModel {
       'quantity': quantity,
       'price': price,
       'productid': productId,
-      'brand':brand,
-      'brandemail':brand_email
+      //'brand':brand,
+    //  'brandemail':brand_email
     };
   }
 }

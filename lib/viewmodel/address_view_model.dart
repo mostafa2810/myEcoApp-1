@@ -13,7 +13,7 @@ class AddressViewModel extends GetxController{
   TextEditingController mobile = TextEditingController();
   TextEditingController  country= TextEditingController();
   TextEditingController city= TextEditingController();
-  String dropdownValue = '+968';
+  String dropdownValue = '+20';
   // TextEditingController floor= TextEditingController();
   // TextEditingController mobile = TextEditingController();
 

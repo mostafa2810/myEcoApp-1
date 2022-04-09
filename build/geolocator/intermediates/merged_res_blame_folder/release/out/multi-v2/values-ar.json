@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/geolocator/intermediates/res/merged/release/values-ar/values-ar.xml",
+            "outputFile": "/home/joo/work/eco_template/build/geolocator/intermediates/res/merged/release/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/3bba847dbb31e774f8337618b2a029ad/jetified-play-services-base-17.0.0/res/values-ar/values.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/geolocator/intermediates/incremental/mergeReleaseResources/merged.dir/values-ar/values-ar.xml",
+            "outputFile": "/home/joo/work/eco_template/build/geolocator/intermediates/incremental/mergeReleaseResources/merged.dir/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/3bba847dbb31e774f8337618b2a029ad/jetified-play-services-base-17.0.0/res/values-ar/values.xml",

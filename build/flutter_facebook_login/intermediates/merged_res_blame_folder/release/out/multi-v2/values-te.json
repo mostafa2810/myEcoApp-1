@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/values-te/values-te.xml",
+            "outputFile": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/incremental/mergeReleaseResources/merged.dir/values-te/values-te.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ee2e3c9bc2f81a35f3fc18d7cafb7a9e/jetified-facebook-login-5.5.1/res/values-te/values-te.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/incremental/mergeReleaseResources/merged.dir/values-te/values-te.xml",
+            "outputFile": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/values-te/values-te.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ee2e3c9bc2f81a35f3fc18d7cafb7a9e/jetified-facebook-login-5.5.1/res/values-te/values-te.xml",

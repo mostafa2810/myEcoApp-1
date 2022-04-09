@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/home/joo/work/myEcoApp22/build/google_maps_flutter/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "merged": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/3bba847dbb31e774f8337618b2a029ad/jetified-play-services-base-17.0.0/res/color/common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/google_maps_flutter/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "merged": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/3bba847dbb31e774f8337618b2a029ad/jetified-play-services-base-17.0.0/res/color/common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/google_maps_flutter/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "merged": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/3bba847dbb31e774f8337618b2a029ad/jetified-play-services-base-17.0.0/res/color/common_google_signin_btn_tint.xml"
     }
 ]

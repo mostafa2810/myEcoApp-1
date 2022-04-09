@@ -53,11 +53,11 @@ class _ProfileViewState extends State<ProfileView> {
                               // ),
                               Column(children: [
                                 Custom_Text(
-                                  text: controller.userModel.name,
+                                  text: controller.userModel.name??'',
                                 ),
                                 SizedBox(height: 10),
                                 Custom_Text(
-                                  text: controller.userModel.email,
+                                  text: controller.userModel.email??'',
                                 ),
                               ])
                             ],
@@ -85,7 +85,6 @@ class _ProfileViewState extends State<ProfileView> {
                                 final box_order=box.read('ordernum1')??"x";
 
 
-
                                 if(box_order=='x'){
 
                                     Get.to(NoOrdersView());
@@ -110,26 +109,6 @@ class _ProfileViewState extends State<ProfileView> {
                             ),
                           ),
                           SizedBox(height: 30),
-
-                          Container(
-                            child: FlatButton(
-                              onPressed: () {
-                                Get.to(
-                                 ChangeCountry()
-                                );
-                              },
-                              child: ListTile(
-                                  title: Custom_Text(
-                                    text: "تغير الدولة",
-                                    fontSize: 15,
-                                  ),
-                                  leading: Container(
-                                      width:60,
-                                     // height:90,
-                                      child: Image.asset('assets/cc.png')),
-                                  trailing: Icon(Icons.navigate_next)),
-                            ),
-                          ),
                           SizedBox(height: 30),
                           Container(
                             child: FlatButton(
@@ -150,16 +129,6 @@ class _ProfileViewState extends State<ProfileView> {
                       ),
                     ),
                   )
-
-                  // Center(
-                  //   child: FlatButton(
-                  //     onPressed: () {
-                  //       controller.signOut();
-                  //       Get.offAll(LoginView());
-                  //     },
-                  //     child: Text("Sign Out"),
-                  //   ),
-                  // ),
                   )),
     );
   }

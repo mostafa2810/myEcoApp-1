@@ -211,7 +211,7 @@ class _CartView2State extends State<CartView2> {
                                     init: Get.find(),
                                     builder: (controller) => Custom_Text(
                                       text: controller.totalPrice.toString(),
-                                      color: HexColor("#ff68682A"),
+                                      color:Colors.blue,
                                       fontSize: 18,
                                     ),
                                   )
@@ -224,7 +224,14 @@ class _CartView2State extends State<CartView2> {
                                   width: 130,
                                   child: GetBuilder<CartViewModel>(
                                     init: Get.find(),
-                                    builder: (controller) => (CustomButton(
+                                    builder: (controller) => (
+
+                                        RaisedButton(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(13)),
+
+                                          color:Colors.blue,
+                                        child:Text("تاكيد الطلب ",style:TextStyle(color:Colors.white,fontSize:20),),
                                         onPressed: () {
 
                                           print("lll="+box_address);
@@ -273,7 +280,9 @@ class _CartView2State extends State<CartView2> {
                                           //   Get.to(StatusChange());
                                           // Get.to(CheckOutView());
                                         },
-                                        text: "تاكيد الطلب")),
+
+
+                                        )),
                                   ),
                                 ),
                               ),

@@ -108,7 +108,7 @@ class MapView extends StatefulWidget{
                             );
                             print("ddd");
                           },
-                          color:Colors.lightGreen,
+                          color:Colors.blue,
                           child:
                           Text(
                             "Get Current Location",

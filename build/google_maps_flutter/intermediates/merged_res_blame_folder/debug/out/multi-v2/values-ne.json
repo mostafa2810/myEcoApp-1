@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/google_maps_flutter/intermediates/res/merged/debug/values-ne/values-ne.xml",
+            "outputFile": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/values-ne/values-ne.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/google_maps_flutter/intermediates/incremental/mergeDebugResources/merged.dir/values-ne/values-ne.xml",
+            "outputFile": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/res/merged/debug/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/values-ne/values-ne.xml",

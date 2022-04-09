@@ -38,49 +38,19 @@ class _AdressScreenState extends State<AdressScreen> {
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
           title: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    // Colors.white,
-                    Colors.white,
-                    //Colors.lightBlueAccent,
-
-                    // Colors.lightBlueAccent,
-                    Colors.white,
-                  ])),
               height: 30,
               child: Center(
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 30,
-                      ),
-                      Row(
-                        children: [
-                          // Text(
-                          //   "Luban   ",
-                          //   style: TextStyle(
-                          //       color: HexColor("#ff68682A"),
-                          //       fontSize: 22,
-                          //       fontWeight: FontWeight.w700),
-                          // ),
-                          SizedBox(
-                            width: 200
-                          ),
-                          Container(
-                            width:60,
-                            child: Image.asset("assets/wh3.jpeg",
-                              fit:BoxFit.cover
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 30,
+                          width: MediaQuery.of(context).size.width * 0.62
                       ),
 
+                      SizedBox(
+                          width: 5
+                      ),
                     ],
                   ))),
-
         ),
         body: GetBuilder<AddressViewModel>(
           init:AddressViewModel(),
@@ -221,7 +191,7 @@ class _AdressScreenState extends State<AdressScreen> {
                                             print(controller.dropdownValue);
                                           });
                                         },
-                                        items: <String>['+968', '+971', '+965', '+974','+966','+973']
+                                        items: <String>['+20']
                                             .map<DropdownMenuItem<String>>((String value) {
                                           return DropdownMenuItem<String>(
                                             value: value,
@@ -262,7 +232,7 @@ class _AdressScreenState extends State<AdressScreen> {
                               ),
                               Container(
                                 child: RaisedButton(
-                                  color: HexColor("#ff68682A"),
+                                  color: Colors.blue,
                                   onPressed: () {
                                    // print("brand"+brandname);
                                     //print("emmmaill="+brand_email);

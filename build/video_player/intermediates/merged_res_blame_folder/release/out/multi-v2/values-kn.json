@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/video_player/intermediates/res/merged/release/values-kn/values-kn.xml",
+            "outputFile": "/home/joo/work/eco_template/build/video_player/intermediates/incremental/mergeReleaseResources/merged.dir/values-kn/values-kn.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/values-kn/values-kn.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/video_player/intermediates/incremental/mergeReleaseResources/merged.dir/values-kn/values-kn.xml",
+            "outputFile": "/home/joo/work/eco_template/build/video_player/intermediates/res/merged/release/values-kn/values-kn.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/values-kn/values-kn.xml",

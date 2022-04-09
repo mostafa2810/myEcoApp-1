@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/geolocator/intermediates/res/merged/release/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "/home/joo/work/eco_template/build/geolocator/intermediates/res/merged/release/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/values-en-rGB/values-en-rGB.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/geolocator/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "/home/joo/work/eco_template/build/geolocator/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/values-en-rGB/values-en-rGB.xml",

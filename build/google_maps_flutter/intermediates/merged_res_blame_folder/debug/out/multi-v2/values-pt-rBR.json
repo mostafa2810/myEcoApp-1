@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/google_maps_flutter/intermediates/res/merged/debug/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/f28e64050acdd6110f6b43fb5b0fe4b1/jetified-play-services-basement-17.0.0/res/values-pt-rBR/values.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/google_maps_flutter/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/res/merged/debug/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/f28e64050acdd6110f6b43fb5b0fe4b1/jetified-play-services-basement-17.0.0/res/values-pt-rBR/values.xml",

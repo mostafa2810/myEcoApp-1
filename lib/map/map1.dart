@@ -120,7 +120,7 @@ class Map1 extends StatefulWidget {
           ),
           RaisedButton(
             child:Text("موافق  ",style:TextStyle(color:Colors.white,fontSize:18),),
-            color: HexColor("#ff68682A"),
+            color:Colors.blue,
             onPressed:(){
                Get.offAll(
                    AdressScreen(
@@ -135,7 +135,7 @@ class Map1 extends StatefulWidget {
 
           RaisedButton(
             child:Text("قم بالتخطي",style:TextStyle(color:Colors.white,fontSize:18),),
-            color: HexColor("#ff68682A"),
+            color: Colors.blue,
             onPressed:(){
               Get.offAll(
                   AdressScreen(

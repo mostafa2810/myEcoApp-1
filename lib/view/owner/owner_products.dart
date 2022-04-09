@@ -87,15 +87,6 @@ class _PostsScreenState extends State<OwnerProductsView> {
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
           title: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    // Colors.white,
-                    Colors.white,
-                    //Colors.lightBlueAccent,
-
-                    // Colors.lightBlueAccent,
-                    Colors.white,
-                  ])),
               height: 30,
               child: Center(
                   child: Row(
@@ -103,13 +94,7 @@ class _PostsScreenState extends State<OwnerProductsView> {
                       SizedBox(
                           width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Container(
-                        width:40,
-                        //width:57,
-                        child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fitWidth
-                        ),
-                      ),
+
                       SizedBox(
                           width: 5
                       ),

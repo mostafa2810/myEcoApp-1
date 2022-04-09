@@ -1,218 +1,218 @@
 [
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_device_auth_dialog_fragment.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ecd6a37a4a1450f08839483ab90eff8e/jetified-facebook-common-5.5.1/res/layout/com_facebook_device_auth_dialog_fragment.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_mode_bar.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_mode_bar.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_screen_toolbar.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_screen_toolbar.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/select_dialog_singlechoice_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/select_dialog_singlechoice_material.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/support_simple_spinner_dropdown_item.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_big_media_custom.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_big_media_custom.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_big_media_custom.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_alert_dialog_button_bar_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_alert_dialog_button_bar_material.xml"
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_smart_device_dialog_fragment.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ecd6a37a4a1450f08839483ab90eff8e/jetified-facebook-common-5.5.1/res/layout/com_facebook_smart_device_dialog_fragment.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_screen_simple.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_screen_simple.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_big_media_narrow_custom.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_big_media_narrow_custom.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_list_menu_item_checkbox.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_dialog_title_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_dialog_title_material.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_alert_dialog_title_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_alert_dialog_title_material.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_media.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_media.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/select_dialog_multichoice_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/select_dialog_multichoice_material.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_cascading_menu_item_layout.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_cascading_menu_item_layout.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/browser_actions_context_menu_row.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/29dcb6a4b8c210d2198b117a45662fcf/browser-1.0.0/res/layout/browser_actions_context_menu_row.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/browser_actions_context_menu_page.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/29dcb6a4b8c210d2198b117a45662fcf/browser-1.0.0/res/layout/browser_actions_context_menu_page.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_media_custom.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_media_custom.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/select_dialog_item_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/select_dialog_item_material.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/custom_dialog.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/custom_dialog.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_popup_menu_header_item_layout.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_popup_menu_header_item_layout.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_search_view.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_search_view.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_media_action.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_media_action.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_list_menu_item_layout.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_media_cancel_action.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_select_dialog_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_select_dialog_material.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_tooltip_bubble.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ee2e3c9bc2f81a35f3fc18d7cafb7a9e/jetified-facebook-login-5.5.1/res/layout/com_facebook_tooltip_bubble.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_action.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_action.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_list_menu_item_icon.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_mode_close_item_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_mode_close_item_material.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_big_media_narrow.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_menu_item_layout.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_menu_item_layout.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_part_chronometer.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_template_part_chronometer.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_screen_content_include.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_screen_content_include.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_icon_group.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_template_icon_group.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_expanded_menu_layout.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_expanded_menu_layout.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_action_tombstone.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_action_tombstone.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_menu_layout.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_menu_layout.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_list_menu_item_radio.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_list_menu_item_radio.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_login_fragment.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_login_fragment.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ecd6a37a4a1450f08839483ab90eff8e/jetified-facebook-common-5.5.1/res/layout/com_facebook_login_fragment.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_tooltip.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_menu_item_layout.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_media_custom.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_list_menu_item_radio.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_mode_bar.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_media_action.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_tooltip.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_tooltip.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_activity_chooser_view.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_activity_chooser_view.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_activity_layout.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ecd6a37a4a1450f08839483ab90eff8e/jetified-facebook-common-5.5.1/res/layout/com_facebook_activity_layout.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_bar_title_item.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_bar_title_item.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_bar_up_container.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_bar_up_container.xml"
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_mode_close_item_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_part_time.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_template_part_time.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_lines_media.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_lines_media.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_lines_media.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_big_media.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/custom_dialog.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_icon_group.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_search_view.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_part_time.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_select_dialog_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_big_media_narrow_custom.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_media.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_big_media.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_big_media.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_alert_dialog_material.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/select_dialog_item_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_action.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_media_cancel_action.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_part_chronometer.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/select_dialog_multichoice_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/select_dialog_singlechoice_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_cascading_menu_item_layout.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_cascading_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_device_auth_dialog_fragment.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ecd6a37a4a1450f08839483ab90eff8e/jetified-facebook-common-5.5.1/res/layout/com_facebook_device_auth_dialog_fragment.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/browser_actions_context_menu_row.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/29dcb6a4b8c210d2198b117a45662fcf/browser-1.0.0/res/layout/browser_actions_context_menu_row.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_tooltip_bubble.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ee2e3c9bc2f81a35f3fc18d7cafb7a9e/jetified-facebook-login-5.5.1/res/layout/com_facebook_tooltip_bubble.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_screen_content_include.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_screen_toolbar.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_template_big_media_narrow.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/a0eea90849baea9aabd8a0c4dfec6c99/media-1.0.0/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_alert_dialog_title_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_activity_layout.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ecd6a37a4a1450f08839483ab90eff8e/jetified-facebook-common-5.5.1/res/layout/com_facebook_activity_layout.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_bar_up_container.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_list_menu_item_icon.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_dialog_title_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_screen_simple.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/browser_actions_context_menu_page.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/29dcb6a4b8c210d2198b117a45662fcf/browser-1.0.0/res/layout/browser_actions_context_menu_page.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/notification_action_tombstone.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_alert_dialog_material.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/layout/com_facebook_smart_device_dialog_fragment.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/ecd6a37a4a1450f08839483ab90eff8e/jetified-facebook-common-5.5.1/res/layout/com_facebook_smart_device_dialog_fragment.xml"
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_action_menu_layout.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/abc_activity_chooser_view.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/layout/support_simple_spinner_dropdown_item.xml"
     }
 ]

@@ -1,38 +1,38 @@
 [
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_edittext.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_edittext.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_default.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_switch_track.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_spinner.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_spinner.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_btn_colored_text_material.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_color_highlight_material.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_seek_thumb.xml"
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_spinner.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_spinner.xml"
     },
     {
-        "merged": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_switch_track.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
         "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_edittext.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/color-v23/abc_tint_seek_thumb.xml"
     }
 ]

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/values-ldltr-v21/values-ldltr-v21.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/incremental/mergeReleaseResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/incremental/mergeReleaseResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/values-ldltr-v21/values-ldltr-v21.xml",

@@ -67,23 +67,23 @@ class _Map1State extends State<Map2> {
   Widget build(BuildContext context) {
     var markers=HashSet<Marker>();
     return Scaffold(
-      appBar:AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Row(
-          children: [
-            Text("Luban   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                fontWeight:FontWeight.w700
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Container(
+            height: 30,
+            child: Center(
+                child: Row(
+                  children: [
+                    SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.62
+                    ),
 
-            ),),
-            SizedBox(
-              width: 80,
-            ),
-            Text("لبان   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                fontWeight:FontWeight.w700
-
-            ),),
-          ],
-        ),
+                    SizedBox(
+                        width: 5
+                    ),
+                  ],
+                ))),
       ),
       body:
       Container(

@@ -21,17 +21,10 @@ import 'helper/binding.dart';
 
 Future<void> main() async {
 
-
-
-
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
- // Get.put(CartViewModel());
   Get.put(ControlViewModel());
   Get.put(CartViewModel());
-  // Get.put(AuthViewModel());
-  // Get.put(HomeViewModel());
-  // Get.put(LocalStorageData());
   await GetStorage.init();
   runApp(MyApp());
 
@@ -50,21 +43,21 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(
-        'assets/Luban9.mp4')
-      ..initialize().then((_) {
-        _controller.play();
-        print("doooone");
+
+    // _controller = VideoPlayerController.asset(
+    //     'assets/ecom.png')
+    //   ..initialize().then((_) {
+    //     _controller.play();
+    //     print("doooone");
         new Future.delayed(new Duration(seconds:5), ()
         {
           print("xxxx");
           Get.off(ControlView());
 
         });
-
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-
-      });
+    //
+    //     // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+    //   });
   }
   @override
   Widget build(BuildContext context) {
@@ -73,26 +66,21 @@ class _MyAppState extends State<MyApp> {
   debugShowCheckedModeBanner:false,
       home:
       Scaffold(
-        backgroundColor:  HexColor("#ffE6E3E3"),
+        backgroundColor: Colors.white,
+        //HexColor("#ffE6E3E3"),
           body:Container(
             height:1000,
            // padding:EdgeInsets.only(top:260),
-          color: HexColor("#ffE6E3E3"),
+          color:Colors.white,
             //    height:510,
            //   width:900,
            // height:700,
-            child: AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: <Widget>[
-                  VideoPlayer(_controller,
-                  ),
-                  //ControlsOverlay(controller: _controller),
-                  //  VideoProgressIndicator(_controller, allowScrubbing: true),
-                ],
-              ),
-            ),
+            child:
+            Container(
+
+                width:440,
+                child: Image.asset('assets/ecom.png'))
+
           )
       )
 

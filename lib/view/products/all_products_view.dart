@@ -46,15 +46,6 @@ class _PostsScreenState extends State<AllProductsView> {
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
           title: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    // Colors.white,
-                    Colors.white,
-                    //Colors.lightBlueAccent,
-
-                    // Colors.lightBlueAccent,
-                    Colors.white,
-                  ])),
               height: 30,
               child: Center(
                   child: Row(
@@ -62,13 +53,7 @@ class _PostsScreenState extends State<AllProductsView> {
                       SizedBox(
                           width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Container(
-                        width:40,
-                        //width:57,
-                        child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fitWidth
-                        ),
-                      ),
+
                       SizedBox(
                           width: 5
                       ),
@@ -103,15 +88,16 @@ class _PostsScreenState extends State<AllProductsView> {
                           crossAxisCount: 2,
                           crossAxisSpacing: 2,
                           mainAxisSpacing: 3,
-
-                        ), //(orientation == Orientation.portrait) ? 2: 2.2),
+                        ),
+                            //(orientation == Orientation.portrait) ? 2: 2.2),
                         itemBuilder: (BuildContext context, int index) {
                           DocumentSnapshot posts =
                               snapshot.data.documents[index];
-
-                          return GetBuilder<HomeViewModel>(
+                          return
+                            GetBuilder<HomeViewModel>(
                               init: Get.find(),
                               builder: (controller) => Container(
+                             //   height:220,
                                   padding: EdgeInsets.all(5),
                                   child: InkWell(
                                     child: Card(
@@ -120,7 +106,7 @@ class _PostsScreenState extends State<AllProductsView> {
                                         SizedBox(height: 20),
                                         Container(
                                           width: 150,
-                                          height: 90,
+                                          height: 70,
                                           child: Image.network(
                                               posts.data()['image'],
                                               fit: BoxFit.fitWidth),
@@ -129,89 +115,20 @@ class _PostsScreenState extends State<AllProductsView> {
                                         Text((posts.data()['name']),style:TextStyle(color:Colors.black,fontSize:16,
                                             fontWeight:FontWeight.bold),),
                                         SizedBox(height: 2),
-
-
-                                        if(box_country=='السعودية')
                                           Text((posts.data()['price']).toString(),
                                             style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
                                                 fontWeight:FontWeight.bold),
                                           ),
-
-                                        if(box_country=='قطر')
-                                          Text((posts.data()['priceQ']).toString(),
-                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                fontWeight:FontWeight.bold),
-                                          ),
-
-
-                                        if(box_country=='كويت')
-                                          Text((posts.data()['priceQw']).toString(),
-                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                fontWeight:FontWeight.bold),
-
-                                          ),
-
-                                        if(box_country=='سلطنة عمان')
-                                          Text((posts.data()['priceAm']).toString(),
-                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                fontWeight:FontWeight.bold),
-
-                                          ),
-
-                                        if(box_country=='البحرين')
-                                          Text((posts.data()['priceBh']).toString(),
-                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                fontWeight:FontWeight.bold),
-
-                                          ),
-
-
-
-                                        if(box_country=='كويت')
-                                          Text((posts.data()['priceQw']).toString(),
-                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                fontWeight:FontWeight.bold),
-
-                                          ),
-                                        if(box_country=='امارات')
-                                          Text((posts.data()['priceAmar']).toString(),
-                                              style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                  fontWeight:FontWeight.bold)),
-
-
                                       ]),
                                     ),
                                     onTap: () {
-                                      if(box_country=='امارات'){
-                                        price=posts.data()['priceAmar'];
-                                      }
-                                      if(box_country=='الكويت'){
-                                        price=posts.data()['priceQw'];
-                                      }
-                                      if(box_country=='البحرين'){
-                                        price=posts.data()['priceBh'];
-                                      }
-                                      if(box_country=='سلطنة عمان'){
-                                        price=posts.data()['priceAm'];
-                                      }
-                                      if(box_country=='قطر'){
-                                        price=posts.data()['priceQ'];
-                                      }
-                                      if(box_country=='السعودية'){
-                                        price=posts.data()['price'];
-                                      }
-                                      if(box_country=='x'){
-                                        price=posts.data()['price'];
-                                      }
-
-
                              Get.to(DetailsView2(
-                                                                  name: posts.data()['name'],
-                                                                  price:price,
-                                                                  x:posts.data()['x'],
-                                                                  details: posts.data()['des'],
-                                                                  image: posts.data()['image'],
-                                                                  productId:posts.data()['productid'],
+                               name: posts.data()['name'],
+                               price:posts.data()['price'],
+                               //x:posts.data()['x'],
+                               details: posts.data()['des'],
+                               image: posts.data()['image'],
+                               productId:posts.data()['productid'],
                                                                 ));
                                     },
                                   )));

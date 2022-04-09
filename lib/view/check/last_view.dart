@@ -27,7 +27,7 @@ class LastView extends StatelessWidget {
 
                   height:240,
                   width:330,
-                  child: Image.asset('assets/wh3.jpeg',fit:BoxFit.cover,)),
+                  child: Image.asset('assets/ecom.png',fit:BoxFit.fitHeight,)),
 
 
               Container(
@@ -42,7 +42,7 @@ class LastView extends StatelessWidget {
 
 
               RaisedButton(
-                  color: Colors.green,
+                  color: Colors.blue,
                   textColor: Colors.white,
                   child: Text("  عودة للتصفح   ",style:TextStyle(fontSize:21),),
                   onPressed: () {

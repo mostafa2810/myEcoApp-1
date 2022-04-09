@@ -164,7 +164,7 @@ class _AddressCheckState extends State<AddressCheck> {
         RaisedButton(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(13)),
-            color: HexColor("#ff68682A"),
+            color: Colors.blue,
           child:Text("    تاكيد الطلب علي هذا العنوان     ",style:TextStyle(
               color:Colors.white,
               fontSize:19),),
@@ -192,7 +192,7 @@ class _AddressCheckState extends State<AddressCheck> {
           height:6
         ),
         RaisedButton(
-            color: HexColor("#ff68682A"),
+            color: Colors.blue,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10)),
             child:Text("   اضافة عنوان اخر    ",style:TextStyle(

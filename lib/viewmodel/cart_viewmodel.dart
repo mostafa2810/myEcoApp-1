@@ -89,16 +89,16 @@ class CartViewModel extends GetxController {
         colorText: Colors.black);
     }
 
-    if (cartProductModel.brand != cartProductModel.brand ) {
-      Get.snackbar('عفوا', "لا يمكن اضافة ",
-          snackPosition: SnackPosition.BOTTOM,
-          //backgroundColor: Colors.white,
-          colorText: Colors.black);
-    }
+    // if (cartProductModel.brand != cartProductModel.brand ) {
+    //   Get.snackbar('عفوا', "لا يمكن اضافة ",
+    //       snackPosition: SnackPosition.BOTTOM,
+    //       //backgroundColor: Colors.white,
+    //       colorText: Colors.black);
+    // }
 
 
     else {
-      print("brannnnd="+cartProductModel.brand_email);
+     // print("brannnnd="+cartProductModel.brand_email);
       var dbHelper = CartDatabaseHelper.db;
       await dbHelper.insert(cartProductModel);
       print("done");

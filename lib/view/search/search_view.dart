@@ -46,7 +46,6 @@ class _PostsScreenState extends State<SearchView> {
                     // Colors.white,
                     Colors.white,
                     //Colors.lightBlueAccent,
-
                     // Colors.lightBlueAccent,
                     Colors.white,
                   ])),
@@ -57,13 +56,6 @@ class _PostsScreenState extends State<SearchView> {
                       SizedBox(
                           width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Container(
-                        width:40,
-                        //width:57,
-                        child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fitWidth
-                        ),
-                      ),
                       SizedBox(
                           width: 5
                       ),
@@ -71,13 +63,12 @@ class _PostsScreenState extends State<SearchView> {
                   ))),
         ),
 
-
-
         body:
         Container(
-          color: Colors.grey[200],
+          color: Colors.blue,
           child: Column(
               children: [
+
                 SizedBox(
                   height:4,
                 ),
@@ -86,16 +77,16 @@ class _PostsScreenState extends State<SearchView> {
                   child: StreamBuilder(
                       stream:
                       FirebaseFirestore.instance.
-                      collection('category').where('name',isGreaterThanOrEqualTo:widget.search_txt)
+                      collection('products').where('name',isGreaterThanOrEqualTo:widget.search_txt)
                           .snapshots(),
                       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (!snapshot.hasData) return Center(child: Text('Loading'));
                         switch (snapshot.connectionState) {
                           case ConnectionState.waiting:
                             return new Text('Loading...');
-//.where("category", isEqualTo:"tec")
                           default:
-                            return GridView.builder(
+                            return
+                              GridView.builder(
                                 itemCount: snapshot.data.documents.length,
                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
@@ -105,44 +96,47 @@ class _PostsScreenState extends State<SearchView> {
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
                                   snapshot.data.documents[index];
+                                  return
+                                    GetBuilder<HomeViewModel>(
+                                        init: Get.find(),
+                                        builder: (controller) => Container(
+                                            padding: EdgeInsets.all(5),
+                                            child: InkWell(
+                                              child: Card(
+                                                color: Colors.grey[100],
+                                                child: Column(children: [
+                                                  SizedBox(height: 20),
+                                                  Container(
+                                                    width: 150,
+                                                    height: 90,
+                                                    child: Image.network(
+                                                        posts.data()['image'],
+                                                        fit: BoxFit.fill),
+                                                  ),
+                                                  SizedBox(height: 2),
+                                                  Text((posts.data()['name']),style:TextStyle(color:Colors.black,fontSize:16,
+                                                      fontWeight:FontWeight.bold),),
+                                                  SizedBox(height: 2),
 
-                                  return GetBuilder<HomeViewModel>(
-                                      init: Get.find(),
-                                      builder: (controller) => Container(
-                                          padding: EdgeInsets.all(4),
-                                          child: InkWell(
-                                            child: Card(
-                                              color: Colors.grey[300],
-                                              child: Column(children: [
-                                                SizedBox(height: 20),
-                                                Container(
-                                                  width: 150,
-                                                  height: 90,
-                                                  child: Image.network(
-                                                      posts.data()['image'],
-                                                      fit: BoxFit.fitWidth),
-                                                ),
-                                                SizedBox(height: 3),
 
-                                                Text(posts.data()['name'],
-                                                    style:TextStyle( color: HexColor("#ff68682A"),
-                                                        fontWeight:FontWeight.bold,
-                                                        fontSize:18
-                                                    )
-                                                ),
+                                                  Text((posts.data()['price']).toString(),
+                                                    style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
+                                                        fontWeight:FontWeight.bold),
+                                                  ),
+                                                ]),
+                                              ),
+                                              onTap: () {
 
-                                                SizedBox (height : 3),
-
-                                              ]),
-                                            ),
-                                            onTap: () {
-
-                                              Get.to(
-                                                ProductsView
-                                                (br:posts.data()['name']),);
-
-                                            },
-                                          )));
+                                                Get.to(DetailsView2(
+                                                  name: posts.data()['name'],
+                                                  price:posts.data()['price'],
+                                                  //x:posts.data()['x'],
+                                                  details: posts.data()['des'],
+                                                  image: posts.data()['image'],
+                                                  productId:posts.data()['productid'],
+                                                ));
+                                              },
+                                            )));
                                 });
                         }
                       }),

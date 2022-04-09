@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/incremental/mergeReleaseResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/values-hdpi-v4/values-hdpi-v4.xml",
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/incremental/mergeReleaseResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/values-hdpi-v4/values-hdpi-v4.xml",

@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.job777.ecommerce"
+3    package="com.eco.temp"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -12,26 +12,26 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/home/joo/work/myEcoApp22/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/home/joo/work/myEcoApp22/android/app/src/debug/AndroidManifest.xml:6:22-64
+14-->/home/joo/work/eco_template/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/home/joo/work/eco_template/android/app/src/debug/AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.INTERTNET" />
-15-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:3:5-67
-15-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:3:22-65
+15-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:3:5-67
+15-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:3:22-65
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:4:5-79
-16-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:4:22-76
+16-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:4:5-79
+16-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:4:22-76
 17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-17-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:5:5-80
-17-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:5:22-78
+17-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:5:5-80
+17-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:5:22-78
 18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-18-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:6:5-79
-18-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:6:22-77
+18-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:6:5-79
+18-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:6:22-77
 19    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-19-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:7:5-81
-19-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:7:22-78
+19-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:7:5-81
+19-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:7:22-78
 20    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-20-->[:location] /home/joo/work/myEcoApp22/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-79
-20-->[:location] /home/joo/work/myEcoApp22/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-76
+20-->[:location] /home/joo/work/eco_template/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-79
+20-->[:location] /home/joo/work/eco_template/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:8:22-76
 21    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
 21-->[com.google.firebase:firebase-messaging:22.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/db8928b7c6fe83ed1ee5131dc16022c5/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:23:5-68
 21-->[com.google.firebase:firebase-messaging:22.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/db8928b7c6fe83ed1ee5131dc16022c5/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:23:22-65
@@ -50,37 +50,37 @@
 27-->[com.google.android.gms:play-services-maps:17.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/8b920335558ff8b94ad308e454eda0ef/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
 28
 29    <application
-29-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:12:5-59:19
+29-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:12:5-59:19
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 30-->[androidx.core:core:1.3.2] /home/joo/.gradle/caches/transforms-2/files-2.1/d065c9c994bbbdee630b3b2724707291/core-1.3.2/AndroidManifest.xml:24:18-86
 31        android:debuggable="true"
 32        android:icon="@mipmap/launcher_icon"
-32-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:14:9-45
-33        android:label="Luban"
-33-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:13:9-30
+32-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:14:9-45
+33        android:label="المتجر الالكتروني "
+33-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:13:9-43
 34        android:supportsRtl="true" >
 34-->[com.facebook.android:facebook-login:5.5.1] /home/joo/.gradle/caches/transforms-2/files-2.1/ee2e3c9bc2f81a35f3fc18d7cafb7a9e/jetified-facebook-login-5.5.1/AndroidManifest.xml:28:18-44
 35        <meta-data
-35-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:16:9-17:70
+35-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:16:9-17:70
 36            android:name="com.google.android.geo.API_KEY"
-36-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:16:20-65
+36-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:16:20-65
 37            android:value="AIzaSyBW3WO2ZHalL-yrQLLdTogo8LKT-yB5xyU" />
-37-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:17:13-68
+37-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:17:13-68
 38
 39        <activity
-39-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:19:9-51:20
-40            android:name="com.job777.ecommerce.MainActivity"
-40-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:20:13-41
+39-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:19:9-51:20
+40            android:name="com.eco.temp.MainActivity"
+40-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:20:13-41
 41            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-41-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:23:13-163
+41-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:23:13-163
 42            android:hardwareAccelerated="true"
-42-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:24:13-47
+42-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:24:13-47
 43            android:launchMode="singleTask"
-43-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:21:13-44
+43-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:21:13-44
 44            android:theme="@style/LaunchTheme"
-44-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:22:13-47
+44-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:22:13-47
 45            android:windowSoftInputMode="adjustResize" >
-45-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:25:13-55
+45-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:25:13-55
 46
 47            <!--
 48                 Specifies an Android theme to apply to this Activity as soon as
@@ -89,11 +89,11 @@
 51                 to determine the Window background behind the Flutter UI.
 52            -->
 53            <meta-data
-53-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:30:13-33:19
+53-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:30:13-33:19
 54                android:name="io.flutter.embedding.android.NormalTheme"
-54-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:31:17-72
+54-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:31:17-72
 55                android:resource="@style/NormalTheme" />
-55-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:32:17-54
+55-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:32:17-54
 56            <!--
 57                 Displays an Android View that continues showing the launch screen
 58                 Drawable until Flutter paints its first frame, then this splash
@@ -102,31 +102,31 @@
 61                 Flutter's first frame.
 62            -->
 63            <meta-data
-63-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:39:13-42:19
+63-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:39:13-42:19
 64                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-64-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:40:17-81
+64-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:40:17-81
 65                android:resource="@drawable/launch_background" />
-65-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:41:17-63
+65-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:41:17-63
 66
 67            <intent-filter>
-67-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:43:13-46:29
+67-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:43:13-46:29
 68                <action android:name="android.intent.action.MAIN" />
-68-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:44:17-68
-68-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:44:25-66
+68-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:44:17-68
+68-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:44:25-66
 69
 70                <category android:name="android.intent.category.LAUNCHER" />
-70-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:45:17-76
-70-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:45:27-74
+70-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:45:17-76
+70-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:45:27-74
 71            </intent-filter>
 72            <intent-filter>
-72-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:47:13-50:29
+72-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:47:13-50:29
 73                <action android:name="FLUTTER_NOTIFICATION_CLICK" />
-73-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:48:17-69
-73-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:48:25-66
+73-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:48:17-69
+73-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:48:25-66
 74
 75                <category android:name="android.intent.category.DEFAULT" />
-75-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:49:17-76
-75-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:49:27-73
+75-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:49:17-76
+75-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:49:27-73
 76            </intent-filter>
 77        </activity>
 78        <!--
@@ -134,44 +134,44 @@
 80             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 81        -->
 82        <meta-data
-82-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:54:9-56:33
+82-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:54:9-56:33
 83            android:name="flutterEmbedding"
-83-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:55:13-44
+83-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:55:13-44
 84            android:value="2" />
-84-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:56:13-30
+84-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:56:13-30
 85
 86        <service
-86-->[:cloud_firestore] /home/joo/work/myEcoApp22/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+86-->[:cloud_firestore] /home/joo/work/eco_template/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
 87            android:name="com.google.firebase.components.ComponentDiscoveryService"
-87-->[:cloud_firestore] /home/joo/work/myEcoApp22/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
+87-->[:cloud_firestore] /home/joo/work/eco_template/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
 88            android:directBootAware="true"
 88-->[com.google.firebase:firebase-common:20.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/ecc89904541f5b1efbef55036a3af467/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
 89            android:exported="false" >
 89-->[com.google.firebase:firebase-analytics-ktx:19.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/18ca0e8bbac822f20462dd944639b637/jetified-firebase-analytics-ktx-19.0.1/AndroidManifest.xml:10:13-37
 90            <meta-data
-90-->[:cloud_firestore] /home/joo/work/myEcoApp22/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+90-->[:cloud_firestore] /home/joo/work/eco_template/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 91                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-91-->[:cloud_firestore] /home/joo/work/myEcoApp22/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-134
+91-->[:cloud_firestore] /home/joo/work/eco_template/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-134
 92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[:cloud_firestore] /home/joo/work/myEcoApp22/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+92-->[:cloud_firestore] /home/joo/work/eco_template/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 93            <meta-data
-93-->[:firebase_auth] /home/joo/work/myEcoApp22/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+93-->[:firebase_auth] /home/joo/work/eco_template/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 94                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-94-->[:firebase_auth] /home/joo/work/myEcoApp22/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+94-->[:firebase_auth] /home/joo/work/eco_template/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
 95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[:firebase_auth] /home/joo/work/myEcoApp22/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+95-->[:firebase_auth] /home/joo/work/eco_template/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 96            <meta-data
-96-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-16:85
+96-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-16:85
 97                android:name="com.google.firebase.components:io.flutter.plugins.firebasemessaging.FlutterFirebaseAppRegistrar"
-97-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-127
+97-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-127
 98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-82
+98-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-82
 99            <meta-data
-99-->[:firebase_core] /home/joo/work/myEcoApp22/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+99-->[:firebase_core] /home/joo/work/eco_template/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
 100                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-100-->[:firebase_core] /home/joo/work/myEcoApp22/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+100-->[:firebase_core] /home/joo/work/eco_template/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
 101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[:firebase_core] /home/joo/work/myEcoApp22/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+101-->[:firebase_core] /home/joo/work/eco_template/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
 102            <meta-data
 102-->[com.google.firebase:firebase-analytics-ktx:19.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/18ca0e8bbac822f20462dd944639b637/jetified-firebase-analytics-ktx-19.0.1/AndroidManifest.xml:11:13-13:85
 103                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
@@ -222,25 +222,25 @@
 125-->[com.google.firebase:firebase-installations:17.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/f1a1296ffd8281f112f8738604bce393/jetified-firebase-installations-17.0.0/AndroidManifest.xml:20:17-82
 126        </service>
 127        <service android:name="io.flutter.plugins.firebasemessaging.FlutterFirebaseMessagingService" >
-127-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
-127-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-101
+127-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+127-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-101
 128            <intent-filter>
-128-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
+128-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
 129                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-129-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-78
-129-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-75
+129-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-78
+129-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-75
 130            </intent-filter>
 131        </service>
 132        <service
-132-->[:location] /home/joo/work/myEcoApp22/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-15:56
+132-->[:location] /home/joo/work/eco_template/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-15:56
 133            android:name="com.lyokone.location.FlutterLocationService"
-133-->[:location] /home/joo/work/myEcoApp22/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-71
+133-->[:location] /home/joo/work/eco_template/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-71
 134            android:enabled="true"
-134-->[:location] /home/joo/work/myEcoApp22/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-35
+134-->[:location] /home/joo/work/eco_template/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-35
 135            android:exported="false"
-135-->[:location] /home/joo/work/myEcoApp22/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
+135-->[:location] /home/joo/work/eco_template/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-37
 136            android:foregroundServiceType="location" />
-136-->[:location] /home/joo/work/myEcoApp22/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-53
+136-->[:location] /home/joo/work/eco_template/build/location/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-53
 137
 138        <receiver
 138-->[com.google.firebase:firebase-messaging:22.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/db8928b7c6fe83ed1ee5131dc16022c5/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:28:9-35:20
@@ -270,10 +270,10 @@
 153            android:exported="false" >
 153-->[com.google.firebase:firebase-messaging:22.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/db8928b7c6fe83ed1ee5131dc16022c5/jetified-firebase-messaging-22.0.0/AndroidManifest.xml:44:13-37
 154            <intent-filter android:priority="-500" >
-154-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
+154-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:29
 155                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-155-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-78
-155-->[:firebase_messaging] /home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-75
+155-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-78
+155-->[:firebase_messaging] /home/joo/work/eco_template/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:10:25-75
 156            </intent-filter>
 157        </service>
 158        <service
@@ -309,8 +309,8 @@
 173-->[com.google.firebase:firebase-auth:21.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/c53b4334ab6a1f5de18dcbd84061d361/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
 174
 175                <category android:name="android.intent.category.DEFAULT" />
-175-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:49:17-76
-175-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:49:27-73
+175-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:49:17-76
+175-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:49:27-73
 176                <category android:name="android.intent.category.BROWSABLE" />
 176-->[com.google.firebase:firebase-auth:21.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/c53b4334ab6a1f5de18dcbd84061d361/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
 176-->[com.google.firebase:firebase-auth:21.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/c53b4334ab6a1f5de18dcbd84061d361/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
@@ -344,8 +344,8 @@
 191-->[com.google.firebase:firebase-auth:21.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/c53b4334ab6a1f5de18dcbd84061d361/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
 192
 193                <category android:name="android.intent.category.DEFAULT" />
-193-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:49:17-76
-193-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:49:27-73
+193-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:49:17-76
+193-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:49:27-73
 194                <category android:name="android.intent.category.BROWSABLE" />
 194-->[com.google.firebase:firebase-auth:21.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/c53b4334ab6a1f5de18dcbd84061d361/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
 194-->[com.google.firebase:firebase-auth:21.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/c53b4334ab6a1f5de18dcbd84061d361/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
@@ -376,8 +376,8 @@
 208-->[com.google.firebase:firebase-auth:21.0.1] /home/joo/.gradle/caches/transforms-2/files-2.1/c53b4334ab6a1f5de18dcbd84061d361/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
 209
 210                <category android:name="android.intent.category.DEFAULT" />
-210-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:49:17-76
-210-->/home/joo/work/myEcoApp22/android/app/src/main/AndroidManifest.xml:49:27-73
+210-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:49:17-76
+210-->/home/joo/work/eco_template/android/app/src/main/AndroidManifest.xml:49:27-73
 211            </intent-filter>
 212        </service>
 213
@@ -385,7 +385,7 @@
 214-->[com.google.firebase:firebase-common:20.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/ecc89904541f5b1efbef55036a3af467/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
 215            android:name="com.google.firebase.provider.FirebaseInitProvider"
 215-->[com.google.firebase:firebase-common:20.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/ecc89904541f5b1efbef55036a3af467/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
-216            android:authorities="com.job777.ecommerce.firebaseinitprovider"
+216            android:authorities="com.eco.temp.firebaseinitprovider"
 216-->[com.google.firebase:firebase-common:20.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/ecc89904541f5b1efbef55036a3af467/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
 217            android:directBootAware="true"
 217-->[com.google.firebase:firebase-common:20.0.0] /home/joo/.gradle/caches/transforms-2/files-2.1/ecc89904541f5b1efbef55036a3af467/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
@@ -450,7 +450,7 @@
 252-->[com.facebook.android:facebook-core:5.5.1] /home/joo/.gradle/caches/transforms-2/files-2.1/d1ce21e689398668c9993f6d0bc1e07e/jetified-facebook-core-5.5.1/AndroidManifest.xml:39:9-42:40
 253            android:name="com.facebook.internal.FacebookInitProvider"
 253-->[com.facebook.android:facebook-core:5.5.1] /home/joo/.gradle/caches/transforms-2/files-2.1/d1ce21e689398668c9993f6d0bc1e07e/jetified-facebook-core-5.5.1/AndroidManifest.xml:40:13-70
-254            android:authorities="com.job777.ecommerce.FacebookInitProvider"
+254            android:authorities="com.eco.temp.FacebookInitProvider"
 254-->[com.facebook.android:facebook-core:5.5.1] /home/joo/.gradle/caches/transforms-2/files-2.1/d1ce21e689398668c9993f6d0bc1e07e/jetified-facebook-core-5.5.1/AndroidManifest.xml:41:13-72
 255            android:exported="false" />
 255-->[com.facebook.android:facebook-core:5.5.1] /home/joo/.gradle/caches/transforms-2/files-2.1/d1ce21e689398668c9993f6d0bc1e07e/jetified-facebook-core-5.5.1/AndroidManifest.xml:42:13-37

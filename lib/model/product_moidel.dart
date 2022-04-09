@@ -36,31 +36,10 @@ class ProductModel {
     final box_country=box.read('country')??'x';
 
 
-    if(box_country=='امارات'){
-      price =map['priceAmar'];
-    }
-    if(box_country=='البحرين'){
-      price =map['priceBh'];
-    }
-    if(box_country=='قطر'){
-      price =map['priceQ'];
-    }
-    if(box_country=='سلطنة عمان'){
-      price =map['priceAm'];
-    }
 
-    if(box_country=='كويت'){
-      price =map['priceQw'];
-    }
-    if(box_country=='السعودية'){
-      price =map['price'];
-    }
-    if(box_country=='x'){
-      price =map['price'];
-    }
     quant = map['quant'];
     brand = map['brand'];
-
+    price=map['price'];
     brand_email=map['brandemail'];
     productId = map['productid'];
   }

@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
 
          ),
          padding:EdgeInsets.all(18),
-         color: HexColor("#ff68682A"),
+         color: Colors.blue,
          onPressed:onPressed,
          child:Custom_Text(
            text:text,

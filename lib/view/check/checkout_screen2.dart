@@ -57,27 +57,14 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
           title: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-
-                    Colors.white,
-                    Colors.white,
-                  ])),
               height: 30,
               child: Center(
                   child: Row(
                     children: [
                       SizedBox(
-                          width:120
-                        //MediaQuery.of(context).size.width * 0.62
+                          width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Container(
-                        width:40,
-                        //width:57,
-                        child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fitWidth
-                        ),
-                      ),
+
                       SizedBox(
                           width: 5
                       ),
@@ -106,8 +93,9 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                 color:Colors.white,
                                 height:120,
                                 width:600,
-                                child:Image.asset('assets/wh3.jpeg'),
+                                child:Image.asset('assets/ecom.png'),
                               ),
+                              SizedBox(height: 10),
                                 Card(
                                   color:Colors.white ,
                                   child: Column(
@@ -120,17 +108,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                             TextStyle(color: Colors.black, fontSize: 19,fontWeight:FontWeight.w700),
                                           )),
                                       SizedBox(height:5,),
-                                      Row(
-                                        children: [
-                                          SizedBox(width:8,),
-                                          Text(" المتجر :",style:TextStyle(color:Colors.black,fontSize: 16),),
-                                          Text(
-                                             box_brand??"",
-                                            style:
-                                            TextStyle(color: Colors.black, fontSize: 16,fontWeight:FontWeight.w700),
-                                          ),
-                                        ],
-                                      ),
+
                                       SizedBox(height:5,),
                                       Row(
                                         children: [
@@ -428,7 +406,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                                 shape: new RoundedRectangleBorder(
       borderRadius: new BorderRadius.circular(30.0),
     ),
-                                                color: HexColor("#ff68682A"),
+                                                color: Colors.blue,
                                                 onPressed: () {
                                                   for (int i = 0; i < i2; i++)
 

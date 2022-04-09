@@ -17,9 +17,11 @@ import 'package:hexcolor/hexcolor.dart';
 
 class ProductsView extends StatefulWidget {
 
-  String br;
+  String cat;
 
-  ProductsView({this.br});
+  ProductsView({this.cat});
+
+
   @override
   _PostsScreenState createState() => _PostsScreenState();
 }
@@ -34,39 +36,12 @@ class _PostsScreenState extends State<ProductsView> {
 
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
 
-  String lg = '';
 
 
   @override
   void initState() {
 
 
-    final box = GetStorage();
-    final box_country=box.read('country')??'x';
-
-    if(box_country=='امارات'){
-      lg ='د.ا';
-    }
-    if(box_country=='البحرين'){
-      lg='د.ب';
-    }
-    if(box_country=='قطر'){
-      lg='ر.ق';
-    }
-    if(box_country=='سلطنة عمان'){
-      lg='ر.ع';
-    }
-
-    if(box_country=='كويت'){
-      lg='د.ك';
-    }
-    if(box_country=='السعودية'){
-
-      lg='ر.س' ;
-    }
-    if(box_country=='x'){
-      lg='ر.س' ;
-    }
     super.initState();
   }
 
@@ -84,15 +59,6 @@ class _PostsScreenState extends State<ProductsView> {
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
           title: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    // Colors.white,
-                    Colors.white,
-                    //Colors.lightBlueAccent,
-
-                    // Colors.lightBlueAccent,
-                    Colors.white,
-                  ])),
               height: 30,
               child: Center(
                   child: Row(
@@ -100,13 +66,7 @@ class _PostsScreenState extends State<ProductsView> {
                       SizedBox(
                           width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Container(
-                        width:40,
-                        //width:57,
-                        child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fitWidth
-                        ),
-                      ),
+
                       SizedBox(
                           width: 5
                       ),
@@ -115,7 +75,7 @@ class _PostsScreenState extends State<ProductsView> {
         ),
         body:
         Container(
-          color: Colors.white,
+          color: Colors.blue,
           child: Column(
               children: [
 
@@ -126,239 +86,87 @@ class _PostsScreenState extends State<ProductsView> {
                 Flexible(
                   child: StreamBuilder(
                       stream:
-                      FirebaseFirestore.instance.collection('products') .where('brand',isEqualTo:widget.br)
+                      FirebaseFirestore.instance.collection('products') .where('cat',isEqualTo:widget.cat)
                           .snapshots(),
                       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (!snapshot.hasData) return Center(child: Text('Loading'));
                         switch (snapshot.connectionState) {
                           case ConnectionState.waiting:
                             return new Text('Loading...');
-//.where("category", isEqualTo:"tec")
                           default:
-                            return ListView.builder(
+                            return GridView.builder(
                                 itemCount: snapshot.data.documents.length,
-                                // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                //   crossAxisCount: 2,
-                                //   crossAxisSpacing: 2,
-                                //   mainAxisSpacing: 3,
-                                //
-                                // ), //(orientation == Orientation.portrait) ? 2: 2.2),
+                                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 2,
+                                  mainAxisSpacing: 3,),
+
+
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
                                   snapshot.data.documents[index];
 
                                   return GetBuilder<HomeViewModel>(
                                       init: Get.find(),
-
                                       builder: (controller) => Container(
-                                          padding: EdgeInsets.all(5),
+                                        height:1400,
                                           child: InkWell(
                                             child: Card(
-                                              color: Colors.grey[100],
-                                              child: Row(children: [
-                                                SizedBox(height: 18),
-
-                                                SizedBox(width:120
-                                                //MediaQuery.of(context).size.width*0.22
-                                                ),
-
-                                                Column(
+                                              color: Colors.white,
+                                              child: Container(
+                                                child: Column(
                                                   children: [
+                                                    SizedBox(height:3,),
                                                     Container(
-                                                      width:100,
-                                                      child: Text((posts.data()['name']),style:TextStyle(color:Colors.black,fontSize:16,
-                                                          fontWeight:FontWeight.bold),),
+                                                      width: 230,
+                                                      height: 120,
+                                                      child: Image.network(
+                                                          posts.data()['image'],
+                                                          fit: BoxFit.scaleDown),
                                                     ),
-                                                    SizedBox(height: 2),
+                                                    SizedBox(height:6),
+                                                    Column(
+                                                      children: [
+                                                        Container(
+                                                          width:100,
+                                                          child: Text((posts.data()['name']),style:TextStyle(color:Colors.black,fontSize:16,
+                                                              fontWeight:FontWeight.bold),),
+                                                        ),
+                                                        SizedBox(height: 6),
 
-                                                    if(box_country=='السعودية')
-                                                      Row(
-                                                        children: [
-
-                                                          SizedBox(
-                                                              width:2
-                                                          ),
-
-                                                          Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),),
-
-
-                                                          SizedBox(
-                                                              width:2
-                                                          ),
-                                                          Text((posts.data()['price']).toString(),
-                                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                                fontWeight:FontWeight.bold),
-                                                          ),
-
-                                                        ],
-                                                      ),
-
-                                                    if(box_country=='قطر')
-                                                      Row(
-                                                        children: [
-
-
-                                                          Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
-
-                                                          ,
-
-                                                          SizedBox(
-                                                              width:2
-                                                          ),
-                                                          Text((posts.data()['priceQ']).toString(),
-                                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                                fontWeight:FontWeight.bold),
-                                                          ),
-
-                                                        ],
-                                                      ),
-
-
-                                                    if(box_country=='كويت')
-                                                      Row(
-                                                        children: [
-
-
-                                                          Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
-
-                                                          , SizedBox(
-                                                              width:2
-                                                          ),
-
-                                                          Text((posts.data()['priceQw']).toString(),
-                                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                                fontWeight:FontWeight.bold),
-
-                                                          ),
-
-
-                                                        ],
-                                                      ),
-
-                                                    if(box_country=='سلطنة عمان')
-                                                      Row(
-                                                        children: [
-
-
-
-                                                          Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
-                                                          , SizedBox(
-                                                              width:2
-                                                          ),
-                                                          Text((posts.data()['priceAm']).toString(),
-                                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                                fontWeight:FontWeight.bold),
-
-                                                          ),
-
-                                                        ],
-                                                      ),
-
-                                                    if(box_country=='البحرين')
-                                                      Row(
-                                                        children: [
-
-
-
-                                                          Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
-                                                          ,SizedBox(
-                                                              width:2
-                                                          ),
-
-                                                          Text((posts.data()['priceBh']).toString(),
-                                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                                fontWeight:FontWeight.bold),
-
-                                                          ),
-
-                                                        ],
-                                                      ),
-
-
-
-                                                    if(box_country=='الكويت')
-                                                      Row(
-                                                        children: [
-
-
-
-                                                          Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
-                                                          , SizedBox(
-                                                              width:2
-                                                          ),
-                                                          Text((posts.data()['priceQw']).toString(),
-                                                            style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                                fontWeight:FontWeight.bold),
-
-                                                          ),
-
-                                                        ],
-                                                      ),
-                                                    if(box_country=='امارات')
-                                                      Row(
-                                                        children: [
-                                                          Text(lg,style:TextStyle(color:Colors.green,fontWeight:FontWeight.w600),)
-
-                                                          , SizedBox(
-                                                              width:2
-                                                          ),
-                                                          Text((posts.data()['priceAmar']).toString(),
-                                                              style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                                  fontWeight:FontWeight.bold)),
-
-                                                        ],
-                                                      ),
-
-
-
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(width:50,),
+                                                            Text((posts.data()['price']).toString(),
+                                                              style:TextStyle( color:Colors.blue,fontSize:16,
+                                                                  fontWeight:FontWeight.bold),
+                                                            ),
+                                                            Text(("  LE"),
+                                                              style:TextStyle( color:Colors.blue,fontSize:16,
+                                                                  fontWeight:FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
 
 
                                                   ],
                                                 ),
-                                                SizedBox(width:10),
-                                                Container(
-
-                                                  width: 130,
-                                                  height: 85,
-                                                  child: Image.network(
-                                                      posts.data()['image'],
-                                                      fit: BoxFit.scaleDown),
-                                                ),
-
-                                              ]),
+                                              ),
                                             ),
                                             onTap: () {
-                                              if(box_country=='امارات'){
-                                                price=posts.data()['priceAmar'];
-                                              }
-                                              if(box_country=='الكويت'){
-                                                price=posts.data()['priceQw'];
-                                              }
-                                              if(box_country=='البحرين'){
-                                                price=posts.data()['priceBh'];
-                                              }
-                                              if(box_country=='سلطنة عمان'){
-                                                price=posts.data()['priceAm'];
-                                              }
-                                              if(box_country=='قطر'){
-                                                price=posts.data()['priceQ'];
-                                              }
-                                              if(box_country=='السعودية'){
-                                                price=posts.data()['price'];
-                                              }
-                                              if(box_country=='x'){
-                                                price=posts.data()['price'];
-                                              }
+
 
                                               Get.to(DetailsView2(
                                                   name: posts.data()['name'],
-                                                  price: price,
-                                                  x:posts.data()['x'],
+                                                  price: posts.data()['price'],
+                                            //      x:posts.data()['x'],
                                                   details: posts.data()['des'],
                                                   image: posts.data()['image'],
                                                   productId:posts.data()['productid'],
-                                                  brand:posts.data()['brand'],
-                                                  brandemail:posts.data()['brandemail']
+                                              //    brand:posts.data()['brand'],
+                                                //  brandemail:posts.data()['brandemail']
                                               ));
                                             },
                                           )));

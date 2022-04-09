@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/res/merged/release/values-zu/values-zu.xml",
+            "outputFile": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/incremental/mergeReleaseResources/merged.dir/values-zu/values-zu.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/values-zu/values-zu.xml",
@@ -33,7 +33,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/flutter_facebook_login/intermediates/incremental/mergeReleaseResources/merged.dir/values-zu/values-zu.xml",
+            "outputFile": "/home/joo/work/eco_template/build/flutter_facebook_login/intermediates/res/merged/release/values-zu/values-zu.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/13fbef9bddf82a70795b218b5aaf0dbe/core-1.1.0/res/values-zu/values-zu.xml",

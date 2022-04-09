@@ -45,39 +45,24 @@ class _PostsScreenState extends State<OwnerAllOrdersView > {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black),
-          title: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    // Colors.white,
-                    Colors.white,
-                    //Colors.lightBlueAccent,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Container(
+            height: 30,
+            child: Center(
+                child: Row(
+                  children: [
+                    SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.62
+                    ),
 
-                    // Colors.lightBlueAccent,
-                    Colors.white,
-                  ])),
-              height: 30,
-              child: Center(
-                  child: Row(
-                    children: [
-                      SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.62
-                      ),
-                      Container(
-                        width:40,
-                        //width:57,
-                        child: Image.asset("assets/wh3.jpeg",
-                            fit:BoxFit.fitWidth
-                        ),
-                      ),
-                      SizedBox(
-                          width: 5
-                      ),
-                    ],
-                  ))),
-        ),
+                    SizedBox(
+                        width: 5
+                    ),
+                  ],
+                ))),
+      ),
         body:
         Container(
           color: Colors.white,

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/res/merged/release/values-fa/values-fa.xml",
+            "outputFile": "/home/joo/work/eco_template/build/firebase_messaging/intermediates/res/merged/release/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/b71b777a52473322c4b704daa0bcee61/jetified-firebase-messaging-20.3.0/res/values-fa/values.xml",
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/firebase_messaging/intermediates/incremental/mergeReleaseResources/merged.dir/values-fa/values-fa.xml",
+            "outputFile": "/home/joo/work/eco_template/build/firebase_messaging/intermediates/incremental/mergeReleaseResources/merged.dir/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/b71b777a52473322c4b704daa0bcee61/jetified-firebase-messaging-20.3.0/res/values-fa/values.xml",

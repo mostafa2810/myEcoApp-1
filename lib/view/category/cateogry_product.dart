@@ -47,50 +47,19 @@ class _PostsScreenState extends State<CategoryProducts> {
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black),
           title: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    // Colors.white,
-                    Colors.white,
-                    //Colors.lightBlueAccent,
-
-                    // Colors.lightBlueAccent,
-                    Colors.white,
-                  ])),
               height: 30,
               child: Center(
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 25,
+                          width: MediaQuery.of(context).size.width * 0.62
                       ),
-                      Row(
-                        children: [
 
-                          Text(
-                            "Luban   ",
-                            style: TextStyle(
-                                color: HexColor("#ff68682A"),
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          SizedBox(
-                            width: 12,
-                          ),
-                          Container(
-                            width:70,
-                            child: Image.asset("assets/wh3.jpeg",
-                              fit:BoxFit.fill,
-                            ),
-                          ),
-                        ],
-                      ),
                       SizedBox(
-                        width: 80,
+                          width: 5
                       ),
-
                     ],
                   ))),
-
         ),
         body:
         Container(

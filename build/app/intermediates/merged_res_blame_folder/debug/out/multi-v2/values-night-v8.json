@@ -1,27 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/myEcoApp22/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/joo/work/eco_template/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
-                {
-                    "source": "/home/joo/work/myEcoApp22/android/app/src/main/res/values-night/styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "172,815",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "464,979"
-                    },
-                    "to": {
-                        "startLines": "2,7",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,352",
-                        "endLines": "6,9",
-                        "endColumns": "12,12",
-                        "endOffsets": "347,516"
-                    }
-                },
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/2e30aee479a9294382e64d56f028a690/appcompat-1.0.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
@@ -37,6 +18,25 @@
                         "startOffsets": "521,591,675,759,855,957,1059",
                         "endColumns": "69,83,83,95,101,101,93",
                         "endOffsets": "586,670,754,850,952,1054,1148"
+                    }
+                },
+                {
+                    "source": "/home/joo/work/eco_template/android/app/src/main/res/values-night/styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "172,815",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "464,979"
+                    },
+                    "to": {
+                        "startLines": "2,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,352",
+                        "endLines": "6,9",
+                        "endColumns": "12,12",
+                        "endOffsets": "347,516"
                     }
                 }
             ]

@@ -56,9 +56,9 @@ class LoginView extends GetWidget<AuthViewModel> {
                             Get.to(RegisterView());
                             },
                             child: Custom_Text(
-                              text: "Sign Up",
+                              text: "تسجيل لاول مرة",
                               fontSize: 18,
-                              color: HexColor("#ff68682A"),
+                              color: Colors.blue,
                             ),
                           ),
                         ],
@@ -102,7 +102,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                       SizedBox(height: 8),
                       InkWell(
                         child: Custom_Text(
-                          color: HexColor("#ff68682A"),
+                          color: Colors.blue,
                           text: "نسيت كلمة المرور",
                           fontSize: 13,
                           alignment: Alignment.topRight,

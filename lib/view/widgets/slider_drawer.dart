@@ -65,15 +65,15 @@ class _SidebarPageState extends State<SidebarPage> {
           }
       ),
 
-      CollapsibleItem(
-          text: ' المتاجر ',
-          icon: Icons.shop_outlined,
-          onPressed: ()  async {
-            Get.to(PostsScreen());
-           // Get.to(BrandsView());
-
-          }
-      ),
+      // CollapsibleItem(
+      //     text: ' المتاجر ',
+      //     icon: Icons.shop_outlined,
+      //     onPressed: ()  async {
+      //       Get.to(PostsScreen());
+      //      // Get.to(BrandsView());
+      //
+      //     }
+      // ),
 
       CollapsibleItem(
           text: '  طلباتي   ',
@@ -104,45 +104,45 @@ class _SidebarPageState extends State<SidebarPage> {
       ),
 
 
-      CollapsibleItem(
-          text: 'صفحتي كتاجر ',
-          icon: Icons.supervised_user_circle,
-          onPressed: () {
+      // CollapsibleItem(
+      //     text: 'صفحتي كتاجر ',
+      //     icon: Icons.supervised_user_circle,
+      //     onPressed: () {
+      //
+      //       final box = GetStorage();
+      //       final box1= box.read('email')??'x';
+      //       final box2= box.read('pass')??'x';
+      //       final box3=box.read('code')??'x';
+      //
+      //       print("box1=="+box1);
+      //       print("box3=="+box3);
+      //       if(box3=='x'){
+      //         Get.to(OwnerCodeView());
+      //       }
+      //       else{
+      //         Get.to(OwnerHomeView(
+      //             email:box1,
+      //             pass:box2,
+      //             code:box3
+      //         ));
+      //       }
+      //     //  Get.to(OwnerCodeView());
+      //        //  Get.to(OwnerCheck());
+      //     }
+      // ),
+      //
 
-            final box = GetStorage();
-            final box1= box.read('email')??'x';
-            final box2= box.read('pass')??'x';
-            final box3=box.read('code')??'x';
-
-            print("box1=="+box1);
-            print("box3=="+box3);
-            if(box3=='x'){
-              Get.to(OwnerCodeView());
-            }
-            else{
-              Get.to(OwnerHomeView(
-                  email:box1,
-                  pass:box2,
-                  code:box3
-              ));
-            }
-          //  Get.to(OwnerCodeView());
-             //  Get.to(OwnerCheck());
-          }
-      ),
 
 
-
-
-      CollapsibleItem(
-          text: ' تغير الدولة  ',
-          icon: Icons.map,
-          onPressed: ()  async {
-
-            Get.to(ChangeCountry());
-
-          }
-      ),
+      // CollapsibleItem(
+      //     text: ' تغير الدولة  ',
+      //     icon: Icons.map,
+      //     onPressed: ()  async {
+      //
+      //       Get.to(ChangeCountry());
+      //
+      //     }
+      // ),
 
 
 
