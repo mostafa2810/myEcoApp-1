@@ -32,7 +32,7 @@ class MapView2 extends StatefulWidget {
 
    @override
   void initState() {
-    // currentLocation();
+     currentLocation();
     // TODO: implement initState
     super.initState();
    //  currentLocation();
@@ -46,14 +46,13 @@ class MapView2 extends StatefulWidget {
      position = await
      Geolocator.getCurrentPosition(desiredAccuracy:LocationAccuracy.high);
 
-     var lastposition=await Geolocator.getLastKnownPosition();
+     var lastposition= await Geolocator.getLastKnownPosition();
      print(lastposition);
      setState(() {
        locationMessage="$position";
      });
-
-
    }
+
 
    void location_permission() async {
      final PermissionStatus permission = await _getLocationPermission();
@@ -62,7 +61,6 @@ class MapView2 extends StatefulWidget {
            .requestPermissions(
            permissionLevel: LocationPermissionLevel.location);
 
-       // Use the position to do whatever...
      }
    }
 
@@ -105,6 +103,7 @@ class MapView2 extends StatefulWidget {
                  //    Text(locationMessage),
                  RaisedButton(
                    onPressed:(){
+                    currentLocation();
                      currentLocation();
                      print("jjjj");
                      // print("lll=" +locationMessage);

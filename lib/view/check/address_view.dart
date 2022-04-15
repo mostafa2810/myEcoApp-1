@@ -11,7 +11,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'checkout_screen2.dart';
 
 
-
 class AdressScreen extends StatefulWidget {
   //List<>String name;
   num total;
@@ -25,13 +24,26 @@ class AdressScreen extends StatefulWidget {
 }
 
 class _AdressScreenState extends State<AdressScreen> {
-  String brand_email;
+ // String brand_email;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  void initState() {
+
+
+    // TODO: implement initState
+    print("total"+widget.total.toString());
+    print("total"+widget.cartmodel.toString());
+    print("total"+widget.lat.toString());
+    print("total"+widget.long.toString());
+  }
+
 
 
   @override
   Widget build(BuildContext context) {
     TextEditingController address3= TextEditingController();
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
     final box = GetStorage();
     return Scaffold(
         appBar: AppBar(
@@ -45,7 +57,6 @@ class _AdressScreenState extends State<AdressScreen> {
                       SizedBox(
                           width: MediaQuery.of(context).size.width * 0.62
                       ),
-
                       SizedBox(
                           width: 5
                       ),
@@ -64,6 +75,7 @@ class _AdressScreenState extends State<AdressScreen> {
                         child: Column(
                         //  crossAxisAlignment:CrossAxisAlignment.baseline,
                             children:[
+
                               SizedBox(
                                   height:30
                               ),
@@ -78,17 +90,18 @@ class _AdressScreenState extends State<AdressScreen> {
                                         text: '',
                                         color:Colors.black,
                                         onSave: (value) {
+
                                           controller.country.text= value;
-                                          print("ttt ="+controller.country.toString());
+                                      //    print("ttt ="+controller.country.toString());
                                         },
                                         validator: (value) {
                                           if (value == null || value=='' ) {
+
                                             return ("ادخل الدولة ");
                                           }
                                         }
                                     ),
                                   ),
-
                                   Container(
                                     padding:EdgeInsets.only(left:30),
                                     width:330,
@@ -103,6 +116,7 @@ class _AdressScreenState extends State<AdressScreen> {
                                         },
                                         validator: (value) {
                                           if (value == null || value=='' ) {
+
                                             return (" ادخل المدينة ");
                                           }
                                         }
@@ -119,11 +133,12 @@ class _AdressScreenState extends State<AdressScreen> {
                                         color:Colors.black,
                                         onSave: (value) {
                                           controller.address.text= value;
-                                          print("ttt ="+controller.address.toString());
+                                        //  print("ttt ="+controller.address.toString());
                                         },
                                         validator: (value) {
                                           if (value == null || value=='' ) {
-                                            return ("ادخل العنوان  ");
+
+                                          return ("ادخل العنوان  ");
                                           }
                                         }
                                     ),
@@ -160,6 +175,7 @@ class _AdressScreenState extends State<AdressScreen> {
                                         },
                                         validator: (value) {
                                           if (value == null|| value=='') {
+
                                             return ("ادخل رقم الشقة  ");
                                           }
                                         }
@@ -216,6 +232,7 @@ class _AdressScreenState extends State<AdressScreen> {
                                               },
                                               validator: (value) {
                                                 if (value == null || value==''|| value.length<7|| value.length>15) {
+
                                                   return (" ادخل رقم بشكل صحيح");
                                                 }
                                               }
@@ -245,7 +262,6 @@ class _AdressScreenState extends State<AdressScreen> {
                                       print("add1111");
                                       box.write('Adress_details1',
                                         controller.address.text.toString(),);
-
                                       box.write('Adress_details2', controller.apartment.text.toString(),);
                                       box.write('Adress_details3', controller.floor.text.toString(),);
                                       box.write('Adress_details4', controller.dropdownValue+controller.mobile.text.toString(),);
@@ -263,7 +279,7 @@ class _AdressScreenState extends State<AdressScreen> {
                                           controller.dropdownValue+controller.mobile.text.toString(),
                                           widget.total,
                                           widget.cartmodel,
-                                          brand_email,
+                                          //brand_email,
                                         //  brandname,
                                           widget.lat,
                                           widget.long

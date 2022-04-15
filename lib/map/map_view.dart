@@ -47,21 +47,6 @@ class MapView extends StatefulWidget{
       return Scaffold(
           appBar:AppBar(
             backgroundColor: Colors.white,
-            title: Row(
-              children: [
-                Text("Luban   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                    fontWeight:FontWeight.w700
-
-                ),),
-                SizedBox(
-                  width: 80,
-                ),
-                Text("لبان   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                    fontWeight:FontWeight.w700
-
-                ),),
-              ],
-            ),
           ),
           body:
           GetBuilder<HomeViewModel>(
@@ -74,7 +59,6 @@ class MapView extends StatefulWidget{
                   child:Center(
                     child: Column(
                       children: [
-
                         Container(
                           height:400,
                           child: GoogleMap(

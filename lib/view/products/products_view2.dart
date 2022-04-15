@@ -75,7 +75,7 @@ class _PostsScreenState extends State<ProductsView> {
         ),
         body:
         Container(
-          color: Colors.blue,
+          color: Colors.white38,
           child: Column(
               children: [
 
@@ -98,7 +98,7 @@ class _PostsScreenState extends State<ProductsView> {
                                 itemCount: snapshot.data.documents.length,
                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
-                                  crossAxisSpacing: 2,
+                                  crossAxisSpacing: 3,
                                   mainAxisSpacing: 3,),
 
 

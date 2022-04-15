@@ -67,25 +67,14 @@ class Map1 extends StatefulWidget {
      return Scaffold(
        appBar:AppBar(
          backgroundColor: Colors.white,
-         title: Row(
-           children: [
-             Text("Luban   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                 fontWeight:FontWeight.w700
 
-             ),),
-             SizedBox(
-               width: 80,
-             ),
-             Text("لبان   ",style:TextStyle(color:Colors.lightGreen,fontSize:22,
-                 fontWeight:FontWeight.w700
-
-             ),),
-           ],
-         ),
        ),
       body:
       Column(
         children: [
+          SizedBox(
+            height:12,
+          ),
           Container(
             height:400,
             child:

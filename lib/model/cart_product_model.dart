@@ -20,8 +20,8 @@ class CartProductModel {
     image = map['image'];
     quantity = map['quantity'];
 
-    final box = GetStorage();
-    final box_country=box.read('country')??'x';
+    // final box = GetStorage();
+    // final box_country=box.read('country')??'x';
 
 
     // if(box_country=='امارات'){
@@ -49,7 +49,7 @@ class CartProductModel {
 
     price=map['price'];
     productId = map['productid'];
-   // brand=map['brand'];
+
   //  brand_email=map['brandemail'];
   }
 

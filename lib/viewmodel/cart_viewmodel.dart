@@ -136,12 +136,12 @@ class CartViewModel extends GetxController {
       textCancel:"لا",
       textConfirm:"نعم",
       cancelTextColor:Colors.deepOrange,
-      buttonColor:Colors.red,
+      buttonColor:Colors.blue,
       confirmTextColor:Colors.white,
       barrierDismissible: true,
       //middleText: "Hello world!",
       backgroundColor: Colors.white,
-      titleStyle: TextStyle(color: Colors.green),
+      titleStyle: TextStyle(color: Colors.blue),
       middleTextStyle: TextStyle(color: Colors.white),
     );
   }

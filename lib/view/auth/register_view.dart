@@ -29,10 +29,10 @@ class RegisterView extends GetWidget<AuthViewModel> {
               key: _formKey,
               child: Column(children: <Widget>[
 
-                Custom_Text(
-                  text: "تسجيل",
-                  fontSize: 30,
-                ),
+                // Custom_Text(
+                //   text: "تسجيل",
+                //   fontSize: 30,
+                // ),
 
                 SizedBox(height: 7),
                 SizedBox(height: 20),
@@ -95,7 +95,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                     controller.createAccountWithEmailAndPassword();
                     }
                   },
-                  text: "Sign Up",
+                  text: "تسجيل",
                 ),
                 SizedBox(height: 20),
               ])),

@@ -27,10 +27,7 @@ Future<void> main() async {
   Get.put(CartViewModel());
   await GetStorage.init();
   runApp(MyApp());
-
-
 }
-
 
 class MyApp extends StatefulWidget {
   @override

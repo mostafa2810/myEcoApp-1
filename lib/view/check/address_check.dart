@@ -22,7 +22,7 @@ class AddressCheck extends StatefulWidget {
   String  country,city,adress,building,floor,phone,brand_email,brand_name;
 
   AddressCheck({this.total,this.cartmodel,this.lat,this.long,this.country,this.city
-  ,this.adress,this.building,this.floor,this.phone,this.brand_email,
+  ,this.adress,this.building,this.floor,this.phone
     //this.brand_name
 
   });
@@ -35,7 +35,12 @@ class AddressCheck extends StatefulWidget {
 
 class _AddressCheckState extends State<AddressCheck> {
 
+@override
+  void initState() {
 
+
+  print("stateeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+  }
 
 
   @override
@@ -180,7 +185,7 @@ class _AddressCheckState extends State<AddressCheck> {
               widget.phone.toString(),
                 widget.total,
                widget.cartmodel,
-                widget.brand_email,
+             //   widget.brand_email,
            //     widget.brand_name,
                 widget.lat,
                 widget.long
@@ -214,8 +219,8 @@ class _AddressCheckState extends State<AddressCheck> {
       ),
     );
   }
-
-  nav(){
-    Get.to(MapView());
-  }
+  //
+  // nav(){
+  //   Get.to(MapView());
+  // }
 }

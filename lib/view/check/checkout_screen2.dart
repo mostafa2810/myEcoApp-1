@@ -28,7 +28,7 @@ class CheckOutScreen2 extends StatefulWidget {
     this.mobile,
     this.total,
     this.cartmodel,
-    this.brand_email,
+  //  this.brand_email,
      // this.brand_name,
       this.lat,this.long
   );

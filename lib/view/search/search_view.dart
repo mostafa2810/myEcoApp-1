@@ -65,7 +65,7 @@ class _PostsScreenState extends State<SearchView> {
 
         body:
         Container(
-          color: Colors.blue,
+          color: Colors.white,
           child: Column(
               children: [
 
@@ -86,57 +86,82 @@ class _PostsScreenState extends State<SearchView> {
                             return new Text('Loading...');
                           default:
                             return
-                              GridView.builder(
+                             GridView.builder(
                                 itemCount: snapshot.data.documents.length,
                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
-                                  crossAxisSpacing: 2,
-                                  mainAxisSpacing: 2,
-                                ), //(orientation == Orientation.portrait) ? 2: 2.2),
+                                  crossAxisSpacing: 3,
+                                  mainAxisSpacing: 3,),
+
+
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
                                   snapshot.data.documents[index];
-                                  return
-                                    GetBuilder<HomeViewModel>(
-                                        init: Get.find(),
-                                        builder: (controller) => Container(
-                                            padding: EdgeInsets.all(5),
-                                            child: InkWell(
-                                              child: Card(
-                                                color: Colors.grey[100],
-                                                child: Column(children: [
-                                                  SizedBox(height: 20),
-                                                  Container(
-                                                    width: 150,
-                                                    height: 90,
-                                                    child: Image.network(
-                                                        posts.data()['image'],
-                                                        fit: BoxFit.fill),
-                                                  ),
-                                                  SizedBox(height: 2),
-                                                  Text((posts.data()['name']),style:TextStyle(color:Colors.black,fontSize:16,
-                                                      fontWeight:FontWeight.bold),),
-                                                  SizedBox(height: 2),
+
+                                  return GetBuilder<HomeViewModel>(
+                                      init: Get.find(),
+                                      builder: (controller) => Container(
+                                          height:1400,
+                                          child: InkWell(
+                                            child: Card(
+                                              color: Colors.white,
+                                              child: Container(
+                                                child: Column(
+                                                  children: [
+                                                    SizedBox(height:3,),
+                                                    Container(
+                                                      width: 230,
+                                                      height: 120,
+                                                      child: Image.network(
+                                                          posts.data()['image'],
+                                                          fit: BoxFit.scaleDown),
+                                                    ),
+                                                    SizedBox(height:6),
+                                                    Column(
+                                                      children: [
+                                                        Container(
+                                                          width:100,
+                                                          child: Text((posts.data()['name']),style:TextStyle(color:Colors.black,fontSize:16,
+                                                              fontWeight:FontWeight.bold),),
+                                                        ),
+                                                        SizedBox(height: 6),
+
+                                                        Row(
+                                                          children: [
+                                                            SizedBox(width:50,),
+                                                            Text((posts.data()['price']).toString(),
+                                                              style:TextStyle( color:Colors.blue,fontSize:16,
+                                                                  fontWeight:FontWeight.bold),
+                                                            ),
+                                                            Text(("  LE"),
+                                                              style:TextStyle( color:Colors.blue,fontSize:16,
+                                                                  fontWeight:FontWeight.bold),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
 
 
-                                                  Text((posts.data()['price']).toString(),
-                                                    style:TextStyle( color: HexColor("#ff68682A"),fontSize:16,
-                                                        fontWeight:FontWeight.bold),
-                                                  ),
-                                                ]),
+                                                  ],
+                                                ),
                                               ),
-                                              onTap: () {
+                                            ),
+                                            onTap: () {
 
-                                                Get.to(DetailsView2(
-                                                  name: posts.data()['name'],
-                                                  price:posts.data()['price'],
-                                                  //x:posts.data()['x'],
-                                                  details: posts.data()['des'],
-                                                  image: posts.data()['image'],
-                                                  productId:posts.data()['productid'],
-                                                ));
-                                              },
-                                            )));
+
+                                              Get.to(DetailsView2(
+                                                name: posts.data()['name'],
+                                                price: posts.data()['price'],
+                                                //      x:posts.data()['x'],
+                                                details: posts.data()['des'],
+                                                image: posts.data()['image'],
+                                                productId:posts.data()['productid'],
+                                                //    brand:posts.data()['brand'],
+                                                //  brandemail:posts.data()['brandemail']
+                                              ));
+                                            },
+                                          )));
                                 });
                         }
                       }),

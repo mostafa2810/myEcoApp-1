@@ -27,15 +27,15 @@ class LoginView extends GetWidget<AuthViewModel> {
         //   backgroundColor: Colors.white,
         // ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
+          padding: const EdgeInsets.only(top: 5.0, right: 20.0, left: 20.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  height:120,
+                  height:320,
                   width:690,
                   color:Colors.white,
-                  child:Image.asset('assets/wh3.jpeg',fit:BoxFit.fitHeight,)
+                  child:Image.asset('assets/E1.jpg',fit:BoxFit.fitWidth,)
                 ),
                 SizedBox(
                   height:10
@@ -65,7 +65,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                       ),
                       SizedBox(height: 7),
                       Custom_Text(
-                        text: "Sign in to Continue",
+                        text: "قم بتسجيل الدخول",
                         fontSize: 14,
                         color: Colors.grey,
                       ),
@@ -73,7 +73,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                       CustomTextFormField(
                           text: "E_mail",
                           obs: false,
-                          hint: "dev@yahoo.com",
+                          hint: "ادخل الايميل الخاص بك",
                           onSave: (value) {
                          //   controller.email = value;
                             controller.email=value;
@@ -87,7 +87,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                       CustomTextFormField(
                           text: "Password",
                           obs: true,
-                          hint: "************",
+                          hint: "ادخل كلمة المرور",
                           onSave: (value) {
                             controller.password = value;
                           },

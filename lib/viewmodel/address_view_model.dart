@@ -18,8 +18,16 @@ class AddressViewModel extends GetxController{
   // TextEditingController mobile = TextEditingController();
 
 
+  @override
+  void onInit() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => address.clear());
+    WidgetsBinding.instance.addPostFrameCallback((_) => apartment.clear());
+    super.onInit();
+  }
+
 
    void addAddress() async{
+
      print("add6666");
      await Firestore.instance.collection('address').document()
          .setData({

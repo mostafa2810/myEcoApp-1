@@ -229,12 +229,12 @@ class _CartView2State extends State<CartView2> {
                                         RaisedButton(
                                           shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.circular(13)),
-
                                           color:Colors.blue,
                                         child:Text("تاكيد الطلب ",style:TextStyle(color:Colors.white,fontSize:20),),
                                         onPressed: () {
 
                                           print("lll="+box_address);
+
 
                                           if(box_address=='x'){
                                             Get.to(MapView2(
@@ -256,7 +256,7 @@ class _CartView2State extends State<CartView2> {
                                               phone:box_address4,
                                               lat:box_Lat,
                                               long:box_Long,
-                                             brand_email:brand_email,
+                                          //   brand_email:brand_email,
                                          //     brand_name:brand_name
                                             )
                                             );

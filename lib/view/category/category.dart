@@ -33,7 +33,7 @@ class CategoryView extends StatelessWidget {
                 ))),
       ),
       body:Container(
-        color:Colors.blue,
+        color:Colors.white38,
         child:
         Padding(
           padding: const EdgeInsets.only(top:38.0),
