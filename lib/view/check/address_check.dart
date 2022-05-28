@@ -16,9 +16,9 @@ import 'package:hexcolor/hexcolor.dart';
 
 class AddressCheck extends StatefulWidget {
 
-  num total;
-  List<CartProductModel>cartmodel;
-  double lat,long;
+  num  total;
+  List<CartProductModel>  cartmodel;
+  double  lat,long;
   String  country,city,adress,building,floor,phone,brand_email,brand_name;
 
   AddressCheck({this.total,this.cartmodel,this.lat,this.long,this.country,this.city

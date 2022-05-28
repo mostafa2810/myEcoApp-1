@@ -5,9 +5,9 @@
 import 'custom_text.dart';
 
 class CustomButtonSocial extends StatelessWidget {
-  final String text;
-  final String imageName;
-  final Function onPressed;
+  final String  text;
+  final String  imageName;
+  final Function  onPressed;
 
 
   CustomButtonSocial({

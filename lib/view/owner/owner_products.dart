@@ -15,7 +15,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 class OwnerProductsView extends StatefulWidget {
 
-  String email;
+  String  email;
   OwnerProductsView({this.email});
 
   @override
@@ -126,9 +126,9 @@ class _PostsScreenState extends State<OwnerProductsView> {
 
                           default:
                             return ListView.builder(
-                                itemCount: snapshot.data.documents.length,
+                                itemCount: snapshot.data.docs.length,
                                 itemBuilder: (context, index) {
-                                  DocumentSnapshot posts = snapshot.data.documents[index];
+                                  DocumentSnapshot posts = snapshot.data.docs[index];
 
                                   // (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
 

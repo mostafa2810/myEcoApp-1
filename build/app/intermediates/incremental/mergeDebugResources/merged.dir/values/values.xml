@@ -384,7 +384,11 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="copy_toast_msg">Link copied to clipboard</string>
     <string name="default_web_client_id" translatable="false">154082487981-a1107no1hts4vuq4essgk8b91iu0ea7g.apps.googleusercontent.com</string>
+    <string name="fallback_menu_item_copy_link">Copy link</string>
+    <string name="fallback_menu_item_open_in_browser">Open in browser</string>
+    <string name="fallback_menu_item_share_link">Share link</string>
     <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="gcm_defaultSenderId" translatable="false">154082487981</string>
     <string name="google_api_key" translatable="false">AIzaSyCCHlm9ox9dFB9qEH9rfyyYVfU56ictgxA</string>

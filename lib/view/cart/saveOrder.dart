@@ -22,8 +22,8 @@ class SaveOrder extends StatefulWidget {
 
 class _PostsScreenState extends State<SaveOrder> {
   String allposts;
-  String v;
-  Future resultsLoaded;
+  String  v;
+  Future  resultsLoaded;
 
 
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
@@ -129,9 +129,9 @@ class _PostsScreenState extends State<SaveOrder> {
                         default:
                           return Expanded(
                             child: ListView.builder(
-                                itemCount: snapshot.data.documents.length,
+                                itemCount: snapshot.data.docs.length,
                                 itemBuilder: (context, index) {
-                                  DocumentSnapshot posts = snapshot.data.documents[index];
+                                  DocumentSnapshot posts = snapshot.data.docs[index];
                                   // int len=snapshot.data.documents.length;
                                   if(snapshot.data == null) return CircularProgressIndicator();
                                   // (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)

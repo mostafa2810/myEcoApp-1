@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class CategoryView extends StatelessWidget {
-  const CategoryView({Key key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {

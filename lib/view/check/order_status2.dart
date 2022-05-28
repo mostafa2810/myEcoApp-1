@@ -25,7 +25,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 class OrderStatusView2 extends StatefulWidget {
 
-  String order_id;
+  String  order_id;
   List<CartProductModel> cartmodel;
   OrderStatusView2({this.order_id,this.cartmodel});
 
@@ -34,10 +34,10 @@ class OrderStatusView2 extends StatefulWidget {
 }
 class _PostsScreenState extends State<OrderStatusView2> {
 
-  String allposts;
-  String v;
+  String  allposts;
+  String  v;
   TextEditingController _searchController = TextEditingController();
-  Future resultsLoaded;
+  Future  resultsLoaded;
   List _allResults = [];
   List _resultsList = [];
 
@@ -95,10 +95,10 @@ class _PostsScreenState extends State<OrderStatusView2> {
 
                           default:
                             return ListView.builder(
-                                itemCount: snapshot.data.documents.length,
+                                itemCount: snapshot.data.docs.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
-                                  snapshot.data.documents[index];
+                                  snapshot.data.docs[index];
 
                                   return GetBuilder<HomeViewModel>(
                                       init: Get.find(),

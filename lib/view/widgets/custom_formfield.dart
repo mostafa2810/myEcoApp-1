@@ -33,8 +33,8 @@ class CustomFormField extends StatelessWidget {
 
               TextFormField(
 
-                onSaved: onSave,
-                validator:validator ,
+                onSaved: onSave(),
+                validator:validator() ,
                 controller: controller,
                 // textAlign:TextAlign.end,
                 decoration: InputDecoration(

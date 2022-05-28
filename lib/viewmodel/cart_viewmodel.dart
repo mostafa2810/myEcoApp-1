@@ -29,7 +29,7 @@ class CartViewModel extends GetxController {
   int quant2 = 1;
 
   var dbHelper = CartDatabaseHelper.db;
-  ProductModel  model;
+  ProductModel   model;
 
 
   @override
@@ -244,7 +244,7 @@ class CartViewModel extends GetxController {
 
   increaseQuantity(int index) async {
     if (_cartProductModel[index].quantity <= 10) {
-      _cartProductModel[index].quantity++;
+      _cartProductModel[index].quantity = _cartProductModel[index].quantity + 1;
       _totalPrice += (double.parse(_cartProductModel[index].price));
       dbHelper.updateProduct(_cartProductModel[index]);
 
@@ -258,7 +258,7 @@ class CartViewModel extends GetxController {
 
   decreaseQuantity(int index) async {
     if (_cartProductModel[index].quantity > 1) {
-      _cartProductModel[index].quantity--;
+      _cartProductModel[index].quantity=_cartProductModel[index].quantity - 1;
       _totalPrice -= (double.parse(_cartProductModel[index].price));
       dbHelper.updateProduct(_cartProductModel[index]);
       update();

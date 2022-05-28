@@ -11,18 +11,18 @@ class LocalStorageData extends GetxController{
 
 
   UserModel get userModel => _userModel;
-  UserModel _userModel;
+  UserModel  _userModel;
  // final LocalStorageData localStorageData=Get.find();
-  Future<UserModel>get getUser async{
+  Future<UserModel> get getUser async{
     try{
         UserModel userModel=await getUserData();
-         if(userModel==null){
-             return null;
-          }
+         // if(userModel==null){
+         //     return null;
+         //  }
              return userModel;
     }catch(e){
       print(e.toString());
-      return null;
+      return userModel ;
     }
   }
 

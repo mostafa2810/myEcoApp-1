@@ -27,16 +27,19 @@ class LoginView extends GetWidget<AuthViewModel> {
         //   backgroundColor: Colors.white,
         // ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 5.0, right: 20.0, left: 20.0),
+          padding: const EdgeInsets.only(top: 0.0, right: 20.0, left: 20.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
+
+
                 Container(
-                  height:320,
+                  height:280,
                   width:690,
                   color:Colors.white,
                   child:Image.asset('assets/E1.jpg',fit:BoxFit.fitWidth,)
                 ),
+
                 SizedBox(
                   height:10
                 ),
@@ -96,7 +99,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                               print("error");
                             }
                           }),
-                      SizedBox(height: 20),
+                      SizedBox(height: 10),
 
 
                       SizedBox(height: 8),
@@ -111,7 +114,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                           Get.to(ForgetPasswordView());
                         },
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 10),
 
                       Container(
                         width: 230,
@@ -132,6 +135,28 @@ class LoginView extends GetWidget<AuthViewModel> {
                             }
                           },
                           text: "تسجيل دخول",
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Container(
+                        width: 230,
+                        child: CustomButton(
+
+                          onPressed: () {
+                            _formKey.currentState.save();
+                            if (_formKey.currentState.validate()) {
+                              final box = GetStorage();
+                              final box1=box.write('email', controller.email);
+                              final box2=box.write('pass', controller.password);
+                              controller.signInWithEmailAndPasswordasAguest();
+
+                              // else{
+                              //   controller.signInWithEmailAndPassword();
+                              // }
+
+                            }
+                          },
+                          text: " تسجيل كزائر ",
                         ),
                       ),
 

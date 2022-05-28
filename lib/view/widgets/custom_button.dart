@@ -8,8 +8,8 @@ import 'custom_text.dart';
 
 class CustomButton extends StatelessWidget {
 
-  final String text;
-  final Function onPressed;
+  final String  text;
+  final Function  onPressed;
 
   const CustomButton({
     this.text,

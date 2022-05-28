@@ -23,7 +23,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   LatLng _initialcameraposition = LatLng(20.5937, 78.9629);
-  GoogleMapController _controller;
+  GoogleMapController  _controller;
   Location _location = Location();
 
   void _onMapCreated(GoogleMapController _cntlr)

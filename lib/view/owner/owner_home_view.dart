@@ -17,8 +17,8 @@ import 'owner_products.dart';
 class OwnerHomeView extends GetWidget<AuthViewModel> {
 
   String email;
-  String pass;
-  String code;
+  String  pass;
+  String  code;
   OwnerHomeView({this.email,this.pass,this.code});
 
   @override

@@ -83,7 +83,7 @@ class _PostsScreenState extends State<AllProductsView> {
 //.where("category", isEqualTo:"tec")
                           default:
                         return GridView.builder(
-                        itemCount: snapshot.data.documents.length,
+                        itemCount: snapshot.data.docs.length,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           crossAxisSpacing: 2,
@@ -92,7 +92,7 @@ class _PostsScreenState extends State<AllProductsView> {
                             //(orientation == Orientation.portrait) ? 2: 2.2),
                         itemBuilder: (BuildContext context, int index) {
                           DocumentSnapshot posts =
-                              snapshot.data.documents[index];
+                              snapshot.data.docs[index];
                           return
                             GetBuilder<HomeViewModel>(
                               init: Get.find(),

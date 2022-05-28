@@ -33,7 +33,7 @@ class SidebarPage extends StatefulWidget {
 
 class _SidebarPageState extends State<SidebarPage> {
   List<CollapsibleItem> _items;
-  String _headline;
+  String  _headline;
   NetworkImage _avatarImg =
   NetworkImage('https://www.w3schools.com/howto/img_avatar.png');
 
@@ -75,23 +75,24 @@ class _SidebarPageState extends State<SidebarPage> {
       //     }
       // ),
 
-      CollapsibleItem(
-          text: '  طلباتي   ',
-          icon: Icons.note,
-          onPressed: ()  async {
-            final box = GetStorage();
-            final box_name=box.read('email');
-            final box_order=box.read('ordernum1')??"x";
-            print("bbb"+box_name);
-            if(box_order=='x'){
-
-              Get.to(NoOrdersView());
-            }
-            else{
-              Get.to(AllOrdersView(user:box_name,));
-            }
-          }
-      ),
+      // CollapsibleItem(
+      //     text: '  طلباتي   ',
+      //     icon: Icons.note,
+      //     onPressed: ()  async {
+      //       final box = GetStorage();
+      //       final box_name=box.read('email');
+      //       final box_order=box.read('ordernum1')??"x";
+      //       print("bbb"+box_name);
+      //       if(box_order=='x'){
+      //
+      //         Get.to(NoOrdersView());
+      //       }
+      //       else{
+      //
+      //         Get.to(AllOrdersView(user:box_name,));
+      //       }
+      //     }
+      // ),
 
       CollapsibleItem(
           text: ' سلة المشتريات  ',

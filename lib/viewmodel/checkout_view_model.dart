@@ -35,13 +35,15 @@ class CheckOutViewModel extends GetxController {
       String country,String city,
       String address, String apartment, String floor, String mobile,
       num total, List<CartProductModel> order, num sub_total,
-      String brand_email,String brand, String notes,double lat,double long
+      String brand_email,String brand, String notes,double lat,double long,
+
       )
   async {
-    String pr, pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10;
-    int q, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10;
+    String  pr, pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10;
+    int  q, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10;
     String order_id;
-
+  String  color,color2,color3,color4,color5,color6,color7,color8,color9,color10;
+  String  size,size2,size3,size4,size5,size6,size7,size8,size9,size10;
     
     DateTime now = DateTime.now();
 
@@ -60,6 +62,8 @@ class CheckOutViewModel extends GetxController {
       if (order.length == 1) {
         pr = order[0].name ?? "";
         q = order[0].quantity ?? 0;
+        color=order[0].color ?? "";
+        size=order[0].size ?? "";
         pr1 = "";
         pr2 = "";
         pr3 = "";
@@ -86,9 +90,21 @@ class CheckOutViewModel extends GetxController {
       if (order.length == 2) {
         pr = order[0].name ?? "";
         q = order[0].quantity ?? 0;
+
+        color=order[0].color ?? "";
+        size=order[0].size ?? "";
+
+
         print("222222222");
         pr1 = order[1].name;
         q1 = order[1].quantity;
+
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
+
+
+
+
 
         pr2 = "";
         pr3 = "";
@@ -117,10 +133,16 @@ class CheckOutViewModel extends GetxController {
       if (order.length == 3) {
         pr = order[0].name ?? "";
         q = order[0].quantity ?? 0;
+        color=order[0].color ?? "";
+        size=order[0].size ?? "";
         pr1 = order[1].name ?? "";
         pr2 = order[2].name ?? "";
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
         q1 = order[1].quantity ?? 0;
         q2 = order[2].quantity ?? 0;
+        color3=order[2].color ?? "";
+        size3=order[2].size ?? "";
         pr3 = "";
         pr4 = "";
         pr5 = "";
@@ -151,6 +173,16 @@ class CheckOutViewModel extends GetxController {
         q2 = order[2].quantity ?? 0;
         q3 = order[3].quantity ?? 0;
 
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
+
+        color3=order[2].color ?? "";
+        size3=order[2].size ?? "";
+
+        color4=order[3].color ?? "";
+        size4=order[3].size ?? "";
+
+
         pr4 = "";
         pr5 = "";
         pr6 = "";
@@ -176,6 +208,18 @@ class CheckOutViewModel extends GetxController {
         pr2 = order[2].name ?? "";
         pr3 = order[3].name ?? "";
         pr4 = order[4].name ?? "";
+
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
+
+        color3=order[2].color ?? "";
+        size3=order[2].size ?? "";
+
+        color4=order[3].color ?? "";
+        size4=order[3].size ?? "";
+
+        color5=order[4].color ?? "";
+        size5=order[4].size ?? "";
 
         q1 = order[1].quantity ?? 0;
         q2 = order[2].quantity ?? 0;
@@ -211,6 +255,22 @@ class CheckOutViewModel extends GetxController {
         q3 = order[3].quantity ?? 0;
         q4 = order[4].quantity ?? 0;
         q5 = order[5].quantity ?? 0;
+
+
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
+
+        color3=order[2].color ?? "";
+        size3=order[2].size ?? "";
+
+        color4=order[3].color ?? "";
+        size4=order[3].size ?? "";
+
+        color5=order[4].color ?? "";
+        size5=order[4].size ?? "";
+
+        color6=order[5].color ?? "";
+        size6=order[5].size ?? "";
 
         pr6 = "";
         pr7 = "";
@@ -251,6 +311,25 @@ class CheckOutViewModel extends GetxController {
         q9 = 0;
         q10 = 0;
 
+
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
+
+        color3=order[2].color ?? "";
+        size3=order[2].size ?? "";
+
+        color4=order[3].color ?? "";
+        size4=order[3].size ?? "";
+
+        color5=order[4].color ?? "";
+        size5=order[4].size ?? "";
+
+        color6=order[5].color ?? "";
+        size6=order[5].size ?? "";
+
+        color7=order[6].color ?? "";
+        size7=order[6].size ?? "";
+
         update();
       }
 
@@ -278,6 +357,30 @@ class CheckOutViewModel extends GetxController {
         q9 = 0;
         q10 = 0;
 
+
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
+
+        color3=order[2].color ?? "";
+        size3=order[2].size ?? "";
+
+        color4=order[3].color ?? "";
+        size4=order[3].size ?? "";
+
+        color5=order[4].color ?? "";
+        size5=order[4].size ?? "";
+
+        color6=order[5].color ?? "";
+        size6=order[5].size ?? "";
+
+        color7=order[6].color ?? "";
+        size7=order[6].size ?? "";
+
+        color8=order[7].color ?? "";
+        size8=order[7].size ?? "";
+
+
+
         update();
       }
 
@@ -301,6 +404,32 @@ class CheckOutViewModel extends GetxController {
         q6 = order[6].quantity ?? 0;
         q7 = order[7].quantity ?? 0;
         q8 = order[8].quantity ?? 0;
+
+
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
+
+        color3=order[2].color ?? "";
+        size3=order[2].size ?? "";
+
+        color4=order[3].color ?? "";
+        size4=order[3].size ?? "";
+
+        color5=order[4].color ?? "";
+        size5=order[4].size ?? "";
+
+        color6=order[5].color ?? "";
+        size6=order[5].size ?? "";
+
+        color7=order[6].color ?? "";
+        size7=order[6].size ?? "";
+
+        color8=order[7].color ?? "";
+        size8=order[7].size ?? "";
+
+        color9=order[8].color ?? "";
+        size9=order[8].size ?? "";
+
 
         q9 = 0;
         q10 = 0;
@@ -328,6 +457,39 @@ class CheckOutViewModel extends GetxController {
         q7 = order[7].quantity ?? 0;
         q8 = order[8].quantity ?? 0;
         q9 = order[9].quantity ?? 0;
+
+
+        color2=order[1].color ?? "";
+        size2=order[1].size ?? "";
+
+        color3=order[2].color ?? "";
+        size3=order[2].size ?? "";
+
+        color4=order[3].color ?? "";
+        size4=order[3].size ?? "";
+
+        color5=order[4].color ?? "";
+        size5=order[4].size ?? "";
+
+        color6=order[5].color ?? "";
+        size6=order[5].size ?? "";
+
+        color7=order[6].color ?? "";
+        size7=order[6].size ?? "";
+
+        color8=order[7].color ?? "";
+        size8=order[7].size ?? "";
+
+        color9=order[8].color ?? "";
+        size9=order[8].size ?? "";
+
+        color10=order[9].color ?? "";
+        size10=order[9].size ?? "";
+
+
+
+
+
         q10 = 0;
         update();
       }
@@ -338,7 +500,7 @@ class CheckOutViewModel extends GetxController {
 
     print("orderL=" + order.length.toString());
 
-    print("ppp=" + pr3);
+  //  print("ppp=" + pr3);
 
     final FirebaseAuth auth = FirebaseAuth.instance;
     final User user = auth.currentUser;
@@ -359,13 +521,15 @@ class CheckOutViewModel extends GetxController {
       print('x=' + x.toString());
       var x3 = random.nextInt(1200);
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
+         'color': color.toString(),
+        'size': size.toString(),
         'apartment': apartment.toString(),
         'floor': floor.toString(),
         'mobile': mobile.toString(),
@@ -402,10 +566,10 @@ class CheckOutViewModel extends GetxController {
       print('x=' + x.toString());
       var x3 = random.nextInt(760);
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -420,6 +584,18 @@ class CheckOutViewModel extends GetxController {
         'username': uid,
         'ord 1': pr + " x " + q.toString(),
         'ord 2': pr1 + " x " + q1.toString(),
+
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+
+
+
+
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -445,10 +621,10 @@ class CheckOutViewModel extends GetxController {
       var x3 = random.nextInt(9);
       print('x=' + x.toString());
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -464,6 +640,17 @@ class CheckOutViewModel extends GetxController {
         'ord 1': pr + " x " + q.toString(),
         'ord 2': pr1 + " x " + q1.toString(),
         'ord 3': pr2 + " x " + q2.toString(),
+
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+        'color3': color3.toString(),
+        'size3': size3.toString(),
+
         'time': time,
          'time2':time2,
           'x':'x',
@@ -488,10 +675,10 @@ class CheckOutViewModel extends GetxController {
       print('x=' + x.toString());
       var x3 = random.nextInt(760);
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -508,6 +695,21 @@ class CheckOutViewModel extends GetxController {
         'ord 2': pr1 + " x " + q1.toString(),
         'ord 3': pr2 + " x " + q2.toString(),
         'ord 4': pr3 + " x " + q3.toString(),
+
+
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+        'color3': color3.toString(),
+        'size3': size3.toString(),
+
+        'color4': color4.toString(),
+        'size4': size4.toString(),
+
         'time': time,
          'time2':time2,
           'x':'x',
@@ -533,10 +735,10 @@ class CheckOutViewModel extends GetxController {
       print('x=' + x.toString());
       var x3 = random.nextInt(600);
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -554,6 +756,27 @@ class CheckOutViewModel extends GetxController {
         'ord 3': pr2 + " x " + q2.toString(),
         'ord 4': pr3 + " x " + q3.toString(),
         'ord 5': pr4 + " x " + q4.toString(),
+
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+        'color3': color3.toString(),
+        'size3': size3.toString(),
+
+        'color4': color4.toString(),
+        'size4': size4.toString(),
+
+        'color5': color5.toString(),
+        'size5': size5.toString(),
+
+
+
+
+
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -579,10 +802,10 @@ class CheckOutViewModel extends GetxController {
       print('x=' + x.toString());
       var x3 = random.nextInt(800);
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -601,6 +824,32 @@ class CheckOutViewModel extends GetxController {
         'ord 4': pr3 + " x " + q3.toString(),
         'ord 5': pr4 + " x " + q4.toString(),
         'ord 6': pr5 + " x " + q5.toString(),
+
+
+
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+        'color3': color3.toString(),
+        'size3': size3.toString(),
+
+        'color4': color4.toString(),
+        'size4': size4.toString(),
+
+        'color5': color5.toString(),
+        'size5': size5.toString(),
+
+
+        'color6': color6.toString(),
+        'size6': size6.toString(),
+
+
+
+
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -626,10 +875,10 @@ class CheckOutViewModel extends GetxController {
       print('x=' + x.toString());
       var x3 = random.nextInt(970);
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -649,6 +898,34 @@ class CheckOutViewModel extends GetxController {
         'ord 5': pr4 + " x " + q4.toString(),
         'ord 6': pr5 + " x  " + q5.toString(),
         'ord 7': pr6 + " x " + q6.toString(),
+
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+        'color3': color3.toString(),
+        'size3': size3.toString(),
+
+        'color4': color4.toString(),
+        'size4': size4.toString(),
+
+        'color5': color5.toString(),
+        'size5': size5.toString(),
+
+
+        'color6': color6.toString(),
+        'size6': size6.toString(),
+
+        'color7': color7.toString(),
+        'size7': size7.toString(),
+
+
+
+
+
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -673,10 +950,10 @@ class CheckOutViewModel extends GetxController {
       print('x=' + x.toString());
       var x3 = random.nextInt(760);
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -693,10 +970,42 @@ class CheckOutViewModel extends GetxController {
         'ord 2': pr1 + " x " + q1.toString(),
         'ord 3': pr2 + " x " + q2.toString(),
         'ord 4': pr3 + " x " + q3.toString(),
-        'ord 5': pr4 + " x " + q4.toString(),
+        'ord 5': pr4+ " x " + q4.toString(),
         'ord 6': pr5 + " x  " + q5.toString(),
         'ord 7': pr6 + " x " + q6.toString(),
         'ord 8': pr7 + " x " + q7.toString(),
+
+
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+        'color3': color3.toString(),
+        'size3': size3.toString(),
+
+        'color4': color4.toString(),
+        'size4': size4.toString(),
+
+        'color5': color5.toString(),
+        'size5': size5.toString(),
+
+
+        'color6': color6.toString(),
+        'size6': size6.toString(),
+
+        'color7': color7.toString(),
+        'size7': size7.toString(),
+
+        'color8': color7.toString(),
+        'size8': size7.toString(),
+
+
+
+
+
         'order_status': 'pending',
         'time': time,
          'time2':time2,
@@ -722,10 +1031,10 @@ class CheckOutViewModel extends GetxController {
       print('x=' + x.toString());
       var x3 = random.nextInt(900);
       print('x=' + x.toString());
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -747,6 +1056,48 @@ class CheckOutViewModel extends GetxController {
         'ord 7': pr6 + " x " + q6.toString(),
         'ord 8': pr7 + " x " + q7.toString(),
         'ord 9': pr8 + " x " + q8.toString(),
+
+
+
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+        'color3': color3.toString(),
+        'size3': size3.toString(),
+
+        'color4': color4.toString(),
+        'size4': size4.toString(),
+
+        'color5': color5.toString(),
+        'size5': size5.toString(),
+
+
+        'color6': color6.toString(),
+        'size6': size6.toString(),
+
+        'color7': color7.toString(),
+        'size7': size7.toString(),
+
+        'color8': color7.toString(),
+        'size8': size7.toString(),
+
+        'color9': color8.toString(),
+        'size9': size8.toString(),
+
+
+
+
+
+
+
+
+
+
+
         'order_status': 'pending',
           'x':'x',
         'time': time,
@@ -774,10 +1125,10 @@ class CheckOutViewModel extends GetxController {
       var x3 = random.nextInt(900);
       print('x=' + x.toString());
 
-      await Firestore.instance
+      await FirebaseFirestore.instance
           .collection('orders_checkout')
-          .document()
-          .setData({
+          .doc()
+          .set({
         'country':country.toString(),
         'city':city.toString(),
         'address': address.toString(),
@@ -801,6 +1152,41 @@ class CheckOutViewModel extends GetxController {
         'ord 9': pr8 + " x " + q8.toString(),
         'ord 10': pr9 + " x " + q9.toString(),
         'ord 11': pr10 + " x " + q10.toString(),
+
+        'color1': color.toString(),
+        'size1': size.toString(),
+
+        'color2': color2.toString(),
+        'size2': size2.toString(),
+
+        'color3': color3.toString(),
+        'size3': size3.toString(),
+
+        'color4': color4.toString(),
+        'size4': size4.toString(),
+
+        'color5': color5.toString(),
+        'size5': size5.toString(),
+
+
+        'color6': color6.toString(),
+        'size6': size6.toString(),
+
+        'color7': color7.toString(),
+        'size7': size7.toString(),
+
+        'color8': color7.toString(),
+        'size8': size7.toString(),
+
+        'color9': color8.toString(),
+        'size9': size8.toString(),
+
+
+        'color10': color9.toString(),
+        'size10': size9.toString(),
+
+
+
         'order_status': 'pending',
          'x':'x',
         'time': time,
@@ -826,7 +1212,7 @@ class CheckOutViewModel extends GetxController {
 
 
     //Get.offAll(OrderStatusView2(order_id: order_id,cartmodel:_cartProductModel));
-    print("order_idddd"+order_id);
+  //  print("order_idddd"+order_id);
 
     Get.offAll(LastView());
     // Get.offAll(OrderStatus(

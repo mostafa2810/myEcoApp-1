@@ -13,7 +13,9 @@ class AddressViewModel extends GetxController{
   TextEditingController mobile = TextEditingController();
   TextEditingController  country= TextEditingController();
   TextEditingController city= TextEditingController();
+  TextEditingController codeController= TextEditingController();
   String dropdownValue = '+20';
+  bool check=true;
   // TextEditingController floor= TextEditingController();
   // TextEditingController mobile = TextEditingController();
 
@@ -29,8 +31,8 @@ class AddressViewModel extends GetxController{
    void addAddress() async{
 
      print("add6666");
-     await Firestore.instance.collection('address').document()
-         .setData({
+     await FirebaseFirestore.instance.collection('address').doc()
+         .set({
        'address': address.text.toString(),
        'apartment': apartment.text.toString(),
        'floor': floor.text.toString(),
@@ -40,6 +42,24 @@ class AddressViewModel extends GetxController{
      }
      );
      print("add999");
+    }
+
+
+    void promoCode(){
+
+
+    if(check == true){
+
+      if(codeController.text.toString() == "1234"){
+
+        print("xxxx");
+
+
+
+      }
+
+    }
+
     }
 
 

@@ -4,13 +4,13 @@ import 'package:get_storage/get_storage.dart';
 import 'package:sqflite/sqflite.dart';
 
 class CartProductModel {
-  String name, image, price, productId;
-  int quantity;
+  String  name, image, price, productId,color,size;
+  int  quantity;
 
 
   CartProductModel(
       {this.name, this.image, this.quantity, this.price,
-        this.productId});
+        this.productId,this.color,this.size});
 
   CartProductModel.fromJson(Map<dynamic, dynamic> map) {
     if (map == null) {
@@ -19,6 +19,11 @@ class CartProductModel {
     name = map['name'];
     image = map['image'];
     quantity = map['quantity'];
+    color=map['color'];
+     size=map['size'];
+
+     print("s=$size");
+     print("c=$color");
 
     // final box = GetStorage();
     // final box_country=box.read('country')??'x';
@@ -60,6 +65,8 @@ class CartProductModel {
       'quantity': quantity,
       'price': price,
       'productid': productId,
+      'color':color,
+      'size':size
       //'brand':brand,
     //  'brandemail':brand_email
     };

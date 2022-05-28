@@ -13,8 +13,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:location_permissions/location_permissions.dart';
 
 class MapView2 extends StatefulWidget {
-  num total;
-  List<CartProductModel>cartmodel;
+  num  total;
+  List<CartProductModel>  cartmodel;
 
   MapView2({this.total,this.cartmodel});
 

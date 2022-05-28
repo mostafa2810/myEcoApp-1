@@ -25,17 +25,17 @@ import 'package:get_storage/get_storage.dart';
 import '../widgets/custom_text.dart';
 
 class HomeView extends StatelessWidget {
-  String email;
+  String  email;
 
   HomeView({this.email});
 
-  bool isExecuted = false;
+  bool  isExecuted = false;
 
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => HomeViewModel());
     TextEditingController search_txt = new TextEditingController();
-    QuerySnapshot querySnapshot;
+    QuerySnapshot  querySnapshot;
     final box = GetStorage();
     final box_name=box.read('name').replaceAll('@','').replaceAll('yahoo.com','').replaceAll('gmail.com','').replaceAll('hotmail.com','');
    // final username=user.displayName;
@@ -83,9 +83,12 @@ class HomeView extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 60),
                 child: SidebarPage(),
               ),
-              body: isExecuted
-                  ? searchedData
-                  : Container(
+              body
+                  // : isExecuted
+                  // ? searchedData
+                  //
+                  // :
+             : Container(
                       padding: EdgeInsets.only(top: 5, right: 10, left: 20),
                       child: ListView(children: [
                         SizedBox(height: 17),
@@ -168,21 +171,22 @@ class HomeView extends StatelessWidget {
                             indicatorBgPadding: 7.0,
 
                             images: [
-
+                              AssetImage('assets/acx6.png'),
+                             AssetImage('assets/acx5.jpg'),
                               AssetImage('assets/c6.jpg'),
-                              AssetImage('assets/c11.png'),
+                              AssetImage('assets/acx4.jpg'),
                               AssetImage('assets/c2.jpg'),
-                              AssetImage('assets/c5.jpg'),
+                              AssetImage('assets/ACX.jpg'),
 
                             ],
                           ),
                         )),
                         SizedBox(height: 24),
                         Padding(
-                          padding: const EdgeInsets.only(left:260),
+                          padding: const EdgeInsets.only(left:240),
                           child: InkWell(
                             child: Text(
-                                "جميع الاقسام",style:TextStyle(color:Colors.black,fontSize:18,
+                                "جميع الاقسام",style:TextStyle(color:Colors.black,fontSize:16,
                                 fontWeight:FontWeight.w700
                             )),
 
@@ -210,19 +214,15 @@ class HomeView extends StatelessWidget {
                                       Get.to(ProductsView());
 
                                             // controller.categoryModel[index].name
-
                                        //   AllProductsView()
-
-
-
                                     }),
-                                SizedBox(width:164,),
+                                SizedBox(width:131,),
                                 Custom_Text(
                                   text: "  المنتجات   ",
-                                  fontSize: 18,
+                                  fontSize: 16,
                                 ),
                               ]),
-                          SizedBox(height: 50),
+                          SizedBox(height: 40),
                           _listViewProducts(),
                       ]),
                     )),
@@ -247,6 +247,7 @@ class HomeView extends StatelessWidget {
                   prefixIcon: InkWell(
                       child: Icon(Icons.search, color: Colors.black),
                       onTap: () {
+
                         controller.queryData(search_txt.text).then((value) {
                           querySnapshot = value;
                           isExecuted = true;
@@ -258,13 +259,13 @@ class HomeView extends StatelessWidget {
                           ));
                         });
                       }),
+
                 ),
               )
           //}
           ),
     );
   }
-
   Widget _listViewCategory() {
     return GetBuilder<HomeViewModel>(
       builder: (controller) => Container(
@@ -273,6 +274,7 @@ class HomeView extends StatelessWidget {
           itemCount: 4, //controller.categoryModel.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
+
             return Column(
               children: [
                 Container(
@@ -392,7 +394,7 @@ class HomeView extends StatelessWidget {
                       height: 107,
                       child:CircleAvatar(
                         backgroundColor:Colors.white38,
-                       child:Image.asset('assets/w66.png'),
+                       child:Image.asset('assets/ACX.jpg'),
                        // backgroundImage:AssetImage('assets/w33.png'),
                          )
                   ),
@@ -466,13 +468,16 @@ class HomeView extends StatelessWidget {
                             ),
                             onTap: () {
 
-                              Get.to(DetailsView2(
+                              Get.to(
+                                  DetailsView2(
                                 name: controller.productModel[index].name,
                                 price:controller.productModel[index].price,
                                 //      x:posts.data()['x'],
                                 details: controller.productModel[index].des,
                                 image: controller.productModel[index].image,
                                 productId:controller.productModel[index].productId,
+                                size: controller.productModel[index].size,
+                                color: controller.productModel[index].color,
                                 //    brand:posts.data()['brand'],
                                 //  brandemail:posts.data()['brandemail']
                               ));

@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:get_storage/get_storage.dart';
 
 class ProductModel {
-  String productId, name, image, des, sized,brand,brand_email,x;
-  num price;
-  num quant;
-  String color;
+  String productId, name, image, des, size,brand,brand_email,x;
+  num  price;
+  num  quant;
+  String  color;
 
   ProductModel(
       {this.productId,
@@ -14,7 +14,7 @@ class ProductModel {
       this.image,
       this.des,
       this.color,
-      this.sized,
+      this.size,
       this.brand,
         this.x,
     this.brand_email,
@@ -29,7 +29,7 @@ class ProductModel {
     image = map['image'];
     des = map['des'];
     color = map['color'];
-    sized = map['sized'];
+    size= map['size'];
     x=map["x"];
 
     final box = GetStorage();
@@ -50,7 +50,7 @@ class ProductModel {
       'image': image,
       'des': des,
       'color': color,
-      'sized': sized,
+      'size': size,
       'price': price,
       'productid': productId,
       'brand':brand,

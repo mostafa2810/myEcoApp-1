@@ -34,8 +34,8 @@ class _Map1State extends State<Map2> {
   var l1=37.43296265331129;
   var l2=-122.08832357078792;
   GoogleMapController newGooGleMapController;
-  LatLng latLng ;
-  CameraPosition cameraPosition ;
+  LatLng  latLng ;
+  CameraPosition  cameraPosition ;
   Completer<GoogleMapController> _googleMapController = Completer();
   CameraPosition initCameraPosition()=> CameraPosition(target: LatLng(l1, l2), zoom: 6);
 

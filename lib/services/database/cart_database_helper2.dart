@@ -11,7 +11,7 @@ class CartDatabaseHelper{
   CartDatabaseHelper._();
   static final CartDatabaseHelper db = CartDatabaseHelper._();
 
-  static Database _database;
+  static Database  _database;
 
   Future<Database> get database async {
     if (_database != null){
@@ -36,6 +36,9 @@ class CartDatabaseHelper{
         $columnPrice TEXT NOT NULL,
          $columnQuant INTEGER,
          $columnProductId TEXT NOT NULL
+         ,$columnProductColor TEXT NOT NULL,
+         $columnProductSize TEXT NOT NULL
+         
          )
       ''');
     }
@@ -56,7 +59,9 @@ class CartDatabaseHelper{
     var dbClient =await database;
     await dbClient.insert(tableCartProduct,model.toJson(),
         conflictAlgorithm:ConflictAlgorithm.replace
+
     );
+
   }
 
   updateProduct(CartProductModel model)async{

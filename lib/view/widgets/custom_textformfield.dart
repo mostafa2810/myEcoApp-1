@@ -7,13 +7,13 @@ import 'custom_text.dart';
 
 class CustomTextFormField extends StatelessWidget {
 
-final String text;
-final String hint;
+final String  text;
+final String  hint;
 final Function onSave;
 final bool obs ;
 final Function validator;
-final TextEditingController controller;
-final Color color;
+final TextEditingController  controller;
+final Color  color;
   CustomTextFormField({this.text,
     this.hint,
     this.onSave,
@@ -35,8 +35,8 @@ final Color color;
 
             TextFormField(
 
-              onSaved: onSave,
-              validator:validator ,
+              onSaved: onSave(),
+              validator:validator() ,
          //    textDirection:TextDirection.rtl,
               obscureText:obs,
               controller: controller,

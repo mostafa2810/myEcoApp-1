@@ -14,7 +14,7 @@ import 'checkout_screen2.dart';
 class AdressScreen extends StatefulWidget {
   //List<>String name;
   num total;
-  List<CartProductModel> cartmodel;
+  List<CartProductModel>  cartmodel;
   double lat,long;
   //String address;
   AdressScreen({this.total,this.cartmodel,this.lat,this.long});

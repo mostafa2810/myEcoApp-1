@@ -87,20 +87,20 @@ import 'otp_screen.dart';
                       }
                     }),
                 SizedBox(height: 20),
-                CustomButton(
-                  onPressed: () {
-                    _formKey.currentState.save();
-                    if (_formKey.currentState.validate()) {
-                      // controller.verifyPhoneNumber();
-                     // controller.createAccountWithEmailAndPassword();
-
-                      Get.to(OTPScreen(
-                        controller.phone
-                      ));
-                    }
-                  },
-                  text: "Sign Up",
-                ),
+                // CustomButton(
+                //   onPressed: () {
+                //     _formKey.currentState!.save();
+                //     if (_formKey.currentState!.validate()) {
+                //       // controller.verifyPhoneNumber();
+                //      // controller.createAccountWithEmailAndPassword();
+                //
+                //       Get.to(OTPScreen(
+                //         controller.phone
+                //       ));
+                //     }
+                //   },
+                //   text: "Sign Up",
+                // ),
                 SizedBox(height: 20),
               ])),
         ));

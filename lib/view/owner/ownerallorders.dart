@@ -29,10 +29,10 @@ class OwnerAllOrdersView extends StatefulWidget {
 }
 class _PostsScreenState extends State<OwnerAllOrdersView > {
 
-  String allposts;
+  String  allposts;
   String v;
   TextEditingController _searchController = TextEditingController();
-  Future resultsLoaded;
+  Future  resultsLoaded;
   List _allResults = [];
   List _resultsList = [];
 
@@ -89,10 +89,10 @@ class _PostsScreenState extends State<OwnerAllOrdersView > {
 //.where("category", isEqualTo:"tec")
                           default:
                             return ListView.builder(
-                                itemCount: snapshot.data.documents.length,
+                                itemCount: snapshot.data.docs.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
-                                  snapshot.data.documents[index];
+                                  snapshot.data.docs[index];
                                   return GetBuilder<HomeViewModel>(
                                       init: Get.find(),
                                       builder: (controller) => Container(
@@ -492,7 +492,7 @@ class _PostsScreenState extends State<OwnerAllOrdersView > {
                                                                 fontSize: 19),
                                                           ),
                                                           onPressed: () {
-                                                            Firestore.instance
+                                                            FirebaseFirestore.instance
                                                                 .collection('orders_checkout')
                                                                 .where('order_id',
                                                                 isEqualTo: posts
@@ -500,7 +500,7 @@ class _PostsScreenState extends State<OwnerAllOrdersView > {
                                                                 .get()
                                                                 .then((snapshot) {
                                                               snapshot.docs.last.reference
-                                                                  .updateData({
+                                                                  .update({
                                                                 'order_status':controller.value,
                                                             //    _value.toString(),
                                                                 'x':'x'

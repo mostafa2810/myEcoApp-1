@@ -15,7 +15,7 @@ import '../../viewmodel/cart_viewmodel.dart';
 import '../check/address_view.dart';
 
 class CartView2 extends StatefulWidget {
-  int id;
+  int  id;
   //String brand_email;
   CartView2({this.id});
 
@@ -171,11 +171,15 @@ class _CartView2State extends State<CartView2> {
                                                               controller
                                                                   .cartProductModel[index].productId),
                                                           controller
-                                                              .cartProductModel[index].productId);
+                                                              .cartProductModel[index].productId
+                                                      );
                                                     },
                                                   ),
                                                 ]))
                                       ]),
+                                ),
+                                SizedBox(
+                                  width:10,
                                 ),
                                 Container(
                                     width: 140,

@@ -10,15 +10,15 @@ import 'package:intl/intl.dart'as intl;
 
 
 class CheckOutScreen2 extends StatefulWidget {
-  String country,city;
+  String  country,city;
   String address;
-  String apartment;
-  String floor;
+  String  apartment;
+  String  floor;
   String mobile;
-  num total;
+  num  total;
   List<CartProductModel> cartmodel;
-  String brand_email;
-  double lat,long;
+  String  brand_email;
+  double  lat,long;
   CheckOutScreen2(
       this.country,
     this.city,
@@ -37,17 +37,29 @@ class CheckOutScreen2 extends StatefulWidget {
   State<CheckOutScreen2> createState() => _CheckOutScreen2State();
 }
 
+
+
 class _CheckOutScreen2State extends State<CheckOutScreen2> {
+  final box = GetStorage();
+  void initState() {
+    super.initState();
+    box.remove('clicked');
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     int i2 = widget.cartmodel.length;
     double opacity=0.0;
     num shipping_cost=22;
     TextEditingController _notesController = TextEditingController();
-    final box = GetStorage();
+    TextEditingController codeController = TextEditingController();
+
     final box_brand=box.read('brand')??'x';
     DateTime now = DateTime.now();
-
+bool clicked=true;
     String time =intl. DateFormat('kk:mm:ss \n EEE d MMM').format(now);
     // String cartmodel2=cartmodel.toString();
     return
@@ -81,21 +93,21 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                     children: [
                       Container(
                           width: 300,
-                          height: 1000,
+                          height: 1100,
                           child: Card(
-                           color: Colors.grey[200],
+                           color: Colors.white,
                               child: SingleChildScrollView(
                                 child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              SizedBox(height: 3),
+                              SizedBox(height: 1),
                               Container(
                                 color:Colors.white,
-                                height:120,
+                                height:80,
                                 width:600,
                                 child:Image.asset('assets/ecom.png'),
                               ),
-                              SizedBox(height: 10),
+                              SizedBox(height: 5),
                                 Card(
                                   color:Colors.white ,
                                   child: Column(
@@ -109,7 +121,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                           )),
                                       SizedBox(height:5,),
 
-                                      SizedBox(height:5,),
+
                                       Row(
                                         children: [
                                           SizedBox(width:11,),
@@ -120,7 +132,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height:10),
+                                      SizedBox(height:6),
                                       for (int i = 0; i < i2; i++)
                                         Row(
                                           children: [
@@ -148,7 +160,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                           ],
                                         ),
                                       SizedBox(
-                                        height:15
+                                        height:7
                                       ),
                                     ],
                                   ),
@@ -161,7 +173,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                       Text("تفاصيل العنوان ",style:TextStyle(color:Colors.black,fontSize:18),),
 
                                       SizedBox(
-                                          height:6
+                                          height:3
                                       ),
 
                                       Row(
@@ -199,13 +211,13 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                       Row(
                                         children: [
                                           Container(
-                                            height:40,
+                                            height:36,
                                             child: Text("عنوان الشارع :  ",
                                               style:TextStyle(color:Colors.black,fontSize:19),),
                                           ),
 
                                           Container(
-                                            height:40,
+                                            height:36,
                                             child: Text(
                                                 widget.address ??
                                                     "",
@@ -273,8 +285,87 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                   ),
                                 ),
 
-                                SizedBox(height: 1),
+                                SizedBox(height: 10,),
+                              Center(
+                                child: Container(
+                                    color: Colors.white,
+                                    height:55,
+                                    child:Center(
+                                      child: Directionality(
+                                        textDirection:TextDirection.rtl,
 
+                                        child: Center(
+                                          child: TextFormField(
+                                            maxLines:1,
+                                            decoration: InputDecoration(
+                                              hintStyle: TextStyle(fontSize: 16,color:Colors.grey),
+                                              hintText: 'اضافة كود خصم ',
+                                              //suffixIcon: Icon(Icons.search),
+                                              border: InputBorder.none,
+                                              contentPadding: EdgeInsets.all(22),
+                                            ),
+                                            controller:codeController,style:TextStyle(color:Colors.black),
+                                     onSaved: (value) {
+                                              codeController.text=value;
+                                     }
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                ),
+                              ),
+
+
+
+
+                         InkWell(
+                           child: Container(
+                             width:170,
+                             height:40,
+                             child: Card(
+                               elevation: 5,
+                               color:Colors.blue,
+                               child:Center(child: Text("  تفعيل كود الخصم  "+codeController.text,style:TextStyle(color:Colors.white,fontSize:16),)),
+                             ),
+                           ),
+                           onTap:(){
+
+                             print("xxx="+clicked.toString());
+                             bool cc=box.read('clicked')??true;
+                             print("cc="+cc.toString());
+                               if(codeController.text=='123456' && cc== true){
+
+
+                                 setState(() {
+                                   clicked=false;
+                                   widget.total=widget.total-50;
+                                   print("ccccc"+clicked.toString());
+                                   box.write('clicked',clicked);
+                                 });
+                                 Get.snackbar('done', 'تم تفعيل الخصم بنجاح ',
+                                 backgroundColor: Colors.green,
+                                   colorText:Colors.white,
+
+                                 );
+                               }
+                               if(cc==true && codeController.text!='123456'){
+
+
+                                 Get.snackbar('خطا', 'كود الخصم غير صحيح ',
+                                     backgroundColor: Colors.red,
+                                     colorText:Colors.white
+                                 );
+                               }
+
+                               print("wwww"+widget.total.toString());
+
+
+
+
+                           },
+                         ),
+
+                              SizedBox(height: 2),
                                 Container(
                                     child: Column(
 
@@ -282,7 +373,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
 
                                     SizedBox(width:20),
                                     Container(
-                                      height:130,
+                                      height:100,
                                       child: Card(
                                         color: Colors.white,
                                         child: Row(
@@ -355,28 +446,26 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                       ),
                                     ),
 
-                                    SizedBox(height: 6),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
 
 
-
                                       ],
                                     ),
-                                    SizedBox(height: 10),
+                                    SizedBox(height: 5),
 
                                  //   SizedBox(height: 50),
 
                                     Container(
                                         color: Colors.white,
-                                        height:100,
+                                        height:70,
                                         width:370,
                                         child:Center(
                                           child: Directionality(
                                             textDirection:TextDirection.rtl,
                                             child: TextFormField(
-                                              maxLines:4,
+                                              maxLines:3,
                                               decoration: InputDecoration(
                                                 hintStyle: TextStyle(fontSize: 16,color:Colors.grey),
                                                 hintText: 'اضافة ملاحظة ',
@@ -391,7 +480,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                     ),
 
 
-                                    SizedBox(height: 20),
+
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
@@ -420,6 +509,9 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                                                 .toString(),
                                                             quantity:
                                                                 widget.cartmodel[i].quantity,
+                                                            color: widget.cartmodel[i]
+                                                                .color,
+                                                            size: widget.cartmodel[i].size,
                                                             productId:
                                                                 widget.cartmodel[i].productId),
                                                         widget.cartmodel[i].productId);
@@ -445,7 +537,7 @@ class _CheckOutScreen2State extends State<CheckOutScreen2> {
                                                   print("doooo");
 
                                                   box.remove('cart');
-
+                                                  box.remove('clicked');
                                                   opacity=1.0;
 
                                                 },

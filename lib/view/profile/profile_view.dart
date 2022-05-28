@@ -14,7 +14,7 @@ import 'package:get_storage/get_storage.dart';
 
 
 class ProfileView extends StatefulWidget {
-  const ProfileView({Key key}) : super(key: key);
+
 
   @override
   State<ProfileView> createState() => _ProfileViewState();

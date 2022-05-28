@@ -13,7 +13,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 class SearchView extends StatefulWidget {
 
-  String search_txt;
+  String  search_txt;
   SearchView({this.search_txt});
 
   @override
@@ -22,9 +22,9 @@ class SearchView extends StatefulWidget {
 class _PostsScreenState extends State<SearchView> {
 
   String allposts;
-  String v;
+  String  v;
   TextEditingController _searchController = TextEditingController();
-  Future resultsLoaded;
+  Future  resultsLoaded;
   List _allResults = [];
   List _resultsList = [];
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
@@ -87,7 +87,7 @@ class _PostsScreenState extends State<SearchView> {
                           default:
                             return
                              GridView.builder(
-                                itemCount: snapshot.data.documents.length,
+                                itemCount: snapshot.data.docs.length,
                                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 3,
@@ -96,7 +96,7 @@ class _PostsScreenState extends State<SearchView> {
 
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
-                                  snapshot.data.documents[index];
+                                  snapshot.data.docs[index];
 
                                   return GetBuilder<HomeViewModel>(
                                       init: Get.find(),
@@ -148,7 +148,6 @@ class _PostsScreenState extends State<SearchView> {
                                               ),
                                             ),
                                             onTap: () {
-
 
                                               Get.to(DetailsView2(
                                                 name: posts.data()['name'],

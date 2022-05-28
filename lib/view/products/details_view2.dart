@@ -10,12 +10,12 @@ import 'package:get_storage/get_storage.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class DetailsView2 extends StatefulWidget {
-  String name;
-  num price;
-  String details;
-  String image;
-  String productId;
-
+  String  name;
+  num  price;
+  String  details;
+  String  image;
+  String  productId;
+  String  color, size;
 
   DetailsView2(
       {this.name,
@@ -23,6 +23,7 @@ class DetailsView2 extends StatefulWidget {
       this.price,
       this.details,
       this.productId,
+        this.size,this.color
     });
 
   @override
@@ -33,7 +34,22 @@ class _DetailsView2State extends State<DetailsView2> {
   int index = 0;
 
   String lg = '';
+  final bool  groupValue= false;
+  bool value=false;
+  bool value1=false;
+  bool value2=false;
 
+
+  bool size=false;
+  bool size1=false;
+  bool size2=false;
+    String  s,c;
+
+  final ValueChanged<bool> onChanged= (bool value) {
+
+      value=value;
+
+  };
   @override
   void initState() {
     final box = GetStorage();
@@ -111,6 +127,147 @@ class _DetailsView2State extends State<DetailsView2> {
                   ),
                   Text(widget.details,
                       style: TextStyle(color: Colors.blue, fontSize: 16)),
+                  SizedBox(
+                    height:20,
+                  ),
+
+
+
+              if(widget.color!=null)
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text("Red",style:TextStyle(color:Colors.black,fontSize:16),),
+
+                          Radio<bool>(
+                            groupValue: true,
+                            value: value,
+                            onChanged: (bool  newValue) {
+
+                              setState(() {
+                                value = !value;
+                                value1=false;
+                                c='red';
+                              });
+                              print("vvv111=$value");
+
+                            },
+                          ),
+
+
+                        ],
+                      ),
+                      SizedBox(width: 100,),
+                      Column(
+                        children: [
+                          Text("Blue",style:TextStyle(color:Colors.black,fontSize:16),),
+
+                          Radio<bool>(
+                            groupValue: true,
+                            value: value1,
+                            onChanged: (bool  newValue) {
+
+                              setState(() {
+                                c='blue';
+                                value1= !value1;
+                                value=false;
+                              });
+                              print("vvv222=$value1");
+
+                            },
+                          ),
+
+
+                        ],
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(
+                    height:20,
+                  ),
+
+                  if(widget.size!=null)
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+
+                          Text("Small",style:TextStyle(color:Colors.black,fontSize:16),),
+                          Radio<bool>(
+                            groupValue: true,
+                            value: size,
+                            onChanged: (bool  newValue) {
+
+                              setState(() {
+                                s='small';
+                                size = !size;
+                                size1=false;
+                                size2=false;
+                              });
+                              print("vvv111=$size");
+
+                            },
+                          ),
+
+
+                        ],
+                      ),
+SizedBox(width: 100,),
+                      Column(
+
+                        children: [
+
+                          Text("Meduim",style:TextStyle(color:Colors.black,fontSize:16),),
+
+                          Radio<bool>(
+                            groupValue: true,
+                            value: size1,
+                            onChanged: (bool   newValue) {
+
+                              setState(() {
+                                s='medium';
+                                size1= !size1;
+                                size=false;
+                                size2=false;
+                              });
+                              print("vvv222=$value1");
+
+                            },
+                          ),
+
+
+                        ],
+                      ),
+                      SizedBox(width: 100,),
+                      Column(
+
+                        children: [
+
+                          Text("large",style:TextStyle(color:Colors.black,fontSize:16),),
+
+                          Radio<bool>(
+                            groupValue: true,
+                            value: size2,
+                            onChanged: (bool   newValue) {
+
+                              setState(() {
+                                s='large';
+                                size2= !size2;
+                                size=false;
+                                size1=false;
+                              });
+                              print("vvv222=$value1");
+
+                            },
+                          ),
+
+
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -154,6 +311,7 @@ class _DetailsView2State extends State<DetailsView2> {
                 ],
               ),
               SizedBox(width: 55),
+
               GetBuilder<CartViewModel>(
                 init: CartViewModel(),
                 builder: (controller) => Container(
@@ -162,10 +320,13 @@ class _DetailsView2State extends State<DetailsView2> {
                     child: CustomButton(
                         text: 'اضف',
                         onPressed: () {
+
                           index = index + 1;
                           print("ttt");
                           print(widget.name);
                           print(widget.price);
+                          print("ccc="+c.toString());
+                          print("sss="+s.toString());
                             controller.dialogAndAdd(
                               CartProductModel(
                                   name: widget.name,
@@ -173,8 +334,11 @@ class _DetailsView2State extends State<DetailsView2> {
                                   price: widget.price.toString(),
                                   quantity: 1,
                                   productId: widget.productId,
+                                  color: c.toString(),
+                                  size: s.toString(),
                                   ),
                               widget.productId,
+
                             );
                             // controller.addProduct2(
                             //   CartProductModel(

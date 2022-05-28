@@ -11,7 +11,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 
 class AllOrdersView extends StatefulWidget {
-  String user;
+  String  user;
 
   AllOrdersView({this.user});
 
@@ -20,10 +20,10 @@ class AllOrdersView extends StatefulWidget {
 }
 class _PostsScreenState extends State<AllOrdersView> {
 
-  String allposts;
-  String v;
+  String  allposts;
+  String  v;
   TextEditingController _searchController = TextEditingController();
-  Future resultsLoaded;
+  Future  resultsLoaded;
   List _allResults = [];
   List _resultsList = [];
 
@@ -89,7 +89,7 @@ class _PostsScreenState extends State<AllOrdersView> {
 //.where("category", isEqualTo:"tec")
                           default:
                             return ListView.builder(
-                                itemCount: snapshot.data.documents.length,
+                                itemCount: snapshot.data.docs.length,
                                 // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                 //   crossAxisCount: 2,
                                 //   crossAxisSpacing: 2,
@@ -97,7 +97,7 @@ class _PostsScreenState extends State<AllOrdersView> {
                                 // ), //(orientation == Orientation.portrait) ? 2: 2.2),
                                 itemBuilder: (BuildContext context, int index) {
                                   DocumentSnapshot posts =
-                                  snapshot.data.documents[index];
+                                  snapshot.data.docs[index];
                                   return GetBuilder<HomeViewModel>(
                                       init: Get.find(),
                                       builder: (controller) =>

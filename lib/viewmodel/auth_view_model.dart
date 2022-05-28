@@ -19,11 +19,11 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 
 class AuthViewModel extends GetxController {
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+  GoogleSignIn  _googleSignIn = GoogleSignIn(scopes: ['email']);
   FirebaseAuth _auth = FirebaseAuth.instance;
   FacebookLogin _facebookLogin = FacebookLogin();
   String email, password, name,phone ,codeV,code;
-  String country,city,details,mobile,brand_name,cat;
+  String  country,city,details,mobile,brand_name,cat;
   // TextEditingController email1,pass1,name1,code1;
   var verificationId;
   Rx<User> _user = Rx<User>();
@@ -52,32 +52,32 @@ class AuthViewModel extends GetxController {
   }
 
 
-Future<void> sginInWithGoogle() async /* Sgin in with google method*/
-  {
-    GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
-  }
-
-  Future<void> googleSignInMehtod() async {
-    final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    GoogleSignInAuthentication googleSignInAuthentication =
-        await googleUser.authentication;
- print("cc=" + googleUser.toString());
-    final AuthCredential credential = GoogleAuthProvider.credential(
-      idToken: googleSignInAuthentication.idToken,
-      accessToken: googleSignInAuthentication.accessToken,
-    );
-
-    print("cc=" + credential.toString());
-    //UserCredential userCredential=
-    await _auth.signInWithCredential(credential).then((user) async {
-      await FireStoreUser().getCurrentUser(user.user.uid).then((value) {
-        setUser(UserModel.fromJson(value.data()));
-        print("Userr = " + _user.toString());
-      });
-      saveUser(user);
-    });
-    Get.offAll(HomeView());
-  }
+// Future<void> sginInWithGoogle() async /* Sgin in with google method*/
+//   {
+//     GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
+//   }
+//
+//   Future<void> googleSignInMehtod() async {
+//     final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+//     GoogleSignInAuthentication googleSignInAuthentication =
+//         await googleUser.authentication;
+//  print("cc=" + googleUser.toString());
+//     final AuthCredential credential = GoogleAuthProvider.credential(
+//       idToken: googleSignInAuthentication.idToken,
+//       accessToken: googleSignInAuthentication.accessToken,
+//     );
+//
+//     print("cc=" + credential.toString());
+//     //UserCredential userCredential=
+//     await _auth.signInWithCredential(credential).then((user) async {
+//       await FireStoreUser().getCurrentUser(user.user.uid).then((value) {
+//         setUser(UserModel.fromJson(value.data()));
+//         print("Userr = " + _user.toString());
+//       });
+//       saveUser(user);
+//     });
+//     Get.offAll(HomeView());
+//   }
 
   void facebookSihnInMethod() async {
     FacebookLoginResult result = await _facebookLogin.logIn(['email']);
@@ -87,7 +87,10 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
 
       await _auth
           .signInWithCredential(faceCredintal)
-          .then((value) async => {saveUser(user)});
+          .then((value) async => {
+          //  saveUser(user)
+          }
+      );
       Get.offAll(HomeView());
     }
   }
@@ -122,12 +125,45 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
 
 
     } catch (e) {
-      Get.snackbar("Error login Acoount", e.message,
+      Get.snackbar("Error login Acoount", e.toString(),
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
     }
   }
 
+  void signInWithEmailAndPasswordasAguest() async {
 
+    final box = GetStorage();
+
+    try {
+      await _auth
+          .signInWithEmailAndPassword(email: 'test@gmail.com', password:'123456')
+          .then((value) async {
+        await FireStoreUser().getCurrentUser(value.user.uid).then((value) {
+          setUser(UserModel.fromJson(value.data()));
+          print("Userr = " + _user.toString());
+        });
+      });
+
+      box.write('email', email);
+      box.write('pass',password);
+      box.write('name',email);
+
+      final box_country= box.read('country')??"x";
+
+      Get.offAll(ControlView());
+      // if(box_country=='x'){
+      //   Get.offAll(CountryView());
+      // }
+      // else{
+      //   Get.offAll(ControlView());
+      // }
+
+
+    } catch (e) {
+      Get.snackbar("Error login Acoount", e.toString(),
+          colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
+    }
+  }
 
 
   void createAccountWithEmailAndPassword() async {
@@ -136,26 +172,26 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password,  )
           .then((user) async {
-        saveUser(user);
+        //saveUser(user);
         final box1=box.write('email',email);
         final box2=box.write('pass',password);
         final box3=box.write('name',name);
       });
 
-      await Firestore.instance.collection('users').add({
+      await FirebaseFirestore.instance.collection('users').add({
         'name': name,
         'email': email,
       });
       final box_country= box.read('country')??"x";
 
       if(box_country=='x'){
-        Get.offAll(CountryView());
+       // Get.offAll(CountryView());
       }
       else{
         Get.offAll(ControlView());
       }
     } catch (e) {
-      Get.snackbar("Error login Acoount", e.message,
+      Get.snackbar("Error login Acoount", e.toString(),
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
     }
   }
@@ -163,18 +199,18 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
   void createAccountWithPhoneAndPassword() async {
     try {
       await _auth
-          .createUserWithEmailAndPassword(email: email, password: password)
+          .createUserWithEmailAndPassword(email: email , password: password)
           .then((user) async {
-        saveUser(user);
+        //saveUser(user);
       });
 
-      await Firestore.instance.collection('users').add({
+      await FirebaseFirestore.instance.collection('users').add({
         'name': name,
         'email': email,
       });
       Get.offAll(ControlView());
     } catch (e) {
-      Get.snackbar("Error login Acoount", e.message,
+      Get.snackbar("Error login Acoount", e.toString(),
           colorText: Colors.black, snackPosition: SnackPosition.BOTTOM);
     }
   }
@@ -234,7 +270,7 @@ _auth.verifyPhoneNumber(phoneNumber: phone,
        });
      } on FirebaseAuthException catch (e) {
        print("PPP"+e.code);
-       print("eeee="+e.message);
+      // print("eeee="+e.message);
 
        Get.snackbar('!!!!!', 'تاكد من ان هذا الايميل صحيح و مسجل داخل Luban',backgroundColor: Colors.lightGreen,colorText:Colors.white,
        duration:Duration(seconds:10));
@@ -245,16 +281,16 @@ _auth.verifyPhoneNumber(phoneNumber: phone,
 
    }
 
-  Future<void> saveUser(UserCredential user) async {
-    UserModel userModel = UserModel(
-      user.user.uid,
-      user.user.email,
-      name == null ? user.user.displayName : name,
-      " ",
-    );
-    await FireStoreUser().addUserToFireStore(userModel);
-    setUser(userModel);
-  }
+  // Future<void> saveUser(UserCredential user) async {
+  //   UserModel userModel = UserModel(
+  //     user.user!.uid,
+  //     user.user!.email,
+  //     name == null ? user.user.displayName : name,
+  //     " ",
+  //   );
+  //   await FireStoreUser().addUserToFireStore(userModel);
+  //   setUser(userModel);
+  // }
 
   void setUser(UserModel userModel) async {
     await localStorageData.setUser(userModel);
@@ -262,7 +298,7 @@ _auth.verifyPhoneNumber(phoneNumber: phone,
 
 ownerSendRequest () async {
     if(name!=""&&email!=""&&country!=""&&city!=null&&cat!=""&&mobile!=""&&details!="") {
-      FirebaseFirestore.instance.collection('send_requests').document().setData(
+      FirebaseFirestore.instance.collection('send_requests').doc().set(
           {
             'brand_name':brand_name,
             'brand_email': email,

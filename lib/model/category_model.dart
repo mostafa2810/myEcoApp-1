@@ -3,7 +3,7 @@
 
 class CategoryModel {
 
-  String name, image;
+  String  name, image;
   CategoryModel({this.name,this.image});
 
   CategoryModel.fromJson(Map<dynamic,dynamic>map){
