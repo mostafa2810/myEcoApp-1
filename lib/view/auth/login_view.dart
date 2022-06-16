@@ -6,10 +6,6 @@ import 'package:ecommerce/view/widgets/custom_textformfield.dart';
 import 'package:ecommerce/viewmodel/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'auth_phone.dart';
-import 'second_Screen.dart';
 import 'package:ecommerce/view/widgets/custom_button.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 
@@ -21,125 +17,125 @@ class LoginView extends GetWidget<AuthViewModel> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor:Colors.white,
-        // appBar: AppBar(
-        //   elevation: 0.0,
-        //   backgroundColor: Colors.white,
-        // ),
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: Colors.white,
+        ),
         body: Padding(
-          padding: const EdgeInsets.only(top: 5.0, right: 20.0, left: 20.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height:320,
-                  width:690,
-                  color:Colors.white,
-                  child:Image.asset('assets/E1.jpg',fit:BoxFit.fitWidth,)
-                ),
-                SizedBox(
-                  height:10
-                ),
-                Form(
-                    key: _formKey,
-                    child: Column(children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Custom_Text(
-                            text: "Welcome",
-                            fontSize: 30,
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                         //     Get.to(AuthView());
-                            Get.to(RegisterView());
-                            },
-                            child: Custom_Text(
-                              text: "تسجيل لاول مرة",
-                              fontSize: 18,
-                              color: Colors.blue,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 7),
-                      Custom_Text(
-                        text: "قم بتسجيل الدخول",
-                        fontSize: 14,
-                        color: Colors.grey,
-                      ),
-                      SizedBox(height: 20),
-                      CustomTextFormField(
-                          text: "E_mail",
-                          obs: false,
-                          hint: "ادخل الايميل الخاص بك",
-                          onSave: (value) {
-                         //   controller.email = value;
-                            controller.email=value;
-                          },
-                          validator: (value) {
-                            if (value == null) {
-                              print("error");
-                            }
-                          }),
-                      SizedBox(height: 20),
-                      CustomTextFormField(
-                          text: "Password",
-                          obs: true,
-                          hint: "ادخل كلمة المرور",
-                          onSave: (value) {
-                            controller.password = value;
-                          },
-                          validator: (value) {
-                            if (value == null) {
-                              print("error");
-                            }
-                          }),
-                      SizedBox(height: 20),
-
-
-                      SizedBox(height: 8),
-                      InkWell(
-                        child: Custom_Text(
-                          color: Colors.blue,
-                          text: "نسيت كلمة المرور",
-                          fontSize: 13,
-                          alignment: Alignment.topRight,
+          padding: const EdgeInsets.only(top: 10.0, right: 20.0, left: 20.0),
+          child: ListView(
+            children: [
+              Container(
+                height:120,
+                width:220,
+                child:Image.asset('assets/sora.jpg',fit:BoxFit.fill,)
+              ),
+              SizedBox(
+                height:10
+              ),
+              Form(
+                  key: _formKey,
+                  child: Column(children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Custom_Text(
+                          text: "Welcome",
+                          fontSize: 30,
                         ),
-                        onTap:(){
-                          Get.to(ForgetPasswordView());
+                        GestureDetector(
+                          onTap: () {
+                       //     Get.to(AuthView());
+                          Get.to(RegisterView());
+                          },
+                          child: Custom_Text(
+                            text: "Sign Up",
+                            fontSize: 18,
+                            color: Colors.lightBlue
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 7),
+                    Custom_Text(
+                      text: "Sign in to Continue",
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                    SizedBox(height: 20),
+                    CustomTextFormField(
+                        text: "E_mail",
+                        hint: "dev@yahoo.com",
+                        obs:false,
+                        onSave: (value) {
+                       //   controller.email = value;
+                          controller.email=value;
                         },
+                        validator: (value) {
+                          if (value == null) {
+                            print("error");
+                          }
+                        }),
+                    SizedBox(height: 20),
+
+                    CustomTextFormField(
+                        text: "Password",
+                        hint: "************",
+                        obs: true,
+                        onSave: (value) {
+                          controller.password = value;
+                        },
+                        validator: (value) {
+                          if (value == null) {
+                            print("error");
+                          }
+                        }),
+                    SizedBox(height: 8),
+                    InkWell(
+                      child: Custom_Text(
+                        text: "Forget Password",
+                        fontSize: 14,
+                        alignment: Alignment.topRight,
                       ),
-                      SizedBox(height: 20),
+                      onTap:(){
+                        Get.to(ForgetPasswordView());
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    CustomButton(
+                      onPressed: () {
+                        _formKey.currentState.save();
+                        if (_formKey.currentState.validate()) {
 
-                      Container(
-                        width: 230,
-                        child: CustomButton(
+                          //controller.signInWithPhoneAndPassword();
+                          controller.signInWithEmailAndPassword();
+                        }
+                      },
+                      text: "تسجيل دخول",
+                    ),
+                    SizedBox(height: 10),
 
-                          onPressed: () {
-                            _formKey.currentState.save();
-                            if (_formKey.currentState.validate()) {
-                              final box = GetStorage();
-                              final box1=box.write('email', controller.email);
-                              final box2=box.write('pass', controller.password);
-                                controller.signInWithEmailAndPassword();
-
-                              // else{
-                              //   controller.signInWithEmailAndPassword();
-                              // }
-
-                            }
-                          },
-                          text: "تسجيل دخول",
-                        ),
-                      ),
-
-                      SizedBox(height: 10),
-
-                    ])),
-              ],
-            ),
+                    // Custom_Text(
+                    //   text: '_OR_',
+                    //   alignment: Alignment.center,
+                    // ),
+                    // SizedBox(
+                    //   height: 20,
+                    // ),
+                    // CustomButtonSocial(
+                    //   text: 'Sign In With Facebook',
+                    //   imageName: 'assets/f1.png',
+                    // ),
+                    // CustomButtonSocial(
+                    //   text: 'Sign In With Google',
+                    //   imageName: 'assets/g1.png',
+                    //   onPressed: () {
+                    //   //  controller.sginInWithGoogle();
+                    //      controller.googleSignInMehtod();
+                    //   },
+                    // ),
+                  ])),
+            ],
           ),
         ));
   }

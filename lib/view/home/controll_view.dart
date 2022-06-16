@@ -1,12 +1,10 @@
 import 'package:ecommerce/constants/const.dart';
-import 'package:ecommerce/helper/local_storage_data.dart';
-import 'package:ecommerce/view/home/home_view.dart';
+import 'package:ecommerce/view/auth/login_view.dart';
+
 import 'package:ecommerce/viewmodel/auth_view_model.dart';
 import 'package:ecommerce/viewmodel/control_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../auth/login_view.dart';
-
 
 
 class ControlView extends StatelessWidget {
@@ -17,8 +15,10 @@ class ControlView extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Obx(() {
-      return (Get.find<AuthViewModel>().user == null)
-          ? LoginView()
+      return
+        (Get.find<AuthViewModel>().user == null)
+         ?
+        LoginView()
           : GetBuilder<ControlViewModel>(
               init: Get.find(),
               //ControlViewModel(),
@@ -50,43 +50,39 @@ class ControlView extends StatelessWidget {
           BottomNavigationBarItem(
               activeIcon: Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: Text("Category"),
+                child:Image.asset('assets/m3.png',width:30,)
               ),
               label: '',
               icon: Padding(
                 padding: const EdgeInsets.only(top: 15),
-                child: Image.asset('assets/cat.jfif',
-                    fit: BoxFit.contain, width: 30),
+                  child:Image.asset('assets/cat.jfif',width:30,)
               )),
           BottomNavigationBarItem(
               activeIcon: Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: Text("Cart"),
+                child: Image.asset('assets/m3.png',width:30,)
               ),
               label: '',
               icon: Padding(
                 padding: const EdgeInsets.only(top: 15),
-                child: Image.asset('assets/m2.png',
-                    fit: BoxFit.contain, width: 30),
+                child: Image.asset('assets/m3.png',width:30,)
               )),
-
 
 
           BottomNavigationBarItem(
               activeIcon: Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: Text("Account"),
+                child: Text("Promo code"),
               ),
               label: '',
               icon: Padding(
                 padding: const EdgeInsets.only(top: 15),
-                child: Image.asset('assets/m1.png',
+                child: Image.asset('assets/offer.png',
                     fit: BoxFit.contain, width: 30),
               ))
         ],
         currentIndex: controller.navigotorValue,
         onTap: (index) {
-
           //   Get.find<AuthViewModel>().user==null
           // print("emmm = "+ controller. _user);
           controller.changeSelectedValue(index);

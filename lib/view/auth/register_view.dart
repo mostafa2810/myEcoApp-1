@@ -27,19 +27,19 @@ class RegisterView extends GetWidget<AuthViewModel> {
           padding: const EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0),
           child: Form(
               key: _formKey,
-              child: Column(children: <Widget>[
+              child: ListView(children: <Widget>[
 
-                // Custom_Text(
-                //   text: "تسجيل",
-                //   fontSize: 30,
-                // ),
+                Custom_Text(
+                  text: "Sign Up",
+                  fontSize: 30,
+                ),
 
                 SizedBox(height: 7),
                 SizedBox(height: 20),
                 CustomTextFormField(
-                    text: "الاسم",
+                    text: "Name",
+                    hint: "ادخل اسمك ",
                     obs: false,
-                    hint: "omar",
                     onSave: (value) {
                       controller.name = value;
                     },
@@ -61,7 +61,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                 //       }
                 //     }),
                 CustomTextFormField(
-                    text: "الايميل",
+                    text: "ادخل الايميل الخاص بك ",
                     hint: "dev@gmail.com",
                     obs: false,
                     onSave: (value) {
@@ -86,16 +86,15 @@ class RegisterView extends GetWidget<AuthViewModel> {
                       }
                     }),
                 SizedBox(height: 20),
-
                 CustomButton(
                   onPressed: () {
                     _formKey.currentState.save();
                     if (_formKey.currentState.validate()) {
-                    // controller.verifyPhoneNumber();
-                    controller.createAccountWithEmailAndPassword();
+                     controller.createAccountWithPhoneAndPassword();
+                    //  controller.createAccountWithEmailAndPassword();
                     }
                   },
-                  text: "تسجيل",
+                  text: "Sign Up",
                 ),
                 SizedBox(height: 20),
               ])),

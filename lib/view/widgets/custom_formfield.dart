@@ -25,23 +25,24 @@ class CustomFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height:80,
         child:  Column(
             children:[
-              Custom_Text(
-                  text:text,fontSize: 14,color:Colors.grey[600]
-              ),
+              // Custom_Text(
+              //     text:text,fontSize: 14,color:Colors.grey[600]
+              // ),
 
               TextFormField(
 
                 onSaved: onSave,
                 validator:validator ,
                 controller: controller,
+
                 // textAlign:TextAlign.end,
                 decoration: InputDecoration(
                   hintText:hint,
                   hintStyle: TextStyle(color:Colors.grey),
                   fillColor:Colors.white,
-
                 ),
               )
             ]

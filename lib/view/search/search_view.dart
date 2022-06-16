@@ -1,8 +1,5 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce/view/products/details_view2.dart';
-import 'package:ecommerce/view/products/products_view.dart';
-import 'package:ecommerce/view/products/products_view2.dart';
 import 'package:ecommerce/view/widgets/custom_text.dart';
 import 'package:ecommerce/viewmodel/home_view_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -130,11 +127,11 @@ class _PostsScreenState extends State<SearchView> {
                                                           children: [
                                                             SizedBox(width:50,),
                                                             Text((posts.data()['price']).toString(),
-                                                              style:TextStyle( color:Colors.blue,fontSize:16,
+                                                              style:TextStyle( color:Colors.lightBlue,fontSize:16,
                                                                   fontWeight:FontWeight.bold),
                                                             ),
                                                             Text(("  LE"),
-                                                              style:TextStyle( color:Colors.blue,fontSize:16,
+                                                              style:TextStyle( color:Colors.lightBlue,fontSize:16,
                                                                   fontWeight:FontWeight.bold),
                                                             ),
                                                           ],
@@ -150,16 +147,10 @@ class _PostsScreenState extends State<SearchView> {
                                             onTap: () {
 
 
-                                              Get.to(DetailsView2(
-                                                name: posts.data()['name'],
-                                                price: posts.data()['price'],
-                                                //      x:posts.data()['x'],
-                                                details: posts.data()['des'],
-                                                image: posts.data()['image'],
-                                                productId:posts.data()['productid'],
-                                                //    brand:posts.data()['brand'],
-                                                //  brandemail:posts.data()['brandemail']
-                                              ));
+
+                                              
+
+
                                             },
                                           )));
                                 });

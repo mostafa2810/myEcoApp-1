@@ -1,6 +1,7 @@
 
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecommerce/model/carsoul_model.dart';
 import 'package:ecommerce/model/category_model.dart';
 import 'package:ecommerce/model/product_moidel.dart';
 import 'package:ecommerce/services/home_services.dart';
@@ -19,12 +20,23 @@ class HomeViewModel extends GetxController{
 
   List<ProductModel>get productModel=>_productModel;
   List <ProductModel> _productModel=[];
+
+  List<CarsoulModel>get carsoulModel=>_carsoulModel;
+  List <CarsoulModel> _carsoulModel=[];
   String value = '';
+
+
 
   HomeViewModel(){
     getCategory();
+
     getBestSellingProducts();
+    getCarsoul();
+
   }
+
+
+
   getCategory()async{
     _loading.value=true;
     HomeServices().getCategory().then((value){
@@ -36,13 +48,32 @@ class HomeViewModel extends GetxController{
     });
   }
 
+
+
+
+  getCarsoul()async{
+    _loading.value=true;
+    HomeServices().getCarsoul().then((value){
+      for(int i=0;i<value.length;i++){
+        _carsoulModel.add(CarsoulModel.fromJson(value[i].data()));
+        _loading.value=false;
+      }
+      update();
+    });
+    print("cars=${_carsoulModel.length}");
+  }
+
+
+
   changeMethod(String val){
     value=val;
     update();
   }
-  
-  getBestSellingProducts()async{
 
+
+
+
+  getBestSellingProducts()async{
     _loading.value=true;
     HomeServices().getBestSelling().then((value){
 
@@ -52,11 +83,8 @@ class HomeViewModel extends GetxController{
         _loading.value=false;
       }
       print(productModel.length);
-
       update();
     });
-
-
   }
 
 

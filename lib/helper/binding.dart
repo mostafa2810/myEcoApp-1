@@ -1,6 +1,4 @@
 
-import 'package:ecommerce/helper/local_storage_data.dart';
-import 'package:ecommerce/viewmodel/cart_viewmodel.dart';
 import 'package:ecommerce/viewmodel/auth_view_model.dart';
 import 'package:ecommerce/viewmodel/control_view_model.dart';
 import 'package:ecommerce/viewmodel/home_view_model.dart';
@@ -14,8 +12,6 @@ class Binding extends Bindings
      Get.lazyPut(() => AuthViewModel());
      Get.lazyPut(() => ControlViewModel());
      Get.lazyPut(() => HomeViewModel());
-     Get.lazyPut(() => CartViewModel());
-     Get.lazyPut(() => LocalStorageData());
-  }
 
+  }
 }

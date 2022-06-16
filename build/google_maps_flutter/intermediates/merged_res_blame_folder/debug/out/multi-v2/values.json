@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/joo/work/tour_app/build/google_maps_flutter/intermediates/res/merged/debug/values/values.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/8b920335558ff8b94ad308e454eda0ef/jetified-play-services-maps-17.0.0/res/values/values.xml",
@@ -80,7 +80,7 @@
             ]
         },
         {
-            "outputFile": "/home/joo/work/eco_template/build/google_maps_flutter/intermediates/res/merged/debug/values/values.xml",
+            "outputFile": "/home/joo/work/tour_app/build/google_maps_flutter/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/8b920335558ff8b94ad308e454eda0ef/jetified-play-services-maps-17.0.0/res/values/values.xml",

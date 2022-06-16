@@ -1,4 +1,4 @@
 io/flutter/plugins/GeneratedPluginRegistrant.java
  io.flutter.plugins.GeneratedPluginRegistrant
-com/eco/temp/BuildConfig.java
- com.eco.temp.BuildConfig
+com/team/tourism2022/BuildConfig.java
+ com.team.tourism2022.BuildConfig

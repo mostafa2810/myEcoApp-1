@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/joo/work/eco_template/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "/home/joo/work/tour_app/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/home/joo/.gradle/caches/transforms-2/files-2.1/33df90df7d77453e9f7ab8e30780760e/cardview-1.0.0/res/values-v23/values-v23.xml",

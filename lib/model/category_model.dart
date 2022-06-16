@@ -3,8 +3,8 @@
 
 class CategoryModel {
 
-  String name, image;
-  CategoryModel({this.name,this.image});
+  String name, image,des,link,video,city;
+  CategoryModel({this.name,this.image,this.des,this.link,this.video,this.city});
 
   CategoryModel.fromJson(Map<dynamic,dynamic>map){
 
@@ -13,12 +13,20 @@ class CategoryModel {
     }
     name=map['name'];
     image=map['image'];
+    link=map["link"];
+    des=map["details"];
+    video=map["video"];
+    city=map["city"];
   }
 
   toJson(){
     return {
       'name':name,
-      'image':image
+      'image':image,
+      'link':link,
+      'details':des,
+      'video':video,
+      'city':city
     };
   }
 }

@@ -343,6 +343,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="ad_label">Ad</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -384,15 +385,22 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
-    <string name="default_web_client_id" translatable="false">154082487981-a1107no1hts4vuq4essgk8b91iu0ea7g.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">755023635928-g95ud5gfisc1420fjbi0h8get1nani7b.apps.googleusercontent.com</string>
     <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
-    <string name="gcm_defaultSenderId" translatable="false">154082487981</string>
-    <string name="google_api_key" translatable="false">AIzaSyCCHlm9ox9dFB9qEH9rfyyYVfU56ictgxA</string>
-    <string name="google_app_id" translatable="false">1:154082487981:android:fd49640cb6b457d01f2024</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCCHlm9ox9dFB9qEH9rfyyYVfU56ictgxA</string>
-    <string name="google_storage_bucket" translatable="false">ecoapp-4e9dd.appspot.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">755023635928</string>
+    <string name="google_api_key" translatable="false">AIzaSyDZA-p6j774igSkq9jvMUoOFbTHQueoojE</string>
+    <string name="google_app_id" translatable="false">1:755023635928:android:f9cf08456b2172c0ebfead</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDZA-p6j774igSkq9jvMUoOFbTHQueoojE</string>
+    <string name="google_storage_bucket" translatable="false">tourismapp-9aa72.appspot.com</string>
     <string name="notification_title">Background location service running</string>
-    <string name="project_id" translatable="false">ecoapp-4e9dd</string>
+    <string name="project_id" translatable="false">tourismapp-9aa72</string>
+    <string name="s1">Save image</string>
+    <string name="s2">"Allow Ad to store image in Picture gallery?"</string>
+    <string name="s3">Accept</string>
+    <string name="s4">Decline</string>
+    <string name="s5">Create calendar event</string>
+    <string name="s6">Allow Ad to create a calendar event?</string>
+    <string name="s7">Test Ad</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
@@ -1783,6 +1791,14 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="Theme.IAPTheme" parent="android:Theme">
+<item name="android:windowIsTranslucent">true</item>
+<item name="android:windowBackground">@android:color/transparent</item>
+<item name="android:windowContentOverlay">@null</item>
+<item name="android:windowNoTitle">true</item>
+<item name="android:windowIsFloating">true</item>
+<item name="android:backgroundDimEnabled">false</item>
+</style>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Dark" parent="Base.ThemeOverlay.AppCompat.Dark"/>
@@ -2051,6 +2067,13 @@
          -->
         <attr format="reference" name="expandActivityOverflowButtonDrawable"/>
     </declare-styleable>
+    <declare-styleable name="AdsAttrs">
+<attr format="string" name="adSize"/>
+
+<attr format="string" name="adSizes"/>
+
+<attr format="string" name="adUnitId"/>
+</declare-styleable>
     <declare-styleable name="AlertDialog">
         <attr name="android:layout"/>
         <attr format="reference" name="buttonPanelSideLayout"/>
@@ -3211,6 +3234,12 @@
         <attr format="dimension" name="paddingBottomNoButtons"/>
         <!-- Top padding to use when no title is present. -->
         <attr format="dimension" name="paddingTopNoTitle"/>
+    </declare-styleable>
+    <declare-styleable name="ScrollBar">
+        <attr format="color|reference" name="sb_handlerColor"/>
+        <attr format="color|reference" name="sb_indicatorColor"/>
+        <attr format="color|reference" name="sb_indicatorTextColor"/>
+        <attr format="boolean|reference" name="sb_horizontal"/>
     </declare-styleable>
     <declare-styleable name="SearchView">
         <!-- The layout to use for the search view. -->

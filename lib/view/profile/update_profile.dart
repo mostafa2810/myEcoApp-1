@@ -17,7 +17,6 @@ import 'package:get/get.dart';
 
   class _UpdateProfileState extends State<UpdateProfile> {
 
-
     @override
     Widget build(BuildContext context) {
       TextEditingController name=TextEditingController();

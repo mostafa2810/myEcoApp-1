@@ -30,7 +30,7 @@ class ForgetPasswordView extends GetWidget<AuthViewModel> {
               child: Column(children: <Widget>[
 
                 Custom_Text(
-                  text: "استعادة كلمة المرور ",
+                  text: "Forget Password",
                   fontSize: 30,
                 ),
 
@@ -39,9 +39,9 @@ class ForgetPasswordView extends GetWidget<AuthViewModel> {
 
 
                 CustomTextFormField(
-                    text: "الايميل ",
-                    obs: false,
+                    text: "E_mail",
                     hint: "dev@yahoo.com",
+                    obs: false,
                     onSave: (value) {
                       controller.email = value;
                     },
@@ -60,7 +60,7 @@ class ForgetPasswordView extends GetWidget<AuthViewModel> {
                       controller.ResetPassword();
                     }
                   },
-                  text: "استعادة كلمة المرور",
+                  text: "Reset Password",
                 ),
                 SizedBox(height: 20),
               ])),

@@ -1,20 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce/country/country_view.dart';
-import 'package:ecommerce/helper/local_storage_data.dart';
 import 'package:ecommerce/services/firestore_user.dart';
-import 'package:ecommerce/view/auth/verify_otp.dart';
 import 'package:ecommerce/view/home/controll_view.dart';
-import 'package:ecommerce/view/home/home_view.dart';
-import 'package:ecommerce/view/owner/owner_home_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce/model/user_model.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-//getx Support disaple automatically
 
 
 
@@ -24,11 +17,11 @@ class AuthViewModel extends GetxController {
   FacebookLogin _facebookLogin = FacebookLogin();
   String email, password, name,phone ,codeV,code;
   String country,city,details,mobile,brand_name,cat;
-  // TextEditingController email1,pass1,name1,code1;
+  TextEditingController email1,pass1,name1,code1;
   var verificationId;
   Rx<User> _user = Rx<User>();
   get user => _user.value?.email;
-  final LocalStorageData localStorageData = Get.find();
+ // final LocalStorageData localStorageData = Get.find();
 
 
 
@@ -57,40 +50,29 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
     GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
   }
 
-  Future<void> googleSignInMehtod() async {
-    final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    GoogleSignInAuthentication googleSignInAuthentication =
-        await googleUser.authentication;
- print("cc=" + googleUser.toString());
-    final AuthCredential credential = GoogleAuthProvider.credential(
-      idToken: googleSignInAuthentication.idToken,
-      accessToken: googleSignInAuthentication.accessToken,
-    );
+ //  Future<void> googleSignInMehtod() async {
+ //    final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+ //    GoogleSignInAuthentication googleSignInAuthentication =
+ //        await googleUser.authentication;
+ // print("cc=" + googleUser.toString());
+ //    final AuthCredential credential = GoogleAuthProvider.credential(
+ //      idToken: googleSignInAuthentication.idToken,
+ //      accessToken: googleSignInAuthentication.accessToken,
+ //    );
+ //
+ //    print("cc=" + credential.toString());
+ //    //UserCredential userCredential=
+ //    await _auth.signInWithCredential(credential).then((user) async {
+ //      await FireStoreUser().getCurrentUser(user.user.uid).then((value) {
+ //        setUser(UserModel.fromJson(value.data()));
+ //        print("Userr = " + _user.toString());
+ //      });
+ //      saveUser(user);
+ //    });
+ //    Get.offAll(HomeView());
+ //  }
 
-    print("cc=" + credential.toString());
-    //UserCredential userCredential=
-    await _auth.signInWithCredential(credential).then((user) async {
-      await FireStoreUser().getCurrentUser(user.user.uid).then((value) {
-        setUser(UserModel.fromJson(value.data()));
-        print("Userr = " + _user.toString());
-      });
-      saveUser(user);
-    });
-    Get.offAll(HomeView());
-  }
 
-  void facebookSihnInMethod() async {
-    FacebookLoginResult result = await _facebookLogin.logIn(['email']);
-    final accessToken = result.accessToken.token;
-    if (result.status == FacebookLoginStatus.loggedIn) {
-      final faceCredintal = FacebookAuthProvider.credential(accessToken);
-
-      await _auth
-          .signInWithCredential(faceCredintal)
-          .then((value) async => {saveUser(user)});
-      Get.offAll(HomeView());
-    }
-  }
 
   void signInWithEmailAndPassword() async {
 
@@ -101,7 +83,7 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
           .signInWithEmailAndPassword(email: email, password: password)
           .then((value) async {
         await FireStoreUser().getCurrentUser(value.user.uid).then((value) {
-          setUser(UserModel.fromJson(value.data()));
+
           print("Userr = " + _user.toString());
         });
       });
@@ -136,7 +118,7 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password,  )
           .then((user) async {
-        saveUser(user);
+
         final box1=box.write('email',email);
         final box2=box.write('pass',password);
         final box3=box.write('name',name);
@@ -149,7 +131,7 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
       final box_country= box.read('country')??"x";
 
       if(box_country=='x'){
-        Get.offAll(CountryView());
+        Get.offAll(ControlView());
       }
       else{
         Get.offAll(ControlView());
@@ -165,7 +147,7 @@ Future<void> sginInWithGoogle() async /* Sgin in with google method*/
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password)
           .then((user) async {
-        saveUser(user);
+
       });
 
       await Firestore.instance.collection('users').add({
@@ -197,7 +179,7 @@ _auth.verifyPhoneNumber(phoneNumber: phone,
     },
     codeAutoRetrievalTimeout: (verificationId)async{});
 
-   Get.to(VerifyOtp());
+
   }
 
 
@@ -245,20 +227,20 @@ _auth.verifyPhoneNumber(phoneNumber: phone,
 
    }
 
-  Future<void> saveUser(UserCredential user) async {
-    UserModel userModel = UserModel(
-      user.user.uid,
-      user.user.email,
-      name == null ? user.user.displayName : name,
-      " ",
-    );
-    await FireStoreUser().addUserToFireStore(userModel);
-    setUser(userModel);
-  }
+  // Future<void> saveUser(UserCredential user) async {
+  //   UserModel userModel = UserModel(
+  //     user.user.uid,
+  //     user.user.email,
+  //     name == null ? user.user.displayName : name,
+  //     " ",
+  //   );
+  //   await FireStoreUser().addUserToFireStore(userModel);
+  //   setUser(userModel);
+  // }
 
-  void setUser(UserModel userModel) async {
-    await localStorageData.setUser(userModel);
-  }
+  // void setUser(UserModel userModel) async {
+  //   await localStorageData.setUser(userModel);
+  // }
 
 ownerSendRequest () async {
     if(name!=""&&email!=""&&country!=""&&city!=null&&cat!=""&&mobile!=""&&details!="") {
